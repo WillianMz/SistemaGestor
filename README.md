@@ -1,2 +1,7 @@
 # ProjetoSGE
-Software de Gestão Empresarial
+Softwares de Gestão Empresarial
+  
+  >Finanças
+  >Estoque
+  >Comercial
+  >Relatórios
