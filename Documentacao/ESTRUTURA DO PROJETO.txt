@@ -1,0 +1,18 @@
+
+
+
+Nome da solução: SGE
+Versão: 1.0.0 BETA
+
+ORGANIZAÇÃO
+
+Biblioteca de classes (DLLs)
+		-Modelo     (.NET Standart)
+		-Estoque    (.NET Framework 4.8 ou superior / Contém regras de negócios e SQL para persistencia de dados)
+		-Financeiro (.NET Framework 4.8 ou superior / Contém regras de negócios e SQL para persistencia de dados)
+		-Comercial  (.NET Framework 4.8 ou superior / Contém regras de negócios e SQL para persistencia de dados)
+		-Util       (.NET Framework 4.8 ou superior / Contém funções e procedimentos utilizados em diversas partes do projeto / Classe estática)
+		-Docfiscal  (Conterá regras para emissão de NFe/NFc/CTe entre outros)
+		
+INTERFACE DO USUÁRIO (DLLs)
+	
