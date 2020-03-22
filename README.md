@@ -1,5 +1,5 @@
-# ProjetoSGE
-Softwares de Gestão Empresarial
+# Siga
+Sistema de Gestão Administrativa
   
   >Finanças
   >Estoque
