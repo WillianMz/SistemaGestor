@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
 [assembly: AssemblyTitle("Gestor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Software de Gestão")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("JW Software")]
 [assembly: AssemblyProduct("Gestor")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright ©  2020 JW Software")]
+[assembly: AssemblyTrademark("JW Software")]
 [assembly: AssemblyCulture("")]
 
 // Definir ComVisible como false torna os tipos neste assembly invisíveis

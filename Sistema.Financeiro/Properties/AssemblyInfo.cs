@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associada a um assembly.
-[assembly: AssemblyTitle("Util")]
+[assembly: AssemblyTitle("Sistema.Financeiro")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Loglabs")]
-[assembly: AssemblyProduct("Util")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Loglabs")]
-[assembly: AssemblyTrademark("Loglabs")]
+[assembly: AssemblyCompany("JW Software")]
+[assembly: AssemblyProduct("Sistema.Financeiro")]
+[assembly: AssemblyCopyright("Copyright ©  2020 JW Software")]
+[assembly: AssemblyTrademark("JW Software")]
 [assembly: AssemblyCulture("")]
 
 // Definir ComVisible como false torna os tipos neste assembly invisíveis
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // O GUID a seguir será destinado à ID de typelib se este projeto for exposto para COM
-[assembly: Guid("748cae26-64b3-405c-a135-0bf1ed44bac2")]
+[assembly: Guid("d9db0ba7-dad1-4dea-9255-1d3789fd414e")]
 
 // As informações da versão de um assembly consistem nos quatro valores a seguir:
 //

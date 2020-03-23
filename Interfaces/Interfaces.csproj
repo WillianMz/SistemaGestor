@@ -213,10 +213,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
-      <Project>{88140a5f-cab6-4326-9444-d27240c12558}</Project>
-      <Name>Controller</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <Project>{8626aab5-4869-4484-b5af-b450ab178625}</Project>
       <Name>Modelo</Name>
