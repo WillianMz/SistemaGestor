@@ -20,7 +20,7 @@ namespace Interfaces.Usuarios
             this.Close();
 
             //TESTE - RETIRAR DEPOIS
-            ParamentroDoSistema p = util_sistema.lerDadosRegistroWindows("Estoque");
+            ParamentroDoSistema p = util_sistema.lerDadosRegistroWindows("Gestor");
             SQL.servidor = p.dbServer;
             SQL.porta    = p.dbPort;
             SQL.banco    = p.dbBase;

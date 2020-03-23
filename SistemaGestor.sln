@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{0665DB83-0FE1-4203-8C26-093226E6355F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestor", "Gestor\Gestor.csproj", "{F38A612E-9EEC-4614-B0AA-07F6859BCE17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0665DB83-0FE1-4203-8C26-093226E6355F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0665DB83-0FE1-4203-8C26-093226E6355F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0665DB83-0FE1-4203-8C26-093226E6355F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F38A612E-9EEC-4614-B0AA-07F6859BCE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38A612E-9EEC-4614-B0AA-07F6859BCE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38A612E-9EEC-4614-B0AA-07F6859BCE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38A612E-9EEC-4614-B0AA-07F6859BCE17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

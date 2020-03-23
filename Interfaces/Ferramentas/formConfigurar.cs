@@ -39,7 +39,7 @@ namespace Interfaces.Ferramentas
                 };
 
                 controle = new BLL_Sistema();
-                controle.salvarParamentros("Estoque", p);
+                controle.salvarParamentros("Gestor", p);
             }
             catch
             {
@@ -50,7 +50,7 @@ namespace Interfaces.Ferramentas
         private void lerDados()
         {
             controle = new BLL_Sistema();
-            ParamentroDoSistema ps = controle.getParamentros("Estoque");
+            ParamentroDoSistema ps = controle.getParamentros("Gestor");
             txtBDServer.Text = ps.dbServer;
             txtBDPort.Text   = Convert.ToString(ps.dbPort);
             txtBDBanco.Text  = ps.dbBase;

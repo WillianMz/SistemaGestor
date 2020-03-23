@@ -186,7 +186,7 @@ namespace Util
             {
                 RegistryKey regkey = Registry.CurrentUser.OpenSubKey("Software", true); //cria a referencia para a chave de registro
 
-                regkey = regkey.CreateSubKey("WNSoftware"); //cria subchave c/nome do desenvolvedor
+                regkey = regkey.CreateSubKey("JWSoftware"); //cria subchave c/nome do desenvolvedor
                 //regkey.DeleteSubKey(software);
                 regkey = regkey.CreateSubKey(software);//cria outra subchave com dados para o software
 
@@ -212,7 +212,7 @@ namespace Util
             try
             {
                 RegistryKey regkey = Registry.CurrentUser.OpenSubKey("Software", true); //cria a referencia para a chave de registro
-                regkey = regkey.OpenSubKey("WNSoftware");
+                regkey = regkey.OpenSubKey("JWSoftware");
                 
                 ParamentroDoSistema reg = new ParamentroDoSistema();
                 reg.dbServer = util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("dbServer").ToString());
