@@ -36,14 +36,6 @@ namespace Sistema.Pessoas.Interfaces
             util_sistema.resultadoPesquisa(dgvPessoa, lblResultado);
         }
 
-        //teste
-        //private void atualizarGrid2(Pessoa p)
-        //{
-        //    dgvPessoa.Rows.Clear();
-        //    dgvPessoa.Rows.Add(p.Id, p.NomeCompleto, p.Fantasia, p.CPF_CNPJ, p.Telefone, p.Email, p.Local);
-        //    util_sistema.resultadoPesquisa(dgvPessoa, lblResultado);
-        //}
-
         private void pesquisarPessoas(bool ativo)
         {
             try
@@ -72,6 +64,10 @@ namespace Sistema.Pessoas.Interfaces
                             ps = controle.listarTodasAsPessoas(ativo);
                             atualizarGrid(ps);
                             break;
+                        case "Desativado":
+                            ps = controle.filtrarPessoa_NOME(txtPesquisar.Text, false);
+                            atualizarGrid(ps);
+                            break;
                     }
                 }                
                 #endregion
@@ -91,6 +87,10 @@ namespace Sistema.Pessoas.Interfaces
                             break;
                         case "CPF/CNPJ":
                             ps = controle.filtrarPessoa_CPFCNPJ(txtPesquisar.Text, ativo);
+                            atualizarGrid(ps);
+                            break;
+                        case "Desativado":
+                            ps = controle.filtrarClientes_NOME(txtPesquisar.Text, false);
                             atualizarGrid(ps);
                             break;
                     }
@@ -114,6 +114,10 @@ namespace Sistema.Pessoas.Interfaces
                             ps = controle.filtrarPessoa_CPFCNPJ(txtPesquisar.Text, ativo);
                             atualizarGrid(ps);
                             break;
+                        case "Desativado":
+                            ps = controle.filtrarFornecedores_NOME(txtPesquisar.Text, false);
+                            atualizarGrid(ps);
+                            break;
                     }
                 }
                 #endregion
@@ -133,6 +137,10 @@ namespace Sistema.Pessoas.Interfaces
                             break;
                         case "CPF/CNPJ":
                             ps = controle.filtrarPessoa_CPFCNPJ(txtPesquisar.Text, ativo);
+                            atualizarGrid(ps);
+                            break;
+                        case "Desativado":
+                            ps = controle.filtrarTransp_NOME(txtPesquisar.Text, false);
                             atualizarGrid(ps);
                             break;
                     }
@@ -157,8 +165,16 @@ namespace Sistema.Pessoas.Interfaces
                             ps = controle.filtrarPessoa_CPFCNPJ(txtPesquisar.Text, ativo);
                             atualizarGrid(ps);
                             break;
+                        case "Desativado":
+                            ps = controle.filtrarFuncionarios_NOME(txtPesquisar.Text, false);
+                            atualizarGrid(ps);
+                            break;
                     }
                 }
+                #endregion
+
+                #region OUTRO
+
                 #endregion
             }
             catch (Exception ex)
@@ -261,6 +277,7 @@ namespace Sistema.Pessoas.Interfaces
             }
         }
         #endregion
+
 
         private void formConsultaPessoa_KeyDown(object sender, KeyEventArgs e)
         {

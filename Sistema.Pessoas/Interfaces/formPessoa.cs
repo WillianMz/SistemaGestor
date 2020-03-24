@@ -27,8 +27,8 @@ namespace Sistema.Pessoas.Interfaces
         {
             if(statusForm == statusForm.Novo)
             {
-                lblMensagem.Text = "Novo registro";
-                lblTitulo.Text = "NOVA PESSOA";
+                lblMensagem.Text = "Inserindo novo registro";
+                lblTitulo.Text = "Nova registro";
                 bloquearCampos();
                 cbTipoPessoa.Enabled = true;
                 btnSalvar.Visible = true;
@@ -90,6 +90,7 @@ namespace Sistema.Pessoas.Interfaces
         {
             if (cbTipoPessoa.Text == "Jurídica")
             {
+                txtCNPJ.MaxLength = 14;
                 lblCNPJ.Text         = "CNPJ";
                 lblNome.Text         = "Razão Social";
                 lblIE.Text           = "Insc.Estadual";
@@ -98,6 +99,7 @@ namespace Sistema.Pessoas.Interfaces
 
             if (cbTipoPessoa.Text == "Física")
             {
+                txtCNPJ.MaxLength = 11;
                 lblCNPJ.Text     = "CPF";
                 lblNome.Text     = "Nome Completo";
                 lblFantasia.Text = "Apelido";
@@ -299,13 +301,12 @@ namespace Sistema.Pessoas.Interfaces
         {
             try
             {
-                checkBoxAtivo.Checked   = p.Ativo;
-                cbCliente.Checked       = p.Cliente;
-                cbFornecedor.Checked    = p.Fornecedor;
-                cbTransportador.Checked = p.Transportador;
-                cbFuncionario.Checked   = p.Funcionario;
-                cbOutro.Checked         = p.Outro;
-
+                checkBoxAtivo.Checked        = p.Ativo;
+                cbCliente.Checked            = p.Cliente;
+                cbFornecedor.Checked         = p.Fornecedor;
+                cbTransportador.Checked      = p.Transportador;
+                cbFuncionario.Checked        = p.Funcionario;
+                cbOutro.Checked              = p.Outro;
                 lblTitulo.Text               = p.NomeCompleto;
                 txtID.Text                   = Convert.ToString(p.Id);
                 cbTipoPessoa.SelectedValue   = p.Tipo.Id;
@@ -516,31 +517,33 @@ namespace Sistema.Pessoas.Interfaces
 
         private void txtCNPJ_Leave(object sender, EventArgs e)
         {
-            if (!txtCNPJ.MaskCompleted)
+            if (txtCNPJ.Text.Trim() == string.Empty)
             {
                 MessageBox.Show(util_msg.msgCPFCNPJ_Vazio);
                 txtCNPJ.Focus();
                 return;
             }
             else
-                pessoaCadastrada(txtCNPJ.Text);
+                pessoaCadastrada(txtCNPJ.Text);        
+
+
+            if (cbTipoPessoa.Text == "Jurídica")
+            {
+                txtCNPJ.Text = util_dados.formataCNPJ(txtCNPJ.Text);
+            }
+            else if(cbTipoPessoa.Text == "Física")
+            {
+                txtCNPJ.Text = util_dados.formataCPF(txtCNPJ.Text);
+            }                   
+
         }
-
-        private void txtCNPJ_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCNPJ.Focused == false)
-                return;
-
-            txtCNPJ.Text = util_dados.formatarCPF_CNPJ(txtCNPJ.Text, Convert.ToInt32(cbTipoPessoa.SelectedValue));
-            SendKeys.Send("{end}");
-        }
-
+        
         private void txtCNPJ_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show(util_msg.msgCampoSomenteNumero, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show(util_msg.msgCampoSomenteNumero, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -65,6 +65,17 @@
             this.dtNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblUltimaAlteracao = new System.Windows.Forms.Label();
             this.lblDtNascimento = new System.Windows.Forms.Label();
+            this.tabDetCliente = new System.Windows.Forms.TabPage();
+            this.tabDetTransp = new System.Windows.Forms.TabPage();
+            this.gbTransp = new System.Windows.Forms.GroupBox();
+            this.btnVeicTransp = new System.Windows.Forms.Button();
+            this.tabDetFornec = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tabDetFuncionario = new System.Windows.Forms.TabPage();
+            this.tabDetOutro = new System.Windows.Forms.TabPage();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlRodape = new System.Windows.Forms.Panel();
@@ -91,34 +102,23 @@
             this.txtFantasia = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.tabDetCliente = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabDetFornec = new System.Windows.Forms.TabPage();
-            this.tabDetFuncionario = new System.Windows.Forms.TabPage();
-            this.tabDetOutro = new System.Windows.Forms.TabPage();
-            this.btnVeicTransp = new System.Windows.Forms.Button();
-            this.gbTransp = new System.Windows.Forms.GroupBox();
-            this.tabDetTransp = new System.Windows.Forms.TabPage();
+            this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.tabDetalhes.SuspendLayout();
             this.tabEndereco.SuspendLayout();
             this.tabContato.SuspendLayout();
             this.tabDadosAdicionais.SuspendLayout();
+            this.tabDetTransp.SuspendLayout();
+            this.tabDetFornec.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.gbPrincipal.SuspendLayout();
             this.gbTipoPessoa.SuspendLayout();
-            this.tabDetFornec.SuspendLayout();
-            this.tabDetTransp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabDetalhes
             // 
-            this.tabDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabDetalhes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabDetalhes.Controls.Add(this.tabEndereco);
             this.tabDetalhes.Controls.Add(this.tabContato);
@@ -499,6 +499,118 @@
             this.lblDtNascimento.TabIndex = 0;
             this.lblDtNascimento.Text = "Dt. Nascimento";
             // 
+            // tabDetCliente
+            // 
+            this.tabDetCliente.Location = new System.Drawing.Point(4, 24);
+            this.tabDetCliente.Name = "tabDetCliente";
+            this.tabDetCliente.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetCliente.Size = new System.Drawing.Size(734, 208);
+            this.tabDetCliente.TabIndex = 3;
+            this.tabDetCliente.Text = "Cliente";
+            this.tabDetCliente.UseVisualStyleBackColor = true;
+            // 
+            // tabDetTransp
+            // 
+            this.tabDetTransp.Controls.Add(this.gbTransp);
+            this.tabDetTransp.Controls.Add(this.btnVeicTransp);
+            this.tabDetTransp.Location = new System.Drawing.Point(4, 24);
+            this.tabDetTransp.Name = "tabDetTransp";
+            this.tabDetTransp.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetTransp.Size = new System.Drawing.Size(734, 208);
+            this.tabDetTransp.TabIndex = 4;
+            this.tabDetTransp.Text = "Transportador";
+            this.tabDetTransp.UseVisualStyleBackColor = true;
+            // 
+            // gbTransp
+            // 
+            this.gbTransp.Location = new System.Drawing.Point(3, 35);
+            this.gbTransp.Name = "gbTransp";
+            this.gbTransp.Size = new System.Drawing.Size(725, 167);
+            this.gbTransp.TabIndex = 1;
+            this.gbTransp.TabStop = false;
+            this.gbTransp.Text = "Veículos";
+            // 
+            // btnVeicTransp
+            // 
+            this.btnVeicTransp.Location = new System.Drawing.Point(3, 6);
+            this.btnVeicTransp.Name = "btnVeicTransp";
+            this.btnVeicTransp.Size = new System.Drawing.Size(136, 23);
+            this.btnVeicTransp.TabIndex = 0;
+            this.btnVeicTransp.Text = "Adicionar Veículo";
+            this.btnVeicTransp.UseVisualStyleBackColor = true;
+            // 
+            // tabDetFornec
+            // 
+            this.tabDetFornec.Controls.Add(this.button2);
+            this.tabDetFornec.Controls.Add(this.button1);
+            this.tabDetFornec.Controls.Add(this.checkBox2);
+            this.tabDetFornec.Controls.Add(this.checkBox1);
+            this.tabDetFornec.Location = new System.Drawing.Point(4, 24);
+            this.tabDetFornec.Name = "tabDetFornec";
+            this.tabDetFornec.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetFornec.Size = new System.Drawing.Size(734, 208);
+            this.tabDetFornec.TabIndex = 5;
+            this.tabDetFornec.Text = "Fornecedor";
+            this.tabDetFornec.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(121, 45);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(121, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 48);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(47, 19);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "MEI";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 23);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 19);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Produtor Rural";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // tabDetFuncionario
+            // 
+            this.tabDetFuncionario.Location = new System.Drawing.Point(4, 24);
+            this.tabDetFuncionario.Name = "tabDetFuncionario";
+            this.tabDetFuncionario.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetFuncionario.Size = new System.Drawing.Size(734, 208);
+            this.tabDetFuncionario.TabIndex = 6;
+            this.tabDetFuncionario.Text = "Colaborador";
+            this.tabDetFuncionario.UseVisualStyleBackColor = true;
+            // 
+            // tabDetOutro
+            // 
+            this.tabDetOutro.Location = new System.Drawing.Point(4, 24);
+            this.tabDetOutro.Name = "tabDetOutro";
+            this.tabDetOutro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDetOutro.Size = new System.Drawing.Size(734, 208);
+            this.tabDetOutro.TabIndex = 7;
+            this.tabDetOutro.Text = "Outro";
+            this.tabDetOutro.UseVisualStyleBackColor = true;
+            // 
             // pnlTitulo
             // 
             this.pnlTitulo.Controls.Add(this.lblTitulo);
@@ -592,8 +704,9 @@
             // 
             // gbPrincipal
             // 
-            this.gbPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbPrincipal.Controls.Add(this.txtCNPJ);
             this.gbPrincipal.Controls.Add(this.checkBoxAtivo);
             this.gbPrincipal.Controls.Add(this.gbTipoPessoa);
             this.gbPrincipal.Controls.Add(this.lblTipoPessoa);
@@ -607,7 +720,6 @@
             this.gbPrincipal.Controls.Add(this.txtFantasia);
             this.gbPrincipal.Controls.Add(this.txtID);
             this.gbPrincipal.Controls.Add(this.txtNome);
-            this.gbPrincipal.Controls.Add(this.txtCNPJ);
             this.gbPrincipal.Location = new System.Drawing.Point(12, 47);
             this.gbPrincipal.Name = "gbPrincipal";
             this.gbPrincipal.Size = new System.Drawing.Size(742, 167);
@@ -795,121 +907,8 @@
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(155, 23);
             this.txtCNPJ.TabIndex = 2;
-            this.txtCNPJ.TextChanged += new System.EventHandler(this.txtCNPJ_TextChanged);
             this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_KeyPress);
             this.txtCNPJ.Leave += new System.EventHandler(this.txtCNPJ_Leave);
-            // 
-            // tabDetCliente
-            // 
-            this.tabDetCliente.Location = new System.Drawing.Point(4, 24);
-            this.tabDetCliente.Name = "tabDetCliente";
-            this.tabDetCliente.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetCliente.Size = new System.Drawing.Size(734, 208);
-            this.tabDetCliente.TabIndex = 3;
-            this.tabDetCliente.Text = "Cliente";
-            this.tabDetCliente.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 23);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(108, 19);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Produtor Rural";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 48);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(47, 19);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "MEI";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(121, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(121, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // tabDetFornec
-            // 
-            this.tabDetFornec.Controls.Add(this.button2);
-            this.tabDetFornec.Controls.Add(this.button1);
-            this.tabDetFornec.Controls.Add(this.checkBox2);
-            this.tabDetFornec.Controls.Add(this.checkBox1);
-            this.tabDetFornec.Location = new System.Drawing.Point(4, 24);
-            this.tabDetFornec.Name = "tabDetFornec";
-            this.tabDetFornec.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetFornec.Size = new System.Drawing.Size(734, 208);
-            this.tabDetFornec.TabIndex = 5;
-            this.tabDetFornec.Text = "Fornecedor";
-            this.tabDetFornec.UseVisualStyleBackColor = true;
-            // 
-            // tabDetFuncionario
-            // 
-            this.tabDetFuncionario.Location = new System.Drawing.Point(4, 24);
-            this.tabDetFuncionario.Name = "tabDetFuncionario";
-            this.tabDetFuncionario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetFuncionario.Size = new System.Drawing.Size(734, 208);
-            this.tabDetFuncionario.TabIndex = 6;
-            this.tabDetFuncionario.Text = "Colaborador";
-            this.tabDetFuncionario.UseVisualStyleBackColor = true;
-            // 
-            // tabDetOutro
-            // 
-            this.tabDetOutro.Location = new System.Drawing.Point(4, 24);
-            this.tabDetOutro.Name = "tabDetOutro";
-            this.tabDetOutro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetOutro.Size = new System.Drawing.Size(734, 208);
-            this.tabDetOutro.TabIndex = 7;
-            this.tabDetOutro.Text = "Outro";
-            this.tabDetOutro.UseVisualStyleBackColor = true;
-            // 
-            // btnVeicTransp
-            // 
-            this.btnVeicTransp.Location = new System.Drawing.Point(3, 6);
-            this.btnVeicTransp.Name = "btnVeicTransp";
-            this.btnVeicTransp.Size = new System.Drawing.Size(136, 23);
-            this.btnVeicTransp.TabIndex = 0;
-            this.btnVeicTransp.Text = "Adicionar Veículo";
-            this.btnVeicTransp.UseVisualStyleBackColor = true;
-            // 
-            // gbTransp
-            // 
-            this.gbTransp.Location = new System.Drawing.Point(3, 35);
-            this.gbTransp.Name = "gbTransp";
-            this.gbTransp.Size = new System.Drawing.Size(725, 167);
-            this.gbTransp.TabIndex = 1;
-            this.gbTransp.TabStop = false;
-            this.gbTransp.Text = "Veículos";
-            // 
-            // tabDetTransp
-            // 
-            this.tabDetTransp.Controls.Add(this.gbTransp);
-            this.tabDetTransp.Controls.Add(this.btnVeicTransp);
-            this.tabDetTransp.Location = new System.Drawing.Point(4, 24);
-            this.tabDetTransp.Name = "tabDetTransp";
-            this.tabDetTransp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetTransp.Size = new System.Drawing.Size(734, 208);
-            this.tabDetTransp.TabIndex = 4;
-            this.tabDetTransp.Text = "Transportador";
-            this.tabDetTransp.UseVisualStyleBackColor = true;
             // 
             // formPessoa
             // 
@@ -937,6 +936,9 @@
             this.tabContato.PerformLayout();
             this.tabDadosAdicionais.ResumeLayout(false);
             this.tabDadosAdicionais.PerformLayout();
+            this.tabDetTransp.ResumeLayout(false);
+            this.tabDetFornec.ResumeLayout(false);
+            this.tabDetFornec.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlRodape.ResumeLayout(false);
@@ -945,9 +947,6 @@
             this.gbPrincipal.PerformLayout();
             this.gbTipoPessoa.ResumeLayout(false);
             this.gbTipoPessoa.PerformLayout();
-            this.tabDetFornec.ResumeLayout(false);
-            this.tabDetFornec.PerformLayout();
-            this.tabDetTransp.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1006,7 +1005,6 @@
         private System.Windows.Forms.TextBox txtFantasia;
         public System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.MaskedTextBox txtCNPJ;
         private System.Windows.Forms.GroupBox gbTipoPessoa;
         private System.Windows.Forms.CheckBox cbOutro;
         private System.Windows.Forms.CheckBox cbCliente;
@@ -1027,5 +1025,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabDetFuncionario;
         private System.Windows.Forms.TabPage tabDetOutro;
+        private System.Windows.Forms.TextBox txtCNPJ;
     }
 }

@@ -28,19 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConsultaPessoa));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConsultaPessoa));
             this.menuAcoes = new System.Windows.Forms.MenuStrip();
             this.menuAdicionar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDetalhes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDesativar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuConsultas = new System.Windows.Forms.ToolStripMenuItem();
-            this.desativadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvPessoa = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocalizacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.lblResultado = new System.Windows.Forms.Label();
             this.pnFiltro = new System.Windows.Forms.Panel();
@@ -49,13 +54,6 @@
             this.lblTipoFiltro = new System.Windows.Forms.Label();
             this.cboxFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLocalizacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuAcoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoa)).BeginInit();
             this.pnlRodape.SuspendLayout();
@@ -70,8 +68,7 @@
             this.menuAdicionar,
             this.menuDetalhes,
             this.menuEditar,
-            this.menuDesativar,
-            this.menuConsultas});
+            this.menuDesativar});
             this.menuAcoes.Location = new System.Drawing.Point(0, 0);
             this.menuAcoes.Name = "menuAcoes";
             this.menuAcoes.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -107,27 +104,13 @@
             this.menuDesativar.Text = "Desativar";
             this.menuDesativar.Click += new System.EventHandler(this.menuDesativar_Click);
             // 
-            // menuConsultas
-            // 
-            this.menuConsultas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.desativadosToolStripMenuItem});
-            this.menuConsultas.Name = "menuConsultas";
-            this.menuConsultas.Size = new System.Drawing.Size(71, 28);
-            this.menuConsultas.Text = "Consultas";
-            // 
-            // desativadosToolStripMenuItem
-            // 
-            this.desativadosToolStripMenuItem.Name = "desativadosToolStripMenuItem";
-            this.desativadosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.desativadosToolStripMenuItem.Text = "Desativados";
-            // 
             // dgvPessoa
             // 
             this.dgvPessoa.AllowUserToAddRows = false;
             this.dgvPessoa.AllowUserToDeleteRows = false;
             this.dgvPessoa.AllowUserToResizeRows = false;
-            this.dgvPessoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvPessoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPessoa.BackgroundColor = System.Drawing.Color.White;
             this.dgvPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -151,86 +134,6 @@
             this.dgvPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoa.Size = new System.Drawing.Size(1042, 340);
             this.dgvPessoa.TabIndex = 2;
-            // 
-            // pnlRodape
-            // 
-            this.pnlRodape.Controls.Add(this.lblResultado);
-            this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlRodape.Location = new System.Drawing.Point(0, 439);
-            this.pnlRodape.Name = "pnlRodape";
-            this.pnlRodape.Size = new System.Drawing.Size(1066, 36);
-            this.pnlRodape.TabIndex = 3;
-            // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(8, 10);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(187, 17);
-            this.lblResultado.TabIndex = 0;
-            this.lblResultado.Text = "Nenhum resultado disponível";
-            // 
-            // pnFiltro
-            // 
-            this.pnFiltro.Controls.Add(this.btnPesquisa);
-            this.pnFiltro.Controls.Add(this.lblProcurar);
-            this.pnFiltro.Controls.Add(this.lblTipoFiltro);
-            this.pnFiltro.Controls.Add(this.cboxFiltro);
-            this.pnFiltro.Controls.Add(this.txtPesquisar);
-            this.pnFiltro.Location = new System.Drawing.Point(12, 35);
-            this.pnFiltro.Name = "pnFiltro";
-            this.pnFiltro.Size = new System.Drawing.Size(581, 52);
-            this.pnFiltro.TabIndex = 1;
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Enabled = false;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
-            this.btnPesquisa.Location = new System.Drawing.Point(541, 18);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(28, 22);
-            this.btnPesquisa.TabIndex = 43;
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            // 
-            // lblProcurar
-            // 
-            this.lblProcurar.AutoSize = true;
-            this.lblProcurar.Location = new System.Drawing.Point(129, 0);
-            this.lblProcurar.Name = "lblProcurar";
-            this.lblProcurar.Size = new System.Drawing.Size(78, 15);
-            this.lblProcurar.TabIndex = 28;
-            this.lblProcurar.Text = "Procurar por";
-            // 
-            // lblTipoFiltro
-            // 
-            this.lblTipoFiltro.AutoSize = true;
-            this.lblTipoFiltro.Location = new System.Drawing.Point(3, 0);
-            this.lblTipoFiltro.Name = "lblTipoFiltro";
-            this.lblTipoFiltro.Size = new System.Drawing.Size(37, 15);
-            this.lblTipoFiltro.TabIndex = 27;
-            this.lblTipoFiltro.Text = "Filtro";
-            // 
-            // cboxFiltro
-            // 
-            this.cboxFiltro.FormattingEnabled = true;
-            this.cboxFiltro.Location = new System.Drawing.Point(6, 18);
-            this.cboxFiltro.Name = "cboxFiltro";
-            this.cboxFiltro.Size = new System.Drawing.Size(121, 23);
-            this.cboxFiltro.TabIndex = 0;
-            this.cboxFiltro.Leave += new System.EventHandler(this.cboxFiltro_Leave);
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisar.Location = new System.Drawing.Point(133, 18);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(406, 23);
-            this.txtPesquisar.TabIndex = 1;
-            this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
             // 
             // colID
             // 
@@ -295,6 +198,87 @@
             this.colLocalizacao.Name = "colLocalizacao";
             this.colLocalizacao.ReadOnly = true;
             // 
+            // pnlRodape
+            // 
+            this.pnlRodape.Controls.Add(this.lblResultado);
+            this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlRodape.Location = new System.Drawing.Point(0, 439);
+            this.pnlRodape.Name = "pnlRodape";
+            this.pnlRodape.Size = new System.Drawing.Size(1066, 36);
+            this.pnlRodape.TabIndex = 3;
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(8, 10);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(187, 17);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Text = "Nenhum resultado disponível";
+            // 
+            // pnFiltro
+            // 
+            this.pnFiltro.Controls.Add(this.btnPesquisa);
+            this.pnFiltro.Controls.Add(this.lblProcurar);
+            this.pnFiltro.Controls.Add(this.lblTipoFiltro);
+            this.pnFiltro.Controls.Add(this.cboxFiltro);
+            this.pnFiltro.Controls.Add(this.txtPesquisar);
+            this.pnFiltro.Location = new System.Drawing.Point(12, 35);
+            this.pnFiltro.Name = "pnFiltro";
+            this.pnFiltro.Size = new System.Drawing.Size(581, 52);
+            this.pnFiltro.TabIndex = 1;
+            // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Enabled = false;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
+            this.btnPesquisa.Location = new System.Drawing.Point(541, 18);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(28, 22);
+            this.btnPesquisa.TabIndex = 43;
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            // 
+            // lblProcurar
+            // 
+            this.lblProcurar.AutoSize = true;
+            this.lblProcurar.Location = new System.Drawing.Point(129, 0);
+            this.lblProcurar.Name = "lblProcurar";
+            this.lblProcurar.Size = new System.Drawing.Size(78, 15);
+            this.lblProcurar.TabIndex = 28;
+            this.lblProcurar.Text = "Procurar por";
+            // 
+            // lblTipoFiltro
+            // 
+            this.lblTipoFiltro.AutoSize = true;
+            this.lblTipoFiltro.Location = new System.Drawing.Point(3, 0);
+            this.lblTipoFiltro.Name = "lblTipoFiltro";
+            this.lblTipoFiltro.Size = new System.Drawing.Size(37, 15);
+            this.lblTipoFiltro.TabIndex = 27;
+            this.lblTipoFiltro.Text = "Filtro";
+            // 
+            // cboxFiltro
+            // 
+            this.cboxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxFiltro.FormattingEnabled = true;
+            this.cboxFiltro.Location = new System.Drawing.Point(6, 18);
+            this.cboxFiltro.Name = "cboxFiltro";
+            this.cboxFiltro.Size = new System.Drawing.Size(121, 23);
+            this.cboxFiltro.TabIndex = 0;
+            this.cboxFiltro.Leave += new System.EventHandler(this.cboxFiltro_Leave);
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisar.Location = new System.Drawing.Point(133, 18);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(406, 23);
+            this.txtPesquisar.TabIndex = 1;
+            this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
+            // 
             // formConsultaPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -335,13 +319,11 @@
         private System.Windows.Forms.Panel pnlRodape;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Panel pnFiltro;
-        private System.Windows.Forms.ToolStripMenuItem menuConsultas;
         private System.Windows.Forms.Label lblProcurar;
         private System.Windows.Forms.Label lblTipoFiltro;
         private System.Windows.Forms.ComboBox cboxFiltro;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.ToolStripMenuItem desativadosToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFantasia;
