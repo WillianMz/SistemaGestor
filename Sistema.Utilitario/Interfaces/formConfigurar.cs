@@ -75,5 +75,6 @@ namespace Sistema.Utilitario.Interfaces
             btnAlterar.Enabled = false;
             lblMensagem.Text = "Alterando dados";
         }
+
     }
 }

@@ -7,7 +7,7 @@ namespace Sistema.Financeiro.Controles
     {
         DAO_Financeiro dao;
 
-        public void novoPagar(Pagar p)
+        public void novoPagar(Modelo.Financeiro.Pagar p)
         {
             dao = new DAO_Financeiro();
             dao.insertPagar(p);

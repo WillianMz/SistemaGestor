@@ -44,11 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controles\BLL_Financeiro.cs" />
+    <Compile Include="Interfaces\formConsultaPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaPagar.Designer.cs">
+      <DependentUpon>formConsultaPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utilitario\carregarComboBox.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Relatorios\" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +77,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Interfaces\formConsultaPagar.resx">
+      <DependentUpon>formConsultaPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

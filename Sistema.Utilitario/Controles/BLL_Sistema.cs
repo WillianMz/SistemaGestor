@@ -1,5 +1,6 @@
 ﻿using Modelo;
 using Util;
+using DAO;
 
 namespace Sistema.Utilitario.Controles
 {
@@ -20,5 +21,7 @@ namespace Sistema.Utilitario.Controles
         }
 
         #endregion
+
+
     }
 }

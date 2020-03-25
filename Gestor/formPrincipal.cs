@@ -1,6 +1,7 @@
 ﻿using Sistema.Estoque.Interfaces;
 using Sistema.Pessoas.Interfaces;
 using Sistema.Utilitario.Interfaces;
+using Sistema.Financeiro.Interfaces;
 using System;
 using System.Windows.Forms;
 using Util;
@@ -143,6 +144,13 @@ namespace Gestor
             {
                 TratarExcecao(ex);
             }
+        }
+
+
+        private void mFinConsultas_Click_1(object sender, EventArgs e)
+        {
+            formConsultaPagar form = new formConsultaPagar();
+            form.ShowDialog();
         }
     }
 }
