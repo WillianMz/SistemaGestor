@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -93,13 +93,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
-      <Project>{88140a5f-cab6-4326-9444-d27240c12558}</Project>
-      <Name>Controller</Name>
+    <ProjectReference Include="..\Sistema.Estoque\Sistema.Estoque.csproj">
+      <Project>{3710dddf-4596-4fb6-be0c-77c3b79bf281}</Project>
+      <Name>Sistema.Estoque</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{0665db83-0fe1-4203-8c26-093226e6355f}</Project>
-      <Name>Interfaces</Name>
+    <ProjectReference Include="..\Sistema.Financeiro\Sistema.Financeiro.csproj">
+      <Project>{d9db0ba7-dad1-4dea-9255-1d3789fd414e}</Project>
+      <Name>Sistema.Financeiro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Pessoas\Sistema.Pessoas.csproj">
+      <Project>{dedcf923-d138-448c-b991-92a586aced48}</Project>
+      <Name>Sistema.Pessoas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Utilitario\Sistema.Utilitario.csproj">
+      <Project>{3bcb78cb-b078-4380-bde0-19cc5d6882bf}</Project>
+      <Name>Sistema.Utilitario</Name>
     </ProjectReference>
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{748cae26-64b3-405c-a135-0bf1ed44bac2}</Project>

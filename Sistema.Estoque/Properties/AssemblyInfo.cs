@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associada a um assembly.
-[assembly: AssemblyTitle("Util")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Sistema.Estoque")]
+[assembly: AssemblyDescription("Modulo Estoque")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Loglabs")]
-[assembly: AssemblyProduct("Util")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Loglabs")]
+[assembly: AssemblyProduct("Sistema.Estoque")]
+[assembly: AssemblyCopyright("Copyright ©  2020 Loglabs")]
 [assembly: AssemblyTrademark("Loglabs")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // O GUID a seguir será destinado à ID de typelib se este projeto for exposto para COM
-[assembly: Guid("748cae26-64b3-405c-a135-0bf1ed44bac2")]
+[assembly: Guid("3710dddf-4596-4fb6-be0c-77c3b79bf281")]
 
 // As informações da versão de um assembly consistem nos quatro valores a seguir:
 //

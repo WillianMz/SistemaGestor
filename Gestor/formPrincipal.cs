@@ -1,9 +1,6 @@
-﻿using Interfaces.Ferramentas;
-using Interfaces.Modulo.Estoque;
-using Interfaces.Modulos.Base;
-using Interfaces.Modulos.Estoque;
-using Interfaces.Usuarios;
-using Interfaces.Utilitario;
+﻿using Sistema.Estoque.Interfaces;
+using Sistema.Pessoas.Interfaces;
+using Sistema.Utilitario.Interfaces;
 using System;
 using System.Windows.Forms;
 using Util;

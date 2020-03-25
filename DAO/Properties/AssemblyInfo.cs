@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Loglabs")]
 [assembly: AssemblyProduct("DAO")]
 [assembly: AssemblyCopyright("Copyright ©  2019 Loglabs")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Loglabs")]
 [assembly: AssemblyCulture("")]
 
 // Definir ComVisible como false torna os tipos neste assembly invisíveis

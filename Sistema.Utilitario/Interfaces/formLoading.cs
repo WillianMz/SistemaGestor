@@ -1,30 +1,21 @@
-﻿using Gestor.Config;
-using Sistema.Utilitario.Interfaces;
-using System;
+﻿using System;
 using System.Windows.Forms;
 using Util;
 
-namespace Gestor
+namespace Sistema.Utilitario.Interfaces
 {
     public partial class formLoading : Form
     {
         public formLoading()
         {
             InitializeComponent();
-            StartTimer();
-            configForm();
-        }
-
-        public void configForm()
-        {
-            //lblSistema.Text = Parametro.nomeSoftware;
-            lblProgramador.Text = Parametro.versao;
+            startTime();
         }
 
         Timer timer = new Timer();
         static int Cont = 0;
 
-        void Temporizador(object sender, EventArgs e)
+        void temporizador(object sender, EventArgs e)
         {
             Cont += 2;
             lblProcessando.Text = "Carregando... (" + Cont + "%)";
@@ -34,18 +25,18 @@ namespace Gestor
                 Cont = 0;
                 timer.Stop();
                 //this.Close();
-                ChamarLogin();        
+                chamarLogin();        
             }
         }
 
-        private void StartTimer()
+        private void startTime()
         {
             timer.Interval = 100;
-            timer.Tick += new EventHandler(Temporizador);
+            timer.Tick += new EventHandler(temporizador);
             timer.Start();
         }
 
-        private void ChamarLogin()
+        private void chamarLogin()
         {
             try
             {

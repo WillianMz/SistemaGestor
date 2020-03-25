@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3710DDDF-4596-4FB6-BE0C-77C3B79BF281}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sistema.Estoque</RootNamespace>
+    <AssemblyName>Sistema.Estoque</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controles\BLL_Estoque.cs" />
+    <Compile Include="Controles\BLL_Produto.cs" />
+    <Compile Include="Interfaces\formConsultaCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaCategoria.Designer.cs">
+      <DependentUpon>formConsultaCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaGrupo.Designer.cs">
+      <DependentUpon>formConsultaGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaProduto.Designer.cs">
+      <DependentUpon>formConsultaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaSubgrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaSubgrupo.Designer.cs">
+      <DependentUpon>formConsultaSubgrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formEntradaAdicionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formEntradaAdicionarProduto.Designer.cs">
+      <DependentUpon>formEntradaAdicionarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formEstoqueEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formEstoqueEntrada.Designer.cs">
+      <DependentUpon>formEstoqueEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formProduto.Designer.cs">
+      <DependentUpon>formProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formProdutoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formProdutoCategoria.Designer.cs">
+      <DependentUpon>formProdutoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formProdutoGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formProdutoGrupo.Designer.cs">
+      <DependentUpon>formProdutoGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formProdutoSubgrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formProdutoSubgrupo.Designer.cs">
+      <DependentUpon>formProdutoSubgrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilitario\carregarComboBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{1604cd63-64d2-4ec5-88a8-1324d56b33f6}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{64a0719f-93b1-45f3-a320-e0d6c90ae73d}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Pessoas\Sistema.Pessoas.csproj">
+      <Project>{DEDCF923-D138-448C-B991-92A586ACED48}</Project>
+      <Name>Sistema.Pessoas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{748cae26-64b3-405c-a135-0bf1ed44bac2}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Interfaces\formConsultaCategoria.resx">
+      <DependentUpon>formConsultaCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formConsultaGrupo.resx">
+      <DependentUpon>formConsultaGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formConsultaProduto.resx">
+      <DependentUpon>formConsultaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formConsultaSubgrupo.resx">
+      <DependentUpon>formConsultaSubgrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formEntradaAdicionarProduto.resx">
+      <DependentUpon>formEntradaAdicionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formEstoqueEntrada.resx">
+      <DependentUpon>formEstoqueEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formProduto.resx">
+      <DependentUpon>formProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formProdutoCategoria.resx">
+      <DependentUpon>formProdutoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formProdutoGrupo.resx">
+      <DependentUpon>formProdutoGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formProdutoSubgrupo.resx">
+      <DependentUpon>formProdutoSubgrupo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
