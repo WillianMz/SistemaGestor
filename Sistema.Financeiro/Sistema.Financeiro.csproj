@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controles\BLL_Financeiro.cs" />
+    <Compile Include="Interfaces\formCadastroPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formCadastroPagar.Designer.cs">
+      <DependentUpon>formCadastroPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formConsultaPagar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Interfaces\formCadastroPagar.resx">
+      <DependentUpon>formCadastroPagar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formConsultaPagar.resx">
       <DependentUpon>formConsultaPagar.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +95,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mais16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
