@@ -84,6 +84,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
             this.gbPrincipal = new System.Windows.Forms.GroupBox();
+            this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.gbTipoPessoa = new System.Windows.Forms.GroupBox();
             this.cbOutro = new System.Windows.Forms.CheckBox();
@@ -102,7 +103,6 @@
             this.txtFantasia = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCNPJ = new System.Windows.Forms.TextBox();
             this.tabDetalhes.SuspendLayout();
             this.tabEndereco.SuspendLayout();
             this.tabContato.SuspendLayout();
@@ -727,6 +727,15 @@
             this.gbPrincipal.TabStop = false;
             this.gbPrincipal.Text = "Dados principais";
             // 
+            // txtCNPJ
+            // 
+            this.txtCNPJ.Location = new System.Drawing.Point(9, 81);
+            this.txtCNPJ.Name = "txtCNPJ";
+            this.txtCNPJ.Size = new System.Drawing.Size(155, 23);
+            this.txtCNPJ.TabIndex = 2;
+            this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_KeyPress);
+            this.txtCNPJ.Leave += new System.EventHandler(this.txtCNPJ_Leave);
+            // 
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
@@ -900,15 +909,6 @@
             this.txtNome.Size = new System.Drawing.Size(425, 23);
             this.txtNome.TabIndex = 3;
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
-            // 
-            // txtCNPJ
-            // 
-            this.txtCNPJ.Location = new System.Drawing.Point(9, 81);
-            this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.Size = new System.Drawing.Size(155, 23);
-            this.txtCNPJ.TabIndex = 2;
-            this.txtCNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCNPJ_KeyPress);
-            this.txtCNPJ.Leave += new System.EventHandler(this.txtCNPJ_Leave);
             // 
             // formPessoa
             // 
