@@ -17,11 +17,11 @@ namespace Sistema.Estoque.Interfaces
         {
             InitializeComponent();
             configForm();
+            carregarComboBox.filtroPesquisaProduto(cboxFiltro);
         }
 
         public void configForm()
-        {
-            carregarComboBox.filtroPesquisaProduto(cboxFiltro);
+        {           
             cboxFiltro.Text = "Nome";
             txtPesquisar.Focus();
 
@@ -146,7 +146,7 @@ namespace Sistema.Estoque.Interfaces
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 {
                     e.Handled = true;
-                    MessageBox.Show(util_msg.msgFiltroPorCodigo, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //MessageBox.Show(util_msg.msgFiltroPorCodigo, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
