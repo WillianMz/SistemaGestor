@@ -264,6 +264,98 @@ namespace Sistema.Estoque.Interfaces
 
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
+            #region VERIFICAÇÕES
+            if (txtProdutoCod.Text == string.Empty)
+            {
+                MessageBox.Show("Código do produto não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCod.Focus();
+                return;
+            }
+
+            if (txtProdutoCodbarras.Text == string.Empty)
+            {
+                MessageBox.Show("GTIN do produto não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCodbarras.Focus();
+                return;
+            }
+
+            if (txtProdutoCST.Text == string.Empty)
+            {
+                MessageBox.Show("CST não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCST.Focus();
+                return;
+            }
+
+            if (txtProdutoCFOP.Text == string.Empty)
+            {
+                MessageBox.Show("CFOP não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCFOP.Focus();
+                return;
+            }
+
+            if (txtProdutoQTD.Text == string.Empty)
+            {
+                MessageBox.Show("Quantidade de entrada não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoQTD.Focus();
+                return;
+            }
+
+            if (txtProdutoValorUN.Text == string.Empty)
+            {
+                MessageBox.Show("Valor Unitário não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoValorUN.Focus();
+                return;
+            }
+
+            if (txtProdutoDesconto.Text == string.Empty)
+            {
+                txtProdutoDesconto.Text = "0";
+            }
+
+            if (txtProdutoValorTotal.Text == string.Empty)
+            {
+                MessageBox.Show("Valor Total não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoValorTotal.Focus();
+                return;
+            }
+
+            if (txtProdutoBC_ICMS.Text == string.Empty)
+            {
+                MessageBox.Show("Base de Cálculo do ICMS não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoBC_ICMS.Focus();
+                return;
+            }
+
+            if (txtProdutoVL_ICMS.Text == string.Empty)
+            {
+                MessageBox.Show("Valor do ICMS não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoVL_ICMS.Focus();
+                return;
+            }
+
+            if (txtProdutoVL_IPI.Text == string.Empty)
+            {
+                MessageBox.Show("Valor do IPI não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoVL_IPI.Focus();
+                return;
+            }
+
+            if (txtProdutoAlqICMS.Text == string.Empty)
+            {
+                MessageBox.Show("Aliquota ICMS não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoAlqICMS.Focus();
+                return;
+            }
+
+            if (txtProdutoAlqIPI.Text == string.Empty)
+            {
+                MessageBox.Show("Aliquota IPI não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoAlqIPI.Focus();
+                return;
+            }
+
+            #endregion
+
             adicionarItem();//teste
         }
 

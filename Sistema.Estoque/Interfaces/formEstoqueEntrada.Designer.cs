@@ -798,7 +798,7 @@
             this.btnEditarCadProduto.Location = new System.Drawing.Point(789, 355);
             this.btnEditarCadProduto.Name = "btnEditarCadProduto";
             this.btnEditarCadProduto.Size = new System.Drawing.Size(111, 23);
-            this.btnEditarCadProduto.TabIndex = 51;
+            this.btnEditarCadProduto.TabIndex = 3;
             this.btnEditarCadProduto.Text = "Editar Cadastro";
             this.btnEditarCadProduto.UseVisualStyleBackColor = true;
             // 
@@ -808,7 +808,7 @@
             this.btnRemoverItem.Location = new System.Drawing.Point(693, 355);
             this.btnRemoverItem.Name = "btnRemoverItem";
             this.btnRemoverItem.Size = new System.Drawing.Size(90, 23);
-            this.btnRemoverItem.TabIndex = 50;
+            this.btnRemoverItem.TabIndex = 2;
             this.btnRemoverItem.Text = "Remover Item";
             this.btnRemoverItem.UseVisualStyleBackColor = true;
             // 
@@ -849,7 +849,7 @@
             this.dgvProdutosItens.RowHeadersVisible = false;
             this.dgvProdutosItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutosItens.Size = new System.Drawing.Size(894, 197);
-            this.dgvProdutosItens.TabIndex = 28;
+            this.dgvProdutosItens.TabIndex = 1;
             // 
             // colItem
             // 
@@ -1005,7 +1005,7 @@
             this.txtProdutoQtdEntrada.Name = "txtProdutoQtdEntrada";
             this.txtProdutoQtdEntrada.ReadOnly = true;
             this.txtProdutoQtdEntrada.Size = new System.Drawing.Size(73, 23);
-            this.txtProdutoQtdEntrada.TabIndex = 47;
+            this.txtProdutoQtdEntrada.TabIndex = 8;
             this.txtProdutoQtdEntrada.Text = "2";
             // 
             // lblProdQtdEntrada
@@ -1022,7 +1022,7 @@
             this.txtProdutoQTD.Location = new System.Drawing.Point(238, 83);
             this.txtProdutoQTD.Name = "txtProdutoQTD";
             this.txtProdutoQTD.Size = new System.Drawing.Size(50, 23);
-            this.txtProdutoQTD.TabIndex = 45;
+            this.txtProdutoQTD.TabIndex = 7;
             this.txtProdutoQTD.Text = "2";
             // 
             // lblProdQtdUN
@@ -1039,7 +1039,7 @@
             this.txtProdutoQtdEmb.Location = new System.Drawing.Point(171, 83);
             this.txtProdutoQtdEmb.Name = "txtProdutoQtdEmb";
             this.txtProdutoQtdEmb.Size = new System.Drawing.Size(61, 23);
-            this.txtProdutoQtdEmb.TabIndex = 43;
+            this.txtProdutoQtdEmb.TabIndex = 6;
             // 
             // lblProdQtdEmb
             // 
@@ -1065,7 +1065,7 @@
             this.cboxProdutoUN.Location = new System.Drawing.Point(111, 83);
             this.cboxProdutoUN.Name = "cboxProdutoUN";
             this.cboxProdutoUN.Size = new System.Drawing.Size(54, 23);
-            this.cboxProdutoUN.TabIndex = 40;
+            this.cboxProdutoUN.TabIndex = 5;
             this.cboxProdutoUN.Text = "CX";
             // 
             // lblProdutoCod
@@ -1082,14 +1082,14 @@
             this.txtProdutoCod.Location = new System.Drawing.Point(6, 37);
             this.txtProdutoCod.Name = "txtProdutoCod";
             this.txtProdutoCod.Size = new System.Drawing.Size(75, 23);
-            this.txtProdutoCod.TabIndex = 32;
+            this.txtProdutoCod.TabIndex = 0;
             // 
             // txtProdutoDesconto
             // 
             this.txtProdutoDesconto.Location = new System.Drawing.Point(449, 83);
             this.txtProdutoDesconto.Name = "txtProdutoDesconto";
             this.txtProdutoDesconto.Size = new System.Drawing.Size(63, 23);
-            this.txtProdutoDesconto.TabIndex = 31;
+            this.txtProdutoDesconto.TabIndex = 10;
             // 
             // lblProdDesc
             // 
@@ -1106,7 +1106,7 @@
             this.btnAdicionarItem.Location = new System.Drawing.Point(798, 111);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
             this.btnAdicionarItem.Size = new System.Drawing.Size(90, 23);
-            this.btnAdicionarItem.TabIndex = 29;
+            this.btnAdicionarItem.TabIndex = 17;
             this.btnAdicionarItem.Text = "Adicionar";
             this.btnAdicionarItem.UseVisualStyleBackColor = true;
             this.btnAdicionarItem.Click += new System.EventHandler(this.btnAdicionarItem_Click);
@@ -1116,7 +1116,7 @@
             this.txtProdutoAlqIPI.Location = new System.Drawing.Point(831, 83);
             this.txtProdutoAlqIPI.Name = "txtProdutoAlqIPI";
             this.txtProdutoAlqIPI.Size = new System.Drawing.Size(57, 23);
-            this.txtProdutoAlqIPI.TabIndex = 28;
+            this.txtProdutoAlqIPI.TabIndex = 16;
             // 
             // lblProdAlqIPI
             // 
@@ -1132,7 +1132,7 @@
             this.btnBuscarProduto.Location = new System.Drawing.Point(537, 37);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(26, 23);
-            this.btnBuscarProduto.TabIndex = 24;
+            this.btnBuscarProduto.TabIndex = 2;
             this.btnBuscarProduto.Text = "+";
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
             this.btnBuscarProduto.Click += new System.EventHandler(this.btnProduto_Click);
@@ -1142,7 +1142,7 @@
             this.txtProdutoAlqICMS.Location = new System.Drawing.Point(768, 83);
             this.txtProdutoAlqICMS.Name = "txtProdutoAlqICMS";
             this.txtProdutoAlqICMS.Size = new System.Drawing.Size(57, 23);
-            this.txtProdutoAlqICMS.TabIndex = 23;
+            this.txtProdutoAlqICMS.TabIndex = 15;
             // 
             // lblProdAlqICMS
             // 
@@ -1158,7 +1158,7 @@
             this.txtProdutoVL_IPI.Location = new System.Drawing.Point(711, 83);
             this.txtProdutoVL_IPI.Name = "txtProdutoVL_IPI";
             this.txtProdutoVL_IPI.Size = new System.Drawing.Size(51, 23);
-            this.txtProdutoVL_IPI.TabIndex = 21;
+            this.txtProdutoVL_IPI.TabIndex = 14;
             // 
             // lblProdVl_IPI
             // 
@@ -1183,7 +1183,7 @@
             this.txtProdutoVL_ICMS.Location = new System.Drawing.Point(656, 83);
             this.txtProdutoVL_ICMS.Name = "txtProdutoVL_ICMS";
             this.txtProdutoVL_ICMS.Size = new System.Drawing.Size(49, 23);
-            this.txtProdutoVL_ICMS.TabIndex = 18;
+            this.txtProdutoVL_ICMS.TabIndex = 13;
             // 
             // lblProdVl_ICMS
             // 
@@ -1199,7 +1199,7 @@
             this.txtProdutoBC_ICMS.Location = new System.Drawing.Point(595, 83);
             this.txtProdutoBC_ICMS.Name = "txtProdutoBC_ICMS";
             this.txtProdutoBC_ICMS.Size = new System.Drawing.Size(55, 23);
-            this.txtProdutoBC_ICMS.TabIndex = 16;
+            this.txtProdutoBC_ICMS.TabIndex = 12;
             // 
             // lblProdBC_ICMS
             // 
@@ -1215,7 +1215,7 @@
             this.txtProdutoCFOP.Location = new System.Drawing.Point(56, 83);
             this.txtProdutoCFOP.Name = "txtProdutoCFOP";
             this.txtProdutoCFOP.Size = new System.Drawing.Size(49, 23);
-            this.txtProdutoCFOP.TabIndex = 14;
+            this.txtProdutoCFOP.TabIndex = 4;
             // 
             // lblProdCFOP
             // 
@@ -1231,7 +1231,7 @@
             this.txtProdutoCST.Location = new System.Drawing.Point(6, 83);
             this.txtProdutoCST.Name = "txtProdutoCST";
             this.txtProdutoCST.Size = new System.Drawing.Size(44, 23);
-            this.txtProdutoCST.TabIndex = 12;
+            this.txtProdutoCST.TabIndex = 3;
             // 
             // lblProdCST
             // 
@@ -1255,7 +1255,7 @@
             this.txtProdutoValorUN.Location = new System.Drawing.Point(373, 83);
             this.txtProdutoValorUN.Name = "txtProdutoValorUN";
             this.txtProdutoValorUN.Size = new System.Drawing.Size(70, 23);
-            this.txtProdutoValorUN.TabIndex = 7;
+            this.txtProdutoValorUN.TabIndex = 9;
             // 
             // lblProdVlUn
             // 
@@ -1271,7 +1271,7 @@
             this.txtProdutoValorTotal.Location = new System.Drawing.Point(518, 83);
             this.txtProdutoValorTotal.Name = "txtProdutoValorTotal";
             this.txtProdutoValorTotal.Size = new System.Drawing.Size(71, 23);
-            this.txtProdutoValorTotal.TabIndex = 5;
+            this.txtProdutoValorTotal.TabIndex = 11;
             // 
             // lblProdVlTotal
             // 
