@@ -13,6 +13,7 @@ namespace Sistema.Estoque.Interfaces
     public partial class formEstoqueEntrada : Form
     {
         public statusForm statusForm;
+        public tipoNota tpNota;
         DateTime dataAtual = DateTime.Now;
         BLL_Empresa empresa;
         BLL_Pessoa pessoas;
@@ -24,14 +25,16 @@ namespace Sistema.Estoque.Interfaces
         public formEstoqueEntrada()
         {
             InitializeComponent();
-            carregarCombobox();
+           // carregarCombobox();
         }
 
         public void configForm()
         {
             if(statusForm == statusForm.Novo)
             {
-
+                lblTitulo.Text = "NOVA ENTRADA NO ESTOQUE";
+                lblMensagem.Text = "Novo registro";
+                carregarCombobox();
             }
 
             if(statusForm == statusForm.Editar)
@@ -48,6 +51,7 @@ namespace Sistema.Estoque.Interfaces
         private void carregarCombobox()
         {
             carregarComboBox.unidade(cboxProdutoUN);
+            carregarComboBox.tipoNotaFiscal(cbTipoNota);
         }
 
         private void bloquearCampos()
@@ -78,11 +82,12 @@ namespace Sistema.Estoque.Interfaces
         {
             try
             {
-                formConsultaPessoa form = new formConsultaPessoa();
-                form.tpConsultaPessoa = consultaPessoaPorTipo.Fornecedor;
-                form.Text = "Consulta Fornecedores";
-                form.ShowDialog();
-                form.Dispose();
+                formPessoa cadFornec = new formPessoa();
+                cadFornec.statusForm = statusForm.Novo;
+                cadFornec.configForm();
+                cadFornec.Text = "Novo fornecedor";
+                cadFornec.ShowDialog();
+                cadFornec.Dispose();
             }
             catch(Exception)
             {
@@ -94,16 +99,15 @@ namespace Sistema.Estoque.Interfaces
         {
             try
             {
-                txtProdutoCod.Text = Convert.ToString(p.Id);
-                txtProdutoCodbarras.Text = p.Codigo;
-                txtProdutoDescricao.Text = p.Nome;
+                txtProdutoCod.Text          = Convert.ToString(p.Id);
+                txtProdutoCodbarras.Text    = p.Codigo;
+                txtProdutoDescricao.Text    = p.Nome;
                 cboxProdutoUN.SelectedValue = p.UnidCompra.Id;
-                txtProdutoQtdEmb.Text = Convert.ToString(p.QtdEmb);
+                txtProdutoQtdEmb.Text       = Convert.ToString(p.QtdEmb);
 
             }
-            catch(Exception )
+            catch(Exception)
             {
-
             }
         }
 
@@ -176,22 +180,12 @@ namespace Sistema.Estoque.Interfaces
             try
             {
                 formConsultaProduto form = new formConsultaProduto();
+                form.statusForm = statusForm.Selecionar;
+                form.configForm();
                 Produto pro = new Produto();
                 form.ShowDialog();
-                pro = form.retornaProduto();
-                adicionarProduto(pro);
-                form.Dispose();
-                
-                //BLL_Produto controle = new BLL_Produto();
-                //int id = int.Parse(dgvProdutos.Rows[dgvProdutos.CurrentRow.Index].Cells[0].Value.ToString());
-                //Produto p = controle.detalhesDoProduto(id);
-                //formProduto form = new formProduto();
-                //form.statusForm = statusForm.Detalhes;
-                //form.configForm();
-                //form.detalhes(p);
-                //form.ShowDialog();
-                //form.Dispose();
-               
+                pro = form.selecionarProduto();
+                adicionarProduto(pro);               
             }
             catch (Exception ex)
             {
@@ -270,6 +264,98 @@ namespace Sistema.Estoque.Interfaces
 
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
+            #region VERIFICAÇÕES
+            if (txtProdutoCod.Text == string.Empty)
+            {
+                MessageBox.Show("Código do produto não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCod.Focus();
+                return;
+            }
+
+            if (txtProdutoCodbarras.Text == string.Empty)
+            {
+                MessageBox.Show("GTIN do produto não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCodbarras.Focus();
+                return;
+            }
+
+            if (txtProdutoCST.Text == string.Empty)
+            {
+                MessageBox.Show("CST não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCST.Focus();
+                return;
+            }
+
+            if (txtProdutoCFOP.Text == string.Empty)
+            {
+                MessageBox.Show("CFOP não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoCFOP.Focus();
+                return;
+            }
+
+            if (txtProdutoQTD.Text == string.Empty)
+            {
+                MessageBox.Show("Quantidade de entrada não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoQTD.Focus();
+                return;
+            }
+
+            if (txtProdutoValorUN.Text == string.Empty)
+            {
+                MessageBox.Show("Valor Unitário não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoValorUN.Focus();
+                return;
+            }
+
+            if (txtProdutoDesconto.Text == string.Empty)
+            {
+                txtProdutoDesconto.Text = "0";
+            }
+
+            if (txtProdutoValorTotal.Text == string.Empty)
+            {
+                MessageBox.Show("Valor Total não informado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoValorTotal.Focus();
+                return;
+            }
+
+            if (txtProdutoBC_ICMS.Text == string.Empty)
+            {
+                MessageBox.Show("Base de Cálculo do ICMS não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoBC_ICMS.Focus();
+                return;
+            }
+
+            if (txtProdutoVL_ICMS.Text == string.Empty)
+            {
+                MessageBox.Show("Valor do ICMS não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoVL_ICMS.Focus();
+                return;
+            }
+
+            if (txtProdutoVL_IPI.Text == string.Empty)
+            {
+                MessageBox.Show("Valor do IPI não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoVL_IPI.Focus();
+                return;
+            }
+
+            if (txtProdutoAlqICMS.Text == string.Empty)
+            {
+                MessageBox.Show("Aliquota ICMS não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoAlqICMS.Focus();
+                return;
+            }
+
+            if (txtProdutoAlqIPI.Text == string.Empty)
+            {
+                MessageBox.Show("Aliquota IPI não informado! \nCaso não tenha informe 0 (Zero)", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtProdutoAlqIPI.Focus();
+                return;
+            }
+
+            #endregion
+
             adicionarItem();//teste
         }
 

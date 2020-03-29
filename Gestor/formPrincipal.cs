@@ -126,6 +126,8 @@ namespace Gestor
         private void mEstoqueEntradaManual_Click(object sender, EventArgs e)
         {
             formEstoqueEntrada form = new formEstoqueEntrada();
+            form.statusForm = statusForm.Novo;
+            form.configForm();
             form.ShowDialog();
             form.Dispose();
         }

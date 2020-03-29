@@ -19,7 +19,7 @@ namespace Sistema.Estoque.Interfaces
             configForm();
         }
 
-        private void configForm()
+        public void configForm()
         {
             carregarComboBox.filtroPesquisaProduto(cboxFiltro);
             cboxFiltro.Text = "Nome";
@@ -40,9 +40,12 @@ namespace Sistema.Estoque.Interfaces
 
             }
 
-            if(statusForm == statusForm.Consulta)
+            if(statusForm == statusForm.Selecionar)
             {
+                this.Text = "Consulta de produto";
+                lblMensagem.Text = "Procure pelo produto e clique em Selecionar";
                 menuAcoes.Visible = false;
+                btnSelecionar.Visible = true;
             }
 
         }
@@ -54,7 +57,7 @@ namespace Sistema.Estoque.Interfaces
             {
                 dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem +"%", p.Marca, p.Fabricante);
             }
-            util_sistema.resultadoPesquisa(dgvProdutos, lblResultado);
+            util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
         }
 
         //teste
@@ -63,23 +66,7 @@ namespace Sistema.Estoque.Interfaces
         {
             dgvProdutos.Rows.Clear();
             dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem + "%", p.Marca, p.Fabricante);
-            util_sistema.resultadoPesquisa(dgvProdutos, lblResultado);
-        }
-
-        public Produto retornaProduto()
-        {
-            try
-            {
-                controle = new BLL_Produto();
-                int id = int.Parse(dgvProdutos.Rows[dgvProdutos.CurrentRow.Index].Cells[0].Value.ToString());
-                Produto p = controle.detalhesDoProduto(id);
-                return p;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
+            util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
         }
 
         private void pesquisarProduto(bool ativo)
@@ -139,7 +126,7 @@ namespace Sistema.Estoque.Interfaces
                         pesquisarProduto(true);
                     else
                     {
-                       lblResultado.Text = util_msg.msgFiltroPesquisaVazio;
+                       lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
                        txtPesquisar.Focus();
                     }
                 }
@@ -185,7 +172,7 @@ namespace Sistema.Estoque.Interfaces
             try
             {
                 if (dgvProdutos.Rows.Count == 0)
-                    lblResultado.Text = "Nenhum registro selecionado!";
+                    lblMensagem.Text = "Nenhum registro selecionado!";
                 else
                 {
                     controle = new BLL_Produto();
@@ -210,7 +197,7 @@ namespace Sistema.Estoque.Interfaces
             try
             {
                 if (dgvProdutos.Rows.Count == 0)
-                    lblResultado.Text = "Nenhum registro selecionado!";
+                    lblMensagem.Text = "Nenhum registro selecionado!";
                 else
                 {
                     controle = new BLL_Produto();
@@ -235,7 +222,7 @@ namespace Sistema.Estoque.Interfaces
             try
             {
                 if (dgvProdutos.Rows.Count == 0)
-                    lblResultado.Text = "Nenhum registro selecionado!";
+                    lblMensagem.Text = "Nenhum registro selecionado!";
                 else
                 {
                     controle = new BLL_Produto();
@@ -265,13 +252,52 @@ namespace Sistema.Estoque.Interfaces
                     pesquisarProduto(false);
                 else
                 {
-                    lblResultado.Text = util_msg.msgFiltroPesquisaVazio;
+                    lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
                     txtPesquisar.Focus();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        public Produto selecionarProduto()
+        {
+            try
+            {
+                controle = new BLL_Produto();
+                int id = int.Parse(dgvProdutos.Rows[dgvProdutos.CurrentRow.Index].Cells[0].Value.ToString());
+                Produto p = new Produto();
+                p = controle.detalhesDoProduto(id);
+                return p;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dgvProdutos.Rows.Count == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    lblMensagem.Text = "Nenhum registro foi selecionado, verifique!";
+                    selecionarProduto();
+                    this.Close();
+                }
+            }
+            catch(Exception)
+            {
+
             }
         }
     }

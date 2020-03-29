@@ -89,6 +89,7 @@
             this.mFinReceber = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.mFinConsultas = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFiscal = new System.Windows.Forms.ToolStripMenuItem();
             this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arquivosFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,17 +114,10 @@
             this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.img_Empresa = new System.Windows.Forms.PictureBox();
-            this.pnlEstoque = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
-            this.consultaReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.StatusPanel.SuspendLayout();
             this.barraDeAtalhos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).BeginInit();
-            this.pnlEstoque.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPrincipal
@@ -543,26 +537,32 @@
             // mFinPagar
             // 
             this.mFinPagar.Name = "mFinPagar";
-            this.mFinPagar.Size = new System.Drawing.Size(180, 22);
+            this.mFinPagar.Size = new System.Drawing.Size(166, 22);
             this.mFinPagar.Text = "Pagar";
             // 
             // mFinReceber
             // 
             this.mFinReceber.Name = "mFinReceber";
-            this.mFinReceber.Size = new System.Drawing.Size(180, 22);
+            this.mFinReceber.Size = new System.Drawing.Size(166, 22);
             this.mFinReceber.Text = "Receber";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(163, 6);
             // 
             // mFinConsultas
             // 
             this.mFinConsultas.Name = "mFinConsultas";
-            this.mFinConsultas.Size = new System.Drawing.Size(180, 22);
+            this.mFinConsultas.Size = new System.Drawing.Size(166, 22);
             this.mFinConsultas.Text = "Consulta Pagar";
             this.mFinConsultas.Click += new System.EventHandler(this.mFinConsultas_Click_1);
+            // 
+            // consultaReceberToolStripMenuItem
+            // 
+            this.consultaReceberToolStripMenuItem.Name = "consultaReceberToolStripMenuItem";
+            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.consultaReceberToolStripMenuItem.Text = "Consulta Receber";
             // 
             // menuFiscal
             // 
@@ -789,69 +789,6 @@
             this.img_Empresa.TabIndex = 427;
             this.img_Empresa.TabStop = false;
             // 
-            // pnlEstoque
-            // 
-            this.pnlEstoque.AccessibleDescription = "Estoque";
-            this.pnlEstoque.BackColor = System.Drawing.Color.RoyalBlue;
-            this.pnlEstoque.Controls.Add(this.label3);
-            this.pnlEstoque.Controls.Add(this.label2);
-            this.pnlEstoque.Controls.Add(this.label1);
-            this.pnlEstoque.Controls.Add(this.lbl);
-            this.pnlEstoque.Location = new System.Drawing.Point(12, 82);
-            this.pnlEstoque.Name = "pnlEstoque";
-            this.pnlEstoque.Size = new System.Drawing.Size(200, 100);
-            this.pnlEstoque.TabIndex = 428;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Abaixo da Qtd. miníma: 0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Saldo negativo: 0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Total em estoque: R$ 150,00";
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(3, 0);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(71, 21);
-            this.lbl.TabIndex = 0;
-            this.lbl.Text = "Estoque";
-            // 
-            // consultaReceberToolStripMenuItem
-            // 
-            this.consultaReceberToolStripMenuItem.Name = "consultaReceberToolStripMenuItem";
-            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultaReceberToolStripMenuItem.Text = "Consulta Receber";
-            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -859,7 +796,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(892, 456);
-            this.Controls.Add(this.pnlEstoque);
             this.Controls.Add(this.img_Empresa);
             this.Controls.Add(this.barraDeAtalhos);
             this.Controls.Add(this.StatusPanel);
@@ -879,8 +815,6 @@
             this.barraDeAtalhos.ResumeLayout(false);
             this.barraDeAtalhos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).EndInit();
-            this.pnlEstoque.ResumeLayout(false);
-            this.pnlEstoque.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -947,11 +881,6 @@
         private System.Windows.Forms.ToolStripMenuItem mEstoqueProdGrupo;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueProdSubgrupo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.Panel pnlEstoque;
-        private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueFornec;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueTransp;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueEntrada;
