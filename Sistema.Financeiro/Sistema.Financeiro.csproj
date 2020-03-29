@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controles\BLL_Financeiro.cs" />
+    <Compile Include="Interfaces\formCadastroBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formCadastroBanco.Designer.cs">
+      <DependentUpon>formCadastroBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formCadastroPagar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Interfaces\formCadastroBanco.resx">
+      <DependentUpon>formCadastroBanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formCadastroPagar.resx">
       <DependentUpon>formCadastroPagar.cs</DependentUpon>
     </EmbeddedResource>
