@@ -40,9 +40,12 @@ namespace Sistema.Estoque.Interfaces
 
             }
 
-            if(statusForm == statusForm.Consulta)
+            if(statusForm == statusForm.Selecionar)
             {
+                this.Text = "Consulta de produto";
+                lblResultado.Text = "Procure pelo produto e clique em Selecionar";
                 menuAcoes.Visible = false;
+                btnSelecionar.Visible = true;
             }
 
         }
