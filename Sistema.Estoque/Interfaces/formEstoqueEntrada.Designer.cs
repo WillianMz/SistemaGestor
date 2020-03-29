@@ -198,9 +198,9 @@
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitulo.Location = new System.Drawing.Point(7, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(238, 23);
+            this.lblTitulo.Size = new System.Drawing.Size(114, 23);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Nova Entrada de Mercadorias";
+            this.lblTitulo.Text = "Nova Entrada";
             // 
             // pnlTitulo
             // 
@@ -213,8 +213,8 @@
             // 
             // tabNota
             // 
-            this.tabNota.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabNota.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabNota.Controls.Add(this.tabPrincipal);
             this.tabNota.Controls.Add(this.tabProdutos);
@@ -262,6 +262,7 @@
             this.lblMsgFornec.Size = new System.Drawing.Size(83, 15);
             this.lblMsgFornec.TabIndex = 26;
             this.lblMsgFornec.Text = "</Mensagem>";
+            this.lblMsgFornec.Visible = false;
             // 
             // btnFornecedor
             // 
@@ -330,6 +331,7 @@
             this.lblNomeEmpresa.Size = new System.Drawing.Size(110, 15);
             this.lblNomeEmpresa.TabIndex = 23;
             this.lblNomeEmpresa.Text = "</Nome empresa>";
+            this.lblNomeEmpresa.Visible = false;
             // 
             // lblMsgEmpresa
             // 
@@ -339,6 +341,7 @@
             this.lblMsgEmpresa.Size = new System.Drawing.Size(83, 15);
             this.lblMsgEmpresa.TabIndex = 22;
             this.lblMsgEmpresa.Text = "</Mensagem>";
+            this.lblMsgEmpresa.Visible = false;
             // 
             // lblCNPJEmpresa
             // 
@@ -351,7 +354,7 @@
             // 
             // gbImpostoNota
             // 
-            this.gbImpostoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbImpostoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbImpostoNota.Controls.Add(this.lblTotalNota);
             this.gbImpostoNota.Controls.Add(this.txtValorTotal);
@@ -582,7 +585,7 @@
             // 
             // gbCabecalhoNota
             // 
-            this.gbCabecalhoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbCabecalhoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbCabecalhoNota.Controls.Add(this.lblTpNota);
             this.gbCabecalhoNota.Controls.Add(this.cbTipoNota);
@@ -624,7 +627,7 @@
             this.cbTipoNota.FormattingEnabled = true;
             this.cbTipoNota.Location = new System.Drawing.Point(89, 16);
             this.cbTipoNota.Name = "cbTipoNota";
-            this.cbTipoNota.Size = new System.Drawing.Size(153, 23);
+            this.cbTipoNota.Size = new System.Drawing.Size(187, 23);
             this.cbTipoNota.TabIndex = 0;
             this.cbTipoNota.Text = "Eletrônica";
             // 
@@ -761,7 +764,7 @@
             // 
             this.lblArquivoXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblArquivoXML.AutoSize = true;
-            this.lblArquivoXML.Location = new System.Drawing.Point(256, 19);
+            this.lblArquivoXML.Location = new System.Drawing.Point(282, 18);
             this.lblArquivoXML.Name = "lblArquivoXML";
             this.lblArquivoXML.Size = new System.Drawing.Size(76, 15);
             this.lblArquivoXML.TabIndex = 1;
@@ -770,9 +773,9 @@
             // txtArquivoXML
             // 
             this.txtArquivoXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArquivoXML.Location = new System.Drawing.Point(338, 15);
+            this.txtArquivoXML.Location = new System.Drawing.Point(364, 15);
             this.txtArquivoXML.Name = "txtArquivoXML";
-            this.txtArquivoXML.Size = new System.Drawing.Size(516, 23);
+            this.txtArquivoXML.Size = new System.Drawing.Size(490, 23);
             this.txtArquivoXML.TabIndex = 0;
             // 
             // tabProdutos
@@ -814,8 +817,8 @@
             this.dgvProdutosItens.AllowUserToAddRows = false;
             this.dgvProdutosItens.AllowUserToDeleteRows = false;
             this.dgvProdutosItens.AllowUserToResizeRows = false;
-            this.dgvProdutosItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProdutosItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutosItens.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutosItens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -951,7 +954,7 @@
             // 
             // gbItem
             // 
-            this.gbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbItem.Controls.Add(this.txtProdutoQtdEntrada);
             this.gbItem.Controls.Add(this.lblProdQtdEntrada);

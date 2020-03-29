@@ -40,7 +40,8 @@
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlRodape = new System.Windows.Forms.Panel();
-            this.lblResultado = new System.Windows.Forms.Label();
+            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.lblMensagem = new System.Windows.Forms.Label();
             this.menuAcoes = new System.Windows.Forms.MenuStrip();
             this.menuAdicionar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.lblTipoFiltro = new System.Windows.Forms.Label();
             this.cboxFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.btnSelecionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.menuAcoes.SuspendLayout();
@@ -163,23 +163,34 @@
             // pnlRodape
             // 
             this.pnlRodape.Controls.Add(this.btnSelecionar);
-            this.pnlRodape.Controls.Add(this.lblResultado);
+            this.pnlRodape.Controls.Add(this.lblMensagem);
             this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlRodape.Location = new System.Drawing.Point(0, 476);
             this.pnlRodape.Name = "pnlRodape";
             this.pnlRodape.Size = new System.Drawing.Size(1149, 40);
             this.pnlRodape.TabIndex = 26;
             // 
-            // lblResultado
+            // btnSelecionar
             // 
-            this.lblResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(9, 13);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(196, 17);
-            this.lblResultado.TabIndex = 0;
-            this.lblResultado.Text = "Nenhum resultado encontrado";
+            this.btnSelecionar.Location = new System.Drawing.Point(1062, 10);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
+            this.btnSelecionar.TabIndex = 1;
+            this.btnSelecionar.Text = "&Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Visible = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
+            // lblMensagem
+            // 
+            this.lblMensagem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblMensagem.AutoSize = true;
+            this.lblMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensagem.Location = new System.Drawing.Point(9, 13);
+            this.lblMensagem.Name = "lblMensagem";
+            this.lblMensagem.Size = new System.Drawing.Size(196, 17);
+            this.lblMensagem.TabIndex = 0;
+            this.lblMensagem.Text = "Nenhum resultado encontrado";
             // 
             // menuAcoes
             // 
@@ -337,16 +348,6 @@
             this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
             this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
             // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.Location = new System.Drawing.Point(1062, 10);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionar.TabIndex = 1;
-            this.btnSelecionar.Text = "&Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            this.btnSelecionar.Visible = false;
-            // 
             // formConsultaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -380,7 +381,7 @@
 
         private System.Windows.Forms.DataGridView dgvProdutos;
         private System.Windows.Forms.Panel pnlRodape;
-        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.MenuStrip menuAcoes;
         private System.Windows.Forms.ToolStripMenuItem menuListarDesativados;
         private System.Windows.Forms.ToolStripMenuItem menuListarTodos;
