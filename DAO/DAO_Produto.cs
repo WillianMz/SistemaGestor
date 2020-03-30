@@ -214,6 +214,11 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// Retorna um objeto Pessoa
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         private Produto retornaProduto(string sql)
         {
             try
@@ -262,7 +267,7 @@ namespace DAO
         {
             try
             {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem FROM produto WHERE id = {0} AND ativo = {1}", id, ativo);
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE id = {0} AND ativo = {1}", id, ativo);
                 return retornaProduto(SQL);
             }
             catch (Exception ex)
@@ -275,7 +280,7 @@ namespace DAO
         {
             try
             {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem FROM produto WHERE codigo = '{0}' AND ativo = {1}", codigo, ativo);
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE codigo = {0} AND ativo = {1}", codigo, ativo);
                 return retornaProduto(SQL);
             }
             catch (Exception ex)
