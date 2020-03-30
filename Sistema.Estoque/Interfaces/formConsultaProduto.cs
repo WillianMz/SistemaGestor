@@ -305,5 +305,10 @@ namespace Sistema.Estoque.Interfaces
 
             }
         }
+
+        private void cbFiltro_Leave(object sender, EventArgs e)
+        {
+            txtPesquisar.Clear();
+        }
     }
 }

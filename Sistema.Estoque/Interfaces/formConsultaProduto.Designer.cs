@@ -47,8 +47,6 @@
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDetalhes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDesativar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuListagem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuListagemDesativados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarDesativados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarTodos = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,8 +198,7 @@
             this.menuAdicionar,
             this.menuEditar,
             this.menuDetalhes,
-            this.menuDesativar,
-            this.menuListagem});
+            this.menuDesativar});
             this.menuAcoes.Location = new System.Drawing.Point(0, 0);
             this.menuAcoes.Name = "menuAcoes";
             this.menuAcoes.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -236,21 +233,6 @@
             this.menuDesativar.Size = new System.Drawing.Size(67, 33);
             this.menuDesativar.Text = "Desativar";
             this.menuDesativar.Click += new System.EventHandler(this.menuDesativar_Click);
-            // 
-            // menuListagem
-            // 
-            this.menuListagem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuListagemDesativados});
-            this.menuListagem.Name = "menuListagem";
-            this.menuListagem.Size = new System.Drawing.Size(67, 33);
-            this.menuListagem.Text = "Listagem";
-            // 
-            // menuListagemDesativados
-            // 
-            this.menuListagemDesativados.Name = "menuListagemDesativados";
-            this.menuListagemDesativados.Size = new System.Drawing.Size(137, 22);
-            this.menuListagemDesativados.Text = "Desativados";
-            this.menuListagemDesativados.Click += new System.EventHandler(this.menuListagemDesativados_Click);
             // 
             // menuListarDesativados
             // 
@@ -328,14 +310,15 @@
             this.lblTipoFiltro.TabIndex = 27;
             this.lblTipoFiltro.Text = "Filtro";
             // 
-            // cboxFiltro
+            // cbFiltro
             // 
             this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFiltro.FormattingEnabled = true;
             this.cbFiltro.Location = new System.Drawing.Point(6, 18);
-            this.cbFiltro.Name = "cboxFiltro";
+            this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Size = new System.Drawing.Size(121, 23);
             this.cbFiltro.TabIndex = 0;
+            this.cbFiltro.Leave += new System.EventHandler(this.cbFiltro_Leave);
             // 
             // txtPesquisar
             // 
@@ -399,8 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuEditar;
         private System.Windows.Forms.ToolStripMenuItem menuDetalhes;
         private System.Windows.Forms.ToolStripMenuItem menuDesativar;
-        private System.Windows.Forms.ToolStripMenuItem menuListagem;
-        private System.Windows.Forms.ToolStripMenuItem menuListagemDesativados;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
