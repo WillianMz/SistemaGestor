@@ -59,7 +59,7 @@
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.lblTipoFiltro = new System.Windows.Forms.Label();
-            this.cboxFiltro = new System.Windows.Forms.ComboBox();
+            this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
@@ -291,7 +291,7 @@
             this.pnFiltro.Controls.Add(this.btnPesquisa);
             this.pnFiltro.Controls.Add(this.lblProcurar);
             this.pnFiltro.Controls.Add(this.lblTipoFiltro);
-            this.pnFiltro.Controls.Add(this.cboxFiltro);
+            this.pnFiltro.Controls.Add(this.cbFiltro);
             this.pnFiltro.Controls.Add(this.txtPesquisar);
             this.pnFiltro.Location = new System.Drawing.Point(13, 40);
             this.pnFiltro.Name = "pnFiltro";
@@ -330,12 +330,12 @@
             // 
             // cboxFiltro
             // 
-            this.cboxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxFiltro.FormattingEnabled = true;
-            this.cboxFiltro.Location = new System.Drawing.Point(6, 18);
-            this.cboxFiltro.Name = "cboxFiltro";
-            this.cboxFiltro.Size = new System.Drawing.Size(121, 23);
-            this.cboxFiltro.TabIndex = 0;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(6, 18);
+            this.cbFiltro.Name = "cboxFiltro";
+            this.cbFiltro.Size = new System.Drawing.Size(121, 23);
+            this.cbFiltro.TabIndex = 0;
             // 
             // txtPesquisar
             // 
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Label lblProcurar;
         private System.Windows.Forms.Label lblTipoFiltro;
-        private System.Windows.Forms.ComboBox cboxFiltro;
+        private System.Windows.Forms.ComboBox cbFiltro;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.ToolStripMenuItem menuAdicionar;
         private System.Windows.Forms.ToolStripMenuItem menuEditar;
