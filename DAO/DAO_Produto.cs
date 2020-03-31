@@ -306,7 +306,7 @@ namespace DAO
         {
             try
             {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante FROM produto WHERE descricao LIKE '%{0}%' AND ativo = {1}", descricao, ativo);
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE descricao LIKE '%{0}%' AND ativo = {1}", descricao, ativo);
                 return retornaProdutos(SQL);
             }
             catch (Exception ex)
@@ -319,7 +319,7 @@ namespace DAO
         {
             try
             {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem FROM produto WHERE marca LIKE '%{0}%' AND ativo = {1}", marca, ativo);
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE marca LIKE '%{0}%' AND ativo = {1}", marca, ativo);
                 return retornaProdutos(SQL);
             }
             catch (Exception ex)
@@ -332,7 +332,7 @@ namespace DAO
         {
             try
             {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem FROM produto WHERE fabricante LIKE '%{0}%' AND ativo = {1}", fabricante, ativo);
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE fabricante LIKE '%{0}%' AND ativo = {1}", fabricante, ativo);
                 return retornaProdutos(SQL);
             }
             catch (Exception ex)

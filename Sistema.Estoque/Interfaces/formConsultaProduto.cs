@@ -26,21 +26,6 @@ namespace Sistema.Estoque.Interfaces
         public void configForm()
         {       
 
-            if (statusForm == statusForm.Novo)
-            {
-
-            }
-
-            if (statusForm == statusForm.Editar)
-            {
-
-            }
-
-            if (statusForm == statusForm.Detalhes)
-            {
-
-            }
-
             if(statusForm == statusForm.Selecionar)
             {
                 this.Text             = "Consulta de produto";
@@ -48,7 +33,6 @@ namespace Sistema.Estoque.Interfaces
                 menuAcoes.Visible     = false;
                 btnSelecionar.Visible = true;
             }
-
         }
 
         private void atualizarGrid(List<Produto> ps)
@@ -126,7 +110,15 @@ namespace Sistema.Estoque.Interfaces
             {
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }    
+        }   
+        
+        private void executarConsulta()
+        {
+            if (chboxDesativados.Checked == true)
+                pesquisarProduto(false);
+            else
+                pesquisarProduto(true);
+        }
         
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
@@ -135,11 +127,11 @@ namespace Sistema.Estoque.Interfaces
                 if(e.KeyCode == Keys.Enter)
                 {
                     if (txtPesquisar.Text != "")
-                        pesquisarProduto(true);
+                        executarConsulta();
                     else
                     {
-                       lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
-                       txtPesquisar.Focus();
+                        lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
+                        txtPesquisar.Focus();
                     }
                 }
             }
@@ -244,7 +236,8 @@ namespace Sistema.Estoque.Interfaces
                         controle.ativarDesativar(id, false);
                         MessageBox.Show(util_msg.msgDesativarProduto, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    pesquisarProduto(true);
+
+                    executarConsulta();
                 }
             }
             catch (Exception ex)
@@ -252,25 +245,7 @@ namespace Sistema.Estoque.Interfaces
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void menuListagemDesativados_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtPesquisar.Text != "")
-                    pesquisarProduto(false);
-                else
-                {
-                    lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
-                    txtPesquisar.Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         public Produto selecionarProduto()
         {
             try

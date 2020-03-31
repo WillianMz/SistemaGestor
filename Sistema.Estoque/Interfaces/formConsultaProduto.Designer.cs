@@ -59,6 +59,7 @@
             this.lblTipoFiltro = new System.Windows.Forms.Label();
             this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.chboxDesativados = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.menuAcoes.SuspendLayout();
@@ -331,12 +332,23 @@
             this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
             this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
             // 
+            // chboxDesativados
+            // 
+            this.chboxDesativados.AutoSize = true;
+            this.chboxDesativados.Location = new System.Drawing.Point(594, 60);
+            this.chboxDesativados.Name = "chboxDesativados";
+            this.chboxDesativados.Size = new System.Drawing.Size(138, 19);
+            this.chboxDesativados.TabIndex = 29;
+            this.chboxDesativados.Text = "Somente desativados";
+            this.chboxDesativados.UseVisualStyleBackColor = true;
+            // 
             // formConsultaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 516);
+            this.Controls.Add(this.chboxDesativados);
             this.Controls.Add(this.pnFiltro);
             this.Controls.Add(this.dgvProdutos);
             this.Controls.Add(this.pnlRodape);
@@ -357,6 +369,7 @@
             this.pnFiltro.ResumeLayout(false);
             this.pnFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -392,5 +405,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFabricante;
         private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.CheckBox chboxDesativados;
     }
 }
