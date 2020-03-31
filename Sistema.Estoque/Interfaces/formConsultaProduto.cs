@@ -17,37 +17,22 @@ namespace Sistema.Estoque.Interfaces
         {
             InitializeComponent();
             configForm();
+
+            carregarComboBox.filtroPesquisaProduto(cbFiltro);
+            cbFiltro.Text = "Nome";
+            txtPesquisar.Focus();
         }
 
         public void configForm()
-        {
-            carregarComboBox.filtroPesquisaProduto(cboxFiltro);
-            cboxFiltro.Text = "Nome";
-            txtPesquisar.Focus();
-
-            if (statusForm == statusForm.Novo)
-            {
-
-            }
-
-            if (statusForm == statusForm.Editar)
-            {
-
-            }
-
-            if (statusForm == statusForm.Detalhes)
-            {
-
-            }
+        {       
 
             if(statusForm == statusForm.Selecionar)
             {
-                this.Text = "Consulta de produto";
-                lblMensagem.Text = "Procure pelo produto e clique em Selecionar";
-                menuAcoes.Visible = false;
+                this.Text             = "Consulta de produto";
+                lblMensagem.Text      = "Procure pelo produto e clique em Selecionar";
+                menuAcoes.Visible     = false;
                 btnSelecionar.Visible = true;
             }
-
         }
 
         private void atualizarGrid(List<Produto> ps)
@@ -59,14 +44,25 @@ namespace Sistema.Estoque.Interfaces
             }
             util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
         }
-
-        //teste
+        
         //usado quando a pesquisa é por codigo e retorna somente um objeto
         private void atualizarGrid2(Produto p)
         {
-            dgvProdutos.Rows.Clear();
-            dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem + "%", p.Marca, p.Fabricante);
-            util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
+            try
+            {
+                dgvProdutos.Rows.Clear();
+
+                if (p != null)
+                {                    
+                    dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem + "%", p.Marca, p.Fabricante);
+                }               
+                                             
+                util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
+            }
+            catch( Exception)
+            {
+                throw;
+            }
         }
 
         private void pesquisarProduto(bool ativo)
@@ -77,7 +73,7 @@ namespace Sistema.Estoque.Interfaces
                 List<Produto> produtos;
                 Produto p;
 
-                switch (cboxFiltro.Text)
+                switch (cbFiltro.Text)
                 {
                     case "Código":
                         p = controle.filtrarProduto_ID(Convert.ToInt32(txtPesquisar.Text), ativo);
@@ -114,7 +110,15 @@ namespace Sistema.Estoque.Interfaces
             {
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }    
+        }   
+        
+        private void executarConsulta()
+        {
+            if (chboxDesativados.Checked == true)
+                pesquisarProduto(false);
+            else
+                pesquisarProduto(true);
+        }
         
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
@@ -123,11 +127,11 @@ namespace Sistema.Estoque.Interfaces
                 if(e.KeyCode == Keys.Enter)
                 {
                     if (txtPesquisar.Text != "")
-                        pesquisarProduto(true);
+                        executarConsulta();
                     else
                     {
-                       lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
-                       txtPesquisar.Focus();
+                        lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
+                        txtPesquisar.Focus();
                     }
                 }
             }
@@ -141,13 +145,10 @@ namespace Sistema.Estoque.Interfaces
         {
             util_sistema.keyPress(sender, e);
 
-            if (cboxFiltro.Text == "Código")
+            if (cbFiltro.Text == "Código")
             {
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                {
                     e.Handled = true;
-                    MessageBox.Show(util_msg.msgFiltroPorCodigo, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
             }
         }
         
@@ -235,7 +236,8 @@ namespace Sistema.Estoque.Interfaces
                         controle.ativarDesativar(id, false);
                         MessageBox.Show(util_msg.msgDesativarProduto, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    pesquisarProduto(true);
+
+                    executarConsulta();
                 }
             }
             catch (Exception ex)
@@ -243,26 +245,7 @@ namespace Sistema.Estoque.Interfaces
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void menuListagemDesativados_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtPesquisar.Text != "")
-                    pesquisarProduto(false);
-                else
-                {
-                    lblMensagem.Text = util_msg.msgFiltroPesquisaVazio;
-                    txtPesquisar.Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
+        
         public Produto selecionarProduto()
         {
             try
@@ -279,15 +262,12 @@ namespace Sistema.Estoque.Interfaces
             }
         }
 
-
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
             try
             {
                 if(dgvProdutos.Rows.Count == 0)
-                {
                     return;
-                }
                 else
                 {
                     lblMensagem.Text = "Nenhum registro foi selecionado, verifique!";
@@ -299,6 +279,11 @@ namespace Sistema.Estoque.Interfaces
             {
 
             }
+        }
+
+        private void cbFiltro_Leave(object sender, EventArgs e)
+        {
+            txtPesquisar.Clear();
         }
     }
 }

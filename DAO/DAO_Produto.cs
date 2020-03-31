@@ -176,212 +176,16 @@ namespace DAO
 
         #region CONSULTAS
 
-        public List<Produto> selectAllProdutos(bool ativo)
+        /// <summary>
+        /// Retorna uma lista de objetos(Produtos)
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        private List<Produto> retornaProdutos(string sql)
         {
             try
             {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem " +
-                                    "FROM produto WHERE ativo = {0} ORDER BY id", ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
-                List<Produto> produtos = new List<Produto>();
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    Produto p = new Produto
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Codigo = dr["codigo"].ToString(),
-                        Nome = dr["nome"].ToString(),
-                        Descricao = dr["descricao"].ToString(),
-                        Custo = double.Parse(dr["custo"].ToString()),
-                        PrecoVenda = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString())
-                    };
-                    produtos.Add(p);
-                }
-                return produtos;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public Produto getProdutoPorID(int id, bool ativo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem " +
-                                    "FROM produto WHERE id = {0} AND ativo = {1}", id, ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
-                Produto p = null;
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    p = new Produto
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Codigo = dr["codigo"].ToString(),
-                        Nome = dr["nome"].ToString(),
-                        Descricao = dr["descricao"].ToString(),
-                        Custo = double.Parse(dr["custo"].ToString()),
-                        PrecoVenda = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString())
-                    };
-                }
-                return p;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public Produto getProdutoPorCodigo(string codigo, bool ativo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem " +
-                                    "FROM produto WHERE codigo = '{0}' AND ativo = {1}", codigo, ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
-                Produto p = null;
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    p = new Produto
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Codigo = dr["codigo"].ToString(),
-                        Nome = dr["nome"].ToString(),
-                        Descricao = dr["descricao"].ToString(),
-                        Custo = double.Parse(dr["custo"].ToString()),
-                        PrecoVenda = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString())
-                    };
-                }
-                return p;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public List<Produto> selectProdutosPorNome(string nome, bool ativo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem " +
-                                    "FROM produto WHERE nome LIKE '%{0}%' AND ativo = {1}", nome, ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
-                List<Produto> produtos = new List<Produto>();
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    Produto p = new Produto
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Codigo = dr["codigo"].ToString(),
-                        Nome = dr["nome"].ToString(),
-                        Descricao = dr["descricao"].ToString(),
-                        Custo = double.Parse(dr["custo"].ToString()),
-                        PrecoVenda = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString()),
-                        Marca = dr["marca"].ToString(),
-                        Fabricante = dr["fabricante"].ToString(),
-                        Imagem = dr["imagem"].ToString()
-                    };
-                    produtos.Add(p);
-                }
-
-                return produtos;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public List<Produto> selectProdutosPorDescricao(string descricao, bool ativo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante " +
-                                    "FROM produto WHERE descricao LIKE '%{0}%' AND ativo = {1}", descricao, ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
-                List<Produto> produtos = new List<Produto>();
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    Produto p = new Produto
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Codigo = dr["codigo"].ToString(),
-                        Nome = dr["nome"].ToString(),
-                        Descricao = dr["descricao"].ToString(),
-                        Custo = double.Parse(dr["custo"].ToString()),
-                        PrecoVenda = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString()),
-                        Marca = dr["marca"].ToString(),
-                        Fabricante = dr["fabricante"].ToString()
-                    };
-                    produtos.Add(p);
-                }
-
-                return produtos;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public List<Produto> selectProdutosPorMarca(string marca, bool ativo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem " +
-                                    "FROM produto WHERE marca LIKE '%{0}%' AND ativo = {1}", marca, ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
-                List<Produto> produtos = new List<Produto>();
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    Produto p = new Produto
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Codigo = dr["codigo"].ToString(),
-                        Nome = dr["nome"].ToString(),
-                        Descricao = dr["descricao"].ToString(),
-                        Custo = double.Parse(dr["custo"].ToString()),
-                        PrecoVenda = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString())
-                    };
-                    produtos.Add(p);
-                }
-
-                return produtos;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public List<Produto> selectProdutoPorFabricante(string fabricante, bool ativo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem " +
-                                    "FROM produto WHERE fabricante LIKE '%{0}%' AND ativo = {1}", fabricante, ativo);
-
-                DataSet ds = con.ConsultaSQL(SQL);
+                DataSet ds = con.ConsultaSQL(sql);
                 List<Produto> produtos = new List<Produto>();
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
@@ -394,12 +198,142 @@ namespace DAO
                         Descricao   = dr["descricao"].ToString(),
                         Custo       = double.Parse(dr["custo"].ToString()),
                         PrecoVenda  = double.Parse(dr["venda"].ToString()),
-                        VendaMargem = double.Parse(dr["v_margem"].ToString())
+                        VendaMargem = double.Parse(dr["v_margem"].ToString()),
+                        Marca       = dr["marca"].ToString(),
+                        Fabricante  = dr["fabricante"].ToString(),
+                        Imagem      = dr["imagem"].ToString()
                     };
                     produtos.Add(p);
                 }
 
                 return produtos;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Retorna um objeto Pessoa
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        private Produto retornaProduto(string sql)
+        {
+            try
+            {
+                DataSet ds = con.ConsultaSQL(sql);
+                Produto p = null;
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    p = new Produto
+                    {
+                        Id          = int.Parse(dr["id"].ToString()),
+                        Codigo      = dr["codigo"].ToString(),
+                        Nome        = dr["nome"].ToString(),
+                        Descricao   = dr["descricao"].ToString(),
+                        Custo       = double.Parse(dr["custo"].ToString()),
+                        PrecoVenda  = double.Parse(dr["venda"].ToString()),
+                        VendaMargem = double.Parse(dr["v_margem"].ToString()),
+                        Marca       = dr["marca"].ToString(),
+                        Fabricante  = dr["fabricante"].ToString(),
+                        Imagem      = dr["imagem"].ToString()
+                    };
+                }
+                return p;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Produto> selectAllProdutos(bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem FROM produto WHERE ativo = {0} ORDER BY id", ativo);
+                return retornaProdutos(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Produto getProdutoPorID(int id, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE id = {0} AND ativo = {1}", id, ativo);
+                return retornaProduto(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Produto getProdutoPorCodigo(string codigo, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE codigo = {0} AND ativo = {1}", codigo, ativo);
+                return retornaProduto(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Produto> selectProdutosPorNome(string nome, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE nome LIKE '%{0}%' AND ativo = {1}", nome, ativo);
+                return retornaProdutos(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Produto> selectProdutosPorDescricao(string descricao, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE descricao LIKE '%{0}%' AND ativo = {1}", descricao, ativo);
+                return retornaProdutos(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Produto> selectProdutosPorMarca(string marca, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE marca LIKE '%{0}%' AND ativo = {1}", marca, ativo);
+                return retornaProdutos(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Produto> selectProdutoPorFabricante(string fabricante, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, codigo, nome, descricao, custo, venda, v_margem, marca, fabricante, imagem FROM produto WHERE fabricante LIKE '%{0}%' AND ativo = {1}", fabricante, ativo);
+                return retornaProdutos(SQL);
             }
             catch (Exception ex)
             {

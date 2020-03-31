@@ -132,7 +132,7 @@ namespace DAO
 
         #region LISTAGEM E CONSULTAS DE PESSOA
 
-        private List<Pessoa> dadosPessoaSimples(string sql)
+        private List<Pessoa> retornaPessoas(string sql)
         {
             try
             {
@@ -160,9 +160,36 @@ namespace DAO
             {
                 throw new Exception(ex.Message);
             }
-        }
+        }    
         
+        private Pessoa retornaPessoa(string sql)
+        {
+            try
+            {
+                DataSet ds = con.ConsultaSQL(sql);
+                Pessoa p = null;
 
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    p = new Pessoa
+                    {
+                        Id           = int.Parse(dr["id"].ToString()),
+                        CPF_CNPJ     = dr["cpf_cnpj"].ToString(),
+                        NomeCompleto = dr["nome_completo"].ToString(),
+                        Fantasia     = dr["fantasia"].ToString(),
+                        Telefone     = long.Parse(dr["telefone"].ToString()),
+                        Celular      = long.Parse(dr["celular"].ToString()),
+                        Email        = dr["email"].ToString(),
+                        Local        = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
+                    };
+                }
+                return p;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public List<TipoPessoa> selectAllTipoPessoa()
         {
@@ -225,26 +252,8 @@ namespace DAO
                                     "AND p.id_cidade = c.id " +
                                     "AND ativo = {1} " +
                                     "AND cpf_cnpj = '{0}' ORDER BY id", cpfCNPJ, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
-
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -252,7 +261,7 @@ namespace DAO
             }
         }
 
-        public Pessoa getsPessoaPorCPF_CNPJ(string cpfCNPJ, bool ativo)
+        public Pessoa getPessoaPorCPF_CNPJ(string cpfCNPJ, bool ativo)
         {
             try
             {
@@ -262,24 +271,7 @@ namespace DAO
                                     "AND p.id_cidade = c.id " +
                                     "AND ativo = {1} " +
                                     "AND cpf_cnpj = '{0}' ORDER BY id", cpfCNPJ, ativo);
-                DataSet ds = con.ConsultaSQL(SQL);
-                Pessoa p = null;
-
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                     p = new Pessoa
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                        NomeCompleto = dr["nome_completo"].ToString(),
-                        Fantasia = dr["fantasia"].ToString(),
-                        Telefone = long.Parse(dr["telefone"].ToString()),
-                        Celular = long.Parse(dr["celular"].ToString()),
-                        Email = dr["email"].ToString(),
-                        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                    };
-                }
-                return p;
+                return retornaPessoa(SQL);
             }
             catch (Exception ex)
             {
@@ -297,27 +289,8 @@ namespace DAO
                                     "AND p.id_cidade = c.id " +
                                     "AND ativo = {0} " +
                                     "ORDER BY id", ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
 
             }
             catch (Exception ex)
@@ -336,26 +309,8 @@ namespace DAO
                                     "AND p.id_cidade = c.id " +
                                     "AND ativo = {1} " +
                                     "AND p.nome_completo LIKE '%{0}%' ORDER BY id ", nome, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -373,26 +328,8 @@ namespace DAO
                                     "AND p.id_cidade = c.id " +
                                     "AND ativo = {1} " +
                                     "AND p.id = '{0}' ORDER BY p.id", id, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -422,7 +359,7 @@ namespace DAO
                     p.Tipo.Id = int.Parse(dr["id_tipo"].ToString());
                     TipoPessoa tp = getTipoPessoa(p.Tipo.Id);
                     p.Tipo = tp;
-
+                    //tipo
                     p.Cliente = bool.Parse(dr["cliente"].ToString());
                     p.Fornecedor = bool.Parse(dr["fornecedor"].ToString());
                     p.Funcionario = bool.Parse(dr["funcionario"].ToString());
@@ -435,24 +372,24 @@ namespace DAO
                     p.RG_IE = dr["rg_ie"].ToString();
 
                     p.CEP = dr["cep"].ToString();
-
+                    //país
                     p.Pais.Id = int.Parse(dr["id_pais"].ToString());
                     Pais pa = daoEnd.getPaisID(p.Pais.Id);
                     p.Pais = pa;
-
+                    //estado
                     p.UF.Id = int.Parse(dr["id_uf"].ToString());
                     UF uf = daoEnd.getEstadoID(p.UF.Id);
                     p.UF = uf;
-
+                    //cidade
                     p.Cidade.Id = int.Parse(dr["id_cidade"].ToString());
                     Cidade cid = daoEnd.getCidadeID(p.Cidade.Id);
                     p.Cidade = cid;
-
+                    //endereco
                     p.Bairro = dr["bairro"].ToString();
                     p.Logradouro = dr["logradouro"].ToString();
                     p.Numero = Convert.ToInt32(dr["numero"].ToString());
                     p.Complemento = dr["complemento"].ToString();
-
+                    //contato
                     p.Telefone = long.Parse(dr["telefone"].ToString());
                     p.Celular = long.Parse(dr["celular"].ToString());
                     p.Contato = dr["contato"].ToString();
@@ -487,26 +424,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND cliente = true " +
                                     "AND nome_completo LIKE '%{0}%' ORDER BY id", filtro, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -525,25 +444,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND cliente = true " +
                                     "AND p.id = {0} ORDER BY id", ID, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //Pessoa p = null;
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //}
-                //return p;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -564,7 +466,7 @@ namespace DAO
                                         "AND fornecedor = true " +
                                         "AND nome_completo LIKE '%{0}%' ORDER BY id", filtro, ativo);
                 
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -583,25 +485,8 @@ namespace DAO
                                     "AND ativo ={1} " +
                                     "AND fornecedor = true " +
                                     "AND p.id = {0} ORDER BY id", id, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //Pessoa p = null;
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //}
-                //return p;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -621,26 +506,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND transportador = true " +
                                     "AND nome_completo LIKE '%{0}%' ORDER BY id", filtro, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -659,25 +526,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND transportador = true " +
                                     "AND p.id = {0} ORDER BY id", id, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //Pessoa p = null;
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //}
-                //return p;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -697,26 +547,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND funcionario = true " +
                                     "AND nome_completo LIKE '%{0}%' ORDER BY id", filtro, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -735,25 +567,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND funcionario = true " +
                                     "AND p.id = {0} ORDER BY id", id, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //Pessoa p = null;
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //}
-                //return p;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -773,26 +588,8 @@ namespace DAO
                                     "AND ativo ={1} " +
                                     "AND outros = true " +
                                     "AND nome_completo LIKE '%{0}%' ORDER BY id", filtro, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //List<Pessoa> ps = new List<Pessoa>();
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    Pessoa p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //    ps.Add(p);
-                //}
-                //return ps;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {
@@ -811,25 +608,8 @@ namespace DAO
                                     "AND ativo = {1} " +
                                     "AND outros = true " +
                                     "AND p.id = {0} ORDER BY id", id, ativo);
-                //DataSet ds = con.ConsultaSQL(SQL);
-                //Pessoa p = null;
 
-                //foreach (DataRow dr in ds.Tables[0].Rows)
-                //{
-                //    p = new Pessoa
-                //    {
-                //        Id = int.Parse(dr["id"].ToString()),
-                //        CPF_CNPJ = dr["cpf_cnpj"].ToString(),
-                //        NomeCompleto = dr["nome_completo"].ToString(),
-                //        Fantasia = dr["fantasia"].ToString(),
-                //        Telefone = long.Parse(dr["telefone"].ToString()),
-                //        Celular = long.Parse(dr["celular"].ToString()),
-                //        Email = dr["email"].ToString(),
-                //        Local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                //    };
-                //}
-                //return p;
-                return dadosPessoaSimples(SQL);
+                return retornaPessoas(SQL);
             }
             catch (Exception ex)
             {

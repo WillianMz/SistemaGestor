@@ -47,8 +47,6 @@
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDetalhes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDesativar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuListagem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuListagemDesativados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarDesativados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarTodos = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,8 +57,9 @@
             this.btnPesquisa = new System.Windows.Forms.Button();
             this.lblProcurar = new System.Windows.Forms.Label();
             this.lblTipoFiltro = new System.Windows.Forms.Label();
-            this.cboxFiltro = new System.Windows.Forms.ComboBox();
+            this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.chboxDesativados = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.menuAcoes.SuspendLayout();
@@ -200,8 +199,7 @@
             this.menuAdicionar,
             this.menuEditar,
             this.menuDetalhes,
-            this.menuDesativar,
-            this.menuListagem});
+            this.menuDesativar});
             this.menuAcoes.Location = new System.Drawing.Point(0, 0);
             this.menuAcoes.Name = "menuAcoes";
             this.menuAcoes.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -236,21 +234,6 @@
             this.menuDesativar.Size = new System.Drawing.Size(67, 33);
             this.menuDesativar.Text = "Desativar";
             this.menuDesativar.Click += new System.EventHandler(this.menuDesativar_Click);
-            // 
-            // menuListagem
-            // 
-            this.menuListagem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuListagemDesativados});
-            this.menuListagem.Name = "menuListagem";
-            this.menuListagem.Size = new System.Drawing.Size(67, 33);
-            this.menuListagem.Text = "Listagem";
-            // 
-            // menuListagemDesativados
-            // 
-            this.menuListagemDesativados.Name = "menuListagemDesativados";
-            this.menuListagemDesativados.Size = new System.Drawing.Size(137, 22);
-            this.menuListagemDesativados.Text = "Desativados";
-            this.menuListagemDesativados.Click += new System.EventHandler(this.menuListagemDesativados_Click);
             // 
             // menuListarDesativados
             // 
@@ -291,7 +274,7 @@
             this.pnFiltro.Controls.Add(this.btnPesquisa);
             this.pnFiltro.Controls.Add(this.lblProcurar);
             this.pnFiltro.Controls.Add(this.lblTipoFiltro);
-            this.pnFiltro.Controls.Add(this.cboxFiltro);
+            this.pnFiltro.Controls.Add(this.cbFiltro);
             this.pnFiltro.Controls.Add(this.txtPesquisar);
             this.pnFiltro.Location = new System.Drawing.Point(13, 40);
             this.pnFiltro.Name = "pnFiltro";
@@ -328,14 +311,15 @@
             this.lblTipoFiltro.TabIndex = 27;
             this.lblTipoFiltro.Text = "Filtro";
             // 
-            // cboxFiltro
+            // cbFiltro
             // 
-            this.cboxFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxFiltro.FormattingEnabled = true;
-            this.cboxFiltro.Location = new System.Drawing.Point(6, 18);
-            this.cboxFiltro.Name = "cboxFiltro";
-            this.cboxFiltro.Size = new System.Drawing.Size(121, 23);
-            this.cboxFiltro.TabIndex = 0;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(6, 18);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Size = new System.Drawing.Size(121, 23);
+            this.cbFiltro.TabIndex = 0;
+            this.cbFiltro.Leave += new System.EventHandler(this.cbFiltro_Leave);
             // 
             // txtPesquisar
             // 
@@ -348,12 +332,23 @@
             this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
             this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
             // 
+            // chboxDesativados
+            // 
+            this.chboxDesativados.AutoSize = true;
+            this.chboxDesativados.Location = new System.Drawing.Point(594, 60);
+            this.chboxDesativados.Name = "chboxDesativados";
+            this.chboxDesativados.Size = new System.Drawing.Size(138, 19);
+            this.chboxDesativados.TabIndex = 29;
+            this.chboxDesativados.Text = "Somente desativados";
+            this.chboxDesativados.UseVisualStyleBackColor = true;
+            // 
             // formConsultaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 516);
+            this.Controls.Add(this.chboxDesativados);
             this.Controls.Add(this.pnFiltro);
             this.Controls.Add(this.dgvProdutos);
             this.Controls.Add(this.pnlRodape);
@@ -374,6 +369,7 @@
             this.pnFiltro.ResumeLayout(false);
             this.pnFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -393,14 +389,12 @@
         private System.Windows.Forms.Button btnPesquisa;
         private System.Windows.Forms.Label lblProcurar;
         private System.Windows.Forms.Label lblTipoFiltro;
-        private System.Windows.Forms.ComboBox cboxFiltro;
+        private System.Windows.Forms.ComboBox cbFiltro;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.ToolStripMenuItem menuAdicionar;
         private System.Windows.Forms.ToolStripMenuItem menuEditar;
         private System.Windows.Forms.ToolStripMenuItem menuDetalhes;
         private System.Windows.Forms.ToolStripMenuItem menuDesativar;
-        private System.Windows.Forms.ToolStripMenuItem menuListagem;
-        private System.Windows.Forms.ToolStripMenuItem menuListagemDesativados;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
@@ -411,5 +405,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFabricante;
         private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.CheckBox chboxDesativados;
     }
 }

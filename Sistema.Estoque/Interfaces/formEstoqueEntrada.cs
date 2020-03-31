@@ -32,9 +32,17 @@ namespace Sistema.Estoque.Interfaces
         {
             if(statusForm == statusForm.Novo)
             {
-                lblTitulo.Text = "NOVA ENTRADA NO ESTOQUE";
+                lblTitulo.Text   = "NOVA ENTRADA NO ESTOQUE";
                 lblMensagem.Text = "Novo registro";
                 carregarCombobox();
+                lblNomeEmpresa.Visible = true;
+                lblNomeEmpresa.Text    = "";
+                lblMsgEmpresa.Visible  = true;
+                lblMsgEmpresa.Text     = "";
+                lblNomeFornec.Text     = "";
+                lblNomeFornec.Visible  = true;
+                lblMsgFornec.Text      = "";
+                lblMsgFornec.Visible   = true;
             }
 
             if(statusForm == statusForm.Editar)
@@ -78,7 +86,7 @@ namespace Sistema.Estoque.Interfaces
             util_sistema.limparComponentesTabPage(tabTransporte);
         }
 
-        private void btnNovoFornecedor_Click(object sender, EventArgs e)
+        private void cadastrarFornedor()
         {
             try
             {
@@ -89,10 +97,15 @@ namespace Sistema.Estoque.Interfaces
                 cadFornec.ShowDialog();
                 cadFornec.Dispose();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
+        }
+
+        private void btnNovoFornecedor_Click(object sender, EventArgs e)
+        {
+            cadastrarFornedor();
         }
 
         private void adicionarProduto(Produto p)
@@ -238,12 +251,18 @@ namespace Sistema.Estoque.Interfaces
 
                     if (p == null)
                     {
-                        MessageBox.Show("Fornecedor não cadastrado!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult result = MessageBox.Show("Forncedor não cadastrado. Deseja cadastar?", util_msg.sistema, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            cadastrarFornedor();
+                        }
+                        else
+                            return;
                     }
                     else
                     {
                         lblMsgFornec.Text = p.Fantasia;
-                        txtNomeFornecedor.Text = p.NomeCompleto + " | " + p.Local;
+                        lblNomeFornec.Text = p.NomeCompleto + " | " + p.Local;
                     }
                 }
             }
@@ -356,7 +375,7 @@ namespace Sistema.Estoque.Interfaces
 
             #endregion
 
-            adicionarItem();//teste
+            adicionarItem();
         }
 
     }

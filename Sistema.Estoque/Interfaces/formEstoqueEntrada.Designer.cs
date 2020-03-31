@@ -37,7 +37,6 @@
             this.gbFornecedor = new System.Windows.Forms.GroupBox();
             this.lblMsgFornec = new System.Windows.Forms.Label();
             this.btnFornecedor = new System.Windows.Forms.Button();
-            this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
             this.txt_cnpjFornec = new System.Windows.Forms.TextBox();
             this.lblCNPJFornecedor = new System.Windows.Forms.Label();
             this.gbEmpresa = new System.Windows.Forms.GroupBox();
@@ -155,6 +154,7 @@
             this.txtCNPJtransp = new System.Windows.Forms.TextBox();
             this.lblCNPJtransp = new System.Windows.Forms.Label();
             this.tabFatura = new System.Windows.Forms.TabPage();
+            this.lblNomeFornec = new System.Windows.Forms.Label();
             this.pnlRodape.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.tabNota.SuspendLayout();
@@ -242,9 +242,9 @@
             // 
             // gbFornecedor
             // 
+            this.gbFornecedor.Controls.Add(this.lblNomeFornec);
             this.gbFornecedor.Controls.Add(this.lblMsgFornec);
             this.gbFornecedor.Controls.Add(this.btnFornecedor);
-            this.gbFornecedor.Controls.Add(this.txtNomeFornecedor);
             this.gbFornecedor.Controls.Add(this.txt_cnpjFornec);
             this.gbFornecedor.Controls.Add(this.lblCNPJFornecedor);
             this.gbFornecedor.Location = new System.Drawing.Point(424, 6);
@@ -273,14 +273,6 @@
             this.btnFornecedor.Text = "+";
             this.btnFornecedor.UseVisualStyleBackColor = true;
             this.btnFornecedor.Click += new System.EventHandler(this.btnNovoFornecedor_Click);
-            // 
-            // txtNomeFornecedor
-            // 
-            this.txtNomeFornecedor.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(9, 67);
-            this.txtNomeFornecedor.Name = "txtNomeFornecedor";
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(460, 23);
-            this.txtNomeFornecedor.TabIndex = 2;
             // 
             // txt_cnpjFornec
             // 
@@ -1374,6 +1366,17 @@
             this.tabFatura.Text = "Fatura";
             this.tabFatura.UseVisualStyleBackColor = true;
             // 
+            // lblNomeFornec
+            // 
+            this.lblNomeFornec.AutoSize = true;
+            this.lblNomeFornec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeFornec.Location = new System.Drawing.Point(6, 70);
+            this.lblNomeFornec.Name = "lblNomeFornec";
+            this.lblNomeFornec.Size = new System.Drawing.Size(97, 15);
+            this.lblNomeFornec.TabIndex = 27;
+            this.lblNomeFornec.Text = "</Nome fornec>";
+            this.lblNomeFornec.Visible = false;
+            // 
             // formEstoqueEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1472,7 +1475,6 @@
         private System.Windows.Forms.ComboBox cbTipoNota;
         private System.Windows.Forms.GroupBox gbFornecedor;
         private System.Windows.Forms.TabPage tabFatura;
-        private System.Windows.Forms.TextBox txtNomeFornecedor;
         private System.Windows.Forms.TextBox txt_cnpjFornec;
         private System.Windows.Forms.Label lblCNPJFornecedor;
         private System.Windows.Forms.Label lblCNPJEmpresa;
@@ -1544,5 +1546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVLipi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAlqICMS;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAlqIPI;
+        private System.Windows.Forms.Label lblNomeFornec;
     }
 }
