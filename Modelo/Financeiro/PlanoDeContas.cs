@@ -11,5 +11,6 @@ namespace Modelo.Financeiro
         public string nome { get; set; }
         public bool entrada { get; set; }
         public bool saida { get; set; }
+        public string descricao { get; set; }
     }
 }

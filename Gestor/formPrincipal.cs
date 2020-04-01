@@ -154,5 +154,17 @@ namespace Gestor
             formConsultaPagar form = new formConsultaPagar();
             form.ShowDialog();
         }
+
+        private void mFinPagar_Click(object sender, EventArgs e)
+        {
+            formCadastroPagar form = new formCadastroPagar();
+            form.ShowDialog();
+        }
+
+        private void cadastroDeBancosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCadastroBanco form = new formCadastroBanco();
+            form.ShowDialog();
+        }
     }
 }
