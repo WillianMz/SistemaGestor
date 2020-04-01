@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPessoa = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -63,13 +64,17 @@
             this.lblDtCadastro = new System.Windows.Forms.Label();
             this.lblTipoPessoa = new System.Windows.Forms.Label();
             this.lblEmpresa = new System.Windows.Forms.Label();
-            this.txtPessoa = new System.Windows.Forms.TextBox();
+            this.lblPlanoDeContas = new System.Windows.Forms.Label();
+            this.dbPlanodeContas = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridParcelas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbPlanodeContas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblPlanoDeContas);
+            this.panel1.Controls.Add(this.dbPlanodeContas);
             this.panel1.Controls.Add(this.txtPessoa);
             this.panel1.Controls.Add(this.btnConsultar);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -107,8 +112,15 @@
             this.panel1.Controls.Add(this.lblEmpresa);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(823, 570);
+            this.panel1.Size = new System.Drawing.Size(823, 543);
             this.panel1.TabIndex = 0;
+            // 
+            // txtPessoa
+            // 
+            this.txtPessoa.Location = new System.Drawing.Point(153, 80);
+            this.txtPessoa.Name = "txtPessoa";
+            this.txtPessoa.Size = new System.Drawing.Size(586, 20);
+            this.txtPessoa.TabIndex = 39;
             // 
             // btnConsultar
             // 
@@ -148,7 +160,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(733, 537);
+            this.btnCancelar.Location = new System.Drawing.Point(733, 508);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 33;
@@ -159,7 +171,7 @@
             // 
             this.lblParcelas.AutoSize = true;
             this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParcelas.Location = new System.Drawing.Point(401, 112);
+            this.lblParcelas.Location = new System.Drawing.Point(394, 303);
             this.lblParcelas.Name = "lblParcelas";
             this.lblParcelas.Size = new System.Drawing.Size(70, 16);
             this.lblParcelas.TabIndex = 32;
@@ -169,9 +181,9 @@
             // 
             this.dbGridParcelas.BackgroundColor = System.Drawing.Color.White;
             this.dbGridParcelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbGridParcelas.Location = new System.Drawing.Point(397, 132);
+            this.dbGridParcelas.Location = new System.Drawing.Point(397, 322);
             this.dbGridParcelas.Name = "dbGridParcelas";
-            this.dbGridParcelas.Size = new System.Drawing.Size(411, 399);
+            this.dbGridParcelas.Size = new System.Drawing.Size(411, 158);
             this.dbGridParcelas.TabIndex = 31;
             // 
             // btnNovaPessoa
@@ -402,19 +414,31 @@
             this.lblEmpresa.TabIndex = 0;
             this.lblEmpresa.Text = "Empresa";
             // 
-            // txtPessoa
+            // lblPlanoDeContas
             // 
-            this.txtPessoa.Location = new System.Drawing.Point(153, 80);
-            this.txtPessoa.Name = "txtPessoa";
-            this.txtPessoa.Size = new System.Drawing.Size(586, 20);
-            this.txtPessoa.TabIndex = 39;
+            this.lblPlanoDeContas.AutoSize = true;
+            this.lblPlanoDeContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanoDeContas.Location = new System.Drawing.Point(394, 112);
+            this.lblPlanoDeContas.Name = "lblPlanoDeContas";
+            this.lblPlanoDeContas.Size = new System.Drawing.Size(122, 16);
+            this.lblPlanoDeContas.TabIndex = 41;
+            this.lblPlanoDeContas.Text = "Plano de Contas";
+            // 
+            // dbPlanodeContas
+            // 
+            this.dbPlanodeContas.BackgroundColor = System.Drawing.Color.White;
+            this.dbPlanodeContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbPlanodeContas.Location = new System.Drawing.Point(397, 131);
+            this.dbPlanodeContas.Name = "dbPlanodeContas";
+            this.dbPlanodeContas.Size = new System.Drawing.Size(411, 158);
+            this.dbPlanodeContas.TabIndex = 40;
             // 
             // formCadastroPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(847, 593);
+            this.ClientSize = new System.Drawing.Size(847, 572);
             this.Controls.Add(this.panel1);
             this.Name = "formCadastroPagar";
             this.ShowIcon = false;
@@ -423,6 +447,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridParcelas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbPlanodeContas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,5 +490,7 @@
         private System.Windows.Forms.TextBox textObservacao;
         private System.Windows.Forms.Label lblObs;
         private System.Windows.Forms.TextBox txtPessoa;
+        private System.Windows.Forms.Label lblPlanoDeContas;
+        private System.Windows.Forms.DataGridView dbPlanodeContas;
     }
 }
