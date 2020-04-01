@@ -40,16 +40,22 @@
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.txtConta = new System.Windows.Forms.TextBox();
             this.dbGridListaBanco = new System.Windows.Forms.DataGridView();
+            this.gridIdBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridCodBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridNomeBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridAgenciaBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridContaBanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckAtivo = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnMenuListar = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlRodape = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblMensagem = new System.Windows.Forms.Label();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dbGridListaBanco)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,10 +114,13 @@
             // 
             // txtNome
             // 
+            this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Location = new System.Drawing.Point(123, 53);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(451, 20);
-            this.txtNome.TabIndex = 9;
+            this.txtNome.TabIndex = 0;
+            this.txtNome.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyDown);
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNome_KeyPress);
             // 
             // txtCodBanco
             // 
@@ -119,32 +128,76 @@
             this.txtCodBanco.Location = new System.Drawing.Point(15, 103);
             this.txtCodBanco.Name = "txtCodBanco";
             this.txtCodBanco.Size = new System.Drawing.Size(116, 20);
-            this.txtCodBanco.TabIndex = 10;
+            this.txtCodBanco.TabIndex = 2;
             // 
             // txtAgencia
             // 
+            this.txtAgencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtAgencia.Enabled = false;
             this.txtAgencia.Location = new System.Drawing.Point(141, 103);
             this.txtAgencia.Name = "txtAgencia";
             this.txtAgencia.Size = new System.Drawing.Size(116, 20);
-            this.txtAgencia.TabIndex = 11;
+            this.txtAgencia.TabIndex = 3;
             // 
             // txtConta
             // 
+            this.txtConta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtConta.Enabled = false;
             this.txtConta.Location = new System.Drawing.Point(266, 103);
             this.txtConta.Name = "txtConta";
             this.txtConta.Size = new System.Drawing.Size(116, 20);
-            this.txtConta.TabIndex = 12;
+            this.txtConta.TabIndex = 4;
             // 
             // dbGridListaBanco
             // 
             this.dbGridListaBanco.BackgroundColor = System.Drawing.Color.White;
             this.dbGridListaBanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbGridListaBanco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridIdBanco,
+            this.gridCodBanco,
+            this.gridNomeBanco,
+            this.gridAgenciaBanco,
+            this.gridContaBanco});
             this.dbGridListaBanco.Location = new System.Drawing.Point(15, 136);
             this.dbGridListaBanco.Name = "dbGridListaBanco";
+            this.dbGridListaBanco.ReadOnly = true;
+            this.dbGridListaBanco.RowHeadersVisible = false;
             this.dbGridListaBanco.Size = new System.Drawing.Size(773, 330);
             this.dbGridListaBanco.TabIndex = 13;
+            // 
+            // gridIdBanco
+            // 
+            this.gridIdBanco.HeaderText = "ID";
+            this.gridIdBanco.Name = "gridIdBanco";
+            this.gridIdBanco.ReadOnly = true;
+            this.gridIdBanco.Width = 60;
+            // 
+            // gridCodBanco
+            // 
+            this.gridCodBanco.HeaderText = "Cod. Banco";
+            this.gridCodBanco.Name = "gridCodBanco";
+            this.gridCodBanco.ReadOnly = true;
+            // 
+            // gridNomeBanco
+            // 
+            this.gridNomeBanco.HeaderText = "Nome";
+            this.gridNomeBanco.Name = "gridNomeBanco";
+            this.gridNomeBanco.ReadOnly = true;
+            this.gridNomeBanco.Width = 350;
+            // 
+            // gridAgenciaBanco
+            // 
+            this.gridAgenciaBanco.HeaderText = "Agência";
+            this.gridAgenciaBanco.Name = "gridAgenciaBanco";
+            this.gridAgenciaBanco.ReadOnly = true;
+            this.gridAgenciaBanco.Width = 130;
+            // 
+            // gridContaBanco
+            // 
+            this.gridContaBanco.HeaderText = "Conta";
+            this.gridContaBanco.Name = "gridContaBanco";
+            this.gridContaBanco.ReadOnly = true;
+            this.gridContaBanco.Width = 130;
             // 
             // ckAtivo
             // 
@@ -160,11 +213,20 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnMenuListar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(798, 24);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btnMenuListar
+            // 
+            this.btnMenuListar.Name = "btnMenuListar";
+            this.btnMenuListar.Size = new System.Drawing.Size(47, 20);
+            this.btnMenuListar.Text = "Listar";
+            this.btnMenuListar.Click += new System.EventHandler(this.btnMenuListar_Click);
             // 
             // pnlRodape
             // 
@@ -172,13 +234,29 @@
             this.pnlRodape.Controls.Add(this.btnEditar);
             this.pnlRodape.Controls.Add(this.btnSalvar);
             this.pnlRodape.Controls.Add(this.btnCancelar);
-            this.pnlRodape.Controls.Add(this.lblMensagem);
+            this.pnlRodape.Controls.Add(this.lblResultado);
             this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlRodape.Location = new System.Drawing.Point(0, 500);
             this.pnlRodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRodape.Name = "pnlRodape";
             this.pnlRodape.Size = new System.Drawing.Size(798, 47);
             this.pnlRodape.TabIndex = 57;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNovo.FlatAppearance.BorderSize = 0;
+            this.btnNovo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
+            this.btnNovo.Location = new System.Drawing.Point(380, 3);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(100, 40);
+            this.btnNovo.TabIndex = 4;
+            this.btnNovo.Text = "&Novo";
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click_1);
             // 
             // btnEditar
             // 
@@ -206,7 +284,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(587, 3);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 40);
-            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "&Salvar";
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -225,46 +303,17 @@
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // lblMensagem
+            // lblResultado
             // 
-            this.lblMensagem.AutoSize = true;
-            this.lblMensagem.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(13, 14);
-            this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(24, 15);
-            this.lblMensagem.TabIndex = 2;
-            this.lblMensagem.Text = "</>";
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.Color.Transparent;
-            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNovo.FlatAppearance.BorderSize = 0;
-            this.btnNovo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
-            this.btnNovo.Location = new System.Drawing.Point(380, 3);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(100, 40);
-            this.btnNovo.TabIndex = 4;
-            this.btnNovo.Text = "&Novo";
-            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click_1);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPesquisar.FlatAppearance.BorderSize = 0;
-            this.btnPesquisar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPesquisar.Location = new System.Drawing.Point(587, 53);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(72, 20);
-            this.btnPesquisar.TabIndex = 5;
-            this.btnPesquisar.Text = "&Pesquisar";
-            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Calibri Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.Location = new System.Drawing.Point(13, 14);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(24, 15);
+            this.lblResultado.TabIndex = 2;
+            this.lblResultado.Text = "</>";
             // 
             // formCadastroBanco
             // 
@@ -272,7 +321,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 547);
-            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.pnlRodape);
             this.Controls.Add(this.ckAtivo);
             this.Controls.Add(this.dbGridListaBanco);
@@ -295,6 +343,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Banco";
             ((System.ComponentModel.ISupportInitialize)(this.dbGridListaBanco)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.pnlRodape.ResumeLayout(false);
             this.pnlRodape.PerformLayout();
             this.ResumeLayout(false);
@@ -321,7 +371,12 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label lblMensagem;
-        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridIdBanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridCodBanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridNomeBanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridAgenciaBanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gridContaBanco;
+        private System.Windows.Forms.ToolStripMenuItem btnMenuListar;
     }
 }

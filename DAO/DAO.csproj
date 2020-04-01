@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
-    <Compile Include="DAO_Banco.cs" />
     <Compile Include="DAO_Endereco.cs" />
     <Compile Include="DAO_Estoque.cs" />
     <Compile Include="DAO_Financeiro.cs" />
