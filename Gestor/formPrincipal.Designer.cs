@@ -90,6 +90,9 @@
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.mFinConsultas = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFiscal = new System.Windows.Forms.ToolStripMenuItem();
             this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arquivosFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,25 +105,9 @@
             this.testesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StatusPanel = new System.Windows.Forms.Panel();
             this.lblDesenvolvedor = new System.Windows.Forms.Label();
-            this.barraDeAtalhos = new System.Windows.Forms.ToolStrip();
-            this.tsbClientes = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.tsbOrcamentoServico = new System.Windows.Forms.ToolStripButton();
-            this.tsbVendas = new System.Windows.Forms.ToolStripButton();
-            this.stbNotaCompra = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbProdutos = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator26 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.img_Empresa = new System.Windows.Forms.PictureBox();    
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
+            this.img_Empresa = new System.Windows.Forms.PictureBox();
             this.menuPrincipal.SuspendLayout();
             this.StatusPanel.SuspendLayout();
-            this.barraDeAtalhos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,43 +145,43 @@
             // mArq_empresa
             // 
             this.mArq_empresa.Name = "mArq_empresa";
-            this.mArq_empresa.Size = new System.Drawing.Size(180, 22);
+            this.mArq_empresa.Size = new System.Drawing.Size(146, 22);
             this.mArq_empresa.Text = "Empresa";
             // 
             // mArq_config
             // 
             this.mArq_config.Name = "mArq_config";
-            this.mArq_config.Size = new System.Drawing.Size(180, 22);
+            this.mArq_config.Size = new System.Drawing.Size(146, 22);
             this.mArq_config.Text = "Configuração";
             this.mArq_config.Click += new System.EventHandler(this.mArq_config_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(143, 6);
             // 
             // mArq_users
             // 
             this.mArq_users.Name = "mArq_users";
-            this.mArq_users.Size = new System.Drawing.Size(180, 22);
+            this.mArq_users.Size = new System.Drawing.Size(146, 22);
             this.mArq_users.Text = "Usuários";
             // 
             // logoffToolStripMenuItem
             // 
             this.logoffToolStripMenuItem.Name = "logoffToolStripMenuItem";
-            this.logoffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoffToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.logoffToolStripMenuItem.Text = "Logoff";
             this.logoffToolStripMenuItem.Click += new System.EventHandler(this.logoffToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
             // 
             // mArq_sair
             // 
             this.mArq_sair.Name = "mArq_sair";
-            this.mArq_sair.Size = new System.Drawing.Size(180, 22);
+            this.mArq_sair.Size = new System.Drawing.Size(146, 22);
             this.mArq_sair.Text = "Sair";
             this.mArq_sair.Click += new System.EventHandler(this.mArq_sair_Click);
             // 
@@ -568,12 +555,28 @@
             // consultaReceberToolStripMenuItem
             // 
             this.consultaReceberToolStripMenuItem.Name = "consultaReceberToolStripMenuItem";
-
-            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-
             this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-
             this.consultaReceberToolStripMenuItem.Text = "Consulta Receber";
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(163, 6);
+            // 
+            // parametrosToolStripMenuItem
+            // 
+            this.parametrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroDeBancosToolStripMenuItem});
+            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.parametrosToolStripMenuItem.Text = "Parametros";
+            // 
+            // cadastroDeBancosToolStripMenuItem
+            // 
+            this.cadastroDeBancosToolStripMenuItem.Name = "cadastroDeBancosToolStripMenuItem";
+            this.cadastroDeBancosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.cadastroDeBancosToolStripMenuItem.Text = "Cadastro de Bancos";
+            this.cadastroDeBancosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeBancosToolStripMenuItem_Click);
             // 
             // menuFiscal
             // 
@@ -665,129 +668,6 @@
             this.lblDesenvolvedor.TabIndex = 0;
             this.lblDesenvolvedor.Text = "Willian";
             // 
-            // barraDeAtalhos
-            // 
-            this.barraDeAtalhos.AutoSize = false;
-            this.barraDeAtalhos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("barraDeAtalhos.BackgroundImage")));
-            this.barraDeAtalhos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbClientes,
-            this.toolStripButton5,
-            this.tsbOrcamentoServico,
-            this.tsbVendas,
-            this.stbNotaCompra,
-            this.toolStripSeparator24,
-            this.tsbProdutos,
-            this.toolStripButton4,
-            this.toolStripSeparator26,
-            this.toolStripButton7});
-            this.barraDeAtalhos.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.barraDeAtalhos.Location = new System.Drawing.Point(0, 24);
-            this.barraDeAtalhos.Name = "barraDeAtalhos";
-            this.barraDeAtalhos.Size = new System.Drawing.Size(892, 55);
-            this.barraDeAtalhos.TabIndex = 12;
-            this.barraDeAtalhos.Text = "toolStrip1";
-            // 
-            // tsbClientes
-            // 
-            this.tsbClientes.AutoSize = false;
-            this.tsbClientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbClientes.Image = ((System.Drawing.Image)(resources.GetObject("tsbClientes.Image")));
-            this.tsbClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbClientes.Name = "tsbClientes";
-            this.tsbClientes.Size = new System.Drawing.Size(52, 55);
-            this.tsbClientes.Text = "toolStripButton1";
-            this.tsbClientes.ToolTipText = "Cliente";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(52, 55);
-            this.toolStripButton5.Text = "toolStripButton5";
-            this.toolStripButton5.ToolTipText = "Orçamento Venda";
-            // 
-            // tsbOrcamentoServico
-            // 
-            this.tsbOrcamentoServico.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbOrcamentoServico.Image = ((System.Drawing.Image)(resources.GetObject("tsbOrcamentoServico.Image")));
-            this.tsbOrcamentoServico.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbOrcamentoServico.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbOrcamentoServico.Name = "tsbOrcamentoServico";
-            this.tsbOrcamentoServico.Size = new System.Drawing.Size(52, 52);
-            this.tsbOrcamentoServico.Text = "Orçamento Serviço";
-            // 
-            // tsbVendas
-            // 
-            this.tsbVendas.AutoSize = false;
-            this.tsbVendas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbVendas.Image = ((System.Drawing.Image)(resources.GetObject("tsbVendas.Image")));
-            this.tsbVendas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbVendas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbVendas.Name = "tsbVendas";
-            this.tsbVendas.Size = new System.Drawing.Size(52, 55);
-            this.tsbVendas.Text = "toolStripButton2";
-            this.tsbVendas.ToolTipText = "Venda";
-            // 
-            // stbNotaCompra
-            // 
-            this.stbNotaCompra.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.stbNotaCompra.Image = ((System.Drawing.Image)(resources.GetObject("stbNotaCompra.Image")));
-            this.stbNotaCompra.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.stbNotaCompra.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.stbNotaCompra.Name = "stbNotaCompra";
-            this.stbNotaCompra.Size = new System.Drawing.Size(52, 52);
-            this.stbNotaCompra.Text = "Compra";
-            // 
-            // toolStripSeparator24
-            // 
-            this.toolStripSeparator24.Name = "toolStripSeparator24";
-            this.toolStripSeparator24.Size = new System.Drawing.Size(6, 55);
-            // 
-            // tsbProdutos
-            // 
-            this.tsbProdutos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProdutos.Image = ((System.Drawing.Image)(resources.GetObject("tsbProdutos.Image")));
-            this.tsbProdutos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbProdutos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbProdutos.Name = "tsbProdutos";
-            this.tsbProdutos.Size = new System.Drawing.Size(52, 52);
-            this.tsbProdutos.Text = "toolStripButton3";
-            this.tsbProdutos.ToolTipText = "Produto";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(52, 55);
-            this.toolStripButton4.Text = "toolStripButton4";
-            this.toolStripButton4.ToolTipText = "Estoque";
-            // 
-            // toolStripSeparator26
-            // 
-            this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(6, 55);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(52, 52);
-            this.toolStripButton7.Text = "toolStripButton7";
-            this.toolStripButton7.ToolTipText = "Sair do Sistema";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
             // img_Empresa
             // 
             this.img_Empresa.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -800,28 +680,6 @@
             this.img_Empresa.TabIndex = 427;
             this.img_Empresa.TabStop = false;
             // 
-
-            // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(177, 6);
-            // 
-            // parametrosToolStripMenuItem
-            // 
-            this.parametrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDeBancosToolStripMenuItem});
-            this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.parametrosToolStripMenuItem.Text = "Parametros";
-            // 
-            // cadastroDeBancosToolStripMenuItem
-            // 
-            this.cadastroDeBancosToolStripMenuItem.Name = "cadastroDeBancosToolStripMenuItem";
-            this.cadastroDeBancosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastroDeBancosToolStripMenuItem.Text = "Cadastro de Bancos";
-            this.cadastroDeBancosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeBancosToolStripMenuItem_Click);
-            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -830,7 +688,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(892, 456);
             this.Controls.Add(this.img_Empresa);
-            this.Controls.Add(this.barraDeAtalhos);
             this.Controls.Add(this.StatusPanel);
             this.Controls.Add(this.menuPrincipal);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -845,8 +702,6 @@
             this.menuPrincipal.PerformLayout();
             this.StatusPanel.ResumeLayout(false);
             this.StatusPanel.PerformLayout();
-            this.barraDeAtalhos.ResumeLayout(false);
-            this.barraDeAtalhos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -864,17 +719,6 @@
         public System.Windows.Forms.Panel StatusPanel;
         private System.Windows.Forms.Label lblDesenvolvedor;
         private System.Windows.Forms.ToolStripMenuItem testesToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip barraDeAtalhos;
-        private System.Windows.Forms.ToolStripButton tsbClientes;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton tsbOrcamentoServico;
-        private System.Windows.Forms.ToolStripButton tsbVendas;
-        private System.Windows.Forms.ToolStripButton stbNotaCompra;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
-        private System.Windows.Forms.ToolStripButton tsbProdutos;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator26;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripMenuItem menuFiscal;
         internal System.Windows.Forms.PictureBox img_Empresa;
         private System.Windows.Forms.ToolStripMenuItem logoffToolStripMenuItem;
