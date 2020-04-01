@@ -37,7 +37,6 @@
             this.gbFornecedor = new System.Windows.Forms.GroupBox();
             this.lblMsgFornec = new System.Windows.Forms.Label();
             this.btnFornecedor = new System.Windows.Forms.Button();
-            this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
             this.txt_cnpjFornec = new System.Windows.Forms.TextBox();
             this.lblCNPJFornecedor = new System.Windows.Forms.Label();
             this.gbEmpresa = new System.Windows.Forms.GroupBox();
@@ -155,6 +154,7 @@
             this.txtCNPJtransp = new System.Windows.Forms.TextBox();
             this.lblCNPJtransp = new System.Windows.Forms.Label();
             this.tabFatura = new System.Windows.Forms.TabPage();
+            this.lblNomeFornec = new System.Windows.Forms.Label();
             this.pnlRodape.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.tabNota.SuspendLayout();
@@ -198,9 +198,9 @@
             this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTitulo.Location = new System.Drawing.Point(7, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(238, 23);
+            this.lblTitulo.Size = new System.Drawing.Size(114, 23);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Nova Entrada de Mercadorias";
+            this.lblTitulo.Text = "Nova Entrada";
             // 
             // pnlTitulo
             // 
@@ -213,8 +213,8 @@
             // 
             // tabNota
             // 
-            this.tabNota.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabNota.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabNota.Controls.Add(this.tabPrincipal);
             this.tabNota.Controls.Add(this.tabProdutos);
@@ -242,9 +242,9 @@
             // 
             // gbFornecedor
             // 
+            this.gbFornecedor.Controls.Add(this.lblNomeFornec);
             this.gbFornecedor.Controls.Add(this.lblMsgFornec);
             this.gbFornecedor.Controls.Add(this.btnFornecedor);
-            this.gbFornecedor.Controls.Add(this.txtNomeFornecedor);
             this.gbFornecedor.Controls.Add(this.txt_cnpjFornec);
             this.gbFornecedor.Controls.Add(this.lblCNPJFornecedor);
             this.gbFornecedor.Location = new System.Drawing.Point(424, 6);
@@ -262,6 +262,7 @@
             this.lblMsgFornec.Size = new System.Drawing.Size(83, 15);
             this.lblMsgFornec.TabIndex = 26;
             this.lblMsgFornec.Text = "</Mensagem>";
+            this.lblMsgFornec.Visible = false;
             // 
             // btnFornecedor
             // 
@@ -272,14 +273,6 @@
             this.btnFornecedor.Text = "+";
             this.btnFornecedor.UseVisualStyleBackColor = true;
             this.btnFornecedor.Click += new System.EventHandler(this.btnNovoFornecedor_Click);
-            // 
-            // txtNomeFornecedor
-            // 
-            this.txtNomeFornecedor.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(9, 67);
-            this.txtNomeFornecedor.Name = "txtNomeFornecedor";
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(460, 23);
-            this.txtNomeFornecedor.TabIndex = 2;
             // 
             // txt_cnpjFornec
             // 
@@ -330,6 +323,7 @@
             this.lblNomeEmpresa.Size = new System.Drawing.Size(110, 15);
             this.lblNomeEmpresa.TabIndex = 23;
             this.lblNomeEmpresa.Text = "</Nome empresa>";
+            this.lblNomeEmpresa.Visible = false;
             // 
             // lblMsgEmpresa
             // 
@@ -339,6 +333,7 @@
             this.lblMsgEmpresa.Size = new System.Drawing.Size(83, 15);
             this.lblMsgEmpresa.TabIndex = 22;
             this.lblMsgEmpresa.Text = "</Mensagem>";
+            this.lblMsgEmpresa.Visible = false;
             // 
             // lblCNPJEmpresa
             // 
@@ -351,7 +346,7 @@
             // 
             // gbImpostoNota
             // 
-            this.gbImpostoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbImpostoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbImpostoNota.Controls.Add(this.lblTotalNota);
             this.gbImpostoNota.Controls.Add(this.txtValorTotal);
@@ -582,7 +577,7 @@
             // 
             // gbCabecalhoNota
             // 
-            this.gbCabecalhoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbCabecalhoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbCabecalhoNota.Controls.Add(this.lblTpNota);
             this.gbCabecalhoNota.Controls.Add(this.cbTipoNota);
@@ -624,7 +619,7 @@
             this.cbTipoNota.FormattingEnabled = true;
             this.cbTipoNota.Location = new System.Drawing.Point(89, 16);
             this.cbTipoNota.Name = "cbTipoNota";
-            this.cbTipoNota.Size = new System.Drawing.Size(153, 23);
+            this.cbTipoNota.Size = new System.Drawing.Size(187, 23);
             this.cbTipoNota.TabIndex = 0;
             this.cbTipoNota.Text = "Eletrônica";
             // 
@@ -761,7 +756,7 @@
             // 
             this.lblArquivoXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblArquivoXML.AutoSize = true;
-            this.lblArquivoXML.Location = new System.Drawing.Point(256, 19);
+            this.lblArquivoXML.Location = new System.Drawing.Point(282, 18);
             this.lblArquivoXML.Name = "lblArquivoXML";
             this.lblArquivoXML.Size = new System.Drawing.Size(76, 15);
             this.lblArquivoXML.TabIndex = 1;
@@ -770,9 +765,9 @@
             // txtArquivoXML
             // 
             this.txtArquivoXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtArquivoXML.Location = new System.Drawing.Point(338, 15);
+            this.txtArquivoXML.Location = new System.Drawing.Point(364, 15);
             this.txtArquivoXML.Name = "txtArquivoXML";
-            this.txtArquivoXML.Size = new System.Drawing.Size(516, 23);
+            this.txtArquivoXML.Size = new System.Drawing.Size(490, 23);
             this.txtArquivoXML.TabIndex = 0;
             // 
             // tabProdutos
@@ -795,7 +790,7 @@
             this.btnEditarCadProduto.Location = new System.Drawing.Point(789, 355);
             this.btnEditarCadProduto.Name = "btnEditarCadProduto";
             this.btnEditarCadProduto.Size = new System.Drawing.Size(111, 23);
-            this.btnEditarCadProduto.TabIndex = 51;
+            this.btnEditarCadProduto.TabIndex = 3;
             this.btnEditarCadProduto.Text = "Editar Cadastro";
             this.btnEditarCadProduto.UseVisualStyleBackColor = true;
             // 
@@ -805,7 +800,7 @@
             this.btnRemoverItem.Location = new System.Drawing.Point(693, 355);
             this.btnRemoverItem.Name = "btnRemoverItem";
             this.btnRemoverItem.Size = new System.Drawing.Size(90, 23);
-            this.btnRemoverItem.TabIndex = 50;
+            this.btnRemoverItem.TabIndex = 2;
             this.btnRemoverItem.Text = "Remover Item";
             this.btnRemoverItem.UseVisualStyleBackColor = true;
             // 
@@ -814,8 +809,8 @@
             this.dgvProdutosItens.AllowUserToAddRows = false;
             this.dgvProdutosItens.AllowUserToDeleteRows = false;
             this.dgvProdutosItens.AllowUserToResizeRows = false;
-            this.dgvProdutosItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProdutosItens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutosItens.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutosItens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -846,7 +841,7 @@
             this.dgvProdutosItens.RowHeadersVisible = false;
             this.dgvProdutosItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutosItens.Size = new System.Drawing.Size(894, 197);
-            this.dgvProdutosItens.TabIndex = 28;
+            this.dgvProdutosItens.TabIndex = 1;
             // 
             // colItem
             // 
@@ -951,7 +946,7 @@
             // 
             // gbItem
             // 
-            this.gbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbItem.Controls.Add(this.txtProdutoQtdEntrada);
             this.gbItem.Controls.Add(this.lblProdQtdEntrada);
@@ -1002,7 +997,7 @@
             this.txtProdutoQtdEntrada.Name = "txtProdutoQtdEntrada";
             this.txtProdutoQtdEntrada.ReadOnly = true;
             this.txtProdutoQtdEntrada.Size = new System.Drawing.Size(73, 23);
-            this.txtProdutoQtdEntrada.TabIndex = 47;
+            this.txtProdutoQtdEntrada.TabIndex = 8;
             this.txtProdutoQtdEntrada.Text = "2";
             // 
             // lblProdQtdEntrada
@@ -1019,7 +1014,7 @@
             this.txtProdutoQTD.Location = new System.Drawing.Point(238, 83);
             this.txtProdutoQTD.Name = "txtProdutoQTD";
             this.txtProdutoQTD.Size = new System.Drawing.Size(50, 23);
-            this.txtProdutoQTD.TabIndex = 45;
+            this.txtProdutoQTD.TabIndex = 7;
             this.txtProdutoQTD.Text = "2";
             // 
             // lblProdQtdUN
@@ -1036,7 +1031,7 @@
             this.txtProdutoQtdEmb.Location = new System.Drawing.Point(171, 83);
             this.txtProdutoQtdEmb.Name = "txtProdutoQtdEmb";
             this.txtProdutoQtdEmb.Size = new System.Drawing.Size(61, 23);
-            this.txtProdutoQtdEmb.TabIndex = 43;
+            this.txtProdutoQtdEmb.TabIndex = 6;
             // 
             // lblProdQtdEmb
             // 
@@ -1062,7 +1057,7 @@
             this.cboxProdutoUN.Location = new System.Drawing.Point(111, 83);
             this.cboxProdutoUN.Name = "cboxProdutoUN";
             this.cboxProdutoUN.Size = new System.Drawing.Size(54, 23);
-            this.cboxProdutoUN.TabIndex = 40;
+            this.cboxProdutoUN.TabIndex = 5;
             this.cboxProdutoUN.Text = "CX";
             // 
             // lblProdutoCod
@@ -1079,14 +1074,14 @@
             this.txtProdutoCod.Location = new System.Drawing.Point(6, 37);
             this.txtProdutoCod.Name = "txtProdutoCod";
             this.txtProdutoCod.Size = new System.Drawing.Size(75, 23);
-            this.txtProdutoCod.TabIndex = 32;
+            this.txtProdutoCod.TabIndex = 0;
             // 
             // txtProdutoDesconto
             // 
             this.txtProdutoDesconto.Location = new System.Drawing.Point(449, 83);
             this.txtProdutoDesconto.Name = "txtProdutoDesconto";
             this.txtProdutoDesconto.Size = new System.Drawing.Size(63, 23);
-            this.txtProdutoDesconto.TabIndex = 31;
+            this.txtProdutoDesconto.TabIndex = 10;
             // 
             // lblProdDesc
             // 
@@ -1103,7 +1098,7 @@
             this.btnAdicionarItem.Location = new System.Drawing.Point(798, 111);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
             this.btnAdicionarItem.Size = new System.Drawing.Size(90, 23);
-            this.btnAdicionarItem.TabIndex = 29;
+            this.btnAdicionarItem.TabIndex = 17;
             this.btnAdicionarItem.Text = "Adicionar";
             this.btnAdicionarItem.UseVisualStyleBackColor = true;
             this.btnAdicionarItem.Click += new System.EventHandler(this.btnAdicionarItem_Click);
@@ -1113,7 +1108,7 @@
             this.txtProdutoAlqIPI.Location = new System.Drawing.Point(831, 83);
             this.txtProdutoAlqIPI.Name = "txtProdutoAlqIPI";
             this.txtProdutoAlqIPI.Size = new System.Drawing.Size(57, 23);
-            this.txtProdutoAlqIPI.TabIndex = 28;
+            this.txtProdutoAlqIPI.TabIndex = 16;
             // 
             // lblProdAlqIPI
             // 
@@ -1129,7 +1124,7 @@
             this.btnBuscarProduto.Location = new System.Drawing.Point(537, 37);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(26, 23);
-            this.btnBuscarProduto.TabIndex = 24;
+            this.btnBuscarProduto.TabIndex = 2;
             this.btnBuscarProduto.Text = "+";
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
             this.btnBuscarProduto.Click += new System.EventHandler(this.btnProduto_Click);
@@ -1139,7 +1134,7 @@
             this.txtProdutoAlqICMS.Location = new System.Drawing.Point(768, 83);
             this.txtProdutoAlqICMS.Name = "txtProdutoAlqICMS";
             this.txtProdutoAlqICMS.Size = new System.Drawing.Size(57, 23);
-            this.txtProdutoAlqICMS.TabIndex = 23;
+            this.txtProdutoAlqICMS.TabIndex = 15;
             // 
             // lblProdAlqICMS
             // 
@@ -1155,7 +1150,7 @@
             this.txtProdutoVL_IPI.Location = new System.Drawing.Point(711, 83);
             this.txtProdutoVL_IPI.Name = "txtProdutoVL_IPI";
             this.txtProdutoVL_IPI.Size = new System.Drawing.Size(51, 23);
-            this.txtProdutoVL_IPI.TabIndex = 21;
+            this.txtProdutoVL_IPI.TabIndex = 14;
             // 
             // lblProdVl_IPI
             // 
@@ -1180,7 +1175,7 @@
             this.txtProdutoVL_ICMS.Location = new System.Drawing.Point(656, 83);
             this.txtProdutoVL_ICMS.Name = "txtProdutoVL_ICMS";
             this.txtProdutoVL_ICMS.Size = new System.Drawing.Size(49, 23);
-            this.txtProdutoVL_ICMS.TabIndex = 18;
+            this.txtProdutoVL_ICMS.TabIndex = 13;
             // 
             // lblProdVl_ICMS
             // 
@@ -1196,7 +1191,7 @@
             this.txtProdutoBC_ICMS.Location = new System.Drawing.Point(595, 83);
             this.txtProdutoBC_ICMS.Name = "txtProdutoBC_ICMS";
             this.txtProdutoBC_ICMS.Size = new System.Drawing.Size(55, 23);
-            this.txtProdutoBC_ICMS.TabIndex = 16;
+            this.txtProdutoBC_ICMS.TabIndex = 12;
             // 
             // lblProdBC_ICMS
             // 
@@ -1212,7 +1207,7 @@
             this.txtProdutoCFOP.Location = new System.Drawing.Point(56, 83);
             this.txtProdutoCFOP.Name = "txtProdutoCFOP";
             this.txtProdutoCFOP.Size = new System.Drawing.Size(49, 23);
-            this.txtProdutoCFOP.TabIndex = 14;
+            this.txtProdutoCFOP.TabIndex = 4;
             // 
             // lblProdCFOP
             // 
@@ -1228,7 +1223,7 @@
             this.txtProdutoCST.Location = new System.Drawing.Point(6, 83);
             this.txtProdutoCST.Name = "txtProdutoCST";
             this.txtProdutoCST.Size = new System.Drawing.Size(44, 23);
-            this.txtProdutoCST.TabIndex = 12;
+            this.txtProdutoCST.TabIndex = 3;
             // 
             // lblProdCST
             // 
@@ -1252,7 +1247,7 @@
             this.txtProdutoValorUN.Location = new System.Drawing.Point(373, 83);
             this.txtProdutoValorUN.Name = "txtProdutoValorUN";
             this.txtProdutoValorUN.Size = new System.Drawing.Size(70, 23);
-            this.txtProdutoValorUN.TabIndex = 7;
+            this.txtProdutoValorUN.TabIndex = 9;
             // 
             // lblProdVlUn
             // 
@@ -1268,7 +1263,7 @@
             this.txtProdutoValorTotal.Location = new System.Drawing.Point(518, 83);
             this.txtProdutoValorTotal.Name = "txtProdutoValorTotal";
             this.txtProdutoValorTotal.Size = new System.Drawing.Size(71, 23);
-            this.txtProdutoValorTotal.TabIndex = 5;
+            this.txtProdutoValorTotal.TabIndex = 11;
             // 
             // lblProdVlTotal
             // 
@@ -1371,6 +1366,17 @@
             this.tabFatura.Text = "Fatura";
             this.tabFatura.UseVisualStyleBackColor = true;
             // 
+            // lblNomeFornec
+            // 
+            this.lblNomeFornec.AutoSize = true;
+            this.lblNomeFornec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeFornec.Location = new System.Drawing.Point(6, 70);
+            this.lblNomeFornec.Name = "lblNomeFornec";
+            this.lblNomeFornec.Size = new System.Drawing.Size(97, 15);
+            this.lblNomeFornec.TabIndex = 27;
+            this.lblNomeFornec.Text = "</Nome fornec>";
+            this.lblNomeFornec.Visible = false;
+            // 
             // formEstoqueEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1469,7 +1475,6 @@
         private System.Windows.Forms.ComboBox cbTipoNota;
         private System.Windows.Forms.GroupBox gbFornecedor;
         private System.Windows.Forms.TabPage tabFatura;
-        private System.Windows.Forms.TextBox txtNomeFornecedor;
         private System.Windows.Forms.TextBox txt_cnpjFornec;
         private System.Windows.Forms.Label lblCNPJFornecedor;
         private System.Windows.Forms.Label lblCNPJEmpresa;
@@ -1541,5 +1546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colVLipi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAlqICMS;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAlqIPI;
+        private System.Windows.Forms.Label lblNomeFornec;
     }
 }

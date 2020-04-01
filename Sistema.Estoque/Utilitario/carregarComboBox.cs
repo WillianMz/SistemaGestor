@@ -18,7 +18,6 @@ namespace Sistema.Estoque.Utilitario
             cb.Items.Add("Descrição");
             cb.Items.Add("Marca");
             cb.Items.Add("Fabricante");
-            cb.Items.Add("Desativados");
         }
 
         public static void tipoProduto(ComboBox cb)
