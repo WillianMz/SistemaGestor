@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controles\BLL_Empresa.cs" />
     <Compile Include="Controles\BLL_Pessoa.cs" />
     <Compile Include="Interfaces\formConsultaPessoa.cs">
       <SubType>Form</SubType>

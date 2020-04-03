@@ -121,6 +121,10 @@
       <Project>{DEDCF923-D138-448C-B991-92A586ACED48}</Project>
       <Name>Sistema.Pessoas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sistema.Utilitario\Sistema.Utilitario.csproj">
+      <Project>{3BCB78CB-B078-4380-BDE0-19CC5D6882BF}</Project>
+      <Name>Sistema.Utilitario</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Util\Util.csproj">
       <Project>{748cae26-64b3-405c-a135-0bf1ed44bac2}</Project>
       <Name>Util</Name>
