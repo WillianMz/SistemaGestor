@@ -45,13 +45,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBDServer = new System.Windows.Forms.TextBox();
             this.lblServidor = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.lblMensagem = new System.Windows.Forms.Label();
+            this.dgvDatabases = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colServidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPorta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.tabConfig.SuspendLayout();
             this.tabDatabase.SuspendLayout();
             this.pnlRodape.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabases)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -61,7 +69,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(656, 49);
+            this.pnlTitulo.Size = new System.Drawing.Size(900, 49);
             this.pnlTitulo.TabIndex = 6;
             // 
             // lblTitulo
@@ -81,15 +89,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabConfig.Controls.Add(this.tabDatabase);
-            this.tabConfig.Controls.Add(this.tabPage2);
             this.tabConfig.Location = new System.Drawing.Point(12, 56);
             this.tabConfig.Name = "tabConfig";
             this.tabConfig.SelectedIndex = 0;
-            this.tabConfig.Size = new System.Drawing.Size(632, 301);
+            this.tabConfig.Size = new System.Drawing.Size(876, 401);
             this.tabConfig.TabIndex = 7;
             // 
             // tabDatabase
             // 
+            this.tabDatabase.Controls.Add(this.dgvDatabases);
             this.tabDatabase.Controls.Add(this.btnAlterar);
             this.tabDatabase.Controls.Add(this.btnSalvar);
             this.tabDatabase.Controls.Add(this.txtBDSenha);
@@ -105,7 +113,7 @@
             this.tabDatabase.Location = new System.Drawing.Point(4, 27);
             this.tabDatabase.Name = "tabDatabase";
             this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDatabase.Size = new System.Drawing.Size(624, 270);
+            this.tabDatabase.Size = new System.Drawing.Size(868, 370);
             this.tabDatabase.TabIndex = 0;
             this.tabDatabase.Text = "Banco de dados";
             this.tabDatabase.UseVisualStyleBackColor = true;
@@ -117,7 +125,7 @@
             this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAlterar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.Location = new System.Drawing.Point(9, 224);
+            this.btnAlterar.Location = new System.Drawing.Point(6, 324);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 40);
             this.btnAlterar.TabIndex = 13;
@@ -133,7 +141,7 @@
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(115, 224);
+            this.btnSalvar.Location = new System.Drawing.Point(112, 324);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 40);
             this.btnSalvar.TabIndex = 10;
@@ -144,7 +152,7 @@
             // 
             // txtBDSenha
             // 
-            this.txtBDSenha.Location = new System.Drawing.Point(228, 173);
+            this.txtBDSenha.Location = new System.Drawing.Point(529, 34);
             this.txtBDSenha.Name = "txtBDSenha";
             this.txtBDSenha.PasswordChar = '*';
             this.txtBDSenha.Size = new System.Drawing.Size(213, 26);
@@ -153,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 152);
+            this.label5.Location = new System.Drawing.Point(526, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 18);
             this.label5.TabIndex = 8;
@@ -161,15 +169,15 @@
             // 
             // txtBDUser
             // 
-            this.txtBDUser.Location = new System.Drawing.Point(9, 173);
+            this.txtBDUser.Location = new System.Drawing.Point(399, 34);
             this.txtBDUser.Name = "txtBDUser";
-            this.txtBDUser.Size = new System.Drawing.Size(213, 26);
+            this.txtBDUser.Size = new System.Drawing.Size(124, 26);
             this.txtBDUser.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 152);
+            this.label4.Location = new System.Drawing.Point(396, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 18);
             this.label4.TabIndex = 6;
@@ -177,15 +185,15 @@
             // 
             // txtBDBanco
             // 
-            this.txtBDBanco.Location = new System.Drawing.Point(9, 121);
+            this.txtBDBanco.Location = new System.Drawing.Point(255, 34);
             this.txtBDBanco.Name = "txtBDBanco";
-            this.txtBDBanco.Size = new System.Drawing.Size(261, 26);
+            this.txtBDBanco.Size = new System.Drawing.Size(138, 26);
             this.txtBDBanco.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 100);
+            this.label3.Location = new System.Drawing.Point(252, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 18);
             this.label3.TabIndex = 4;
@@ -193,7 +201,7 @@
             // 
             // txtBDPort
             // 
-            this.txtBDPort.Location = new System.Drawing.Point(276, 69);
+            this.txtBDPort.Location = new System.Drawing.Point(149, 34);
             this.txtBDPort.Name = "txtBDPort";
             this.txtBDPort.Size = new System.Drawing.Size(100, 26);
             this.txtBDPort.TabIndex = 3;
@@ -201,7 +209,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(273, 48);
+            this.label2.Location = new System.Drawing.Point(146, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 18);
             this.label2.TabIndex = 2;
@@ -209,38 +217,28 @@
             // 
             // txtBDServer
             // 
-            this.txtBDServer.Location = new System.Drawing.Point(9, 69);
+            this.txtBDServer.Location = new System.Drawing.Point(9, 34);
             this.txtBDServer.Name = "txtBDServer";
-            this.txtBDServer.Size = new System.Drawing.Size(261, 26);
+            this.txtBDServer.Size = new System.Drawing.Size(134, 26);
             this.txtBDServer.TabIndex = 1;
             // 
             // lblServidor
             // 
             this.lblServidor.AutoSize = true;
-            this.lblServidor.Location = new System.Drawing.Point(6, 48);
+            this.lblServidor.Location = new System.Drawing.Point(6, 13);
             this.lblServidor.Name = "lblServidor";
             this.lblServidor.Size = new System.Drawing.Size(60, 18);
             this.lblServidor.TabIndex = 0;
             this.lblServidor.Text = "Servidor";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(624, 270);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // pnlRodape
             // 
             this.pnlRodape.Controls.Add(this.lblMensagem);
             this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlRodape.Location = new System.Drawing.Point(0, 362);
+            this.pnlRodape.Location = new System.Drawing.Point(0, 462);
             this.pnlRodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlRodape.Name = "pnlRodape";
-            this.pnlRodape.Size = new System.Drawing.Size(656, 44);
+            this.pnlRodape.Size = new System.Drawing.Size(900, 44);
             this.pnlRodape.TabIndex = 8;
             // 
             // lblMensagem
@@ -253,12 +251,63 @@
             this.lblMensagem.TabIndex = 2;
             this.lblMensagem.Text = "</>";
             // 
+            // dgvDatabases
+            // 
+            this.dgvDatabases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatabases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colEmpresa,
+            this.colServidor,
+            this.colPorta,
+            this.colBase,
+            this.colUsuario,
+            this.colSenha});
+            this.dgvDatabases.Location = new System.Drawing.Point(6, 66);
+            this.dgvDatabases.Name = "dgvDatabases";
+            this.dgvDatabases.Size = new System.Drawing.Size(856, 252);
+            this.dgvDatabases.TabIndex = 14;
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            // 
+            // colEmpresa
+            // 
+            this.colEmpresa.HeaderText = "Empresa";
+            this.colEmpresa.Name = "colEmpresa";
+            // 
+            // colServidor
+            // 
+            this.colServidor.HeaderText = "Servidor";
+            this.colServidor.Name = "colServidor";
+            // 
+            // colPorta
+            // 
+            this.colPorta.HeaderText = "Porta";
+            this.colPorta.Name = "colPorta";
+            // 
+            // colBase
+            // 
+            this.colBase.HeaderText = "Base";
+            this.colBase.Name = "colBase";
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.HeaderText = "Usuário";
+            this.colUsuario.Name = "colUsuario";
+            // 
+            // colSenha
+            // 
+            this.colSenha.HeaderText = "Senha";
+            this.colSenha.Name = "colSenha";
+            // 
             // formConfigurar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(656, 406);
+            this.ClientSize = new System.Drawing.Size(900, 506);
             this.Controls.Add(this.pnlRodape);
             this.Controls.Add(this.tabConfig);
             this.Controls.Add(this.pnlTitulo);
@@ -280,6 +329,7 @@
             this.tabDatabase.PerformLayout();
             this.pnlRodape.ResumeLayout(false);
             this.pnlRodape.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabases)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,7 +339,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TabControl tabConfig;
         private System.Windows.Forms.TabPage tabDatabase;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox txtBDSenha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBDUser;
@@ -304,5 +353,13 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Panel pnlRodape;
         private System.Windows.Forms.Label lblMensagem;
+        private System.Windows.Forms.DataGridView dgvDatabases;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colServidor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPorta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSenha;
     }
 }

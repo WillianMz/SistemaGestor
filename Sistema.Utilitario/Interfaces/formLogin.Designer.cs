@@ -36,7 +36,7 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.btnEsqueceuSenha = new System.Windows.Forms.Button();
             this.lblEmpresa = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.lblDev = new System.Windows.Forms.Label();
             this.btnLogar = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -115,6 +115,7 @@
             this.btnEsqueceuSenha.TabIndex = 4;
             this.btnEsqueceuSenha.Text = "Esqueceu a senha?";
             this.btnEsqueceuSenha.UseVisualStyleBackColor = false;
+            this.btnEsqueceuSenha.Click += new System.EventHandler(this.btnEsqueceuSenha_Click);
             // 
             // lblEmpresa
             // 
@@ -126,14 +127,15 @@
             this.lblEmpresa.TabIndex = 6;
             this.lblEmpresa.Text = "Empresa";
             // 
-            // comboBox1
+            // cbEmpresa
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(60, 236);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(310, 28);
-            this.comboBox1.TabIndex = 7;
+            this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmpresa.FormattingEnabled = true;
+            this.cbEmpresa.Location = new System.Drawing.Point(60, 236);
+            this.cbEmpresa.Name = "cbEmpresa";
+            this.cbEmpresa.Size = new System.Drawing.Size(310, 28);
+            this.cbEmpresa.TabIndex = 7;
             // 
             // lblDev
             // 
@@ -183,7 +185,7 @@
             this.ClientSize = new System.Drawing.Size(437, 450);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.lblDev);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbEmpresa);
             this.Controls.Add(this.lblEmpresa);
             this.Controls.Add(this.btnEsqueceuSenha);
             this.Controls.Add(this.txtSenha);
@@ -215,7 +217,7 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Button btnEsqueceuSenha;
         private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEmpresa;
         private System.Windows.Forms.Label lblDev;
         private System.Windows.Forms.Button btnLogar;
         private System.Windows.Forms.Button btnConfig;

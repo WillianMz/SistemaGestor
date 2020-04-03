@@ -2,9 +2,7 @@
 {
     public class util_msg
     {
-        public static string sistema = "Gestor Comercial";
-       //public static string sistema2 = 
-
+        public static string sistema = "Sistema Gestor";
 
         #region MENSAGENS DE MANIPULAÇÃO DE DADOS
 
