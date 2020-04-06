@@ -1,6 +1,4 @@
-﻿
-using Modelo;
-using System;
+﻿using System;
 using System.Windows.Forms;
 using Util;
 using static Util.util_database;
@@ -12,34 +10,33 @@ namespace Sistema.Utilitario.Interfaces
         public formLogin()
         {
             InitializeComponent();
-
             carregarParametros();
         }
-
+        
         private void carregarParametros()
         {
             try
             {
-                ParamentroDoSistema p = util_sistema.lerDadosRegistroWindows("Gestor");
-                SQL.servidor = p.dbServer;
-                SQL.porta    = p.dbPort;
-                SQL.banco    = p.dbBase;
-                SQL.userBD   = p.dbUser;
-                SQL.senhaBD  = p.dbPwd;
-                
+                ConfigSistema config = RegEditWindows.lerDadosRegistroWindows("Gestor");
+                SQL.servidor = config.dbServer;
+                SQL.porta    = config.dbPort;
+                SQL.banco    = config.dbBase;
+                SQL.userBD   = config.dbUser;
+                SQL.senhaBD  = config.dbPwd;
+
                 carregarComboBox.empresas(cbEmpresa);
                 cbEmpresa.SelectedIndex = 0;
             }
-            catch(Exception ex)
+            catch (Exception)
             {
-                throw ex;//mudar isso aqui
+                MessageBox.Show(util_msg.msgErroCarregarParametro, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            this.Close();            
+            Close();            
         }
 
         private void btnConfig_Click(object sender, EventArgs e)

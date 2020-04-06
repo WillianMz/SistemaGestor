@@ -68,6 +68,7 @@
             this.lblProgramador.Size = new System.Drawing.Size(49, 15);
             this.lblProgramador.TabIndex = 3;
             this.lblProgramador.Text = "Willian";
+            this.lblProgramador.Visible = false;
             // 
             // lblSistema
             // 

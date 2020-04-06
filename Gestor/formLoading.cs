@@ -1,5 +1,4 @@
-﻿using Gestor.Config;
-using Sistema.Utilitario.Interfaces;
+﻿using Sistema.Utilitario.Interfaces;
 using System;
 using System.Windows.Forms;
 using Util;
@@ -12,28 +11,27 @@ namespace Gestor
         {
             InitializeComponent();
             StartTimer();
-            configForm();
+           // configForm();
         }
 
-        public void configForm()
-        {
-            //lblSistema.Text = Parametro.nomeSoftware;
-            lblProgramador.Text = Parametro.versao;
-        }
+        //public void configForm()
+        //{
+        //    //lblSistema.Text = Parametro.nomeSoftware;
+        //    //lblProgramador.Text = Parametro.versao;
+        //}
 
         Timer timer = new Timer();
         static int Cont = 0;
 
         void Temporizador(object sender, EventArgs e)
         {
-            Cont += 2;
-            lblProcessando.Text = "Carregando... (" + Cont + "%)";
+            Cont += 4;
+           // lblProcessando.Text = "Carregando... (" + Cont + "%)";
 
             if(Cont >= 100)
             {
                 Cont = 0;
                 timer.Stop();
-                //this.Close();
                 ChamarLogin();        
             }
         }
@@ -50,15 +48,14 @@ namespace Gestor
             try
             {
                 formLogin form = new formLogin();
-                this.Visible = false;
+                Visible = false;
                 form.ShowDialog();
-                this.Close();
+                Close();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(util_msg.msgErro + ex, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
