@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controles\BLL_Banco.cs" />
     <Compile Include="Controles\BLL_Financeiro.cs" />
     <Compile Include="Interfaces\formCadastroBanco.cs">
       <SubType>Form</SubType>
