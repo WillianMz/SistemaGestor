@@ -28,6 +28,8 @@ namespace Sistema.Utilitario
 
                 //dados referentes a login
                 regkey.SetValue("lembrarSenha",  util_dados.criptografar(Convert.ToString(config.lembrarSenha)));
+                //regkey.SetValue("user",          util_dados.criptografar(config.usuario));
+                //regkey.SetValue("userPass",      util_dados.criptografar(config.senha));
                 regkey.SetValue("empresaPadrao", util_dados.criptografar(Convert.ToString(config.empresaPadrao)));
 
                 regkey.Close();
@@ -44,38 +46,6 @@ namespace Sistema.Utilitario
         {
             try
             {
-                #region NAO ESTA FUNCIONANDO
-                //RegistryKey regkey = Registry.CurrentUser.OpenSubKey("Software", true); //cria a referencia para a chave de registro
-                //ParamentroDoSistema reg = new ParamentroDoSistema();
-                //regkey = regkey.OpenSubKey("SistemaGestor");
-
-                //if (regkey.OpenSubKey("SistemaGestor") != null)
-                //{
-                //    if (reg.dbServer != string.Empty)
-                //        reg.dbServer = util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("dbServer").ToString());
-
-
-                //    //if (reg.dbPort != 0)
-                //        reg.dbPort = Convert.ToInt32(util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("dbPort").ToString()));
-
-                //    if (reg.dbBase != string.Empty)
-                //        reg.dbBase = util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("dbBase").ToString());
-
-                //   if (reg.dbUser != string.Empty)
-                //        reg.dbUser = util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("dbUser").ToString());
-
-                //    if (reg.dbPwd != string.Empty)
-                //        reg.dbPwd = util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("dbPWD").ToString());
-
-                //    //if (reg.lembrarSenha ? true : false)
-                //    //    reg.lembrarSenha = Convert.ToBoolean(util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("lembrarSenha").ToString()));
-
-                //    //if (reg.empresaPadrao != 0)
-                //    //    reg.empresaPadrao = Convert.ToInt32(util_dados.descriptografar(regkey.OpenSubKey(software, true).GetValue("empresaPadrao").ToString()));
-                //}
-                //return reg;
-                #endregion
-
                 RegistryKey regkey = Registry.CurrentUser.OpenSubKey("Software", true); //cria a referencia para a chave de registro
                 regkey = regkey.OpenSubKey("SistemaGestor");
 

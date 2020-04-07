@@ -13,6 +13,8 @@
         public string dbPwd { get; set; }
 
         public bool lembrarSenha { get; set; }
+        public string usuario { get; set; }
+        public string senha { get; set; }
         public int empresaPadrao { get; set; }
     }
 }
