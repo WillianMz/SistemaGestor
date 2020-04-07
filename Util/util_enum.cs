@@ -12,7 +12,8 @@
         Novo,
         Detalhes,
         Editar,
-        Consulta
+        Consulta,
+        Selecionar
     }
 
     public enum tipoPessoa
@@ -32,5 +33,12 @@
         Transportador = 4,
         Funcionario   = 5,
         Outros        = 6
-    }        
+    }  
+    
+    public enum tipoNota
+    {
+        Manual,
+        Eletronica
+    }
+
 }

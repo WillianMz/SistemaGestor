@@ -120,10 +120,8 @@
   <metadata name="menuPrincipal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="barraDeAtalhos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>146, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+<<<<<<< HEAD
   <data name="barraDeAtalhos.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACBsAAAB5CAIAAAD9SSwWAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3393,6 +3391,8 @@
         gg==
 </value>
   </data>
+=======
+>>>>>>> 57fdc4671fcc9e8e9b15db55a0ffcca8c2415c2d
   <data name="img_Empresa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA8AAAAGwCAYAAABmawxzAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s

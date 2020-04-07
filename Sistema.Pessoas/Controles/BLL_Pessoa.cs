@@ -80,7 +80,7 @@ namespace Sistema.Pessoas.Controles
         public Pessoa filtroPessoaCPFcnpj(string cpfCNPJ, bool ativo)
         {
             dao = new DAO_Pessoa();
-            Pessoa p = dao.getsPessoaPorCPF_CNPJ(cpfCNPJ, ativo);
+            Pessoa p = dao.getPessoaPorCPF_CNPJ(cpfCNPJ, ativo);
             return p;
         }
 
