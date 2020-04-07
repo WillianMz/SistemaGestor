@@ -1,6 +1,4 @@
-﻿using Modelo;
-using Util;
-using DAO;
+﻿using Util;
 
 namespace Sistema.Utilitario.Controles
 {
@@ -8,20 +6,19 @@ namespace Sistema.Utilitario.Controles
     {
         #region INICIALIZAÇÃO DO PROGRAMA
 
-        public ParamentroDoSistema getParamentros(string software)
+        public ConfigSistema getParamentros(string software)
         {
-            ParamentroDoSistema p = new ParamentroDoSistema();
-            p = util_sistema.lerDadosRegistroWindows(software);
-            return p;
+            //ConfigSistema config = util_sistema.lerDadosRegistroWindows(software);
+            ConfigSistema config = RegEditWindows.lerDadosRegistroWindows(software);
+            return config;
         }
 
-        public void salvarParamentros(string software, ParamentroDoSistema ps)
+        public void salvarParamentros(string software, ConfigSistema config)
         {
-            util_sistema.gravarDadosRegistroWindows(software, ps);
+            //util_sistema.gravarDadosRegistroWindows(software, config);
+            RegEditWindows.gravarDadosRegistroWindows(software, config);
         }
-
         #endregion
-
 
     }
 }

@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\Parametro.cs" />
     <Compile Include="formLoading.cs">
       <SubType>Form</SubType>
     </Compile>

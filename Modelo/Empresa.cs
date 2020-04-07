@@ -37,5 +37,10 @@ namespace Modelo
         public DateTime dtCadastro { get; set; }
         public DateTime dtAlteracao { get; set; }
         public string local { get; set; }
+
+        public string descricao
+        {
+            get { return Id + " - " +fantasia; }
+        }
     }
 }

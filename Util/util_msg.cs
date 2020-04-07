@@ -2,9 +2,7 @@
 {
     public class util_msg
     {
-        public static string sistema = "Gestor Comercial";
-       //public static string sistema2 = 
-
+        public static string sistema = "Sistema Gestor";
 
         #region MENSAGENS DE MANIPULAÇÃO DE DADOS
 
@@ -26,6 +24,13 @@
         public static string msgErro                = "Ocorreu um erro! \nDetalhes: ";
         public static string msgFiltroPesquisaVazio = "Digite algum filtro para a pesquisa";
         public static string msgConfigForm          = "Erro ao exibir tela!";
+
+        #endregion
+
+        #region CONFIGURAÇÕES
+
+        public static string msgErroCarregarParametro = "Não foi possível carregar os parametros.";
+        public static string msgParametroNaoConfig = "O lajdflkajsdflkasjdflakjsdf";
 
         #endregion
 

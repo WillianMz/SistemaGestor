@@ -3,7 +3,7 @@ using Modelo;
 using System;
 using System.Collections.Generic;
 
-namespace Sistema.Pessoas.Controles
+namespace Sistema.Utilitario.Controles
 {
     public class BLL_Empresa
     {
