@@ -117,6 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="gridIdBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridCodBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridNomeBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridAgenciaBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridContaBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridIdBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridCodBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridNomeBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridAgenciaBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gridContaBanco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -137,16 +167,16 @@
   </data>
   <data name="btnEditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG/SURBVFhHxZe7SgNBGEajjb2F97tiJfoM6iMo6DOkEEVf
-        QQtbQWwU38BGUXwEO8H7/dZYWYg2inq+xB+SsEN2NzObA4dkJ5DvY2dnMskFpAN38AOfcA4zowtv8AEX
-        cQN/cBWDo/BrVIFuDfyTx+AlXOFG0BKdqPBf1JwPYBRBSij8ChVuqsQgRmElvDyYFn6Lk/iCcUqsoz6v
-        CS21S1R4jwZgGOOUmMfP4tt0WPgdWrhRrYQeVi1R7ROpUPgFKrxXAxG4StgeIfU9iWlHhd+jK9yIKmHh
-        Ucu0KknCjcoSqcPb8Bw1d30aSMAE1i28dM5Th5/hI/ZrIAE1h7diXcNPUeGufd2Ft3Atm8zDW9DCXfu4
-        Cy/hJ/iMQxpIQM3hDXiMr5h5uBhFbRZfOKOBmHgJFzo8vuM2xi3hLVzs4x424hZWK+E1vAl1fl8oXJWX
-        mNVABV7DxThq/kcKV0VcJbyHi2V8Q62EUlRiE61EkHBxhLoDa4WrclTCHkz9rnsPb8ZvVAEroTuh6dDB
-        cRe1OvSZzoBew8UUWrip6dCrHswDXMIxrJwiL+iPowXrTmg6VlCnGK2O4ByiSkyjpiNDcrk/4NGmODIF
-        ffcAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAb9JREFUWEfFl7tKA0EYRqONvYX3u2Il+gzqIyjoM6QQRV9BC1tBbBTfwEZRfAQ7
+        wfv91lhZiDaKer7EH5KwQ3Y3M5sDh2QnkO9jZ2cyyQWkA3fwA59wDjOjC2/wARdxA39wFYOj8GtUgW4N
+        /JPH4CVc4UbQEp2o8F/UnA9gFEFKKPwKFW6qxCBGYSW8PJgWfouT+IJxSqyjPq8JLbVLVHiPBmAY45SY
+        x8/i23RY+B1auFGthB5WLVHtE6lQ+AUqvFcDEbhK2B4h9T2JaUeF36Mr3IgqYeFRy7QqScKNyhKpw9vw
+        HDV3fRpIwATWLbx0zlOHn+Ej9msgATWHt2Jdw09R4a593YW3cC2bzMNb0MJd+7gLL+En+IxDGkhAzeEN
+        eIyvmHm4GEVtFl84o4GYeAkXOjy+4zbGLeEtXOzjHjbiFlYr4TW8CXV+XyhclZeY1UAFXsPFOGr+RwpX
+        RVwlvIeLZXxDrYRSVGITrUSQcHGEugNrhatyVMIeTP2uew9vxm9UASuhO6Hp0MFxF7U69JnOgF7DxRRa
+        uKnp0KsezANcwjGsnCIv6I+jBetOaDpWUKcYrY7gHKJKTKOmI0NyuT/g0aY4MgV99wAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
   <data name="btnSalvar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

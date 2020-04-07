@@ -16,27 +16,29 @@ namespace Sistema.Financeiro.Interfaces
     public partial class formCadastroBanco : Form
     {
         private int empresaCodigo = 1;
-        BLL_Banco controle;
+        BLL_Financeiro controle;
         public formCadastroBanco()
         {
             InitializeComponent();
         }
 
+        #region ROTINAS
         private void adicionar()
         {
             try
             {
                 Banco b = new Banco();
                 b.ativo = ckAtivo.Checked;
-                b.id = Convert.ToInt32(txtCodigo.Text);
                 b.nome = txtNome.Text;
                 b.codigoBanco = Convert.ToInt32(txtCodBanco.Text);
                 b.agencia = txtAgencia.Text;
                 b.conta = txtConta.Text;
                 b.idEmpresa = empresaCodigo;
 
-                controle = new BLL_Banco();
-                controle.novo(b);
+                controle = new BLL_Financeiro();
+                controle.novoBanco(b);
+
+                lblResultado.Text = "Adicionado com sucesso!";
 
             }catch(Exception ex)
             {
@@ -55,7 +57,6 @@ namespace Sistema.Financeiro.Interfaces
                 txtConta.Enabled = true;
                 btnNovo.Enabled = false;
                 btnEditar.Enabled = false;
-                btnPesquisar.Enabled = false;
                 btnSalvar.Enabled = true;
                 txtNome.Focus();
             }
@@ -68,7 +69,6 @@ namespace Sistema.Financeiro.Interfaces
                 txtConta.Enabled = true;
                 btnNovo.Enabled = false;
                 btnEditar.Enabled = false;
-                btnPesquisar.Enabled = false;
                 btnSalvar.Enabled = true;
                 txtNome.Focus();
             }
@@ -94,13 +94,30 @@ namespace Sistema.Financeiro.Interfaces
 
         }
 
-        #region BUTTONS
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void atualizarGrid(List<Banco> banc)
         {
-            novo();
+            dbGridListaBanco.Rows.Clear();
+            foreach (Banco b in banc)
+            {
+                dbGridListaBanco.Rows.Add(b.id, b.codigoBanco, b.nome, b.agencia, b.conta);
+            }
+            util_sistema.resultadoPesquisa(dbGridListaBanco, lblResultado);
         }
 
-        
+        private void pesquisarBancos(bool ativo)
+        {
+            controle = new BLL_Financeiro();
+            List<Banco> bancos = controle.filtrarBancos(txtNome.Text, ativo);
+            atualizarGrid(bancos);
+        }
+
+
+        #endregion
+
+
+
+        #region BUTTONS
+
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -112,6 +129,42 @@ namespace Sistema.Financeiro.Interfaces
         private void btnNovo_Click_1(object sender, EventArgs e)
         {
             novo();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuListar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    if (txtNome.Text != "")
+                        pesquisarBancos(true);
+                    else
+                    {
+                        lblResultado.Text = util_msg.msgFiltroPesquisaVazio;
+                        txtNome.Focus();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            util_sistema.keyPress(sender, e);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Modelo.Financeiro;
 using Npgsql;
 using System;
+using System.Data;
+using System.Collections.Generic;
 
 namespace DAO
 {
@@ -104,6 +106,118 @@ namespace DAO
 
         #endregion
 
+
+
+        #region BANCO
+        public void insertBanco(Banco b)
+        {
+            try
+            {
+                cmd = new NpgsqlCommand();
+
+                SQL = "INSERT INTO banco ";
+                SQL += "(idempresa, codbanco, nome, ativo, agencia, conta)";
+                SQL += "VALUES ";
+                SQL += "(@idempresa, @codbanco, @nome, @ativo, @agencia, @conta)";
+
+                cmd.CommandText = SQL;
+                cmd.Parameters.AddWithValue("@idempresa", b.idEmpresa);
+                cmd.Parameters.AddWithValue("@codbanco", b.codigoBanco);
+                cmd.Parameters.AddWithValue("@nome", b.nome);
+                cmd.Parameters.AddWithValue("@ativo", b.ativo);
+                cmd.Parameters.AddWithValue("@agencia", b.agencia);
+                cmd.Parameters.AddWithValue("@conta", b.conta);
+                con.ComandoSQL(cmd);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+
+        public List<Banco> listarBancos(string sql)
+        {
+            try
+            {
+                DataSet ds = con.ConsultaSQL(sql);
+                List<Banco> ps = new List<Banco>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Banco b = new Banco
+                    {
+                        id = int.Parse(dr["id"].ToString()),
+                        idEmpresa = int.Parse(dr["idempresa"].ToString()),
+                        codigoBanco = int.Parse(dr["codbanco"].ToString()),
+                        nome = dr["nome"].ToString(),
+                        agencia = dr["agencia"].ToString(),
+                        conta = dr["conta"].ToString(),
+                        ativo = bool.Parse(dr["ativo"].ToString())
+                    };
+                    ps.Add(b);
+                }
+                return ps;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Banco> listaAllBanco(bool ativo)
+        {
+            try
+            {
+
+                SQL = "SELECT id, idempresa, nome, codbanco, agencia, conta, ativo WHERE ativo = " + ativo;
+
+               
+                return listarBancos(SQL);
+
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Banco> selectBancoPorNome(string nome, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome, codbanco, agencia, conta FROM banco WHERE nome LIKE '%{0}%' AND ativo = {1} ORDER BY nome", nome, ativo);
+                DataSet ds = con.ConsultaSQL(SQL);
+
+                List<Banco> lista = new List<Banco>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Banco obj = new Banco
+                    {
+                        id = int.Parse(dr["id"].ToString()),
+                        nome = dr["nome"].ToString(),
+                        codigoBanco = int.Parse(dr["codbanco"].ToString()),
+                        agencia = dr["agencia"].ToString(),
+                        conta = dr["conta"].ToString()
+                    };
+                    lista.Add(obj);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+
+        #endregion
 
     }
 }
