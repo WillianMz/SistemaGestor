@@ -1,5 +1,4 @@
-﻿using Modelo;
-using Sistema.Utilitario.Controles;
+﻿using Sistema.Utilitario.Controles;
 using System;
 using System.Windows.Forms;
 using Util;
@@ -29,17 +28,19 @@ namespace Sistema.Utilitario.Interfaces
         {
             try
             {
-                ParamentroDoSistema p = new ParamentroDoSistema
+                ConfigSistema config = new ConfigSistema
                 {
                     dbServer = txtBDServer.Text.Trim(),
                     dbPort = Convert.ToInt32(txtBDPort.Text.Trim()),
                     dbUser = txtBDUser.Text.Trim(),
                     dbBase = txtBDBanco.Text.Trim(),
-                    dbPwd = txtBDSenha.Text.Trim()
+                    dbPwd = txtBDSenha.Text.Trim(),
+                    lembrarSenha = true,
+                    empresaPadrao = 2
                 };
 
                 controle = new BLL_Sistema();
-                controle.salvarParamentros("Gestor", p);
+                controle.salvarParamentros("Gestor", config);
             }
             catch
             {
@@ -50,12 +51,12 @@ namespace Sistema.Utilitario.Interfaces
         private void lerDados()
         {
             controle = new BLL_Sistema();
-            ParamentroDoSistema ps = controle.getParamentros("Gestor");
-            txtBDServer.Text = ps.dbServer;
-            txtBDPort.Text   = Convert.ToString(ps.dbPort);
-            txtBDBanco.Text  = ps.dbBase;
-            txtBDUser.Text   = ps.dbUser;
-            txtBDSenha.Text  = ps.dbPwd;
+            ConfigSistema cf = controle.getParamentros("Gestor");
+            txtBDServer.Text = cf.dbServer;
+            txtBDPort.Text   = Convert.ToString(cf.dbPort);
+            txtBDBanco.Text  = cf.dbBase;
+            txtBDUser.Text   = cf.dbUser;
+            txtBDSenha.Text  = cf.dbPwd;
         }
         
         private void btnSalvar_Click(object sender, EventArgs e)

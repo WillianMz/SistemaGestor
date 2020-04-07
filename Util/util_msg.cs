@@ -27,6 +27,13 @@
 
         #endregion
 
+        #region CONFIGURAÇÕES
+
+        public static string msgErroCarregarParametro = "Não foi possível carregar os parametros.";
+        public static string msgParametroNaoConfig = "O lajdflkajsdflkasjdflakjsdf";
+
+        #endregion
+
 
         #region MENSAGENS DIVERSAS
 

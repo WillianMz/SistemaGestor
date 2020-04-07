@@ -59,6 +59,7 @@
     <Compile Include="Interfaces\formLoading.Designer.cs">
       <DependentUpon>formLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigSistema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\formLogin.cs">
       <SubType>Form</SubType>
@@ -71,6 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RegEditWindows.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
