@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroPagar));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPlanoDeContas = new System.Windows.Forms.Label();
+            this.dbPlanodeContas = new System.Windows.Forms.DataGridView();
             this.txtPessoa = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -64,11 +67,14 @@
             this.lblDtCadastro = new System.Windows.Forms.Label();
             this.lblTipoPessoa = new System.Windows.Forms.Label();
             this.lblEmpresa = new System.Windows.Forms.Label();
-            this.lblPlanoDeContas = new System.Windows.Forms.Label();
-            this.dbPlanodeContas = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridParcelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbPlanodeContas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridParcelas)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,8 +118,27 @@
             this.panel1.Controls.Add(this.lblEmpresa);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(823, 543);
+            this.panel1.Size = new System.Drawing.Size(843, 543);
             this.panel1.TabIndex = 0;
+            // 
+            // lblPlanoDeContas
+            // 
+            this.lblPlanoDeContas.AutoSize = true;
+            this.lblPlanoDeContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlanoDeContas.Location = new System.Drawing.Point(394, 112);
+            this.lblPlanoDeContas.Name = "lblPlanoDeContas";
+            this.lblPlanoDeContas.Size = new System.Drawing.Size(122, 16);
+            this.lblPlanoDeContas.TabIndex = 41;
+            this.lblPlanoDeContas.Text = "Plano de Contas";
+            // 
+            // dbPlanodeContas
+            // 
+            this.dbPlanodeContas.BackgroundColor = System.Drawing.Color.White;
+            this.dbPlanodeContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbPlanodeContas.Location = new System.Drawing.Point(397, 131);
+            this.dbPlanodeContas.Name = "dbPlanodeContas";
+            this.dbPlanodeContas.Size = new System.Drawing.Size(411, 158);
+            this.dbPlanodeContas.TabIndex = 40;
             // 
             // txtPessoa
             // 
@@ -414,31 +439,68 @@
             this.lblEmpresa.TabIndex = 0;
             this.lblEmpresa.Text = "Empresa";
             // 
-            // lblPlanoDeContas
+            // panel2
             // 
-            this.lblPlanoDeContas.AutoSize = true;
-            this.lblPlanoDeContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlanoDeContas.Location = new System.Drawing.Point(394, 112);
-            this.lblPlanoDeContas.Name = "lblPlanoDeContas";
-            this.lblPlanoDeContas.Size = new System.Drawing.Size(122, 16);
-            this.lblPlanoDeContas.TabIndex = 41;
-            this.lblPlanoDeContas.Text = "Plano de Contas";
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnNovo);
+            this.panel2.Controls.Add(this.btnSalvar);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(0, 584);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(906, 53);
+            this.panel2.TabIndex = 1;
             // 
-            // dbPlanodeContas
+            // btnNovo
             // 
-            this.dbPlanodeContas.BackgroundColor = System.Drawing.Color.White;
-            this.dbPlanodeContas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dbPlanodeContas.Location = new System.Drawing.Point(397, 131);
-            this.dbPlanodeContas.Name = "dbPlanodeContas";
-            this.dbPlanodeContas.Size = new System.Drawing.Size(411, 158);
-            this.dbPlanodeContas.TabIndex = 40;
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
+            this.btnNovo.Location = new System.Drawing.Point(588, 6);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(100, 40);
+            this.btnNovo.TabIndex = 6;
+            this.btnNovo.Text = "&Novo";
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(691, 6);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 40);
+            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Text = "&Salvar";
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(794, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 40);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "&Cancelar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // formCadastroPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(847, 572);
+            this.ClientSize = new System.Drawing.Size(905, 638);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "formCadastroPagar";
             this.ShowIcon = false;
@@ -446,8 +508,9 @@
             this.Text = "Cadastro de Títulos a Pagar";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbGridParcelas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbPlanodeContas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridParcelas)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,5 +555,9 @@
         private System.Windows.Forms.TextBox txtPessoa;
         private System.Windows.Forms.Label lblPlanoDeContas;
         private System.Windows.Forms.DataGridView dbPlanodeContas;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -7,7 +7,7 @@ namespace Modelo.Financeiro
     public class PlanoDeContas
     {
         public int id { get; set; }
-        public int codigo { get; set; }
+        public bool ativo { get; set; }
         public string nome { get; set; }
         public bool entrada { get; set; }
         public bool saida { get; set; }

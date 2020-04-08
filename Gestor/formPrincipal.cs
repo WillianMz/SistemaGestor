@@ -166,5 +166,11 @@ namespace Gestor
             formCadastroBanco form = new formCadastroBanco();
             form.ShowDialog();
         }
+
+        private void cadastroDePlanoDeContasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formPlanoDeContas form = new formPlanoDeContas();
+            form.Show();
+        }
     }
 }

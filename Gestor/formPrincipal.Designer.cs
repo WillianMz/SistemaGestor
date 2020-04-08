@@ -105,6 +105,7 @@
             this.testesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDesenvolvedor = new System.Windows.Forms.Label();
             this.img_Empresa = new System.Windows.Forms.PictureBox();
+            this.cadastroDePlanoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).BeginInit();
             this.SuspendLayout();
@@ -528,51 +529,52 @@
             // mFinPagar
             // 
             this.mFinPagar.Name = "mFinPagar";
-            this.mFinPagar.Size = new System.Drawing.Size(166, 22);
+            this.mFinPagar.Size = new System.Drawing.Size(180, 22);
             this.mFinPagar.Text = "Pagar";
             this.mFinPagar.Click += new System.EventHandler(this.mFinPagar_Click);
             // 
             // mFinReceber
             // 
             this.mFinReceber.Name = "mFinReceber";
-            this.mFinReceber.Size = new System.Drawing.Size(166, 22);
+            this.mFinReceber.Size = new System.Drawing.Size(180, 22);
             this.mFinReceber.Text = "Receber";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(177, 6);
             // 
             // mFinConsultas
             // 
             this.mFinConsultas.Name = "mFinConsultas";
-            this.mFinConsultas.Size = new System.Drawing.Size(166, 22);
+            this.mFinConsultas.Size = new System.Drawing.Size(180, 22);
             this.mFinConsultas.Text = "Consulta Pagar";
             this.mFinConsultas.Click += new System.EventHandler(this.mFinConsultas_Click_1);
             // 
             // consultaReceberToolStripMenuItem
             // 
             this.consultaReceberToolStripMenuItem.Name = "consultaReceberToolStripMenuItem";
-            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultaReceberToolStripMenuItem.Text = "Consulta Receber";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(177, 6);
             // 
             // parametrosToolStripMenuItem
             // 
             this.parametrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroDeBancosToolStripMenuItem});
+            this.cadastroDeBancosToolStripMenuItem,
+            this.cadastroDePlanoDeContasToolStripMenuItem});
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
             // cadastroDeBancosToolStripMenuItem
             // 
             this.cadastroDeBancosToolStripMenuItem.Name = "cadastroDeBancosToolStripMenuItem";
-            this.cadastroDeBancosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.cadastroDeBancosToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.cadastroDeBancosToolStripMenuItem.Text = "Cadastro de Bancos";
             this.cadastroDeBancosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeBancosToolStripMenuItem_Click);
             // 
@@ -667,6 +669,13 @@
             this.img_Empresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.img_Empresa.TabIndex = 427;
             this.img_Empresa.TabStop = false;
+            // 
+            // cadastroDePlanoDeContasToolStripMenuItem
+            // 
+            this.cadastroDePlanoDeContasToolStripMenuItem.Name = "cadastroDePlanoDeContasToolStripMenuItem";
+            this.cadastroDePlanoDeContasToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.cadastroDePlanoDeContasToolStripMenuItem.Text = "Cadastro de Plano de Contas";
+            this.cadastroDePlanoDeContasToolStripMenuItem.Click += new System.EventHandler(this.cadastroDePlanoDeContasToolStripMenuItem_Click);
             // 
             // formPrincipal
             // 
@@ -770,5 +779,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeBancosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDePlanoDeContasToolStripMenuItem;
     }
 }
