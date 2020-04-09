@@ -660,9 +660,10 @@ namespace DAO
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "INSERT INTO produto_grupo(nome) VALUES (@nome)";
+                SQL = "INSERT INTO produto_grupo(nome, id_categ) VALUES (@nome, @id_categ)";
                 cmd.CommandText = SQL;
                 cmd.Parameters.AddWithValue("@nome", g.Nome);
+                cmd.Parameters.AddWithValue("@id_categ", g.categ.Id);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -676,9 +677,10 @@ namespace DAO
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "UPDATE produto_grupo SET nome = @nome categ WHERE id = @id";
+                SQL = "UPDATE produto_grupo SET nome = @nome, id_categ = @id_categ WHERE id = @id";
                 cmd.CommandText = SQL;
                 cmd.Parameters.AddWithValue("@nome", g.Nome);
+                cmd.Parameters.AddWithValue("id_Categ", g.categ.Id);
                 cmd.Parameters.AddWithValue("@id", g.Id);
                 con.ComandoSQL(cmd);
             }
