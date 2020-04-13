@@ -60,7 +60,7 @@ namespace Sistema.Estoque.Interfaces
             carregarComboBox.unidade(cboxUnidade);
             carregarComboBox.unidade(cboxUnCompra);
             carregarComboBox.categoriaProduto(cboxCategoria);
-            carregarComboBox.grupoProduto(cboxGrupo);
+            //carregarComboBox.grupoProduto(cboxGrupo);
         }
 
         private void bloquearCampos()
@@ -526,7 +526,7 @@ namespace Sistema.Estoque.Interfaces
             formProdutoGrupo frm = new formProdutoGrupo();
             frm.statusForm = statusForm.Novo;
             frm.ShowDialog();
-            carregarComboBox.grupoProduto(cboxGrupo);
+            carregarComboBox.grupoProduto(cboxCategoria, cboxGrupo);
             frm.Dispose();
         }
 

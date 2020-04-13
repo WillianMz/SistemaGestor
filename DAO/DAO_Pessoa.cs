@@ -204,7 +204,7 @@ namespace DAO
                     TipoPessoa t = new TipoPessoa
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     tp.Add(t);
                 }
@@ -230,7 +230,7 @@ namespace DAO
                     t = new TipoPessoa
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                 }
 

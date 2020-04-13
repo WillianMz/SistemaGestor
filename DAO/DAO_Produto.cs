@@ -451,7 +451,7 @@ namespace DAO
                     Unidade u = new Unidade
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     unid.Add(u);
                 }
@@ -476,7 +476,7 @@ namespace DAO
                     u = new Unidade
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                 }
                 return u;
@@ -504,7 +504,7 @@ namespace DAO
                     TipoProduto obj = new TipoProduto
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     lista.Add(obj);
                 }
@@ -528,7 +528,7 @@ namespace DAO
                     obj = new TipoProduto
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                 }
                 return obj;
@@ -541,15 +541,21 @@ namespace DAO
 
         #endregion
 
+        //Classificação dos produtos [CATEGORIA->GRUPOS->SUBGRUPOS]
         #region CATEGORIA
+        /// <summary>
+        /// FAZ O INSERT DE CATEGORIA NA BASE DE DADOS
+        /// </summary>
+        /// <param name="cat"></param>
         public void insertCategoria(Categoria cat)
         {
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "INSERT INTO produto_categ(nome) VALUES (@nome)";
+                SQL = "INSERT INTO produto_categ(nome, ativo) VALUES (@nome, @ativo)";
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@nome", cat.Nome);
+                cmd.Parameters.AddWithValue("@nome", cat.nome);
+                cmd.Parameters.AddWithValue("ativo", cat.ativo);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -558,15 +564,20 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// FAZ O UPDATE DA CATEGORIA NA BASE DE DADOS
+        /// </summary>
+        /// <param name="cat"></param>
         public void updateCategoria(Categoria cat)
         {
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "UPDATE produto_categ SET nome = @nome WHERE id = @id";
+                SQL = "UPDATE produto_categ SET nome = @nome, ativo = @ativo WHERE id = @id";
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@nome", cat.Nome);
-                cmd.Parameters.AddWithValue("@id", cat.Id);
+                cmd.Parameters.AddWithValue("@nome", cat.nome);
+                cmd.Parameters.AddWithValue("ativo", cat.ativo);
+                cmd.Parameters.AddWithValue("@id",   cat.Id);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -575,13 +586,17 @@ namespace DAO
             }
         }
 
-        public List<Categoria> selectAllCategorias()
+        /// <summary>
+        /// RETORNA TODAS AS CATEGORIAS DA BASE DE DADOS PASSANDO O PARAMETRO True OU False
+        /// </summary>
+        /// <param name="ativo">True OU False</param>
+        /// <returns></returns>
+        public List<Categoria> selectAllCategorias(bool ativo)
         {
             try
             {
-                SQL = "SELECT id, nome FROM produto_categ";
+                SQL = string.Format("SELECT id, nome FROM produto_categ WHERE ativo = {0} ORDER BY nome", ativo);
                 DataSet ds = con.ConsultaSQL(SQL);
-
                 List<Categoria> lista = new List<Categoria>();
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
@@ -589,7 +604,7 @@ namespace DAO
                     Categoria obj = new Categoria
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     lista.Add(obj);
                 }
@@ -602,19 +617,26 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// RETONA UM OBJETO CATEGORIA
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Categoria getCategoriaPorID(int id)
         {
             try
             {
-                SQL = string.Format("SELECT id, nome FROM produto_categ WHERE id = {0}", id);
+                SQL = string.Format("SELECT id, nome, ativo FROM produto_categ WHERE id = {0}", id);
                 DataSet ds = con.ConsultaSQL(SQL);
                 Categoria obj = null;
+
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     obj = new Categoria
                     {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        Id    = int.Parse(dr["id"].ToString()),
+                        nome  = dr["nome"].ToString(),
+                        ativo = bool.Parse(dr["ativo"].ToString())
                     };
                 }
                 return obj;
@@ -625,13 +647,17 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// RETORNA CATEGORIAS CONSULTADAS PELO NOME
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public List<Categoria> selectCategoriasPorNome(string nome, bool ativo)
         {
             try
             {
-                SQL = string.Format("SELECT id, nome FROM produto_categ WHERE nome LIKE '%{0}%' AND ativo = {1} ORDER BY nome", nome, ativo);
+                SQL = string.Format("SELECT id, nome FROM produto_categ WHERE nome LIKE '%{0}%' AND ativo {1} ORDER BY nome", nome, ativo);
                 DataSet ds = con.ConsultaSQL(SQL);
-
                 List<Categoria> lista = new List<Categoria>();
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
@@ -639,7 +665,38 @@ namespace DAO
                     Categoria obj = new Categoria
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
+                    };
+                    lista.Add(obj);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// RETORNA TODAS AS CATEGORIAS DA BASE DE DADOS BUSCANDO PELO NOME
+        /// </summary>
+        /// <param name="ativo">True OU False</param>
+        /// <returns></returns>
+        public List<Categoria> selectAllCategoriasPorNome(string nome)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome FROM produto_categ WHERE nome LIKE '%{0}%' ORDER BY nome", nome);
+                DataSet ds = con.ConsultaSQL(SQL);
+                List<Categoria> lista = new List<Categoria>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Categoria obj = new Categoria
+                    {
+                        Id = int.Parse(dr["id"].ToString()),
+                        nome = dr["nome"].ToString()
                     };
                     lista.Add(obj);
                 }
@@ -655,15 +712,20 @@ namespace DAO
         #endregion
 
         #region GRUPO
+        /// <summary>
+        /// FAZ O INSERT DO GRUPO NA BASE DE DADOS
+        /// </summary>
+        /// <param name="g"></param>
         public void insertGrupo(Grupo g)
         {
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "INSERT INTO produto_grupo(nome, id_categ) VALUES (@nome, @id_categ)";
+                SQL = "INSERT INTO produto_grupo(nome, id_categ, ativo) VALUES (@nome, @id_categ, @ativo)";
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@nome", g.Nome);
+                cmd.Parameters.AddWithValue("@nome",     g.nome);
                 cmd.Parameters.AddWithValue("@id_categ", g.categ.Id);
+                cmd.Parameters.AddWithValue("@ativo",    g.ativo);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -672,16 +734,21 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// FAZ O UPDATE DO GRUPO NA BASE DE DADOS
+        /// </summary>
+        /// <param name="g"></param>
         public void updateGrupo(Grupo g)
         {
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "UPDATE produto_grupo SET nome = @nome, id_categ = @id_categ WHERE id = @id";
+                SQL = "UPDATE produto_grupo SET nome = @nome, id_categ = @id_categ, ativo = @ativo WHERE id = @id";
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@nome", g.Nome);
+                cmd.Parameters.AddWithValue("@nome",    g.nome);
                 cmd.Parameters.AddWithValue("id_Categ", g.categ.Id);
-                cmd.Parameters.AddWithValue("@id", g.Id);
+                cmd.Parameters.AddWithValue("@ativo",   g.ativo);
+                cmd.Parameters.AddWithValue("@id",      g.Id);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -690,42 +757,29 @@ namespace DAO
             }
         }
 
-        public List<Grupo> selectAllGrupos()
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, nome FROM produto_grupo ");
-                DataSet ds = con.ConsultaSQL(SQL);
-                List<Grupo> lista = new List<Grupo>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    Grupo obj = new Grupo
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
-                    };
-                    lista.Add(obj);
-                }
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
+        /// <summary>
+        /// RETORNA UM OBJETO GRUPO
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Grupo getGrupoID(int id)
         {
             try
             {
-                SQL = string.Format("SELECT id, nome FROM produto_grupo WHERE id = {0}", id);
+                SQL = string.Format("SELECT id, nome, id_categ, ativo FROM produto_grupo WHERE id = {0}", id);
                 DataSet ds = con.ConsultaSQL(SQL);
                 Grupo obj = null;
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     obj = new Grupo();
+                    Categoria c = new Categoria();
                     obj.Id = int.Parse(dr["id"].ToString());
-                    obj.Nome = dr["nome"].ToString();
+                    obj.nome = dr["nome"].ToString();
+                    obj.ativo = bool.Parse(dr["ativo"].ToString());
+                    //categoria
+                    obj.categ.Id = int.Parse(dr["id_categ"].ToString());
+                    c = getCategoriaPorID(obj.categ.Id);
+                    obj.categ = c;
                 }
                 return obj;
             }
@@ -735,11 +789,17 @@ namespace DAO
             }
         }
 
-        public List<Grupo> selectGruposPorNome(string nome, bool ativo)
+        /// <summary>
+        /// RETORNA TODOS OS GRUPOS DE UMA CATEGORIA
+        /// </summary>
+        /// <param name="idCategoria"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Grupo> selectGruposPorCateg(int idCategoria, bool ativo)
         {
             try
             {
-                SQL = string.Format("SELECT id, nome, ativo FROM produto_grupo WHERE nome LIKE '%{0}%' AND ativo = {1} ORDER BY nome", nome, ativo);
+                SQL = string.Format("SELECT id, nome, id_categ, ativo FROM produto_grupo WHERE id_categ = {0} AND ativo = {1} ORDER BY nome", idCategoria, ativo);
                 DataSet ds = con.ConsultaSQL(SQL);
                 List<Grupo> lista = new List<Grupo>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
@@ -747,7 +807,7 @@ namespace DAO
                     Grupo obj = new Grupo
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     lista.Add(obj);
                 }
@@ -759,18 +819,82 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// RETORNA TODOS OS GRUPOS DE UMA CATEGORIA BUSCANDO PELO NOME
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="idCategoria"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns> 
+        public List<Grupo> selectGruposPorNome(string nome, int idCategoria, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome, ativo FROM produto_grupo WHERE nome LIKE '%{0}%' AND id_categ = {1} AND ativo = {2}  ORDER BY nome", nome, idCategoria, ativo);
+                DataSet ds = con.ConsultaSQL(SQL);
+                List<Grupo> lista = new List<Grupo>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Grupo obj = new Grupo
+                    {
+                        Id = int.Parse(dr["id"].ToString()),
+                        nome = dr["nome"].ToString()
+                    };
+                    lista.Add(obj);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// RETORNA TODOS OS GRUPOS PELA CONSULTA DE NOMES INDEPENDENTE DE CATEGORIAS
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public List<Grupo> selectAllGruposPorNome(string nome)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome, id_categ, ativo FROM produto_grupo WHERE nome LIKE '%{0}%' ORDER BY nome", nome);
+                DataSet ds = con.ConsultaSQL(SQL);
+                List<Grupo> lista = new List<Grupo>();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Grupo obj = new Grupo
+                    {
+                        Id = int.Parse(dr["id"].ToString()),
+                        nome = dr["nome"].ToString()
+                    };
+                    lista.Add(obj);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         #endregion
 
         #region SUBGRUPO
+        /// <summary>
+        /// FAZ O INSERT DO SUBGRUPO NA BASE DE DADOS
+        /// </summary>
+        /// <param name="s"></param>
         public void insertSubgrupo(Subgrupo s)
         {
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "INSERT INTO produto_subgrupo(nome, id_grupo) VALUES (@nome, @grupo)";
+                SQL = "INSERT INTO produto_subgrupo(nome, id_grupo, ativo) VALUES (@nome, @grupo, @ativo)";
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@nome", s.Nome);
+                cmd.Parameters.AddWithValue("@nome",  s.nome);
                 cmd.Parameters.AddWithValue("@grupo", s.grupo.Id);
+                cmd.Parameters.AddWithValue("@ativo", s.ativo);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -779,16 +903,21 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// FAZ O UPDATE DO SUBGRUPO NA BASE DE DADOS
+        /// </summary>
+        /// <param name="s"></param>
         public void updateSubgrupo(Subgrupo s)
         {
             try
             {
                 cmd = new NpgsqlCommand();
-                SQL = "UPDATE produto_subgrupo SET nome = @nome, id_grupo = @grupo WHERE id = @id";
+                SQL = "UPDATE produto_subgrupo SET nome = @nome, id_grupo = @grupo, ativo = @ativo WHERE id = @id";
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@nome", s.Nome);
+                cmd.Parameters.AddWithValue("@nome",  s.nome);
                 cmd.Parameters.AddWithValue("@grupo", s.grupo.Id);
-                cmd.Parameters.AddWithValue("@id", s.Id);
+                cmd.Parameters.AddWithValue("@ativo", s.ativo);
+                cmd.Parameters.AddWithValue("@id",    s.Id);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -797,36 +926,16 @@ namespace DAO
             }
         }
 
-        public List<Subgrupo> selectSubgrupos(Grupo grupo)
-        {
-            try
-            {
-                SQL = string.Format("SELECT id, nome, id_grupo FROM produto_subgrupo WHERE id_grupo = {0}", grupo.Id);
-                DataSet ds = con.ConsultaSQL(SQL);
-                List<Subgrupo> lista = new List<Subgrupo>();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    Subgrupo obj = new Subgrupo
-                    {
-                        Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
-                    };
-                    lista.Add(obj);
-                }
-
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
+        /// <summary>
+        /// RETORNA UM SUBGRUPO
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Subgrupo getSubgrupoID(int id)
         {
             try
             {
-                SQL = string.Format("SELECT id, nome, id_grupo FROM produto_subgrupo WHERE id = {0}", id);
+                SQL = string.Format("SELECT id, nome, id_grupo,ativo FROM produto_subgrupo WHERE id = {0}", id);
                 DataSet ds = con.ConsultaSQL(SQL);
 
                 Subgrupo sub = null;
@@ -834,8 +943,9 @@ namespace DAO
                 {
                     sub = new Subgrupo();
                     Grupo grupo = new Grupo();
-                    sub.Id = int.Parse(dr["id"].ToString());
-                    sub.Nome = dr["nome"].ToString();
+                    sub.Id    = int.Parse(dr["id"].ToString());
+                    sub.nome  = dr["nome"].ToString();
+                    sub.ativo = bool.Parse(dr["ativo"].ToString());
                     //grupo
                     sub.grupo.Id = int.Parse(dr["id_grupo"].ToString());
                     grupo = getGrupoID(sub.grupo.Id);
@@ -849,20 +959,26 @@ namespace DAO
             }
         }
 
-        public List<Subgrupo> selectSubgruposPorNome(string nome, bool ativo, int idGrupo)
+        /// <summary>
+        /// RETORNA TODAS OS SUBGRUPOS DE UM GRUPO
+        /// </summary>
+        /// <param name="idGrupo"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Subgrupo> selectSubgruposPorGrupo(int idGrupo, bool ativo)
         {
             try
             {
-                SQL = string.Format("SELECT id, nome FROM produto_subgrupo WHERE nome LIKE '%{0}%' AND ativo = {1} AND  id_grupo = {2} ORDER BY id", nome, ativo, idGrupo);
+                SQL = string.Format("SELECT id, nome, id_grupo FROM produto_subgrupo WHERE id_grupo = {0} AND ativo = {1} ORDER BY nome", idGrupo, ativo);
                 DataSet ds = con.ConsultaSQL(SQL);
-
                 List<Subgrupo> lista = new List<Subgrupo>();
-
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    Subgrupo obj = new Subgrupo();
-                    obj.Id = int.Parse(dr["id"].ToString());
-                    obj.Nome = dr["nome"].ToString();
+                    Subgrupo obj = new Subgrupo
+                    {
+                        Id = int.Parse(dr["id"].ToString()),
+                        nome = dr["nome"].ToString()
+                    };
                     lista.Add(obj);
                 }
 
@@ -874,6 +990,67 @@ namespace DAO
             }
         }
 
+        /// <summary>
+        /// RETORNA TODOS OS SUBGRUPOS DE UM GRUPO BUSCANDO PELO NOME
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="idGrupo"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Subgrupo> selectSubgruposPorNome(string nome, int idGrupo, bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome FROM produto_subgrupo WHERE nome LIKE '%{0}%' AND id_grupo = {1} AND ativo = {2} ORDER BY nome", nome, idGrupo, ativo);
+                DataSet ds = con.ConsultaSQL(SQL);
+
+                List<Subgrupo> lista = new List<Subgrupo>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Subgrupo obj = new Subgrupo();
+                    obj.Id = int.Parse(dr["id"].ToString());
+                    obj.nome = dr["nome"].ToString();
+                    lista.Add(obj);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// RETORNA TODOS OS SUBGRUPOS PELA CONSULTA DE NOMES INDEPENDENTE DO GRUPO
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public List<Subgrupo> selectAllSubgrupoPorNome(string nome)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome FROM produto_subgrupo WHERE nome LIKE '%{0}%' ORDER BY nome", nome);
+                DataSet ds = con.ConsultaSQL(SQL);
+
+                List<Subgrupo> lista = new List<Subgrupo>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Subgrupo obj = new Subgrupo();
+                    obj.Id = int.Parse(dr["id"].ToString());
+                    obj.nome = dr["nome"].ToString();
+                    lista.Add(obj);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         #endregion
 
     }
