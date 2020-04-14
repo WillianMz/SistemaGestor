@@ -14,12 +14,18 @@ namespace Sistema.Estoque.Interfaces
     {
         public statusForm statusForm;
         DateTime dataAtual = DateTime.Now;
-        BLL_Produto controler;       
+        BLL_Produto controler;
+        Categoria c;
+        Grupo g;
+        Subgrupo s;
+        int idCateg;
+        int idGrupo;
+        int idSubg;
 
         public formProduto()
         {
             InitializeComponent();
-            carregarCombobox();
+            carregarCbox();
             configForm();
         }
 
@@ -54,13 +60,12 @@ namespace Sistema.Estoque.Interfaces
             }            
         }
 
-        private void carregarCombobox()
+        private void carregarCbox()
         {
-            carregarComboBox.tipoProduto(cboxTpProduto);
-            carregarComboBox.unidade(cboxUnidade);
-            carregarComboBox.unidade(cboxUnCompra);
-            carregarComboBox.categoriaProduto(cboxCategoria);
-            //carregarComboBox.grupoProduto(cboxGrupo);
+            carregarComboBox.tipoProduto(cbTpProduto);
+            carregarComboBox.unidade(cbUnidade);
+            carregarComboBox.unidade(cbUnCompra);
+           // carregarComboBox.categoriaProduto(cbCategoria);
         }
 
         private void bloquearCampos()
@@ -102,16 +107,16 @@ namespace Sistema.Estoque.Interfaces
             {
                 Produto p = new Produto();
                 p.Ativo           = true; //default padrão
-                p.TipoProduto.Id  = int.Parse(cboxTpProduto.SelectedValue.ToString());
+                p.TipoProduto.Id  = int.Parse(cbTpProduto.SelectedValue.ToString());
                 p.Codigo          = txtCodbarras.Text.Trim();
                 p.Nome            = txtNome.Text.Trim();
                 p.Descricao       = txtDescricao.Text.Trim();
-                p.Unidade.Id      = int.Parse(cboxUnidade.SelectedValue.ToString());
+                p.Unidade.Id      = int.Parse(cbUnidade.SelectedValue.ToString());
                 p.Marca           = txtMarca.Text.Trim();
                 p.Fabricante      = txtFabricante.Text.Trim();
-                p.Categoria.Id    = int.Parse(cboxCategoria.SelectedValue.ToString());
-                p.Grupo.Id        = int.Parse(cboxGrupo.SelectedValue.ToString());
-                p.Subgrupo.Id     = int.Parse(cboxSubgrupo.SelectedValue.ToString());
+                p.Categoria.Id = idCateg;//int.Parse(cbCategoria.SelectedValue.ToString());
+                p.Grupo.Id = idGrupo; //int.Parse(cbGrupo.SelectedValue.ToString());
+                p.Subgrupo.Id = idSubg; //int.Parse(cbSubgrupo.SelectedValue.ToString());
                 p.Custo           = double.Parse(txtCusto.Text);
                 p.VendaComissao   = double.Parse(txtComissao.Text);
                 p.VendaPorcCom    = double.Parse(txtPorcComissao.Text);
@@ -124,7 +129,7 @@ namespace Sistema.Estoque.Interfaces
                 p.PrecoVenda      = double.Parse(txtVenda.Text);
                 p.QtdMinina       = double.Parse(txtQtdMinima.Text);
                 p.QtdMaxima       = double.Parse(txtQtdMaxima.Text);
-                p.UnidCompra.Id   = int.Parse(cboxUnCompra.SelectedValue.ToString());
+                p.UnidCompra.Id   = int.Parse(cbUnCompra.SelectedValue.ToString());
                 p.QtdEmb          = double.Parse(txtQtdEmb.Text);
                 p.PesoBruto       = double.Parse(txtPesoBruto.Text);
                 p.PesoLiquido     = double.Parse(txtPesoLiquido.Text);
@@ -170,16 +175,16 @@ namespace Sistema.Estoque.Interfaces
             {
                 Produto p = new Produto();
                 p.Id              = int.Parse(txtID.Text);
-                p.TipoProduto.Id  = int.Parse(cboxTpProduto.SelectedValue.ToString());
+                p.TipoProduto.Id  = int.Parse(cbTpProduto.SelectedValue.ToString());
                 p.Codigo          = txtCodbarras.Text.Trim();
                 p.Nome            = txtNome.Text.Trim();
                 p.Descricao       = txtDescricao.Text.Trim();
-                p.Unidade.Id      = int.Parse(cboxUnidade.SelectedValue.ToString());
+                p.Unidade.Id      = int.Parse(cbUnidade.SelectedValue.ToString());
                 p.Marca           = txtMarca.Text.Trim();
                 p.Fabricante      = txtFabricante.Text.Trim();
-                p.Categoria.Id    = int.Parse(cboxCategoria.SelectedValue.ToString());
-                p.Grupo.Id        = int.Parse(cboxGrupo.SelectedValue.ToString());
-                p.Subgrupo.Id     = int.Parse(cboxSubgrupo.SelectedValue.ToString());
+                p.Categoria.Id = idCateg;//int.Parse(cbCategoria.SelectedValue.ToString());
+                p.Grupo.Id = idGrupo; //int.Parse(cbGrupo.SelectedValue.ToString());
+                p.Subgrupo.Id = idSubg; //int.Parse(cbSubgrupo.SelectedValue.ToString());
                 p.Custo           = double.Parse(txtCusto.Text);
                 p.VendaComissao   = double.Parse(txtComissao.Text);
                 p.VendaPorcCom    = double.Parse(txtPorcComissao.Text);
@@ -192,7 +197,7 @@ namespace Sistema.Estoque.Interfaces
                 p.PrecoVenda      = double.Parse(txtVenda.Text);
                 p.QtdMinina       = double.Parse(txtQtdMinima.Text);
                 p.QtdMaxima       = double.Parse(txtQtdMaxima.Text);
-                p.UnidCompra.Id   = int.Parse(cboxUnCompra.SelectedValue.ToString());
+                p.UnidCompra.Id   = int.Parse(cbUnCompra.SelectedValue.ToString());
                 p.QtdEmb          = double.Parse(txtQtdEmb.Text);
                 p.PesoBruto       = double.Parse(txtPesoBruto.Text);
                 p.PesoLiquido     = double.Parse(txtPesoLiquido.Text);
@@ -242,20 +247,23 @@ namespace Sistema.Estoque.Interfaces
                 lblTitulo.Text              = p.Nome;
                 txtID.Text                  = Convert.ToString(p.Id);
                 chBoxAtivo.Checked          = p.Ativo;
-                cboxTpProduto.SelectedValue = p.TipoProduto.Id;
+                cbTpProduto.SelectedValue = p.TipoProduto.Id;
                 txtCodbarras.Text           = p.Codigo;
                 txtNome.Text                = p.Nome;
                 txtDescricao.Text           = p.Descricao;
-                cboxUnidade.SelectedValue   = p.Unidade.Id;
+                cbUnidade.SelectedValue   = p.Unidade.Id;
                 chBoxBalanca.Checked        = p.Balanca;
                 txtMarca.Text               = p.Marca;
                 txtFabricante.Text          = p.Fabricante;
-                cboxCategoria.SelectedValue = p.Categoria.Id;
-                cboxGrupo.SelectedValue     = p.Grupo.Id;
-                cboxSubgrupo.SelectedValue  = p.Subgrupo.Id;               
+                txtCategoria.Text           = p.Categoria.Id + " - " + p.Categoria.nome;
+                txtGrupo.Text               = p.Grupo.Id + " - " + p.Grupo.nome;
+                txtSubgrupo.Text            = p.Subgrupo.Id + " - " + p.Subgrupo.nome;
+                //cbCategoria.SelectedValue = p.Categoria.Id;
+                //cbGrupo.SelectedValue     = p.Grupo.Id;
+                //cbSubgrupo.SelectedValue  = p.Subgrupo.Id;               
                 txtQtdMinima.Text           = Convert.ToString(p.QtdMinina);
                 txtQtdMaxima.Text           = Convert.ToString(p.QtdMaxima);
-                cboxUnCompra.SelectedValue  = p.UnidCompra.Id;
+                cbUnCompra.SelectedValue  = p.UnidCompra.Id;
                 txtQtdEmb.Text              = Convert.ToString(p.QtdEmb);
                 txtPesoBruto.Text           = Convert.ToString(p.PesoBruto);
                 txtPesoLiquido.Text         = Convert.ToString(p.PesoLiquido);
@@ -286,10 +294,10 @@ namespace Sistema.Estoque.Interfaces
         private void salvar()
         {
             #region VERIFICAR CAMPOS PREENCHIDOS
-            if (cboxTpProduto.Text == "")
+            if (cbTpProduto.Text == "")
             {
                 MessageBox.Show("Selecione o tipo de produto!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboxTpProduto.Focus();
+                cbTpProduto.Focus();
                 return;
             }
 
@@ -309,11 +317,11 @@ namespace Sistema.Estoque.Interfaces
                 return;
             }
 
-            if (cboxUnidade.Text == "")
+            if (cbUnidade.Text == "")
             {
-                cboxUnidade.BackColor = Color.Yellow;
+                cbUnidade.BackColor = Color.Yellow;
                 MessageBox.Show("Selecione o tipo de unidade!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboxUnidade.Focus();
+                cbUnidade.Focus();
                 return;
             }
 
@@ -328,26 +336,26 @@ namespace Sistema.Estoque.Interfaces
             if (txtFabricante.Text == "")
                 txtFabricante.Text = "NC";
 
-            if (cboxCategoria.Text == "")
-            {
-                MessageBox.Show("Selecione uma categoria!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboxCategoria.Focus();
-                return;
-            }
+            //if (cbCategoria.Text == "")
+            //{
+            //    MessageBox.Show("Selecione uma categoria!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    cbCategoria.Focus();
+            //    return;
+            //}
 
-            if (cboxGrupo.Text == "")
-            {
-                MessageBox.Show("Selecione um grupo!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboxGrupo.Focus();
-                return;
-            }
+            //if (cbGrupo.Text == "")
+            //{
+            //    MessageBox.Show("Selecione um grupo!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    cbGrupo.Focus();
+            //    return;
+            //}
 
-            if (cboxSubgrupo.Text == "")
-            {
-                MessageBox.Show("Selecione um subgrupo!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboxSubgrupo.Focus();
-                return;
-            }
+            //if (cbSubgrupo.Text == "")
+            //{
+            //    MessageBox.Show("Selecione um subgrupo!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    cbSubgrupo.Focus();
+            //    return;
+            //}
 
             if (txtLocalizacao.Text == "")
                 txtLocalizacao.Text = "NC";
@@ -358,10 +366,10 @@ namespace Sistema.Estoque.Interfaces
             if (txtQtdMaxima.Text == "")
                 txtQtdMaxima.Text = "0";
 
-            if (cboxUnCompra.Text == "")
+            if (cbUnCompra.Text == "")
             {
                 MessageBox.Show("Selecione a unidade de compra!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboxUnCompra.Focus();
+                cbUnCompra.Focus();
                 return;
             }
 
@@ -398,10 +406,15 @@ namespace Sistema.Estoque.Interfaces
 
         #region COMBOBOX
 
-        private void cboxGrupo_SelectedValueChanged(object sender, EventArgs e)
-        {
-            carregarComboBox.subgrupoProduto(cboxSubgrupo, cboxGrupo);
-        }
+        //private void cboxCategoria_SelectedValueChanged(object sender, EventArgs e)
+        //{            
+        //    carregarComboBox.grupoProduto(cbGrupo, cbCategoria);
+        //}
+
+        //private void cboxGrupo_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    carregarComboBox.subgrupoProduto(cbSubgrupo, cbGrupo);
+        //}
 
         #endregion
 
@@ -514,29 +527,37 @@ namespace Sistema.Estoque.Interfaces
 
         private void btnCateg_Click(object sender, EventArgs e)
         {
-            formProdutoCategoria form = new formProdutoCategoria();
-            form.statusForm = statusForm.Novo;
-            form.ShowDialog();
-            carregarComboBox.categoriaProduto(cboxCategoria);
-            form.Dispose();
+            //formProdutoCategoria fCateg = new formProdutoCategoria();
+            //fCateg.statusForm = statusForm.Novo;
+            //fCateg.configForm();
+            //fCateg.ShowDialog();
+            //carregarComboBox.categoriaProduto(cbCategoria);
+            //fCateg.Close();
+            //fCateg.Dispose();
         }
 
         private void btnGrupo_Click(object sender, EventArgs e)
         {
-            formProdutoGrupo frm = new formProdutoGrupo();
-            frm.statusForm = statusForm.Novo;
-            frm.ShowDialog();
-            carregarComboBox.grupoProduto(cboxCategoria, cboxGrupo);
-            frm.Dispose();
+            //idCateg = Convert.ToInt32(cbCategoria.SelectedValue);
+            //formProdutoGrupo fGrupo = new formProdutoGrupo();
+            //fGrupo.statusForm = statusForm.Novo;
+            //fGrupo.configForm(idCateg);
+            //fGrupo.ShowDialog();
+            //fGrupo.Close();
+            //carregarComboBox.grupoProduto(cbCategoria, cbGrupo);
+            //fGrupo.Dispose();
         }
 
         private void btnSubgrupo_Click(object sender, EventArgs e)
         {
-            formProdutoSubgrupo frm = new formProdutoSubgrupo();
-            frm.statusForm = statusForm.Novo;
-            frm.ShowDialog();
-            carregarComboBox.subgrupoProduto(cboxSubgrupo, cboxGrupo);
-            frm.Dispose();
+            //idGrupo = Convert.ToInt32(cbGrupo.SelectedValue);
+            //formProdutoSubgrupo fSub = new formProdutoSubgrupo();
+            //fSub.statusForm = statusForm.Novo;
+            //fSub.configForm(idGrupo);
+            //fSub.ShowDialog();
+            //fSub.Close();
+            //carregarComboBox.subgrupoProduto(cbSubgrupo, cbGrupo);
+            //fSub.Dispose();
         }
 
         private void btnAdicionarImagem_Click(object sender, EventArgs e)
@@ -580,9 +601,44 @@ namespace Sistema.Estoque.Interfaces
                     return;
             }
             else if (statusForm == statusForm.Detalhes)
-                this.Close();
+                Close();
         }
 
+
         #endregion
+
+        private void btnClassifProdutos_Click(object sender, EventArgs e)
+        {
+            formClassifProdutos fClass = new formClassifProdutos();
+            fClass.status = statusForm.Selecionar;
+            fClass.configForm();
+
+            c = new Categoria();
+            g = new Grupo();
+            s = new Subgrupo();
+
+            fClass.ShowDialog();
+            //tem que mudar isso aqui -> ainda nao sei fazer de outro jeito
+            c = fClass.selecionarCategoria();
+            g = fClass.selecionarGrupo();
+            s = fClass.selecionarSubgrupo();
+
+            classificacao(c, g, s);
+
+            fClass.Close();
+            fClass.Dispose();
+        }
+
+
+        private void classificacao(Categoria c, Grupo g, Subgrupo s)
+        {
+            idCateg = c.Id;
+            idGrupo = g.Id;
+            idSubg  = s.Id;
+            txtCategoria.Text = c.Id + " - " + c.nome;
+            txtGrupo.Text     = g.Id + " - " + g.nome;
+            txtSubgrupo.Text  = s.Id + " - " + s.nome;
+        }
+
     }
 }

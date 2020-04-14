@@ -32,13 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProduto));
             this.tabProduto = new System.Windows.Forms.TabControl();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
+            this.lblCNPJFabricante = new System.Windows.Forms.Label();
+            this.txtCNPJFabricante = new System.Windows.Forms.TextBox();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
             this.pbImagem = new System.Windows.Forms.PictureBox();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
-            this.mtxtAlteracao = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtCadastro = new System.Windows.Forms.MaskedTextBox();
-            this.lblAlteracao = new System.Windows.Forms.Label();
-            this.lblCadastro = new System.Windows.Forms.Label();
             this.txtQtdMaxima = new System.Windows.Forms.TextBox();
             this.lblQtdMaxima = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
@@ -54,60 +52,34 @@
             this.lblQtdEmb = new System.Windows.Forms.Label();
             this.lblPesoBruto = new System.Windows.Forms.Label();
             this.lblComprimento = new System.Windows.Forms.Label();
-            this.cboxUnCompra = new System.Windows.Forms.ComboBox();
+            this.cbUnCompra = new System.Windows.Forms.ComboBox();
             this.txtPesoBruto = new System.Windows.Forms.TextBox();
             this.lblPesoLiquido = new System.Windows.Forms.Label();
             this.gbClassificacao = new System.Windows.Forms.GroupBox();
             this.txtLocalizacao = new System.Windows.Forms.TextBox();
-            this.btnCateg = new System.Windows.Forms.Button();
-            this.btnGrupo = new System.Windows.Forms.Button();
-            this.btnSubgrupo = new System.Windows.Forms.Button();
             this.lblLocalizacao = new System.Windows.Forms.Label();
-            this.cboxSubgrupo = new System.Windows.Forms.ComboBox();
             this.lblSubgrupo = new System.Windows.Forms.Label();
-            this.cboxGrupo = new System.Windows.Forms.ComboBox();
             this.lblGrupo = new System.Windows.Forms.Label();
-            this.cboxCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.btnCodigo = new System.Windows.Forms.Button();
             this.lblFabricante = new System.Windows.Forms.Label();
             this.txtFabricante = new System.Windows.Forms.TextBox();
-            this.lblCodBarras = new System.Windows.Forms.Label();
+            this.lblCodPrincipal = new System.Windows.Forms.Label();
             this.txtCodbarras = new System.Windows.Forms.TextBox();
             this.chBoxBalanca = new System.Windows.Forms.CheckBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.cboxUnidade = new System.Windows.Forms.ComboBox();
+            this.cbUnidade = new System.Windows.Forms.ComboBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.lblUnidade = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.cboxTpProduto = new System.Windows.Forms.ComboBox();
+            this.cbTpProduto = new System.Windows.Forms.ComboBox();
             this.lblTpProduto = new System.Windows.Forms.Label();
             this.chBoxAtivo = new System.Windows.Forms.CheckBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblCod = new System.Windows.Forms.Label();
             this.tabValores = new System.Windows.Forms.TabPage();
-            this.tabCodigos = new System.Windows.Forms.TabPage();
-            this.dgvCodigos = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.btnAdicionarCodigo = new System.Windows.Forms.Button();
-            this.tabTributacao = new System.Windows.Forms.TabPage();
-            this.tabDadosFiscais = new System.Windows.Forms.TabControl();
-            this.tabFederal = new System.Windows.Forms.TabPage();
-            this.tabEstadual = new System.Windows.Forms.TabPage();
-            this.pnlRodape = new System.Windows.Forms.Panel();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblMensagem = new System.Windows.Forms.Label();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.ofdImagem = new System.Windows.Forms.OpenFileDialog();
-            this.toolTipProduto = new System.Windows.Forms.ToolTip(this.components);
             this.gbPreco = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCusto = new System.Windows.Forms.TextBox();
@@ -131,24 +103,51 @@
             this.lblPorcDesconto = new System.Windows.Forms.Label();
             this.lblPorcComissao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabCodigos = new System.Windows.Forms.TabPage();
+            this.dgvCodigos = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnAdicionarCodigo = new System.Windows.Forms.Button();
+            this.tabTributacao = new System.Windows.Forms.TabPage();
+            this.tabDadosFiscais = new System.Windows.Forms.TabControl();
+            this.tabFederal = new System.Windows.Forms.TabPage();
+            this.tabEstadual = new System.Windows.Forms.TabPage();
+            this.pnlRodape = new System.Windows.Forms.Panel();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblMensagem = new System.Windows.Forms.Label();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.ofdImagem = new System.Windows.Forms.OpenFileDialog();
+            this.toolTipProduto = new System.Windows.Forms.ToolTip(this.components);
+            this.btnClassifProdutos = new System.Windows.Forms.Button();
+            this.mtxtAlteracao = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtCadastro = new System.Windows.Forms.MaskedTextBox();
+            this.lblAlteracao = new System.Windows.Forms.Label();
+            this.lblCadastro = new System.Windows.Forms.Label();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtGrupo = new System.Windows.Forms.TextBox();
+            this.txtSubgrupo = new System.Windows.Forms.TextBox();
             this.tabProduto.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             this.gbEstoque.SuspendLayout();
             this.gbClassificacao.SuspendLayout();
             this.tabValores.SuspendLayout();
+            this.gbPreco.SuspendLayout();
             this.tabCodigos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCodigos)).BeginInit();
             this.tabTributacao.SuspendLayout();
             this.tabDadosFiscais.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
-            this.gbPreco.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProduto
             // 
-            this.tabProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tabProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabProduto.Controls.Add(this.tabPrincipal);
             this.tabProduto.Controls.Add(this.tabValores);
@@ -163,25 +162,26 @@
             // 
             // tabPrincipal
             // 
+            this.tabPrincipal.Controls.Add(this.lblCNPJFabricante);
+            this.tabPrincipal.Controls.Add(this.txtCNPJFabricante);
             this.tabPrincipal.Controls.Add(this.btnAdicionarImagem);
             this.tabPrincipal.Controls.Add(this.pbImagem);
             this.tabPrincipal.Controls.Add(this.gbEstoque);
             this.tabPrincipal.Controls.Add(this.gbClassificacao);
-            this.tabPrincipal.Controls.Add(this.btnCodigo);
             this.tabPrincipal.Controls.Add(this.lblFabricante);
             this.tabPrincipal.Controls.Add(this.txtFabricante);
-            this.tabPrincipal.Controls.Add(this.lblCodBarras);
+            this.tabPrincipal.Controls.Add(this.lblCodPrincipal);
             this.tabPrincipal.Controls.Add(this.txtCodbarras);
             this.tabPrincipal.Controls.Add(this.chBoxBalanca);
             this.tabPrincipal.Controls.Add(this.lblMarca);
-            this.tabPrincipal.Controls.Add(this.cboxUnidade);
+            this.tabPrincipal.Controls.Add(this.cbUnidade);
             this.tabPrincipal.Controls.Add(this.txtMarca);
             this.tabPrincipal.Controls.Add(this.lblUnidade);
             this.tabPrincipal.Controls.Add(this.lblDescricao);
             this.tabPrincipal.Controls.Add(this.txtDescricao);
             this.tabPrincipal.Controls.Add(this.lblNome);
             this.tabPrincipal.Controls.Add(this.txtNome);
-            this.tabPrincipal.Controls.Add(this.cboxTpProduto);
+            this.tabPrincipal.Controls.Add(this.cbTpProduto);
             this.tabPrincipal.Controls.Add(this.lblTpProduto);
             this.tabPrincipal.Controls.Add(this.chBoxAtivo);
             this.tabPrincipal.Controls.Add(this.txtID);
@@ -195,12 +195,32 @@
             this.tabPrincipal.Text = "Produto";
             this.tabPrincipal.UseVisualStyleBackColor = true;
             // 
+            // lblCNPJFabricante
+            // 
+            this.lblCNPJFabricante.AutoSize = true;
+            this.lblCNPJFabricante.Enabled = false;
+            this.lblCNPJFabricante.Location = new System.Drawing.Point(382, 142);
+            this.lblCNPJFabricante.Name = "lblCNPJFabricante";
+            this.lblCNPJFabricante.Size = new System.Drawing.Size(111, 15);
+            this.lblCNPJFabricante.TabIndex = 66;
+            this.lblCNPJFabricante.Text = "CNPJ do Fabricante";
+            // 
+            // txtCNPJFabricante
+            // 
+            this.txtCNPJFabricante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCNPJFabricante.Enabled = false;
+            this.txtCNPJFabricante.Location = new System.Drawing.Point(385, 160);
+            this.txtCNPJFabricante.Name = "txtCNPJFabricante";
+            this.txtCNPJFabricante.Size = new System.Drawing.Size(144, 23);
+            this.txtCNPJFabricante.TabIndex = 65;
+            this.toolTipProduto.SetToolTip(this.txtCNPJFabricante, "Fabbricante do produto");
+            // 
             // btnAdicionarImagem
             // 
             this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarImagem.Image")));
             this.btnAdicionarImagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(594, 152);
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(824, 152);
             this.btnAdicionarImagem.Name = "btnAdicionarImagem";
             this.btnAdicionarImagem.Size = new System.Drawing.Size(44, 40);
             this.btnAdicionarImagem.TabIndex = 63;
@@ -212,23 +232,21 @@
             // pbImagem
             // 
             this.pbImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImagem.Location = new System.Drawing.Point(644, 7);
+            this.pbImagem.Location = new System.Drawing.Point(543, 5);
             this.pbImagem.Name = "pbImagem";
-            this.pbImagem.Size = new System.Drawing.Size(218, 185);
+            this.pbImagem.Size = new System.Drawing.Size(275, 187);
             this.pbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagem.TabIndex = 64;
             this.pbImagem.TabStop = false;
             // 
             // gbEstoque
             // 
-            this.gbEstoque.Controls.Add(this.mtxtAlteracao);
-            this.gbEstoque.Controls.Add(this.mtxtCadastro);
-            this.gbEstoque.Controls.Add(this.lblAlteracao);
-            this.gbEstoque.Controls.Add(this.lblCadastro);
             this.gbEstoque.Controls.Add(this.txtQtdMaxima);
+            this.gbEstoque.Controls.Add(this.txtLocalizacao);
             this.gbEstoque.Controls.Add(this.lblQtdMaxima);
             this.gbEstoque.Controls.Add(this.txtAltura);
             this.gbEstoque.Controls.Add(this.txtComprimento);
+            this.gbEstoque.Controls.Add(this.lblLocalizacao);
             this.gbEstoque.Controls.Add(this.txtQtdEmb);
             this.gbEstoque.Controls.Add(this.txtQtdMinima);
             this.gbEstoque.Controls.Add(this.lblQtdMinima);
@@ -240,7 +258,7 @@
             this.gbEstoque.Controls.Add(this.lblQtdEmb);
             this.gbEstoque.Controls.Add(this.lblPesoBruto);
             this.gbEstoque.Controls.Add(this.lblComprimento);
-            this.gbEstoque.Controls.Add(this.cboxUnCompra);
+            this.gbEstoque.Controls.Add(this.cbUnCompra);
             this.gbEstoque.Controls.Add(this.txtPesoBruto);
             this.gbEstoque.Controls.Add(this.lblPesoLiquido);
             this.gbEstoque.Location = new System.Drawing.Point(391, 198);
@@ -249,42 +267,6 @@
             this.gbEstoque.TabIndex = 62;
             this.gbEstoque.TabStop = false;
             this.gbEstoque.Text = "Estoque";
-            // 
-            // mtxtAlteracao
-            // 
-            this.mtxtAlteracao.Enabled = false;
-            this.mtxtAlteracao.Location = new System.Drawing.Point(275, 128);
-            this.mtxtAlteracao.Mask = "00/00/0000";
-            this.mtxtAlteracao.Name = "mtxtAlteracao";
-            this.mtxtAlteracao.Size = new System.Drawing.Size(100, 23);
-            this.mtxtAlteracao.TabIndex = 63;
-            // 
-            // mtxtCadastro
-            // 
-            this.mtxtCadastro.Enabled = false;
-            this.mtxtCadastro.Location = new System.Drawing.Point(87, 128);
-            this.mtxtCadastro.Mask = "00/00/0000";
-            this.mtxtCadastro.Name = "mtxtCadastro";
-            this.mtxtCadastro.Size = new System.Drawing.Size(100, 23);
-            this.mtxtCadastro.TabIndex = 62;
-            // 
-            // lblAlteracao
-            // 
-            this.lblAlteracao.AutoSize = true;
-            this.lblAlteracao.Location = new System.Drawing.Point(197, 131);
-            this.lblAlteracao.Name = "lblAlteracao";
-            this.lblAlteracao.Size = new System.Drawing.Size(75, 15);
-            this.lblAlteracao.TabIndex = 65;
-            this.lblAlteracao.Text = "Dt.Alteração";
-            // 
-            // lblCadastro
-            // 
-            this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Location = new System.Drawing.Point(12, 131);
-            this.lblCadastro.Name = "lblCadastro";
-            this.lblCadastro.Size = new System.Drawing.Size(72, 15);
-            this.lblCadastro.TabIndex = 64;
-            this.lblCadastro.Text = "Dt.Cadastro";
             // 
             // txtQtdMaxima
             // 
@@ -410,16 +392,17 @@
             this.lblComprimento.TabIndex = 53;
             this.lblComprimento.Text = "Comprimento";
             // 
-            // cboxUnCompra
+            // cbUnCompra
             // 
-            this.cboxUnCompra.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxUnCompra.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxUnCompra.FormattingEnabled = true;
-            this.cboxUnCompra.Location = new System.Drawing.Point(87, 22);
-            this.cboxUnCompra.Name = "cboxUnCompra";
-            this.cboxUnCompra.Size = new System.Drawing.Size(61, 23);
-            this.cboxUnCompra.TabIndex = 57;
-            this.toolTipProduto.SetToolTip(this.cboxUnCompra, "Tipo de unidade no qual é comprado");
+            this.cbUnCompra.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbUnCompra.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbUnCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnCompra.FormattingEnabled = true;
+            this.cbUnCompra.Location = new System.Drawing.Point(87, 22);
+            this.cbUnCompra.Name = "cbUnCompra";
+            this.cbUnCompra.Size = new System.Drawing.Size(61, 23);
+            this.cbUnCompra.TabIndex = 57;
+            this.toolTipProduto.SetToolTip(this.cbUnCompra, "Tipo de unidade no qual é comprado");
             // 
             // txtPesoBruto
             // 
@@ -439,16 +422,12 @@
             // 
             // gbClassificacao
             // 
-            this.gbClassificacao.Controls.Add(this.txtLocalizacao);
-            this.gbClassificacao.Controls.Add(this.btnCateg);
-            this.gbClassificacao.Controls.Add(this.btnGrupo);
-            this.gbClassificacao.Controls.Add(this.btnSubgrupo);
-            this.gbClassificacao.Controls.Add(this.lblLocalizacao);
-            this.gbClassificacao.Controls.Add(this.cboxSubgrupo);
+            this.gbClassificacao.Controls.Add(this.txtSubgrupo);
+            this.gbClassificacao.Controls.Add(this.txtGrupo);
+            this.gbClassificacao.Controls.Add(this.txtCategoria);
+            this.gbClassificacao.Controls.Add(this.btnClassifProdutos);
             this.gbClassificacao.Controls.Add(this.lblSubgrupo);
-            this.gbClassificacao.Controls.Add(this.cboxGrupo);
             this.gbClassificacao.Controls.Add(this.lblGrupo);
-            this.gbClassificacao.Controls.Add(this.cboxCategoria);
             this.gbClassificacao.Controls.Add(this.lblCategoria);
             this.gbClassificacao.Location = new System.Drawing.Point(9, 198);
             this.gbClassificacao.Name = "gbClassificacao";
@@ -460,137 +439,53 @@
             // txtLocalizacao
             // 
             this.txtLocalizacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLocalizacao.Location = new System.Drawing.Point(9, 128);
+            this.txtLocalizacao.Location = new System.Drawing.Point(45, 129);
             this.txtLocalizacao.Multiline = true;
             this.txtLocalizacao.Name = "txtLocalizacao";
-            this.txtLocalizacao.Size = new System.Drawing.Size(361, 45);
+            this.txtLocalizacao.Size = new System.Drawing.Size(203, 23);
             this.txtLocalizacao.TabIndex = 3;
             this.toolTipProduto.SetToolTip(this.txtLocalizacao, "Informe a localização do produto.\r\nEx.: Prateleira: X\r\n       Depósito: Setor X");
-            // 
-            // btnCateg
-            // 
-            this.btnCateg.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCateg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnCateg.Image = ((System.Drawing.Image)(resources.GetObject("btnCateg.Image")));
-            this.btnCateg.Location = new System.Drawing.Point(347, 22);
-            this.btnCateg.Name = "btnCateg";
-            this.btnCateg.Size = new System.Drawing.Size(23, 23);
-            this.btnCateg.TabIndex = 38;
-            this.toolTipProduto.SetToolTip(this.btnCateg, "Nova categoria");
-            this.btnCateg.UseVisualStyleBackColor = true;
-            this.btnCateg.Click += new System.EventHandler(this.btnCateg_Click);
-            // 
-            // btnGrupo
-            // 
-            this.btnGrupo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGrupo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnGrupo.Image")));
-            this.btnGrupo.Location = new System.Drawing.Point(347, 51);
-            this.btnGrupo.Name = "btnGrupo";
-            this.btnGrupo.Size = new System.Drawing.Size(23, 23);
-            this.btnGrupo.TabIndex = 41;
-            this.toolTipProduto.SetToolTip(this.btnGrupo, "Novo grupo");
-            this.btnGrupo.UseVisualStyleBackColor = true;
-            this.btnGrupo.Click += new System.EventHandler(this.btnGrupo_Click);
-            // 
-            // btnSubgrupo
-            // 
-            this.btnSubgrupo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSubgrupo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnSubgrupo.Image = ((System.Drawing.Image)(resources.GetObject("btnSubgrupo.Image")));
-            this.btnSubgrupo.Location = new System.Drawing.Point(347, 80);
-            this.btnSubgrupo.Name = "btnSubgrupo";
-            this.btnSubgrupo.Size = new System.Drawing.Size(23, 23);
-            this.btnSubgrupo.TabIndex = 42;
-            this.toolTipProduto.SetToolTip(this.btnSubgrupo, "Novo subgrupo");
-            this.btnSubgrupo.UseVisualStyleBackColor = true;
-            this.btnSubgrupo.Click += new System.EventHandler(this.btnSubgrupo_Click);
             // 
             // lblLocalizacao
             // 
             this.lblLocalizacao.AutoSize = true;
-            this.lblLocalizacao.Location = new System.Drawing.Point(6, 110);
+            this.lblLocalizacao.Location = new System.Drawing.Point(42, 111);
             this.lblLocalizacao.Name = "lblLocalizacao";
             this.lblLocalizacao.Size = new System.Drawing.Size(72, 15);
             this.lblLocalizacao.TabIndex = 30;
             this.lblLocalizacao.Text = "Localização";
             // 
-            // cboxSubgrupo
-            // 
-            this.cboxSubgrupo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxSubgrupo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxSubgrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxSubgrupo.FormattingEnabled = true;
-            this.cboxSubgrupo.Location = new System.Drawing.Point(80, 80);
-            this.cboxSubgrupo.Name = "cboxSubgrupo";
-            this.cboxSubgrupo.Size = new System.Drawing.Size(261, 23);
-            this.cboxSubgrupo.TabIndex = 40;
-            // 
             // lblSubgrupo
             // 
             this.lblSubgrupo.AutoSize = true;
-            this.lblSubgrupo.Location = new System.Drawing.Point(15, 83);
+            this.lblSubgrupo.Location = new System.Drawing.Point(7, 118);
             this.lblSubgrupo.Name = "lblSubgrupo";
             this.lblSubgrupo.Size = new System.Drawing.Size(59, 15);
             this.lblSubgrupo.TabIndex = 45;
             this.lblSubgrupo.Text = "Subgrupo";
             // 
-            // cboxGrupo
-            // 
-            this.cboxGrupo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxGrupo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxGrupo.FormattingEnabled = true;
-            this.cboxGrupo.Location = new System.Drawing.Point(80, 51);
-            this.cboxGrupo.Name = "cboxGrupo";
-            this.cboxGrupo.Size = new System.Drawing.Size(261, 23);
-            this.cboxGrupo.TabIndex = 39;
-            this.cboxGrupo.SelectedIndexChanged += new System.EventHandler(this.cboxGrupo_SelectedValueChanged);
-            // 
             // lblGrupo
             // 
             this.lblGrupo.AutoSize = true;
-            this.lblGrupo.Location = new System.Drawing.Point(34, 54);
+            this.lblGrupo.Location = new System.Drawing.Point(6, 74);
             this.lblGrupo.Name = "lblGrupo";
             this.lblGrupo.Size = new System.Drawing.Size(41, 15);
             this.lblGrupo.TabIndex = 44;
             this.lblGrupo.Text = "Grupo";
             // 
-            // cboxCategoria
-            // 
-            this.cboxCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxCategoria.FormattingEnabled = true;
-            this.cboxCategoria.Location = new System.Drawing.Point(80, 22);
-            this.cboxCategoria.Name = "cboxCategoria";
-            this.cboxCategoria.Size = new System.Drawing.Size(261, 23);
-            this.cboxCategoria.TabIndex = 37;
-            // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(16, 25);
+            this.lblCategoria.Location = new System.Drawing.Point(6, 30);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(60, 15);
             this.lblCategoria.TabIndex = 43;
             this.lblCategoria.Text = "Categoria";
             // 
-            // btnCodigo
-            // 
-            this.btnCodigo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCodigo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnCodigo.Image = ((System.Drawing.Image)(resources.GetObject("btnCodigo.Image")));
-            this.btnCodigo.Location = new System.Drawing.Point(151, 70);
-            this.btnCodigo.Name = "btnCodigo";
-            this.btnCodigo.Size = new System.Drawing.Size(37, 23);
-            this.btnCodigo.TabIndex = 4;
-            this.toolTipProduto.SetToolTip(this.btnCodigo, "Mais opções do código");
-            this.btnCodigo.UseVisualStyleBackColor = true;
-            // 
             // lblFabricante
             // 
             this.lblFabricante.AutoSize = true;
-            this.lblFabricante.Location = new System.Drawing.Point(186, 142);
+            this.lblFabricante.Location = new System.Drawing.Point(155, 142);
             this.lblFabricante.Name = "lblFabricante";
             this.lblFabricante.Size = new System.Drawing.Size(66, 15);
             this.lblFabricante.TabIndex = 42;
@@ -599,27 +494,28 @@
             // txtFabricante
             // 
             this.txtFabricante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFabricante.Location = new System.Drawing.Point(186, 160);
+            this.txtFabricante.Location = new System.Drawing.Point(155, 160);
+            this.txtFabricante.MaxLength = 40;
             this.txtFabricante.Name = "txtFabricante";
-            this.txtFabricante.Size = new System.Drawing.Size(225, 23);
+            this.txtFabricante.Size = new System.Drawing.Size(224, 23);
             this.txtFabricante.TabIndex = 9;
             this.toolTipProduto.SetToolTip(this.txtFabricante, "Fabbricante do produto");
             // 
-            // lblCodBarras
+            // lblCodPrincipal
             // 
-            this.lblCodBarras.AutoSize = true;
-            this.lblCodBarras.Location = new System.Drawing.Point(6, 52);
-            this.lblCodBarras.Name = "lblCodBarras";
-            this.lblCodBarras.Size = new System.Drawing.Size(101, 15);
-            this.lblCodBarras.TabIndex = 27;
-            this.lblCodBarras.Text = "Código de barras";
+            this.lblCodPrincipal.AutoSize = true;
+            this.lblCodPrincipal.Location = new System.Drawing.Point(6, 52);
+            this.lblCodPrincipal.Name = "lblCodPrincipal";
+            this.lblCodPrincipal.Size = new System.Drawing.Size(101, 15);
+            this.lblCodPrincipal.TabIndex = 27;
+            this.lblCodPrincipal.Text = "Código de Barras";
             // 
             // txtCodbarras
             // 
             this.txtCodbarras.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodbarras.Location = new System.Drawing.Point(9, 70);
             this.txtCodbarras.Name = "txtCodbarras";
-            this.txtCodbarras.Size = new System.Drawing.Size(136, 23);
+            this.txtCodbarras.Size = new System.Drawing.Size(115, 23);
             this.txtCodbarras.TabIndex = 3;
             this.toolTipProduto.SetToolTip(this.txtCodbarras, "Digite o código do produto.\r\nEx.: Código de barras, RFid, Código interno entre ou" +
         "tros.\r\nNão será aceito códigos utilizados em outros produtos. Cada produto deve " +
@@ -629,7 +525,7 @@
             // chBoxBalanca
             // 
             this.chBoxBalanca.AutoSize = true;
-            this.chBoxBalanca.Location = new System.Drawing.Point(289, 27);
+            this.chBoxBalanca.Location = new System.Drawing.Point(288, 27);
             this.chBoxBalanca.Name = "chBoxBalanca";
             this.chBoxBalanca.Size = new System.Drawing.Size(71, 19);
             this.chBoxBalanca.TabIndex = 2;
@@ -646,31 +542,33 @@
             this.lblMarca.TabIndex = 40;
             this.lblMarca.Text = "Marca";
             // 
-            // cboxUnidade
+            // cbUnidade
             // 
-            this.cboxUnidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxUnidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxUnidade.FormattingEnabled = true;
-            this.cboxUnidade.Location = new System.Drawing.Point(511, 70);
-            this.cboxUnidade.Name = "cboxUnidade";
-            this.cboxUnidade.Size = new System.Drawing.Size(48, 23);
-            this.cboxUnidade.TabIndex = 6;
-            this.toolTipProduto.SetToolTip(this.cboxUnidade, "Tipo de unidade que é vendido ou utilizado.\r\nCaso não souber selecione UN como pa" +
+            this.cbUnidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbUnidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUnidade.FormattingEnabled = true;
+            this.cbUnidade.Location = new System.Drawing.Point(471, 70);
+            this.cbUnidade.Name = "cbUnidade";
+            this.cbUnidade.Size = new System.Drawing.Size(58, 23);
+            this.cbUnidade.TabIndex = 6;
+            this.toolTipProduto.SetToolTip(this.cbUnidade, "Tipo de unidade que é vendido ou utilizado.\r\nCaso não souber selecione UN como pa" +
         "drão!");
             // 
             // txtMarca
             // 
             this.txtMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMarca.Location = new System.Drawing.Point(9, 160);
+            this.txtMarca.MaxLength = 40;
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(171, 23);
+            this.txtMarca.Size = new System.Drawing.Size(140, 23);
             this.txtMarca.TabIndex = 8;
             this.toolTipProduto.SetToolTip(this.txtMarca, "Marca do produto");
             // 
             // lblUnidade
             // 
             this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Location = new System.Drawing.Point(508, 52);
+            this.lblUnidade.Location = new System.Drawing.Point(468, 52);
             this.lblUnidade.Name = "lblUnidade";
             this.lblUnidade.Size = new System.Drawing.Size(53, 15);
             this.lblUnidade.TabIndex = 17;
@@ -689,15 +587,16 @@
             // 
             this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricao.Location = new System.Drawing.Point(9, 115);
+            this.txtDescricao.MaxLength = 200;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(569, 23);
+            this.txtDescricao.Size = new System.Drawing.Size(520, 23);
             this.txtDescricao.TabIndex = 7;
             this.toolTipProduto.SetToolTip(this.txtDescricao, "Informe uma descrição para o produto");
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(224, 52);
+            this.lblNome.Location = new System.Drawing.Point(127, 52);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 15);
             this.lblNome.TabIndex = 14;
@@ -706,24 +605,25 @@
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(227, 70);
+            this.txtNome.Location = new System.Drawing.Point(130, 70);
+            this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(278, 23);
+            this.txtNome.Size = new System.Drawing.Size(335, 23);
             this.txtNome.TabIndex = 5;
             this.toolTipProduto.SetToolTip(this.txtNome, "Nome do produto. O mais especifico possível!");
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 
-            // cboxTpProduto
+            // cbTpProduto
             // 
-            this.cboxTpProduto.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.cboxTpProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxTpProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cboxTpProduto.FormattingEnabled = true;
-            this.cboxTpProduto.Location = new System.Drawing.Point(89, 25);
-            this.cboxTpProduto.Name = "cboxTpProduto";
-            this.cboxTpProduto.Size = new System.Drawing.Size(132, 23);
-            this.cboxTpProduto.TabIndex = 0;
-            this.toolTipProduto.SetToolTip(this.cboxTpProduto, "Selecione o tipo de produto");
+            this.cbTpProduto.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbTpProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTpProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbTpProduto.FormattingEnabled = true;
+            this.cbTpProduto.Location = new System.Drawing.Point(89, 25);
+            this.cbTpProduto.Name = "cbTpProduto";
+            this.cbTpProduto.Size = new System.Drawing.Size(132, 23);
+            this.cbTpProduto.TabIndex = 0;
+            this.toolTipProduto.SetToolTip(this.cbTpProduto, "Selecione o tipo de produto");
             // 
             // lblTpProduto
             // 
@@ -774,218 +674,12 @@
             this.tabValores.Text = "Custo/Venda";
             this.tabValores.UseVisualStyleBackColor = true;
             // 
-            // tabCodigos
-            // 
-            this.tabCodigos.Controls.Add(this.dgvCodigos);
-            this.tabCodigos.Controls.Add(this.txtCodigo);
-            this.tabCodigos.Controls.Add(this.lblCodigo);
-            this.tabCodigos.Controls.Add(this.btnAdicionarCodigo);
-            this.tabCodigos.Location = new System.Drawing.Point(4, 24);
-            this.tabCodigos.Name = "tabCodigos";
-            this.tabCodigos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCodigos.Size = new System.Drawing.Size(874, 382);
-            this.tabCodigos.TabIndex = 4;
-            this.tabCodigos.Text = "Códigos";
-            this.tabCodigos.UseVisualStyleBackColor = true;
-            // 
-            // dgvCodigos
-            // 
-            this.dgvCodigos.AllowUserToAddRows = false;
-            this.dgvCodigos.AllowUserToDeleteRows = false;
-            this.dgvCodigos.AllowUserToResizeRows = false;
-            this.dgvCodigos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCodigos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCodigos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvCodigos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dgvCodigos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvCodigos.ColumnHeadersHeight = 30;
-            this.dgvCodigos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCodigos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodigo});
-            this.dgvCodigos.Location = new System.Drawing.Point(16, 52);
-            this.dgvCodigos.Name = "dgvCodigos";
-            this.dgvCodigos.ReadOnly = true;
-            this.dgvCodigos.RowHeadersVisible = false;
-            this.dgvCodigos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCodigos.Size = new System.Drawing.Size(310, 137);
-            this.dgvCodigos.TabIndex = 28;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(65, 6);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(151, 23);
-            this.txtCodigo.TabIndex = 2;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(13, 9);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(45, 15);
-            this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Código";
-            // 
-            // btnAdicionarCodigo
-            // 
-            this.btnAdicionarCodigo.Location = new System.Drawing.Point(222, 6);
-            this.btnAdicionarCodigo.Name = "btnAdicionarCodigo";
-            this.btnAdicionarCodigo.Size = new System.Drawing.Size(75, 23);
-            this.btnAdicionarCodigo.TabIndex = 0;
-            this.btnAdicionarCodigo.Text = "Adicionar";
-            this.btnAdicionarCodigo.UseVisualStyleBackColor = true;
-            // 
-            // tabTributacao
-            // 
-            this.tabTributacao.Controls.Add(this.tabDadosFiscais);
-            this.tabTributacao.Location = new System.Drawing.Point(4, 24);
-            this.tabTributacao.Name = "tabTributacao";
-            this.tabTributacao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTributacao.Size = new System.Drawing.Size(874, 382);
-            this.tabTributacao.TabIndex = 3;
-            this.tabTributacao.Text = "Tributação";
-            this.tabTributacao.UseVisualStyleBackColor = true;
-            // 
-            // tabDadosFiscais
-            // 
-            this.tabDadosFiscais.Controls.Add(this.tabFederal);
-            this.tabDadosFiscais.Controls.Add(this.tabEstadual);
-            this.tabDadosFiscais.Location = new System.Drawing.Point(6, 6);
-            this.tabDadosFiscais.Name = "tabDadosFiscais";
-            this.tabDadosFiscais.SelectedIndex = 0;
-            this.tabDadosFiscais.Size = new System.Drawing.Size(757, 370);
-            this.tabDadosFiscais.TabIndex = 0;
-            // 
-            // tabFederal
-            // 
-            this.tabFederal.Location = new System.Drawing.Point(4, 24);
-            this.tabFederal.Name = "tabFederal";
-            this.tabFederal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFederal.Size = new System.Drawing.Size(749, 342);
-            this.tabFederal.TabIndex = 0;
-            this.tabFederal.Text = "Federal";
-            this.tabFederal.UseVisualStyleBackColor = true;
-            // 
-            // tabEstadual
-            // 
-            this.tabEstadual.Location = new System.Drawing.Point(4, 24);
-            this.tabEstadual.Name = "tabEstadual";
-            this.tabEstadual.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstadual.Size = new System.Drawing.Size(749, 342);
-            this.tabEstadual.TabIndex = 1;
-            this.tabEstadual.Text = "Estadual";
-            this.tabEstadual.UseVisualStyleBackColor = true;
-            // 
-            // pnlRodape
-            // 
-            this.pnlRodape.Controls.Add(this.btnNovo);
-            this.pnlRodape.Controls.Add(this.btnSalvar);
-            this.pnlRodape.Controls.Add(this.btnCancelar);
-            this.pnlRodape.Controls.Add(this.lblMensagem);
-            this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlRodape.Location = new System.Drawing.Point(0, 460);
-            this.pnlRodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlRodape.Name = "pnlRodape";
-            this.pnlRodape.Size = new System.Drawing.Size(906, 53);
-            this.pnlRodape.TabIndex = 1;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
-            this.btnNovo.Location = new System.Drawing.Point(588, 7);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(100, 40);
-            this.btnNovo.TabIndex = 3;
-            this.btnNovo.Text = "&Novo";
-            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTipProduto.SetToolTip(this.btnNovo, "Salvar alterações");
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(691, 7);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(100, 40);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.Text = "&Salvar";
-            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTipProduto.SetToolTip(this.btnSalvar, "Salvar alterações");
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(794, 7);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 40);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTipProduto.SetToolTip(this.btnCancelar, "Cancelar alterações");
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lblMensagem
-            // 
-            this.lblMensagem.AutoSize = true;
-            this.lblMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensagem.Location = new System.Drawing.Point(9, 18);
-            this.lblMensagem.Name = "lblMensagem";
-            this.lblMensagem.Size = new System.Drawing.Size(31, 17);
-            this.lblMensagem.TabIndex = 2;
-            this.lblMensagem.Text = "</>";
-            // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.Controls.Add(this.lblTitulo);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(906, 41);
-            this.pnlTitulo.TabIndex = 4;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTitulo.Location = new System.Drawing.Point(7, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(71, 23);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "<Titulo>";
-            // 
-            // ofdImagem
-            // 
-            this.ofdImagem.FileName = "openFileDialog1";
-            this.ofdImagem.Filter = "PNG|*.png|JPEG|*.jpeg|JPG|*.jpg*";
-            // 
-            // toolTipProduto
-            // 
-            this.toolTipProduto.IsBalloon = true;
-            this.toolTipProduto.OwnerDraw = true;
-            // 
             // gbPreco
             // 
+            this.gbPreco.Controls.Add(this.mtxtAlteracao);
+            this.gbPreco.Controls.Add(this.mtxtCadastro);
+            this.gbPreco.Controls.Add(this.lblAlteracao);
+            this.gbPreco.Controls.Add(this.lblCadastro);
             this.gbPreco.Controls.Add(this.label12);
             this.gbPreco.Controls.Add(this.txtCusto);
             this.gbPreco.Controls.Add(this.lblPorcMargem);
@@ -1209,6 +903,296 @@
             this.label3.TabIndex = 106;
             this.label3.Text = "Lucro";
             // 
+            // tabCodigos
+            // 
+            this.tabCodigos.Controls.Add(this.dgvCodigos);
+            this.tabCodigos.Controls.Add(this.txtCodigo);
+            this.tabCodigos.Controls.Add(this.lblCodigo);
+            this.tabCodigos.Controls.Add(this.btnAdicionarCodigo);
+            this.tabCodigos.Location = new System.Drawing.Point(4, 24);
+            this.tabCodigos.Name = "tabCodigos";
+            this.tabCodigos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCodigos.Size = new System.Drawing.Size(874, 382);
+            this.tabCodigos.TabIndex = 4;
+            this.tabCodigos.Text = "Códigos";
+            this.tabCodigos.UseVisualStyleBackColor = true;
+            // 
+            // dgvCodigos
+            // 
+            this.dgvCodigos.AllowUserToAddRows = false;
+            this.dgvCodigos.AllowUserToDeleteRows = false;
+            this.dgvCodigos.AllowUserToResizeRows = false;
+            this.dgvCodigos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCodigos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCodigos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvCodigos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dgvCodigos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvCodigos.ColumnHeadersHeight = 30;
+            this.dgvCodigos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCodigos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCodigo});
+            this.dgvCodigos.Location = new System.Drawing.Point(16, 52);
+            this.dgvCodigos.Name = "dgvCodigos";
+            this.dgvCodigos.ReadOnly = true;
+            this.dgvCodigos.RowHeadersVisible = false;
+            this.dgvCodigos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCodigos.Size = new System.Drawing.Size(310, 137);
+            this.dgvCodigos.TabIndex = 28;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(65, 6);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(151, 23);
+            this.txtCodigo.TabIndex = 2;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(13, 9);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(45, 15);
+            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.Text = "Código";
+            // 
+            // btnAdicionarCodigo
+            // 
+            this.btnAdicionarCodigo.Location = new System.Drawing.Point(222, 6);
+            this.btnAdicionarCodigo.Name = "btnAdicionarCodigo";
+            this.btnAdicionarCodigo.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionarCodigo.TabIndex = 0;
+            this.btnAdicionarCodigo.Text = "Adicionar";
+            this.btnAdicionarCodigo.UseVisualStyleBackColor = true;
+            // 
+            // tabTributacao
+            // 
+            this.tabTributacao.Controls.Add(this.tabDadosFiscais);
+            this.tabTributacao.Location = new System.Drawing.Point(4, 24);
+            this.tabTributacao.Name = "tabTributacao";
+            this.tabTributacao.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTributacao.Size = new System.Drawing.Size(874, 382);
+            this.tabTributacao.TabIndex = 3;
+            this.tabTributacao.Text = "Tributação";
+            this.tabTributacao.UseVisualStyleBackColor = true;
+            // 
+            // tabDadosFiscais
+            // 
+            this.tabDadosFiscais.Controls.Add(this.tabFederal);
+            this.tabDadosFiscais.Controls.Add(this.tabEstadual);
+            this.tabDadosFiscais.Location = new System.Drawing.Point(6, 6);
+            this.tabDadosFiscais.Name = "tabDadosFiscais";
+            this.tabDadosFiscais.SelectedIndex = 0;
+            this.tabDadosFiscais.Size = new System.Drawing.Size(757, 370);
+            this.tabDadosFiscais.TabIndex = 0;
+            // 
+            // tabFederal
+            // 
+            this.tabFederal.Location = new System.Drawing.Point(4, 24);
+            this.tabFederal.Name = "tabFederal";
+            this.tabFederal.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFederal.Size = new System.Drawing.Size(749, 342);
+            this.tabFederal.TabIndex = 0;
+            this.tabFederal.Text = "Federal";
+            this.tabFederal.UseVisualStyleBackColor = true;
+            // 
+            // tabEstadual
+            // 
+            this.tabEstadual.Location = new System.Drawing.Point(4, 24);
+            this.tabEstadual.Name = "tabEstadual";
+            this.tabEstadual.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEstadual.Size = new System.Drawing.Size(749, 342);
+            this.tabEstadual.TabIndex = 1;
+            this.tabEstadual.Text = "Estadual";
+            this.tabEstadual.UseVisualStyleBackColor = true;
+            // 
+            // pnlRodape
+            // 
+            this.pnlRodape.Controls.Add(this.btnNovo);
+            this.pnlRodape.Controls.Add(this.btnSalvar);
+            this.pnlRodape.Controls.Add(this.btnCancelar);
+            this.pnlRodape.Controls.Add(this.lblMensagem);
+            this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlRodape.Location = new System.Drawing.Point(0, 460);
+            this.pnlRodape.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlRodape.Name = "pnlRodape";
+            this.pnlRodape.Size = new System.Drawing.Size(906, 53);
+            this.pnlRodape.TabIndex = 1;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNovo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
+            this.btnNovo.Location = new System.Drawing.Point(588, 7);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(100, 40);
+            this.btnNovo.TabIndex = 3;
+            this.btnNovo.Text = "&Novo";
+            this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTipProduto.SetToolTip(this.btnNovo, "Salvar alterações");
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(691, 7);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(100, 40);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "&Salvar";
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTipProduto.SetToolTip(this.btnSalvar, "Salvar alterações");
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(794, 7);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 40);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTipProduto.SetToolTip(this.btnCancelar, "Cancelar alterações");
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblMensagem
+            // 
+            this.lblMensagem.AutoSize = true;
+            this.lblMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensagem.Location = new System.Drawing.Point(9, 18);
+            this.lblMensagem.Name = "lblMensagem";
+            this.lblMensagem.Size = new System.Drawing.Size(31, 17);
+            this.lblMensagem.TabIndex = 2;
+            this.lblMensagem.Text = "</>";
+            // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.Controls.Add(this.lblTitulo);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(906, 41);
+            this.pnlTitulo.TabIndex = 4;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTitulo.Location = new System.Drawing.Point(7, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(71, 23);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "<Titulo>";
+            // 
+            // ofdImagem
+            // 
+            this.ofdImagem.FileName = "openFileDialog1";
+            this.ofdImagem.Filter = "PNG|*.png|JPEG|*.jpeg|JPG|*.jpg*";
+            // 
+            // toolTipProduto
+            // 
+            this.toolTipProduto.IsBalloon = true;
+            this.toolTipProduto.OwnerDraw = true;
+            this.toolTipProduto.ToolTipTitle = "Ajuda";
+            // 
+            // btnClassifProdutos
+            // 
+            this.btnClassifProdutos.Location = new System.Drawing.Point(235, 17);
+            this.btnClassifProdutos.Name = "btnClassifProdutos";
+            this.btnClassifProdutos.Size = new System.Drawing.Size(135, 23);
+            this.btnClassifProdutos.TabIndex = 46;
+            this.btnClassifProdutos.Text = "Classificar Produto";
+            this.btnClassifProdutos.UseVisualStyleBackColor = true;
+            this.btnClassifProdutos.Click += new System.EventHandler(this.btnClassifProdutos_Click);
+            // 
+            // mtxtAlteracao
+            // 
+            this.mtxtAlteracao.Enabled = false;
+            this.mtxtAlteracao.Location = new System.Drawing.Point(548, 291);
+            this.mtxtAlteracao.Mask = "00/00/0000";
+            this.mtxtAlteracao.Name = "mtxtAlteracao";
+            this.mtxtAlteracao.Size = new System.Drawing.Size(100, 23);
+            this.mtxtAlteracao.TabIndex = 115;
+            // 
+            // mtxtCadastro
+            // 
+            this.mtxtCadastro.Enabled = false;
+            this.mtxtCadastro.Location = new System.Drawing.Point(360, 291);
+            this.mtxtCadastro.Mask = "00/00/0000";
+            this.mtxtCadastro.Name = "mtxtCadastro";
+            this.mtxtCadastro.Size = new System.Drawing.Size(100, 23);
+            this.mtxtCadastro.TabIndex = 114;
+            // 
+            // lblAlteracao
+            // 
+            this.lblAlteracao.AutoSize = true;
+            this.lblAlteracao.Location = new System.Drawing.Point(470, 294);
+            this.lblAlteracao.Name = "lblAlteracao";
+            this.lblAlteracao.Size = new System.Drawing.Size(75, 15);
+            this.lblAlteracao.TabIndex = 117;
+            this.lblAlteracao.Text = "Dt.Alteração";
+            // 
+            // lblCadastro
+            // 
+            this.lblCadastro.AutoSize = true;
+            this.lblCadastro.Location = new System.Drawing.Point(285, 294);
+            this.lblCadastro.Name = "lblCadastro";
+            this.lblCadastro.Size = new System.Drawing.Size(72, 15);
+            this.lblCadastro.TabIndex = 116;
+            this.lblCadastro.Text = "Dt.Cadastro";
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCategoria.Enabled = false;
+            this.txtCategoria.Location = new System.Drawing.Point(9, 48);
+            this.txtCategoria.MaxLength = 40;
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(360, 23);
+            this.txtCategoria.TabIndex = 47;
+            this.toolTipProduto.SetToolTip(this.txtCategoria, "Marca do produto");
+            // 
+            // txtGrupo
+            // 
+            this.txtGrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGrupo.Enabled = false;
+            this.txtGrupo.Location = new System.Drawing.Point(9, 92);
+            this.txtGrupo.MaxLength = 40;
+            this.txtGrupo.Name = "txtGrupo";
+            this.txtGrupo.Size = new System.Drawing.Size(360, 23);
+            this.txtGrupo.TabIndex = 48;
+            this.toolTipProduto.SetToolTip(this.txtGrupo, "Marca do produto");
+            // 
+            // txtSubgrupo
+            // 
+            this.txtSubgrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSubgrupo.Enabled = false;
+            this.txtSubgrupo.Location = new System.Drawing.Point(10, 136);
+            this.txtSubgrupo.MaxLength = 40;
+            this.txtSubgrupo.Name = "txtSubgrupo";
+            this.txtSubgrupo.Size = new System.Drawing.Size(360, 23);
+            this.txtSubgrupo.TabIndex = 49;
+            this.toolTipProduto.SetToolTip(this.txtSubgrupo, "Marca do produto");
+            // 
             // formProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1237,6 +1221,8 @@
             this.gbClassificacao.ResumeLayout(false);
             this.gbClassificacao.PerformLayout();
             this.tabValores.ResumeLayout(false);
+            this.gbPreco.ResumeLayout(false);
+            this.gbPreco.PerformLayout();
             this.tabCodigos.ResumeLayout(false);
             this.tabCodigos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCodigos)).EndInit();
@@ -1246,8 +1232,6 @@
             this.pnlRodape.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            this.gbPreco.ResumeLayout(false);
-            this.gbPreco.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1261,16 +1245,16 @@
         private System.Windows.Forms.CheckBox chBoxAtivo;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblCod;
-        private System.Windows.Forms.Label lblCodBarras;
+        private System.Windows.Forms.Label lblCodPrincipal;
         private System.Windows.Forms.TextBox txtCodbarras;
         private System.Windows.Forms.CheckBox chBoxBalanca;
-        private System.Windows.Forms.ComboBox cboxUnidade;
+        private System.Windows.Forms.ComboBox cbUnidade;
         private System.Windows.Forms.Label lblUnidade;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.ComboBox cboxTpProduto;
+        private System.Windows.Forms.ComboBox cbTpProduto;
         private System.Windows.Forms.Label lblTpProduto;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblFabricante;
@@ -1289,7 +1273,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TabPage tabCodigos;
-        private System.Windows.Forms.Button btnCodigo;
         private System.Windows.Forms.OpenFileDialog ofdImagem;
         private System.Windows.Forms.ToolTip toolTipProduto;
         private System.Windows.Forms.TabControl tabDadosFiscais;
@@ -1300,7 +1283,7 @@
         private System.Windows.Forms.Button btnAdicionarCodigo;
         private System.Windows.Forms.DataGridView dgvCodigos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
-        private System.Windows.Forms.ComboBox cboxUnCompra;
+        private System.Windows.Forms.ComboBox cbUnCompra;
         private System.Windows.Forms.TextBox txtQtdMaxima;
         private System.Windows.Forms.Label lblQtdMaxima;
         private System.Windows.Forms.Label lblUnCompra;
@@ -1315,22 +1298,12 @@
         private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.Label lblAltura;
         private System.Windows.Forms.GroupBox gbClassificacao;
-        private System.Windows.Forms.Button btnCateg;
-        private System.Windows.Forms.Button btnGrupo;
-        private System.Windows.Forms.Button btnSubgrupo;
-        private System.Windows.Forms.ComboBox cboxSubgrupo;
         private System.Windows.Forms.Label lblSubgrupo;
-        private System.Windows.Forms.ComboBox cboxGrupo;
         private System.Windows.Forms.Label lblGrupo;
-        public System.Windows.Forms.ComboBox cboxCategoria;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.GroupBox gbEstoque;
         private System.Windows.Forms.Button btnAdicionarImagem;
         private System.Windows.Forms.PictureBox pbImagem;
-        private System.Windows.Forms.MaskedTextBox mtxtAlteracao;
-        private System.Windows.Forms.MaskedTextBox mtxtCadastro;
-        private System.Windows.Forms.Label lblAlteracao;
-        private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.GroupBox gbPreco;
         private System.Windows.Forms.Label label12;
@@ -1355,5 +1328,15 @@
         private System.Windows.Forms.Label lblPorcDesconto;
         private System.Windows.Forms.Label lblPorcComissao;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCNPJFabricante;
+        private System.Windows.Forms.TextBox txtCNPJFabricante;
+        private System.Windows.Forms.Button btnClassifProdutos;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.MaskedTextBox mtxtAlteracao;
+        private System.Windows.Forms.MaskedTextBox mtxtCadastro;
+        private System.Windows.Forms.Label lblAlteracao;
+        private System.Windows.Forms.Label lblCadastro;
+        private System.Windows.Forms.TextBox txtSubgrupo;
+        private System.Windows.Forms.TextBox txtGrupo;
     }
 }

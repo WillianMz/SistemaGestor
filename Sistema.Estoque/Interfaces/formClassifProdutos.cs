@@ -9,6 +9,7 @@ namespace Sistema.Estoque.Interfaces
 {
     public partial class formClassifProdutos : Form
     {
+        public statusForm status;
         BLL_Produto controle;
         int idCategoria;
         int idGrupo;
@@ -20,25 +21,63 @@ namespace Sistema.Estoque.Interfaces
             pesquisarCategoria();
         }
 
+        public void configForm()
+        {
+            if(status == statusForm.Selecionar)
+            {
+                Text = "Selecionar a Classificação do Produto";
+                lblMensagem.Text = "Selecione a Categoria, o Grupo e o Subgrupo.";
+                btnSelecionar.Visible = true;
+            }
+        }
 
-        #region METODOS PARA RECEBER OBJETOS DE CATEGORIA/GRUPOS/SUBGRUPOS
+        #region RETORNA CATEGORIA/GRUPO/SUBGRUPO PARA PESQUISA
+        public Categoria selecionarCategoria()
+        {
+            try
+            {
+                controle = new BLL_Produto();
+                Categoria c = controle.detalhesCategoria(idCategoria);
+                return c;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
-        //private void categoria(Categoria c)
-        //{
-        //    try
-        //    {
-        //        //txtCod.Text = Convert.ToString(c.Id);
-        //        txtNome.Text = c.nome;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+        public Grupo selecionarGrupo()
+        {
+            try
+            {
+                controle = new BLL_Produto();
+                Grupo g = controle.detalhesGrupo(idGrupo);
+                return g;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
+        public Subgrupo selecionarSubgrupo()
+        {
+            try
+            {
+                idSubgrupo = int.Parse(dgvSubgrupos.Rows[dgvSubgrupos.CurrentRow.Index].Cells[0].Value.ToString());
+                controle = new BLL_Produto();
+                Subgrupo s = controle.detalhesSubgrupo(idSubgrupo);
+                return s;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
         #endregion
 
+        #region DATAGRID
         private void pesquisarCategoria()
         {
             controle = new BLL_Produto();
@@ -94,7 +133,50 @@ namespace Sistema.Estoque.Interfaces
             //util_sistema.resultadoPesquisa(dgvDados, lblResultado);
         }
 
+        private void eventoClickCategoria()
+        {
+            if (dgvSubgrupos.Rows != null)
+            {
+                dgvCategorias.CurrentRow.Selected = true;
+                idCategoria = int.Parse(dgvCategorias.Rows[dgvCategorias.CurrentRow.Index].Cells[0].Value.ToString());
+                pesquisarGrupo();
+                dgvSubgrupos.Rows.Clear();
+            }
+        }
 
+        private void eventoClickGrupo()
+        {
+            if (dgvGrupos.Rows != null)
+            {
+                dgvGrupos.CurrentRow.Selected = true;
+                idGrupo = int.Parse(dgvGrupos.Rows[dgvGrupos.CurrentRow.Index].Cells[0].Value.ToString());
+                pesquisarSubgrupo();
+            }
+        }
+
+        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eventoClickCategoria();
+        }
+
+        private void dgvGrupos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            eventoClickGrupo();
+        }
+
+        private void dgvCategorias_KeyUp(object sender, KeyEventArgs e)
+        {
+            eventoClickCategoria();
+        }
+
+        private void dgvGrupos_KeyUp(object sender, KeyEventArgs e)
+        {
+            eventoClickGrupo();
+        }
+
+        #endregion
+
+        #region BOTOES
         private void btnNovaCategoria_Click(object sender, EventArgs e)
         {
             formProdutoCategoria form = new formProdutoCategoria();
@@ -210,45 +292,25 @@ namespace Sistema.Estoque.Interfaces
             }
         }
 
-        private void eventoClickCategoria()
+        private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            if(dgvSubgrupos.Rows != null)
+            try
             {
-                dgvCategorias.CurrentRow.Selected = true;
-                idCategoria = int.Parse(dgvCategorias.Rows[dgvCategorias.CurrentRow.Index].Cells[0].Value.ToString());
-                pesquisarGrupo();
-                dgvSubgrupos.Rows.Clear();
-            }            
-        }
+                if ((dgvCategorias.Rows.Count != 0) && (dgvGrupos.Rows.Count != 0) && (dgvSubgrupos.Rows.Count != 0))
+                {
+                    //selecionarCategoria();
+                    //selecionarGrupo();
+                    //selecionarSubgrupo();
+                    Close();
+                }
+                else
+                    return;
+            }
+            catch
+            {
 
-        private void eventoClickGrupo()
-        {
-            if(dgvGrupos.Rows != null)
-            {
-                dgvGrupos.CurrentRow.Selected = true;
-                idGrupo = int.Parse(dgvGrupos.Rows[dgvGrupos.CurrentRow.Index].Cells[0].Value.ToString());
-                pesquisarSubgrupo();
             }
         }
-
-        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
-        {           
-            eventoClickCategoria();
-        }
-
-        private void dgvGrupos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            eventoClickGrupo();
-        }
-
-        private void dgvCategorias_KeyUp(object sender, KeyEventArgs e)
-        {
-            eventoClickCategoria();
-        }
-
-        private void dgvGrupos_KeyUp(object sender, KeyEventArgs e)
-        {
-            eventoClickGrupo();
-        }
+        #endregion
     }
 }

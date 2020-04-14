@@ -75,13 +75,14 @@
             // 
             // btnSelecionar
             // 
-            this.btnSelecionar.Location = new System.Drawing.Point(1062, 10);
+            this.btnSelecionar.Location = new System.Drawing.Point(877, 12);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
             this.btnSelecionar.TabIndex = 1;
             this.btnSelecionar.Text = "&Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
             this.btnSelecionar.Visible = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // lblMensagem
             // 
