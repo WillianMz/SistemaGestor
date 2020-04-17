@@ -32,7 +32,7 @@ namespace DAO
                 {
                     TipoNota t = new TipoNota();
                     t.Id = int.Parse(dr["id"].ToString());
-                    t.Nome = dr["nome"].ToString();
+                    t.nome = dr["nome"].ToString();
                     tn.Add(t);
                 };
                 return tn;

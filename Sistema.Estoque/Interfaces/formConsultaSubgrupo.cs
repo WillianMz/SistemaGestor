@@ -10,7 +10,7 @@ namespace Sistema.Estoque.Interfaces
 {
     public partial class formConsultaSubgrupo : Form
     {
-        BLL_Produto controle;
+        //BLL_Produto controle;
 
         public formConsultaSubgrupo()
         {
@@ -20,7 +20,7 @@ namespace Sistema.Estoque.Interfaces
 
         private void configForm()
         {
-            carregarComboBox.grupoProduto(cboxGrupo);
+            //carregarComboBox.grupoProduto(cboxGrupo);
         }
         
         private void atualizarGrid(List<Subgrupo> subgrupo)
@@ -28,19 +28,19 @@ namespace Sistema.Estoque.Interfaces
             dgvDados.Rows.Clear();
             foreach (Subgrupo s in subgrupo)
             {
-                dgvDados.Rows.Add(s.Id, s.Nome);
+                dgvDados.Rows.Add(s.Id, s.nome);
             }
             util_sistema.resultadoPesquisa(dgvDados, lblResultado);
         }
 
-        private void pesquisarSubgrupo(bool ativo)
-        {
-            controle = new BLL_Produto();
-            Grupo g = new Grupo();
-            g.Id = Convert.ToInt32(cboxGrupo.SelectedValue);
-            List<Subgrupo> sb = controle.filtrarSubgrupos(txtPesquisar.Text, ativo, g);
-            atualizarGrid(sb);
-        }
+        //private void pesquisarSubgrupo(bool ativo)
+        //{
+        //    controle = new BLL_Produto();
+        //    Grupo g = new Grupo();
+        //    g.Id = Convert.ToInt32(cboxGrupo.SelectedValue);
+        //    List<Subgrupo> sb = controle.filtrarSubgrupos(txtPesquisar.Text, ativo, g);
+        //    atualizarGrid(sb);
+        //}
 
         private void menuAdicionar_Click(object sender, EventArgs e)
         {
@@ -52,28 +52,28 @@ namespace Sistema.Estoque.Interfaces
 
         private void menuEditar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvDados.Rows.Count == 0)
-                    lblResultado.Text = "Nenhum registro selecionado!";
-                else
-                {
-                    controle = new BLL_Produto();
-                    int id = int.Parse(dgvDados.Rows[dgvDados.CurrentRow.Index].Cells[0].Value.ToString());
-                    Subgrupo s = controle.detalhesSubgrupo(id);
+            //try
+            //{
+            //    if (dgvDados.Rows.Count == 0)
+            //        lblResultado.Text = "Nenhum registro selecionado!";
+            //    else
+            //    {
+            //        controle = new BLL_Produto();
+            //        int id = int.Parse(dgvDados.Rows[dgvDados.CurrentRow.Index].Cells[0].Value.ToString());
+            //        Subgrupo s = controle.detalhesSubgrupo(id);
 
-                    formProdutoSubgrupo form = new formProdutoSubgrupo();
-                    form.statusForm = statusForm.Editar;
-                    form.configForm();
-                    form.detalhes(s);
-                    form.ShowDialog();
-                    form.Dispose();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //        formProdutoSubgrupo form = new formProdutoSubgrupo();
+            //        form.statusForm = statusForm.Editar;
+            //        form.configForm();
+            //        form.detalhes(s);
+            //        form.ShowDialog();
+            //        form.Dispose();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,24 +85,24 @@ namespace Sistema.Estoque.Interfaces
         {
             try
             {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    if (cboxGrupo.Text.Trim() == string.Empty)
-                    {
-                        MessageBox.Show("Selecione um grupo!");
-                        cboxGrupo.Focus();
-                        return;
-                    }
+                //if (e.KeyCode == Keys.Enter)
+                //{
+                //    if (cboxGrupo.Text.Trim() == string.Empty)
+                //    {
+                //        MessageBox.Show("Selecione um grupo!");
+                //        cboxGrupo.Focus();
+                //        return;
+                //    }
 
-                    if (txtPesquisar.Text != "")
-                        pesquisarSubgrupo(true);
-                    else
-                    {
+                //    if (txtPesquisar.Text != "")
+                //        pesquisarSubgrupo(true);
+                //    else
+                //    {
                         
-                        lblResultado.Text = util_msg.msgFiltroPesquisaVazio;
-                        txtPesquisar.Focus();
-                    }
-                }
+                //        lblResultado.Text = util_msg.msgFiltroPesquisaVazio;
+                //        txtPesquisar.Focus();
+                //    }
+                //}
             }
             catch (Exception ex)
             {

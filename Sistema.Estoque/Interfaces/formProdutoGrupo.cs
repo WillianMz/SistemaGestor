@@ -10,23 +10,26 @@ namespace Sistema.Estoque.Interfaces
     {
         public statusForm statusForm;
         BLL_Produto controle;
+        int idCategoria;
 
         public formProdutoGrupo()
         {
             InitializeComponent();
-            configForm();
         }
         
-        public void configForm()
+        public void configForm(int categoriaID)
         {
             if (statusForm == statusForm.Novo)
             {
                 lblTitulo.Text = "NOVO GRUPO";
+                chboxAtivo.Checked = true;
+                idCategoria = categoriaID;
             }
 
             if (statusForm == statusForm.Editar)
             {
                 lblTitulo.Text = "EDITANDO GRUPO";
+                idCategoria = categoriaID;
             }
         }
 
@@ -34,8 +37,9 @@ namespace Sistema.Estoque.Interfaces
         {
             try
             {
-                txtCod.Text = Convert.ToString(g.Id);
-                txtNome.Text = g.Nome;
+                txtCod.Text  = Convert.ToString(g.Id);
+                txtNome.Text = g.nome;
+                chboxAtivo.Checked = g.ativo;
             }
             catch (Exception ex)
             {
@@ -48,46 +52,65 @@ namespace Sistema.Estoque.Interfaces
             controle = new BLL_Produto();
             Grupo g;
 
-            if(statusForm == statusForm.Novo)
+            if (txtNome.Text.Trim() == string.Empty)
             {
-                try
+                MessageBox.Show("Informe o nome do grupo", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
+                return;
+            }
+
+            try
+            {
+                if (statusForm == statusForm.Novo)
                 {
-                    if (txtNome.Text.Trim() == string.Empty)
+                    if (controle.grupoCadastrado(txtNome.Text.Trim()) == true)
                     {
-                        MessageBox.Show("Informe o nome do grupo", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Já existe um Grupo com este nome!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtNome.Focus();
                         return;
                     }
 
                     g = new Grupo();
-                    g.Nome = txtNome.Text;
-                    controle.novoGrupo(g);
-                    
+                    g.nome = txtNome.Text;
+                    g.categ.Id = idCategoria;
+
+                    if (chboxAtivo.Checked)
+                        g.ativo = true;
+                    else
+                        g.ativo = false;
+
+                    controle.gravarGrupo(g);
                     MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNome.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
                 }
             }
-
-            if (statusForm == statusForm.Editar)
+            catch (Exception ex)
             {
-                try
+                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                if (statusForm == statusForm.Editar)
                 {
                     g = new Grupo();
                     g.Id = int.Parse(txtCod.Text);
-                    g.Nome = txtNome.Text;
-                    controle.editarGrupo(g);
+                    g.nome = txtNome.Text;
+                    g.categ.Id = idCategoria;
 
+                    if (chboxAtivo.Checked)
+                        g.ativo = true;
+                    else
+                        g.ativo = false;
+
+                    controle.gravarGrupo(g);
                     MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNome.Clear();
+                    Close();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

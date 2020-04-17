@@ -14,7 +14,6 @@ namespace Sistema.Estoque.Interfaces
         public formProdutoCategoria()
         {
             InitializeComponent();
-            configForm();
         }
 
         public void configForm()
@@ -22,6 +21,7 @@ namespace Sistema.Estoque.Interfaces
             if (statusForm == statusForm.Novo)
             {
                 lblTitulo.Text = "NOVA CATEGORIA";
+                chboxAtivo.Checked = true;
             }
 
             if (statusForm == statusForm.Editar)
@@ -34,8 +34,9 @@ namespace Sistema.Estoque.Interfaces
         {
             try
             {
-                txtCod.Text  = Convert.ToString(c.Id);
-                txtNome.Text = c.Nome;
+                txtCod.Text        = Convert.ToString(c.Id);
+                txtNome.Text       = c.nome;
+                chboxAtivo.Checked = c.ativo;
             }
             catch (Exception ex)
             {
@@ -53,44 +54,60 @@ namespace Sistema.Estoque.Interfaces
                 MessageBox.Show("Informe o nome da categoria", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtNome.Focus();
                 return;
-            }
-
-            if (controle.categoriaCadastrada(txtNome.Text.Trim()) == true)
-            {
-                MessageBox.Show("Já existe uma categoria com este nome!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNome.Focus();
-                return;
-            }
+            }            
 
             try
             {
                 if (statusForm == statusForm.Novo)
                 {
-                    c = new Categoria();
-                    c.Nome = txtNome.Text.Trim();
+                    if (controle.categoriaCadastrada(txtNome.Text.Trim()) == true)
+                    {
+                        MessageBox.Show("Já existe uma Categoria com este nome!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtNome.Focus();
+                        return;
+                    }
 
-                    controle.novaCategoria(c);
+                    c = new Categoria
+                    {
+                        nome = txtNome.Text.Trim()
+                    };
+                    if (chboxAtivo.Checked)
+                        c.ativo = true;
+                    else
+                        c.ativo = false;
+
+                    controle.gravarCategoria(c);
                     MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                if (statusForm == statusForm.Editar)
-                {
-                    c = new Categoria();
-                    c.Id = int.Parse(txtCod.Text.Trim());
-                    c.Nome = txtNome.Text;
-
-                    controle.editarCategoria(c);
-                    MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
+
+            try
             {
-                Close();
-                Dispose();
+                if (statusForm == statusForm.Editar)
+                {
+                    c = new Categoria
+                    {
+                        Id = int.Parse(txtCod.Text.Trim()),
+                        nome = txtNome.Text
+                    };
+                    if (chboxAtivo.Checked)
+                        c.ativo = true;
+                    else
+                        c.ativo = false;
+
+                    controle.gravarCategoria(c);
+                    MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

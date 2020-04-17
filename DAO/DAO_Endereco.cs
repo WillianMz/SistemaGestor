@@ -24,7 +24,7 @@ namespace DAO
                     Pais p = new Pais
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     ps.Add(p);
                 }
@@ -48,7 +48,7 @@ namespace DAO
                     p = new Pais
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                 }
                 return p;
@@ -74,7 +74,7 @@ namespace DAO
                     UF u = new UF
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     uf.Add(u);
                 }
@@ -98,7 +98,7 @@ namespace DAO
                     p = new UF
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                 }
                 return p;
@@ -124,7 +124,7 @@ namespace DAO
                     Cidade c = new Cidade
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                     cd.Add(c);
                 }
@@ -148,7 +148,7 @@ namespace DAO
                     c = new Cidade
                     {
                         Id = int.Parse(dr["id"].ToString()),
-                        Nome = dr["nome"].ToString()
+                        nome = dr["nome"].ToString()
                     };
                 }
                 return c;

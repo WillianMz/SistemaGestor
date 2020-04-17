@@ -45,6 +45,12 @@
   <ItemGroup>
     <Compile Include="Controles\BLL_Estoque.cs" />
     <Compile Include="Controles\BLL_Produto.cs" />
+    <Compile Include="Interfaces\formClassifProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formClassifProdutos.Designer.cs">
+      <DependentUpon>formClassifProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formConsultaCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Interfaces\formClassifProdutos.resx">
+      <DependentUpon>formClassifProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formConsultaCategoria.resx">
       <DependentUpon>formConsultaCategoria.cs</DependentUpon>
     </EmbeddedResource>

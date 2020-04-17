@@ -49,20 +49,22 @@ namespace Sistema.Estoque.Utilitario
             try
             {
                 BLL_Produto controler = new BLL_Produto();
-                List<Categoria> c = controler.listarCategorias();
+                List<Categoria> c = controler.listarCategorias(true);
                 util_sistema.carregarCombobox(c, cb);
             }
             catch (Exception)
             { }
         }
         
-        public static void grupoProduto(ComboBox cbox)
+        public static void grupoProduto(ComboBox cb, ComboBox cbCategoria)
         {
             try
             {
                 BLL_Produto controle = new BLL_Produto();
-                List<Grupo> g = controle.listarGrupos();
-                util_sistema.carregarCombobox(g, cbox);
+                Categoria c = new Categoria();
+                c.Id = Convert.ToInt32(cbCategoria.SelectedValue);
+                List<Grupo> g = controle.listarGrupos(c, true);
+                util_sistema.carregarCombobox(g, cb);
             }
             catch (Exception)
             { }             
@@ -75,7 +77,7 @@ namespace Sistema.Estoque.Utilitario
                 BLL_Produto controler = new BLL_Produto();
                 Grupo g = new Grupo();
                 g.Id = Convert.ToInt32(cbGrupo.SelectedValue);
-                List<Subgrupo> sub = controler.listarSubgrupos(g);
+                List<Subgrupo> sub = controler.listarSubgrupos(g, true);
                 util_sistema.carregarCombobox(sub, cb);
             }
             catch (Exception)

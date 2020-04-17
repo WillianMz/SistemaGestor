@@ -21,16 +21,16 @@ namespace Sistema.Estoque.Interfaces
             dgvDados.Rows.Clear();
             foreach (Grupo g in grupo)
             {
-                dgvDados.Rows.Add(g.Id, g.Nome);
+                dgvDados.Rows.Add(g.Id, g.nome);
             }
             util_sistema.resultadoPesquisa(dgvDados, lblResultado);
         }
 
         private void pesquisarGrupo(bool ativo)
         {
-            controle = new BLL_Produto();
-            List<Grupo> gr = controle.filtrarGrupos(txtPesquisar.Text, ativo);
-            atualizarGrid(gr);
+            //controle = new BLL_Produto();
+            //List<Grupo> gr = controle.filtrarGrupos(txtPesquisar.Text, ativo);
+            //atualizarGrid(gr);
         }
 
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
@@ -81,7 +81,7 @@ namespace Sistema.Estoque.Interfaces
 
                     formProdutoGrupo form = new formProdutoGrupo();
                     form.statusForm = statusForm.Editar;
-                    form.configForm();
+                    //form.configForm();
                     form.detalhes(g);
                     form.ShowDialog();
                     form.Dispose();
