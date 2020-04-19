@@ -110,7 +110,7 @@ namespace Sistema.Estoque.Interfaces
             {
                 dgvCategorias.Rows.Add(c.Id, c.nome);
             }
-            //util_sistema.resultadoPesquisa(dgvCategorias);//, lblResultado);
+            util_sistema.resultadoPesquisa(dgvCategorias, lblMensagem);
         }
 
         private void tabelaGrupos(List<Grupo> grupos)
