@@ -219,5 +219,119 @@ namespace DAO
 
         #endregion
 
+
+        #region PLANO DE CONTAS
+
+        public void insertPlanoContas(PlanoDeContas pc)
+        {
+            try
+            {
+                cmd = new NpgsqlCommand();
+
+                SQL = "INSERT INTO fin_plano_conta ";
+                SQL += "(nome, descricao, entrada, saida, ativo) ";
+                SQL += "VALUES";
+                SQL += "(@nome, @descricao, @entrada, @saida, @ativo) ";
+
+                cmd.CommandText = SQL;
+                cmd.Parameters.AddWithValue("@nome", pc.nome);
+                cmd.Parameters.AddWithValue("@descricao", pc.descricao);
+                cmd.Parameters.AddWithValue("@entrada", pc.entrada);
+                cmd.Parameters.AddWithValue("@saida", pc.saida);
+                cmd.Parameters.AddWithValue("@ativo", pc.ativo);
+                con.ComandoSQL(cmd);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void editPlanoContas(PlanoDeContas pc)
+        {
+            try
+            {
+                cmd = new NpgsqlCommand();
+
+                SQL = "UPDATE fin_plano_conta";
+                SQL += "SET ativo = @ativo, nome = @nome, descricao = @descricao, entrada = @entrada, saida = @saida";
+                SQL += "WHERE id = @id";
+
+                cmd.CommandText = SQL;
+                cmd.Parameters.AddWithValue("@id", pc.id);
+                cmd.Parameters.AddWithValue("@ativo", pc.ativo);
+                cmd.Parameters.AddWithValue("@nome", pc.nome);
+                cmd.Parameters.AddWithValue("@descricao", pc.descricao);
+                cmd.Parameters.AddWithValue("@entrada", pc.entrada);
+                cmd.Parameters.AddWithValue("@saida", pc.saida);
+                con.ComandoSQL(cmd);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void ativarDesativar(int id, bool ativo)
+        {
+            try
+            {
+                cmd = new NpgsqlCommand();
+                SQL = "UPDATE fin_plano_conta SET ativo = @ativo WHERE id = @id";
+                cmd.CommandText = SQL;
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@ativo", ativo);
+                con.ComandoSQL(cmd);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<PlanoDeContas> selectAllPlanoContas(bool ativo)
+        {
+            try
+            {
+                SQL = string.Format("SELECT id, nome, descricao, entrada, saida FROM fin_plano_conta WHERE ativo = {0} ORDER BY id", ativo);
+                return retornaAllPlanoContas(SQL);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private List<PlanoDeContas> retornaAllPlanoContas(string sql)
+        {
+            try
+            {
+                DataSet ds = con.ConsultaSQL(sql);
+                List<PlanoDeContas> planoContas = new List<PlanoDeContas>();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    PlanoDeContas pc = new PlanoDeContas
+                    {
+                        id = int.Parse(dr["id"].ToString()),
+                        nome = dr["nome"].ToString(),
+                        descricao = dr["descricao"].ToString(),
+                        entrada = bool.Parse(dr["entrada"].ToString()),
+                        saida = bool.Parse(dr["saida"].ToString())
+                    };
+                    planoContas.Add(pc);
+                }
+
+                return planoContas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+        #endregion
+
     }
 }
