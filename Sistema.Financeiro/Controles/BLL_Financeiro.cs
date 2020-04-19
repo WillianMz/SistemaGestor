@@ -39,6 +39,29 @@ namespace Sistema.Financeiro.Controles
 
         #endregion
 
+        #region PLANO DE CONTAS
+        public void novoPlanoContas(PlanoDeContas pc)
+        {
+            daoFinanceiro = new DAO_Financeiro();
+            daoFinanceiro.insertPlanoContas(pc);
+        }
+
+        public void editarPlanoContas(PlanoDeContas pc)
+        {
+            daoFinanceiro = new DAO_Financeiro();
+            daoFinanceiro.editPlanoContas(pc);
+        }
+
+        public List<PlanoDeContas> listarTodosPlanoContas(bool ativo)
+        {
+            daoFinanceiro = new DAO_Financeiro();
+            List<PlanoDeContas> pc = daoFinanceiro.selectAllPlanoContas(ativo);
+            return pc;
+        }
+
+
+        #endregion
+
 
 
 
