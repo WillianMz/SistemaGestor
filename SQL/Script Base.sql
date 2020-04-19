@@ -248,7 +248,9 @@ CREATE SEQUENCE seq_prod_grupo INCREMENT 1 START 1;
 CREATE TABLE produto_grupo(
 	id int primary key default nextval('seq_prod_grupo'),
 	nome varchar(100) not null,
-	ativo boolean default true
+	id_categ int not null,
+	ativo boolean default true,
+	constraint fk_categ foreign key(id_categ) references produto_categ(id)
 );
 
 CREATE SEQUENCE seq_prod_subgrupo INCREMENT 1 START 1;

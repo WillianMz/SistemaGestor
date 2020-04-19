@@ -39,6 +39,7 @@
             this.menu = new System.Windows.Forms.MenuStrip();
             this.menuAdicionar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tESTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
@@ -50,8 +51,8 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.AllowUserToResizeRows = false;
-            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDados.BackgroundColor = System.Drawing.Color.White;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -142,7 +143,8 @@
             this.menu.BackColor = System.Drawing.Color.Transparent;
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAdicionar,
-            this.menuEditar});
+            this.menuEditar,
+            this.tESTEToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -163,6 +165,13 @@
             this.menuEditar.Size = new System.Drawing.Size(49, 20);
             this.menuEditar.Text = "Editar";
             this.menuEditar.Click += new System.EventHandler(this.menuEditar_Click);
+            // 
+            // tESTEToolStripMenuItem
+            // 
+            this.tESTEToolStripMenuItem.Name = "tESTEToolStripMenuItem";
+            this.tESTEToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.tESTEToolStripMenuItem.Text = "Classificação de Produtos";
+            this.tESTEToolStripMenuItem.Click += new System.EventHandler(this.tESTEToolStripMenuItem_Click);
             // 
             // formConsultaCategoria
             // 
@@ -211,5 +220,6 @@
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
+        private System.Windows.Forms.ToolStripMenuItem tESTEToolStripMenuItem;
     }
 }

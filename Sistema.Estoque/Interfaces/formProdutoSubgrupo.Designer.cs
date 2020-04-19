@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProdutoSubgrupo));
-            this.lblGrupo = new System.Windows.Forms.Label();
-            this.cboxGrupo = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -38,30 +36,15 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.chboxAtivo = new System.Windows.Forms.CheckBox();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblGrupo
-            // 
-            this.lblGrupo.AutoSize = true;
-            this.lblGrupo.Location = new System.Drawing.Point(9, 69);
-            this.lblGrupo.Name = "lblGrupo";
-            this.lblGrupo.Size = new System.Drawing.Size(46, 18);
-            this.lblGrupo.TabIndex = 25;
-            this.lblGrupo.Text = "Grupo";
-            // 
-            // cboxGrupo
-            // 
-            this.cboxGrupo.FormattingEnabled = true;
-            this.cboxGrupo.Location = new System.Drawing.Point(12, 90);
-            this.cboxGrupo.Name = "cboxGrupo";
-            this.cboxGrupo.Size = new System.Drawing.Size(232, 26);
-            this.cboxGrupo.TabIndex = 24;
-            // 
             // lblID
             // 
+            this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(9, 119);
+            this.lblID.Location = new System.Drawing.Point(9, 75);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(36, 18);
             this.lblID.TabIndex = 23;
@@ -69,8 +52,9 @@
             // 
             // txtCod
             // 
+            this.txtCod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCod.Enabled = false;
-            this.txtCod.Location = new System.Drawing.Point(12, 140);
+            this.txtCod.Location = new System.Drawing.Point(12, 96);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(63, 26);
             this.txtCod.TabIndex = 19;
@@ -81,7 +65,7 @@
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(329, 178);
+            this.btnSalvar.Location = new System.Drawing.Point(329, 128);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 40);
             this.btnSalvar.TabIndex = 21;
@@ -92,16 +76,19 @@
             // 
             // txtNome
             // 
+            this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(81, 140);
+            this.txtNome.Location = new System.Drawing.Point(81, 96);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(346, 26);
+            this.txtNome.Size = new System.Drawing.Size(283, 26);
             this.txtNome.TabIndex = 20;
             // 
             // lblNome
             // 
+            this.lblNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(78, 119);
+            this.lblNome.Location = new System.Drawing.Point(78, 75);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(67, 18);
             this.lblNome.TabIndex = 22;
@@ -128,14 +115,24 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "<TITULO>";
             // 
+            // chboxAtivo
+            // 
+            this.chboxAtivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.chboxAtivo.AutoSize = true;
+            this.chboxAtivo.Location = new System.Drawing.Point(370, 98);
+            this.chboxAtivo.Name = "chboxAtivo";
+            this.chboxAtivo.Size = new System.Drawing.Size(59, 22);
+            this.chboxAtivo.TabIndex = 40;
+            this.chboxAtivo.Text = "Ativo";
+            this.chboxAtivo.UseVisualStyleBackColor = true;
+            // 
             // formProdutoSubgrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(441, 224);
-            this.Controls.Add(this.lblGrupo);
-            this.Controls.Add(this.cboxGrupo);
+            this.ClientSize = new System.Drawing.Size(441, 180);
+            this.Controls.Add(this.chboxAtivo);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.btnSalvar);
@@ -161,9 +158,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblGrupo;
-        private System.Windows.Forms.ComboBox cboxGrupo;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Button btnSalvar;
@@ -171,5 +165,6 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.CheckBox chboxAtivo;
     }
 }

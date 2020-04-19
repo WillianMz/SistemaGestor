@@ -28,7 +28,7 @@ namespace DAO
                 {
                     Origem o = new Origem();
                     o.Id = int.Parse(dr["id"].ToString());
-                    o.Nome = dr["nome"].ToString();
+                    o.nome = dr["nome"].ToString();
                     ls.Add(o);
                 }
                 return ls;
@@ -50,7 +50,7 @@ namespace DAO
                 {
                     origem = new Origem();
                     origem.Id = int.Parse(dr["id"].ToString());
-                    origem.Nome = dr["nome"].ToString();                   
+                    origem.nome = dr["nome"].ToString();                   
                 }
                 return origem;
             }
@@ -73,7 +73,7 @@ namespace DAO
                 {
                     CST c = new CST();
                     c.Id = int.Parse(dr["id"].ToString());
-                    c.Nome = dr["nome"].ToString();
+                    c.nome = dr["nome"].ToString();
                     ls.Add(c);
                 }
                 return ls;
@@ -95,7 +95,7 @@ namespace DAO
                 {
                     obj = new CST();
                     obj.Id = int.Parse(dr["id"].ToString());
-                    obj.Nome = dr["nome"].ToString();
+                    obj.nome = dr["nome"].ToString();
                 }
                 return obj;
             }
@@ -118,7 +118,7 @@ namespace DAO
                 {
                     CFOP cfop = new CFOP();
                     cfop.Id = int.Parse(dr["id"].ToString());
-                    cfop.Nome = dr["nome"].ToString();
+                    cfop.nome = dr["nome"].ToString();
                     ls.Add(cfop);
                 }
                 return ls;
@@ -140,7 +140,7 @@ namespace DAO
                 {
                     obj = new CFOP();
                     obj.Id = int.Parse(dr["id"].ToString());
-                    obj.Nome = dr["nome"].ToString();
+                    obj.nome = dr["nome"].ToString();
                 }
                 return obj;
             }
@@ -163,7 +163,7 @@ namespace DAO
                 {
                     NCM ncm = new NCM();
                     ncm.Id = int.Parse(dr["id"].ToString());
-                    ncm.Nome = dr["nome"].ToString();
+                    ncm.nome = dr["nome"].ToString();
                     ls.Add(ncm);
                 }
                 return ls;
@@ -185,7 +185,7 @@ namespace DAO
                 {
                     obj = new NCM();
                     obj.Id = int.Parse(dr["id"].ToString());
-                    obj.Nome = dr["nome"].ToString();
+                    obj.nome = dr["nome"].ToString();
                 }
                 return obj;
             }

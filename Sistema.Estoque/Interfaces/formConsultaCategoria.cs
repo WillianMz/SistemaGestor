@@ -29,7 +29,7 @@ namespace Sistema.Estoque.Interfaces
             dgvDados.Rows.Clear();
             foreach(Categoria c in categ)
             {
-                dgvDados.Rows.Add(c.Id, c.Nome);
+                dgvDados.Rows.Add(c.Id, c.nome);
             }
             util_sistema.resultadoPesquisa(dgvDados, lblResultado);
         }
@@ -37,7 +37,7 @@ namespace Sistema.Estoque.Interfaces
         private void pesquisarCategoria(bool ativo)
         {
             controle = new BLL_Produto();
-            List<Categoria> categorias = controle.filtrarCategorias(txtPesquisar.Text, ativo);
+            List<Categoria> categorias = controle.filtrarCategoriasPorNome(txtPesquisar.Text, ativo);
             atualizarGrid(categorias);
         }
 
@@ -91,6 +91,13 @@ namespace Sistema.Estoque.Interfaces
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
             util_sistema.keyPress(sender, e);
+        }
+
+        private void tESTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formClassifProdutos form = new formClassifProdutos();
+            form.ShowDialog();
+            form.Dispose();
         }
     }
 }

@@ -36,6 +36,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.chboxAtivo = new System.Windows.Forms.CheckBox();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(439, 49);
+            this.pnlTitulo.Size = new System.Drawing.Size(441, 49);
             this.pnlTitulo.TabIndex = 5;
             // 
             // lblTitulo
@@ -63,18 +64,19 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(78, 71);
+            this.lblNome.Location = new System.Drawing.Point(78, 75);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(67, 18);
+            this.lblNome.Size = new System.Drawing.Size(46, 18);
             this.lblNome.TabIndex = 6;
-            this.lblNome.Text = "Descrição";
+            this.lblNome.Text = "Nome";
             // 
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(81, 92);
+            this.txtNome.Location = new System.Drawing.Point(81, 96);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(346, 26);
+            this.txtNome.Size = new System.Drawing.Size(283, 26);
             this.txtNome.TabIndex = 1;
             // 
             // btnSalvar
@@ -83,7 +85,7 @@
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(327, 134);
+            this.btnSalvar.Location = new System.Drawing.Point(329, 128);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(100, 40);
             this.btnSalvar.TabIndex = 2;
@@ -95,7 +97,7 @@
             // txtCod
             // 
             this.txtCod.Enabled = false;
-            this.txtCod.Location = new System.Drawing.Point(12, 92);
+            this.txtCod.Location = new System.Drawing.Point(12, 96);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(63, 26);
             this.txtCod.TabIndex = 0;
@@ -103,18 +105,29 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(9, 71);
+            this.lblID.Location = new System.Drawing.Point(9, 75);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(36, 18);
             this.lblID.TabIndex = 10;
             this.lblID.Text = "Cód.";
+            // 
+            // chboxAtivo
+            // 
+            this.chboxAtivo.AutoSize = true;
+            this.chboxAtivo.Location = new System.Drawing.Point(370, 98);
+            this.chboxAtivo.Name = "chboxAtivo";
+            this.chboxAtivo.Size = new System.Drawing.Size(59, 22);
+            this.chboxAtivo.TabIndex = 39;
+            this.chboxAtivo.Text = "Ativo";
+            this.chboxAtivo.UseVisualStyleBackColor = true;
             // 
             // formProdutoCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(439, 186);
+            this.ClientSize = new System.Drawing.Size(441, 180);
+            this.Controls.Add(this.chboxAtivo);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.btnSalvar);
@@ -122,7 +135,7 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -147,5 +160,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.CheckBox chboxAtivo;
     }
 }

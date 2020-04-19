@@ -33,17 +33,13 @@ namespace Sistema.Estoque.Interfaces
         {
             if(statusForm == statusForm.Novo)
             {
-                lblTitulo.Text   = "NOVA ENTRADA NO ESTOQUE";
+               // lblTitulo.Text   = "NOVA ENTRADA NO ESTOQUE";
                 lblMensagem.Text = "Novo registro";
                 carregarCombobox();
                 lblNomeEmpresa.Visible = true;
                 lblNomeEmpresa.Text    = "";
-                lblMsgEmpresa.Visible  = true;
-                lblMsgEmpresa.Text     = "";
                 lblNomeFornec.Text     = "";
                 lblNomeFornec.Visible  = true;
-                lblMsgFornec.Text      = "";
-                lblMsgFornec.Visible   = true;
             }
 
             if(statusForm == statusForm.Editar)
@@ -66,25 +62,18 @@ namespace Sistema.Estoque.Interfaces
         private void bloquearCampos()
         {
             util_sistema.bloquearComponentesTabPage(tabPrincipal,  false);
-            util_sistema.bloquearComponentesTabPage(tabProdutos,   false);
-            util_sistema.bloquearComponentesTabPage(tabFatura,     false);
-            util_sistema.bloquearComponentesTabPage(tabTransporte, false);
+            //util_sistema.bloquearComponentesTabPage(tabProdutos,   false);
         }
 
         private void ativarCampos()
         {
             util_sistema.bloquearComponentesTabPage(tabPrincipal,  true);
-            util_sistema.bloquearComponentesTabPage(tabProdutos,   true);
-            util_sistema.bloquearComponentesTabPage(tabFatura,     true);
-            util_sistema.bloquearComponentesTabPage(tabTransporte, true);
         }
 
         private void limparCampos()
         {
             util_sistema.limparComponentesTabPage(tabPrincipal);
-            util_sistema.limparComponentesTabPage(tabProdutos);
-            util_sistema.limparComponentesTabPage(tabFatura);
-            util_sistema.limparComponentesTabPage(tabTransporte);
+           // util_sistema.limparComponentesTabPage(tabProdutos);
         }
 
         private void cadastrarFornedor()
@@ -142,7 +131,7 @@ namespace Sistema.Estoque.Interfaces
                     item.produto.Id     = Convert.ToInt32(txtProdutoCod.Text);
                     item.produto.Codigo = txtProdutoCodbarras.Text;
                     item.produto.Nome = txtProdutoDescricao.Text;
-                    item.unid.Nome = cboxProdutoUN.Text;//teste
+                    item.unid.nome = cboxProdutoUN.Text;//teste
                     item.cst.Id         = Convert.ToInt32(txtProdutoCST.Text);
                     item.cfop.Id        = Convert.ToInt32(txtProdutoCFOP.Text);
                     item.qtd            = double.Parse(txtProdutoQTD.Text);
@@ -178,7 +167,7 @@ namespace Sistema.Estoque.Interfaces
                 foreach (Produto_Item item in lst)
                 {
                     contador++;
-                    dgvProdutosItens.Rows.Add(contador.ToString(), item.produto.Id, item.produto.Codigo, item.produto.Nome, item.cst.Id, item.cfop.Id, item.unid.Nome, 
+                    dgvProdutosItens.Rows.Add(contador.ToString(), item.produto.Id, item.produto.Codigo, item.produto.Nome, item.cst.Id, item.cfop.Id, item.unid.nome, 
                                                item.qtd, item.vlUnit, item.vlTotal, item.vlDesc, item.bcICMS, item.vlICMS, item.vlIPI, item.alqICMS, item.alqIPI);
                 }
             }
@@ -229,7 +218,7 @@ namespace Sistema.Estoque.Interfaces
                         else
                         {
                             lblNomeEmpresa.Text = emp.razaoSocial + " | " + emp.local;
-                            lblMsgEmpresa.Text = emp.fantasia;
+                          //  lblMsgEmpresa.Text = emp.fantasia;
                         }
                     }
                 }
@@ -262,7 +251,7 @@ namespace Sistema.Estoque.Interfaces
                     }
                     else
                     {
-                        lblMsgFornec.Text = p.Fantasia;
+                       // lblMsgFornec.Text = p.Fantasia;
                         lblNomeFornec.Text = p.NomeCompleto + " | " + p.Local;
                     }
                 }

@@ -120,18 +120,26 @@ namespace Sistema.Estoque.Controles
         #endregion
 
         #region CATEGORIA
-        public void novaCategoria(Categoria c)
+
+        /// <summary>
+        /// RECEBE UM OBJETO CATEGORIA E GRAVA AS ALTERAÇÕES
+        /// </summary>
+        /// <param name="c"></param>
+        public void gravarCategoria(Categoria c)
         {
             dao = new DAO_Produto();
-            dao.insertCategoria(c);
+
+            if (c.Id == 0)
+                dao.insertCategoria(c);
+            else
+                dao.updateCategoria(c);
         }
 
-        public void editarCategoria(Categoria c)
-        {
-            dao = new DAO_Produto();
-            dao.updateCategoria(c);
-        }
-
+        /// <summary>
+        /// RETONA UM OBJETO CATEGORIA
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Categoria detalhesCategoria(int id)
         {
             dao = new DAO_Produto();
@@ -139,23 +147,39 @@ namespace Sistema.Estoque.Controles
             return cat;            
         }
 
-        public List<Categoria> listarCategorias()
+        /// <summary>
+        /// LISTA TODAS AS CATEGORIAS - PASSAR O PARAMETRO (True OU False)
+        /// </summary>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Categoria> listarCategorias(bool ativo)
         {
             dao = new DAO_Produto();
-            return dao.selectAllCategorias();
+            return dao.selectAllCategorias(ativo);
         }
 
-        public List<Categoria> filtrarCategorias(string filtro, bool ativo)
+        /// <summary>
+        /// CONSULTA AS CATEGORIAS PELO NOME PASSANDO O PARAMETRO True OU False
+        /// </summary>
+        /// <param name="filtro"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Categoria> filtrarCategoriasPorNome(string filtro, bool ativo)
         {
             dao = new DAO_Produto();
             List<Categoria> cs = dao.selectCategoriasPorNome(filtro, ativo);
             return cs;
         }
 
+        /// <summary>
+        /// VERIFICA SE JA EXISTE ALGUMA CATEGORIA CADASTRADA
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public bool categoriaCadastrada(string nome)
         {
             dao = new DAO_Produto();
-            List<Categoria> catg = dao.selectCategoriasPorNome(nome,true);
+            List<Categoria> catg = dao.selectAllCategoriasPorNome(nome);
 
             if (catg.Count > 0)
                 return true;
@@ -166,18 +190,26 @@ namespace Sistema.Estoque.Controles
         #endregion
 
         #region GRUPO
-        public void novoGrupo(Grupo g)
+
+        /// <summary>
+        /// GRAVA AS ALTERAÇÕES FEITA NO OBJETO GRUPO
+        /// </summary>
+        /// <param name="g"></param>
+        public void gravarGrupo(Grupo g)
         {
             dao = new DAO_Produto();
-            dao.insertGrupo(g);
+
+            if (g.Id == 0)
+                dao.insertGrupo(g);
+            else
+                dao.updateGrupo(g);
         }
 
-        public void editarGrupo(Grupo g)
-        {
-            dao = new DAO_Produto();
-            dao.updateGrupo(g);
-        }
-
+        /// <summary>
+        /// RETORNA UM OBJETO GRUPO
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Grupo detalhesGrupo(int id)
         {
             dao = new DAO_Produto();
@@ -185,23 +217,41 @@ namespace Sistema.Estoque.Controles
             return g;
         }
 
-        public List<Grupo> listarGrupos()
+        /// <summary>
+        /// RETORNA UMA LISTA DE GRUPOS DE DETERMINADA CATEGORIA
+        /// </summary>
+        /// <param name="categ"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Grupo> listarGrupos(Categoria categ, bool ativo)
         {
             dao = new DAO_Produto();
-            return dao.selectAllGrupos();
+            return dao.selectGruposPorCateg(categ.Id, ativo);
         }
 
-        public List<Grupo> filtrarGrupos(string filtro, bool ativo)
+        /// <summary>
+        /// RETONA UMA LISTA DE GRUPOS DE UMA CATEGORIA BUSCANDO PELO NOME
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="c"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Grupo> filtrarGrupos(string nome, Categoria c, bool ativo)
         {
             dao = new DAO_Produto();
-            List<Grupo> gs = dao.selectGruposPorNome(filtro, ativo);
+            List<Grupo> gs = dao.selectGruposPorNome(nome, c.Id, ativo);
             return gs;
         }
         
+        /// <summary>
+        /// VERIFICA SE UM GRUPO JÁ ESTA CADASTRADO - RETONA TRUE OU FALSE
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
         public bool grupoCadastrado(string nome)
         {
             dao = new DAO_Produto();
-            List<Grupo> gr = dao.selectGruposPorNome(nome, true);
+            List<Grupo> gr = dao.selectAllGruposPorNome(nome);
 
             if (gr.Count > 0)
                 return true;
@@ -212,31 +262,26 @@ namespace Sistema.Estoque.Controles
         #endregion
 
         #region SUBGRUPO
-        public void novoSubgrupo(Subgrupo s)
+
+        /// <summary>
+        /// GRAVA UM OBJETO SUBGRUPO
+        /// </summary>
+        /// <param name="s"></param>
+        public void gravarSubgrupo(Subgrupo s)
         {
             dao = new DAO_Produto();
-            dao.insertSubgrupo(s);
+
+            if (s.Id == 0)
+                dao.insertSubgrupo(s);
+            else
+                dao.updateSubgrupo(s);
         }
 
-        public void editarSubgrupo(Subgrupo s)
-        {
-            dao = new DAO_Produto();
-            dao.updateSubgrupo(s);
-        }
-
-        public List<Subgrupo> listarSubgrupos(Grupo grupo)
-        {
-            dao = new DAO_Produto();
-            return dao.selectSubgrupos(grupo);
-        }
-
-        public List<Subgrupo> filtrarSubgrupos(string filtro, bool ativo, Grupo g)
-        {
-            dao = new DAO_Produto();
-            List<Subgrupo> sg = dao.selectSubgruposPorNome(filtro, ativo, g.Id);
-            return sg;
-        }
-
+        /// <summary>
+        /// RETORNA UM OBJETO SUBGRUPO
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Subgrupo detalhesSubgrupo(int id)
         {
             dao = new DAO_Produto();
@@ -244,10 +289,41 @@ namespace Sistema.Estoque.Controles
             return s;
         }
 
-        public bool subgrupoCadastrado(string nome, Grupo g)
+        /// <summary>
+        /// RETONA UMA LISTA DE SUBGRUPOS DE DETERMINADO GRUPO
+        /// </summary>
+        /// <param name="grupo"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Subgrupo> listarSubgrupos(Grupo grupo, bool ativo)
         {
             dao = new DAO_Produto();
-            List<Subgrupo> sub = dao.selectSubgruposPorNome(nome, true, g.Id);
+            return dao.selectSubgruposPorGrupo(grupo.Id, ativo);
+        }
+
+        /// <summary>
+        /// RETORNA UMA LISTA DE SUBGRUPOS DE UM GRUPO BUSCANDO PELO NOME
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <param name="g"></param>
+        /// <param name="ativo"></param>
+        /// <returns></returns>
+        public List<Subgrupo> filtrarSubgrupos(string nome, Grupo g, bool ativo)
+        {
+            dao = new DAO_Produto();
+            List<Subgrupo> sg = dao.selectSubgruposPorNome(nome, g.Id, ativo);
+            return sg;
+        }        
+
+        /// <summary>
+        /// VERIFICA SE O SUBGRUPO JÁ ESTÁ CADASTRADO
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public bool subgrupoCadastrado(string nome)
+        {
+            dao = new DAO_Produto();
+            List<Subgrupo> sub = dao.selectAllSubgrupoPorNome(nome);
 
             if (sub.Count > 0)
                 return true;

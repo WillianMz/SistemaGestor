@@ -1,6 +1,5 @@
 ﻿using Modelo.Estoque;
 using Sistema.Estoque.Controles;
-using Sistema.Estoque.Utilitario;
 using System;
 using System.Windows.Forms;
 using Util;
@@ -11,35 +10,36 @@ namespace Sistema.Estoque.Interfaces
     {
         public statusForm statusForm;
         BLL_Produto controle;
+        int idGrupo;
 
         public formProdutoSubgrupo()
         {
             InitializeComponent();
-            configForm();
         }
 
-        public void configForm()
+        public void configForm(int grupoID)
         {
             if (statusForm == statusForm.Novo)
             {
                 lblTitulo.Text = "NOVO SUBGRUPO";
-                carregarComboBox.grupoProduto(cboxGrupo);
+                chboxAtivo.Checked = true;
+                idGrupo = grupoID;
             }
 
             if (statusForm == statusForm.Editar)
             {
                 lblTitulo.Text = "EDITANDO SUBGRUPO";
-                carregarComboBox.grupoProduto(cboxGrupo);
+                idGrupo = grupoID;
             }
         }
 
-        public void detalhes(Subgrupo subgrupo)
+        public void detalhes(Subgrupo s)
         {
             try
             {
-                txtCod.Text = Convert.ToString(subgrupo.Id);
-                txtNome.Text = subgrupo.Nome;
-                cboxGrupo.SelectedValue = subgrupo.grupo.Id;
+                txtCod.Text = Convert.ToString(s.Id);
+                txtNome.Text = s.nome;
+                chboxAtivo.Checked = s.ativo;
             }
             catch (Exception ex)
             {
@@ -52,56 +52,65 @@ namespace Sistema.Estoque.Interfaces
             controle = new BLL_Produto();
             Subgrupo s;
 
-            if (statusForm == statusForm.Novo)
+            if (txtNome.Text.Trim() == string.Empty)
             {
-                try
+                MessageBox.Show("Informe o nome do Subgrupo", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
+                return;
+            }
+
+            try
+            {
+                if (statusForm == statusForm.Novo)
                 {
-                    if (txtNome.Text.Trim() == string.Empty)
+                    if (controle.subgrupoCadastrado(txtNome.Text.Trim()) == true)
                     {
-                        MessageBox.Show("Informe o nome do subgrupo", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Já existe um Subgrupo com este nome!", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         txtNome.Focus();
                         return;
                     }
-                    else if(cboxGrupo.Text.Trim() == string.Empty)
-                    {
-                        MessageBox.Show("Selecione o grupo a qual o subgrupo pertence", util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        cboxGrupo.Focus();
-                        return;
-                    }
 
                     s = new Subgrupo();
-                    s.Nome = txtNome.Text;
-                    s.grupo.Id = int.Parse(cboxGrupo.SelectedValue.ToString());
+                    s.nome = txtNome.Text;
+                    s.grupo.Id = idGrupo;
 
-                    controle.novoSubgrupo(s);
+                    if (chboxAtivo.Checked)
+                        s.ativo = true;
+                    else
+                        s.ativo = false;
 
+                    controle.gravarSubgrupo(s);
                     MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNome.Clear();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
                 }
             }
-
-            if (statusForm == statusForm.Editar)
+            catch (Exception ex)
             {
-                try
+                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                if (statusForm == statusForm.Editar)
                 {
                     s = new Subgrupo();
                     s.Id = int.Parse(txtCod.Text);
-                    s.Nome = txtNome.Text;
-                    s.grupo.Id = int.Parse(cboxGrupo.SelectedValue.ToString());
+                    s.nome = txtNome.Text;
+                    s.grupo.Id = idGrupo;
 
-                    controle.editarSubgrupo(s);
+                    if (chboxAtivo.Checked)
+                        s.ativo = true;
+                    else
+                        s.ativo = false;
 
+                    controle.gravarSubgrupo(s);
                     MessageBox.Show(util_msg.msgSalvar, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNome.Clear();
+                    Close();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
