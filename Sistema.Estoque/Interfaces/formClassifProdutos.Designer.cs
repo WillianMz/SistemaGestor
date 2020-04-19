@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formClassifProdutos));
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
@@ -48,12 +49,13 @@
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.menuAdicionar = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.chboxAtivo = new System.Windows.Forms.CheckBox();
+            this.chboxDesativados = new System.Windows.Forms.CheckBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.menuCategoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGrupo = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSubgrupo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlRodape.SuspendLayout();
             this.gbTabelas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubgrupos)).BeginInit();
@@ -109,15 +111,15 @@
             this.gbTabelas.Controls.Add(this.dgvSubgrupos);
             this.gbTabelas.Controls.Add(this.dgvGrupos);
             this.gbTabelas.Controls.Add(this.dgvCategorias);
-            this.gbTabelas.Location = new System.Drawing.Point(12, 85);
+            this.gbTabelas.Location = new System.Drawing.Point(12, 66);
             this.gbTabelas.Name = "gbTabelas";
-            this.gbTabelas.Size = new System.Drawing.Size(940, 340);
+            this.gbTabelas.Size = new System.Drawing.Size(940, 359);
             this.gbTabelas.TabIndex = 32;
             this.gbTabelas.TabStop = false;
             // 
             // btnEditarSubgrupo
             // 
-            this.btnEditarSubgrupo.Location = new System.Drawing.Point(744, 304);
+            this.btnEditarSubgrupo.Location = new System.Drawing.Point(744, 330);
             this.btnEditarSubgrupo.Name = "btnEditarSubgrupo";
             this.btnEditarSubgrupo.Size = new System.Drawing.Size(110, 23);
             this.btnEditarSubgrupo.TabIndex = 40;
@@ -127,7 +129,7 @@
             // 
             // btnEditarGrupo
             // 
-            this.btnEditarGrupo.Location = new System.Drawing.Point(433, 304);
+            this.btnEditarGrupo.Location = new System.Drawing.Point(433, 330);
             this.btnEditarGrupo.Name = "btnEditarGrupo";
             this.btnEditarGrupo.Size = new System.Drawing.Size(110, 23);
             this.btnEditarGrupo.TabIndex = 39;
@@ -137,7 +139,7 @@
             // 
             // btnEditarCategoria
             // 
-            this.btnEditarCategoria.Location = new System.Drawing.Point(122, 304);
+            this.btnEditarCategoria.Location = new System.Drawing.Point(122, 330);
             this.btnEditarCategoria.Name = "btnEditarCategoria";
             this.btnEditarCategoria.Size = new System.Drawing.Size(110, 23);
             this.btnEditarCategoria.TabIndex = 38;
@@ -147,7 +149,7 @@
             // 
             // btnNovoSubgrupo
             // 
-            this.btnNovoSubgrupo.Location = new System.Drawing.Point(628, 304);
+            this.btnNovoSubgrupo.Location = new System.Drawing.Point(628, 330);
             this.btnNovoSubgrupo.Name = "btnNovoSubgrupo";
             this.btnNovoSubgrupo.Size = new System.Drawing.Size(110, 23);
             this.btnNovoSubgrupo.TabIndex = 37;
@@ -157,7 +159,7 @@
             // 
             // btnNovoGrupo
             // 
-            this.btnNovoGrupo.Location = new System.Drawing.Point(317, 304);
+            this.btnNovoGrupo.Location = new System.Drawing.Point(317, 330);
             this.btnNovoGrupo.Name = "btnNovoGrupo";
             this.btnNovoGrupo.Size = new System.Drawing.Size(110, 23);
             this.btnNovoGrupo.TabIndex = 36;
@@ -167,7 +169,7 @@
             // 
             // btnNovaCategoria
             // 
-            this.btnNovaCategoria.Location = new System.Drawing.Point(6, 304);
+            this.btnNovaCategoria.Location = new System.Drawing.Point(6, 330);
             this.btnNovaCategoria.Name = "btnNovaCategoria";
             this.btnNovaCategoria.Size = new System.Drawing.Size(110, 23);
             this.btnNovaCategoria.TabIndex = 35;
@@ -196,7 +198,7 @@
             this.dgvSubgrupos.ReadOnly = true;
             this.dgvSubgrupos.RowHeadersVisible = false;
             this.dgvSubgrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubgrupos.Size = new System.Drawing.Size(306, 279);
+            this.dgvSubgrupos.Size = new System.Drawing.Size(306, 305);
             this.dgvSubgrupos.TabIndex = 34;
             // 
             // dataGridViewTextBoxColumn3
@@ -235,7 +237,7 @@
             this.dgvGrupos.ReadOnly = true;
             this.dgvGrupos.RowHeadersVisible = false;
             this.dgvGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrupos.Size = new System.Drawing.Size(305, 279);
+            this.dgvGrupos.Size = new System.Drawing.Size(305, 305);
             this.dgvGrupos.TabIndex = 33;
             this.dgvGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrupos_CellClick);
             this.dgvGrupos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvGrupos_KeyUp);
@@ -276,7 +278,7 @@
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(305, 279);
+            this.dgvCategorias.Size = new System.Drawing.Size(305, 305);
             this.dgvCategorias.TabIndex = 32;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             this.dgvCategorias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvCategorias_KeyUp);
@@ -298,9 +300,11 @@
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.Transparent;
+            this.menu.Enabled = false;
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAdicionar,
-            this.menuEditar});
+            this.menuCategoria,
+            this.menuGrupo,
+            this.menuSubgrupo});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -308,54 +312,63 @@
             this.menu.TabIndex = 36;
             this.menu.Text = "menuStrip1";
             // 
-            // menuAdicionar
-            // 
-            this.menuAdicionar.Name = "menuAdicionar";
-            this.menuAdicionar.Size = new System.Drawing.Size(70, 20);
-            this.menuAdicionar.Text = "Adicionar";
-            // 
-            // menuEditar
-            // 
-            this.menuEditar.Name = "menuEditar";
-            this.menuEditar.Size = new System.Drawing.Size(49, 20);
-            this.menuEditar.Text = "Editar";
-            // 
             // pnlSuperior
             // 
-            this.pnlSuperior.Controls.Add(this.chboxAtivo);
+            this.pnlSuperior.Controls.Add(this.btnPesquisa);
+            this.pnlSuperior.Controls.Add(this.chboxDesativados);
             this.pnlSuperior.Controls.Add(this.txtNome);
-            this.pnlSuperior.Controls.Add(this.lblNome);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 24);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(964, 55);
+            this.pnlSuperior.Size = new System.Drawing.Size(964, 36);
             this.pnlSuperior.TabIndex = 37;
             // 
-            // chboxAtivo
+            // chboxDesativados
             // 
-            this.chboxAtivo.AutoSize = true;
-            this.chboxAtivo.Location = new System.Drawing.Point(351, 23);
-            this.chboxAtivo.Name = "chboxAtivo";
-            this.chboxAtivo.Size = new System.Drawing.Size(52, 18);
-            this.chboxAtivo.TabIndex = 38;
-            this.chboxAtivo.Text = "Ativo";
-            this.chboxAtivo.UseVisualStyleBackColor = true;
+            this.chboxDesativados.AutoSize = true;
+            this.chboxDesativados.Location = new System.Drawing.Point(385, 9);
+            this.chboxDesativados.Name = "chboxDesativados";
+            this.chboxDesativados.Size = new System.Drawing.Size(143, 18);
+            this.chboxDesativados.TabIndex = 38;
+            this.chboxDesativados.Text = "Somente desativados";
+            this.chboxDesativados.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(12, 21);
+            this.txtNome.Location = new System.Drawing.Point(12, 7);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(333, 22);
             this.txtNome.TabIndex = 37;
             // 
-            // lblNome
+            // btnPesquisa
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(9, 4);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(39, 14);
-            this.lblNome.TabIndex = 36;
-            this.lblNome.Text = "Nome";
+            this.btnPesquisa.Enabled = false;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
+            this.btnPesquisa.Location = new System.Drawing.Point(348, 7);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(28, 22);
+            this.btnPesquisa.TabIndex = 44;
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            // 
+            // menuCategoria
+            // 
+            this.menuCategoria.Name = "menuCategoria";
+            this.menuCategoria.Size = new System.Drawing.Size(70, 20);
+            this.menuCategoria.Text = "Categoria";
+            // 
+            // menuGrupo
+            // 
+            this.menuGrupo.Name = "menuGrupo";
+            this.menuGrupo.Size = new System.Drawing.Size(52, 20);
+            this.menuGrupo.Text = "Grupo";
+            // 
+            // menuSubgrupo
+            // 
+            this.menuSubgrupo.Name = "menuSubgrupo";
+            this.menuSubgrupo.Size = new System.Drawing.Size(71, 20);
+            this.menuSubgrupo.Text = "Subgrupo";
             // 
             // formClassifProdutos
             // 
@@ -400,12 +413,9 @@
         private System.Windows.Forms.GroupBox gbTabelas;
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem menuAdicionar;
-        private System.Windows.Forms.ToolStripMenuItem menuEditar;
         private System.Windows.Forms.Panel pnlSuperior;
-        private System.Windows.Forms.CheckBox chboxAtivo;
+        private System.Windows.Forms.CheckBox chboxDesativados;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.DataGridView dgvSubgrupos;
         private System.Windows.Forms.DataGridView dgvGrupos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
@@ -420,5 +430,9 @@
         private System.Windows.Forms.Button btnEditarSubgrupo;
         private System.Windows.Forms.Button btnEditarGrupo;
         private System.Windows.Forms.Button btnEditarCategoria;
+        private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.ToolStripMenuItem menuCategoria;
+        private System.Windows.Forms.ToolStripMenuItem menuGrupo;
+        private System.Windows.Forms.ToolStripMenuItem menuSubgrupo;
     }
 }

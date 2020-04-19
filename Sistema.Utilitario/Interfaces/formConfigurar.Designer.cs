@@ -47,19 +47,10 @@
             this.lblServidor = new System.Windows.Forms.Label();
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.lblMensagem = new System.Windows.Forms.Label();
-            this.dgvDatabases = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colServidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPorta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSenha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             this.tabConfig.SuspendLayout();
             this.tabDatabase.SuspendLayout();
             this.pnlRodape.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabases)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -97,7 +88,6 @@
             // 
             // tabDatabase
             // 
-            this.tabDatabase.Controls.Add(this.dgvDatabases);
             this.tabDatabase.Controls.Add(this.btnAlterar);
             this.tabDatabase.Controls.Add(this.btnSalvar);
             this.tabDatabase.Controls.Add(this.txtBDSenha);
@@ -251,57 +241,6 @@
             this.lblMensagem.TabIndex = 2;
             this.lblMensagem.Text = "</>";
             // 
-            // dgvDatabases
-            // 
-            this.dgvDatabases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatabases.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colEmpresa,
-            this.colServidor,
-            this.colPorta,
-            this.colBase,
-            this.colUsuario,
-            this.colSenha});
-            this.dgvDatabases.Location = new System.Drawing.Point(6, 66);
-            this.dgvDatabases.Name = "dgvDatabases";
-            this.dgvDatabases.Size = new System.Drawing.Size(856, 252);
-            this.dgvDatabases.TabIndex = 14;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
-            // 
-            // colEmpresa
-            // 
-            this.colEmpresa.HeaderText = "Empresa";
-            this.colEmpresa.Name = "colEmpresa";
-            // 
-            // colServidor
-            // 
-            this.colServidor.HeaderText = "Servidor";
-            this.colServidor.Name = "colServidor";
-            // 
-            // colPorta
-            // 
-            this.colPorta.HeaderText = "Porta";
-            this.colPorta.Name = "colPorta";
-            // 
-            // colBase
-            // 
-            this.colBase.HeaderText = "Base";
-            this.colBase.Name = "colBase";
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.HeaderText = "Usuário";
-            this.colUsuario.Name = "colUsuario";
-            // 
-            // colSenha
-            // 
-            this.colSenha.HeaderText = "Senha";
-            this.colSenha.Name = "colSenha";
-            // 
             // formConfigurar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -329,7 +268,6 @@
             this.tabDatabase.PerformLayout();
             this.pnlRodape.ResumeLayout(false);
             this.pnlRodape.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatabases)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,13 +291,5 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Panel pnlRodape;
         private System.Windows.Forms.Label lblMensagem;
-        private System.Windows.Forms.DataGridView dgvDatabases;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colServidor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPorta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBase;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSenha;
     }
 }
