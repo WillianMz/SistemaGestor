@@ -1,4 +1,5 @@
-﻿using Sistema.Utilitario.Controles;
+﻿using Modelo.Config;
+using Sistema.Utilitario.Controles;
 using System;
 using System.Windows.Forms;
 using Util;

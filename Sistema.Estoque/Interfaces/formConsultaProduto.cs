@@ -285,5 +285,11 @@ namespace Sistema.Estoque.Interfaces
         {
             txtPesquisar.Clear();
         }
+
+        private void mConsultarEstoque_Click(object sender, EventArgs e)
+        {
+            formBalancoEstoque f = new formBalancoEstoque();
+            f.ShowDialog();
+        }
     }
 }

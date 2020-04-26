@@ -81,6 +81,12 @@
     <Compile Include="Interfaces\formEntradaAdicionarProduto.Designer.cs">
       <DependentUpon>formEntradaAdicionarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\formBalancoEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formBalancoEstoque.Designer.cs">
+      <DependentUpon>formBalancoEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formEstoqueEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formEntradaAdicionarProduto.resx">
       <DependentUpon>formEntradaAdicionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formBalancoEstoque.resx">
+      <DependentUpon>formBalancoEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formEstoqueEntrada.resx">
       <DependentUpon>formEstoqueEntrada.cs</DependentUpon>

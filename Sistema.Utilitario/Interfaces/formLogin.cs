@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Modelo.Config;
+using System;
 using System.Windows.Forms;
 using Util;
-using static Util.util_database;
+using static Modelo.Config.Parametro;
 
 namespace Sistema.Utilitario.Interfaces
 {
@@ -36,6 +37,9 @@ namespace Sistema.Utilitario.Interfaces
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
+            UsuarioLogado.empresa = int.Parse(cbEmpresa.SelectedValue.ToString());
+            UsuarioLogado.nomeUser = txtUsuario.Text;
+
             Close();            
         }
 
