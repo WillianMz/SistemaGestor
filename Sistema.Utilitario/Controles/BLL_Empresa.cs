@@ -30,11 +30,11 @@ namespace Sistema.Utilitario.Controles
             return empresas;
         }
 
-        public List<Empresa> filtrarEmpresa_ID(int id, bool ativo)
+        public Empresa filtrarEmpresa_ID(int id, bool ativo)
         {
             dao = new DAO_Sistema();
-            List<Empresa> empresas = dao.selectEmpresa_ID(id, ativo);
-            return empresas;
+            Empresa empresa = dao.selectEmpresa_ID(id, ativo);
+            return empresa;
         }
 
         public Empresa filtrarEmpresa_CNPJ(string cnpj, bool ativo)
