@@ -1,4 +1,4 @@
-﻿namespace Sistema.Utilitario
+﻿namespace Modelo.Config
 {
     public class ConfigSistema
     {
@@ -7,14 +7,14 @@
 
         //base de dados
         public string dbServer { get; set; }
-        public int dbPort { get; set; }
+        public int    dbPort { get; set; }
         public string dbBase { get; set; }
         public string dbUser { get; set; }
         public string dbPwd { get; set; }
 
-        public bool lembrarSenha { get; set; }
-        public string usuario { get; set; }
+        public bool   lembrarSenha { get; set; }
+        public string userLogado { get; set; }
         public string senha { get; set; }
-        public int empresaPadrao { get; set; }
+        public int    empresaPadrao { get; set; }
     }
 }

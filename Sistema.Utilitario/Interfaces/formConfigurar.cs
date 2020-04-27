@@ -1,4 +1,5 @@
-﻿using Sistema.Utilitario.Controles;
+﻿using Modelo.Config;
+using Sistema.Utilitario.Controles;
 using System;
 using System.Windows.Forms;
 using Util;
@@ -19,9 +20,8 @@ namespace Sistema.Utilitario.Interfaces
         public void configForm()
         {
             lblTitulo.Text = "Configurações do Software";
-            util_sistema.bloquearComponentesTabPage(tabDatabase, false);
-            btnSalvar.Enabled = false;
-            btnAlterar.Enabled = true;
+            btnSalvarbd.Enabled = false;
+            btnAlterarbd.Enabled = true;
         }
 
         private void salvarConfig()
@@ -59,21 +59,21 @@ namespace Sistema.Utilitario.Interfaces
             txtBDSenha.Text  = cf.dbPwd;
         }
         
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvarbd_Click(object sender, EventArgs e)
         {
             salvarConfig();
             
-            util_sistema.bloquearComponentesTabPage(tabDatabase, false);
-            btnSalvar.Enabled = false;
-            btnAlterar.Enabled = true;
+            util_sistema.bloquearComponentesTabPage(tabSuporte, false);
+            btnSalvarbd.Enabled = false;
+            btnAlterarbd.Enabled = true;
             lblMensagem.Text = "Dados alterados com sucesso!";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            util_sistema.bloquearComponentesTabPage(tabDatabase, true);
-            btnSalvar.Enabled = true;
-            btnAlterar.Enabled = false;
+            util_sistema.bloquearComponentesTabPage(tabSuporte, true);
+            btnSalvarbd.Enabled = true;
+            btnAlterarbd.Enabled = false;
             lblMensagem.Text = "Alterando dados";
         }
 

@@ -1,8 +1,7 @@
-﻿using System;
-using Npgsql;
+﻿using Npgsql;
+using System;
 using System.Data;
-using Util;
-using static Util.util_database;
+using static Modelo.Config.Parametro;
 
 namespace DAO
 {
@@ -10,11 +9,8 @@ namespace DAO
     {
         NpgsqlConnection conexao;
         NpgsqlTransaction Trans;
-
         private static NpgsqlConnection Conn;
         private static Conexao Instancia;
-        //private const string URL = "Server=127.0.0.1;Port=5432;Database=loja_kmais;User Id=postgres;Password=987654321;";
-        //private static string URL = util_database.conexaoBase;
 
         private static readonly string URL = ("Server=" + SQL.servidor + ";Port=" + SQL.porta + ";Database=" + SQL.banco + ";User Id=" + SQL.userBD + ";Password=" + SQL.senhaBD + ";");
 
@@ -151,6 +147,32 @@ namespace DAO
                 return ds;
             }
             catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        //teste
+        public DataTable consulta(string sql)
+        {
+            try
+            {
+                Conectar();
+                DataTable dt = new DataTable();
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, Conn);
+                da.TableMappings.Add("Temp", "Tab1");
+                da.Fill(dt);
+                return dt;
+            }
+            catch(NpgsqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch(Exception ex)
             {
                 throw new Exception(ex.Message);
             }

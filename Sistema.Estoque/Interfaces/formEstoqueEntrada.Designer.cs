@@ -33,6 +33,60 @@
             this.tabNota = new System.Windows.Forms.TabControl();
             this.tabPrincipal = new System.Windows.Forms.TabPage();
             this.gbEmpresa = new System.Windows.Forms.GroupBox();
+            this.lblStatusEntrada = new System.Windows.Forms.Label();
+            this.cbStatusEntrada = new System.Windows.Forms.ComboBox();
+            this.lblDtEntrada = new System.Windows.Forms.Label();
+            this.dtpDtEntrada = new System.Windows.Forms.DateTimePicker();
+            this.txtCodEntrada = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.gbTransporte = new System.Windows.Forms.GroupBox();
+            this.lblVolPesoLiquido = new System.Windows.Forms.Label();
+            this.lblVolPesoBruto = new System.Windows.Forms.Label();
+            this.txtPesoLiquido = new System.Windows.Forms.TextBox();
+            this.txtPesoBruto = new System.Windows.Forms.TextBox();
+            this.lblVolNumer = new System.Windows.Forms.Label();
+            this.lblVolMarca = new System.Windows.Forms.Label();
+            this.txtVolNumeracao = new System.Windows.Forms.TextBox();
+            this.txtVolMarca = new System.Windows.Forms.TextBox();
+            this.lblVolEspecie = new System.Windows.Forms.Label();
+            this.lblVolQtd = new System.Windows.Forms.Label();
+            this.txtVolEsp = new System.Windows.Forms.TextBox();
+            this.txtVolQtd = new System.Windows.Forms.TextBox();
+            this.lblPlaca = new System.Windows.Forms.Label();
+            this.lblCodANTT = new System.Windows.Forms.Label();
+            this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
+            this.txtCodANTT = new System.Windows.Forms.TextBox();
+            this.lblFrete = new System.Windows.Forms.Label();
+            this.cbFrete = new System.Windows.Forms.ComboBox();
+            this.lblNomeTransp = new System.Windows.Forms.Label();
+            this.btnTransp = new System.Windows.Forms.Button();
+            this.txtCNPJtransp = new System.Windows.Forms.TextBox();
+            this.lblTransportador = new System.Windows.Forms.Label();
+            this.gbImpostoNota = new System.Windows.Forms.GroupBox();
+            this.lblTotalNota = new System.Windows.Forms.Label();
+            this.txtValorTotal = new System.Windows.Forms.TextBox();
+            this.lblVL_ipi = new System.Windows.Forms.Label();
+            this.txtValorIPI = new System.Windows.Forms.TextBox();
+            this.lblOutrasDespesas = new System.Windows.Forms.Label();
+            this.txtOutrasDesp = new System.Windows.Forms.TextBox();
+            this.lblVL_Desconto = new System.Windows.Forms.Label();
+            this.txtValorDesconto = new System.Windows.Forms.TextBox();
+            this.lblVL_Seguro = new System.Windows.Forms.Label();
+            this.txtValorSeguro = new System.Windows.Forms.TextBox();
+            this.lblVL_Frete = new System.Windows.Forms.Label();
+            this.txtValorFrete = new System.Windows.Forms.TextBox();
+            this.lblValorTotalItens = new System.Windows.Forms.Label();
+            this.txtValorItens = new System.Windows.Forms.TextBox();
+            this.lblVL_Importacao = new System.Windows.Forms.Label();
+            this.txt_vlImportacao = new System.Windows.Forms.TextBox();
+            this.lblVL_icmsST = new System.Windows.Forms.Label();
+            this.txt_vlICMSst = new System.Windows.Forms.TextBox();
+            this.lblBC_icmsST = new System.Windows.Forms.Label();
+            this.txt_bcICMSst = new System.Windows.Forms.TextBox();
+            this.lblVL_icms = new System.Windows.Forms.Label();
+            this.txt_vlICMS = new System.Windows.Forms.TextBox();
+            this.lblBC_ICMS = new System.Windows.Forms.Label();
+            this.txt_bcICMS = new System.Windows.Forms.TextBox();
             this.txtNatOp = new System.Windows.Forms.TextBox();
             this.lblNatOper = new System.Windows.Forms.Label();
             this.lblEntradaSaida = new System.Windows.Forms.Label();
@@ -41,13 +95,20 @@
             this.cbTipoNota = new System.Windows.Forms.ComboBox();
             this.dtEntradaSaida = new System.Windows.Forms.DateTimePicker();
             this.dtEmissao = new System.Windows.Forms.DateTimePicker();
+            this.lblNomeFornec = new System.Windows.Forms.Label();
+            this.mtxtCNPJEmpresa = new System.Windows.Forms.MaskedTextBox();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.lblSerie = new System.Windows.Forms.Label();
             this.txtChaveAcesso = new System.Windows.Forms.TextBox();
+            this.lblNomeEmpresa = new System.Windows.Forms.Label();
             this.txtNumeroNota = new System.Windows.Forms.TextBox();
             this.lblNumeroNota = new System.Windows.Forms.Label();
             this.lblChaveAcesso = new System.Windows.Forms.Label();
+            this.btnFornecedor = new System.Windows.Forms.Button();
+            this.txt_cnpjFornec = new System.Windows.Forms.TextBox();
+            this.lblFornecedor = new System.Windows.Forms.Label();
             this.btnArquivoXML = new System.Windows.Forms.Button();
+            this.lblEmpresa = new System.Windows.Forms.Label();
             this.lblArquivoXML = new System.Windows.Forms.Label();
             this.txtArquivoXML = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -91,67 +152,6 @@
             this.lblProdCodBarras = new System.Windows.Forms.Label();
             this.txtProdutoCodbarras = new System.Windows.Forms.TextBox();
             this.dgvProdutosItens = new System.Windows.Forms.DataGridView();
-            this.gbImpostoNota = new System.Windows.Forms.GroupBox();
-            this.lblTotalNota = new System.Windows.Forms.Label();
-            this.txtValorTotal = new System.Windows.Forms.TextBox();
-            this.lblVL_ipi = new System.Windows.Forms.Label();
-            this.txtValorIPI = new System.Windows.Forms.TextBox();
-            this.lblOutrasDespesas = new System.Windows.Forms.Label();
-            this.txtOutrasDesp = new System.Windows.Forms.TextBox();
-            this.lblVL_Desconto = new System.Windows.Forms.Label();
-            this.txtValorDesconto = new System.Windows.Forms.TextBox();
-            this.lblVL_Seguro = new System.Windows.Forms.Label();
-            this.txtValorSeguro = new System.Windows.Forms.TextBox();
-            this.lblVL_Frete = new System.Windows.Forms.Label();
-            this.txtValorFrete = new System.Windows.Forms.TextBox();
-            this.lblValorTotalItens = new System.Windows.Forms.Label();
-            this.txtValorItens = new System.Windows.Forms.TextBox();
-            this.lblVL_Importacao = new System.Windows.Forms.Label();
-            this.txt_vlImportacao = new System.Windows.Forms.TextBox();
-            this.lblVL_icmsST = new System.Windows.Forms.Label();
-            this.txt_vlICMSst = new System.Windows.Forms.TextBox();
-            this.lblBC_icmsST = new System.Windows.Forms.Label();
-            this.txt_bcICMSst = new System.Windows.Forms.TextBox();
-            this.lblVL_icms = new System.Windows.Forms.Label();
-            this.txt_vlICMS = new System.Windows.Forms.TextBox();
-            this.lblBC_ICMS = new System.Windows.Forms.Label();
-            this.txt_bcICMS = new System.Windows.Forms.TextBox();
-            this.gbTransporte = new System.Windows.Forms.GroupBox();
-            this.lblNomeTransp = new System.Windows.Forms.Label();
-            this.btnTransp = new System.Windows.Forms.Button();
-            this.txtCNPJtransp = new System.Windows.Forms.TextBox();
-            this.lblTransportador = new System.Windows.Forms.Label();
-            this.cbFrete = new System.Windows.Forms.ComboBox();
-            this.lblFrete = new System.Windows.Forms.Label();
-            this.txtCodANTT = new System.Windows.Forms.TextBox();
-            this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
-            this.lblCodANTT = new System.Windows.Forms.Label();
-            this.lblPlaca = new System.Windows.Forms.Label();
-            this.lblVolPesoLiquido = new System.Windows.Forms.Label();
-            this.lblVolPesoBruto = new System.Windows.Forms.Label();
-            this.txtPesoLiquido = new System.Windows.Forms.TextBox();
-            this.txtPesoBruto = new System.Windows.Forms.TextBox();
-            this.lblVolNumer = new System.Windows.Forms.Label();
-            this.lblVolMarca = new System.Windows.Forms.Label();
-            this.txtVolNumeracao = new System.Windows.Forms.TextBox();
-            this.txtVolMarca = new System.Windows.Forms.TextBox();
-            this.lblVolEspecie = new System.Windows.Forms.Label();
-            this.lblVolQtd = new System.Windows.Forms.Label();
-            this.txtVolEsp = new System.Windows.Forms.TextBox();
-            this.txtVolQtd = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtCodEntrada = new System.Windows.Forms.TextBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.lblFornecedor = new System.Windows.Forms.Label();
-            this.txt_cnpjFornec = new System.Windows.Forms.TextBox();
-            this.btnFornecedor = new System.Windows.Forms.Button();
-            this.lblNomeEmpresa = new System.Windows.Forms.Label();
-            this.mtxtCNPJEmpresa = new System.Windows.Forms.MaskedTextBox();
-            this.lblNomeFornec = new System.Windows.Forms.Label();
-            this.lblDtEntrada = new System.Windows.Forms.Label();
-            this.dtpDtEntrada = new System.Windows.Forms.DateTimePicker();
-            this.cbStatusEntrada = new System.Windows.Forms.ComboBox();
-            this.lblStatusEntrada = new System.Windows.Forms.Label();
             this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,11 +173,11 @@
             this.tabNota.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             this.gbEmpresa.SuspendLayout();
+            this.gbTransporte.SuspendLayout();
+            this.gbImpostoNota.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.gbItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosItens)).BeginInit();
-            this.gbImpostoNota.SuspendLayout();
-            this.gbTransporte.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRodape
@@ -268,6 +268,498 @@
             this.gbEmpresa.TabStop = false;
             this.gbEmpresa.Text = "Nota";
             // 
+            // lblStatusEntrada
+            // 
+            this.lblStatusEntrada.AutoSize = true;
+            this.lblStatusEntrada.Location = new System.Drawing.Point(225, 19);
+            this.lblStatusEntrada.Name = "lblStatusEntrada";
+            this.lblStatusEntrada.Size = new System.Drawing.Size(55, 15);
+            this.lblStatusEntrada.TabIndex = 36;
+            this.lblStatusEntrada.Text = "Situação";
+            // 
+            // cbStatusEntrada
+            // 
+            this.cbStatusEntrada.FormattingEnabled = true;
+            this.cbStatusEntrada.Location = new System.Drawing.Point(228, 37);
+            this.cbStatusEntrada.Name = "cbStatusEntrada";
+            this.cbStatusEntrada.Size = new System.Drawing.Size(121, 23);
+            this.cbStatusEntrada.TabIndex = 35;
+            // 
+            // lblDtEntrada
+            // 
+            this.lblDtEntrada.AutoSize = true;
+            this.lblDtEntrada.Location = new System.Drawing.Point(115, 19);
+            this.lblDtEntrada.Name = "lblDtEntrada";
+            this.lblDtEntrada.Size = new System.Drawing.Size(79, 15);
+            this.lblDtEntrada.TabIndex = 34;
+            this.lblDtEntrada.Text = "Data Entrada";
+            // 
+            // dtpDtEntrada
+            // 
+            this.dtpDtEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDtEntrada.Location = new System.Drawing.Point(115, 37);
+            this.dtpDtEntrada.Name = "dtpDtEntrada";
+            this.dtpDtEntrada.Size = new System.Drawing.Size(107, 23);
+            this.dtpDtEntrada.TabIndex = 33;
+            // 
+            // txtCodEntrada
+            // 
+            this.txtCodEntrada.Enabled = false;
+            this.txtCodEntrada.Location = new System.Drawing.Point(9, 37);
+            this.txtCodEntrada.Name = "txtCodEntrada";
+            this.txtCodEntrada.Size = new System.Drawing.Size(100, 23);
+            this.txtCodEntrada.TabIndex = 32;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(6, 19);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(45, 15);
+            this.lblCodigo.TabIndex = 31;
+            this.lblCodigo.Text = "Código";
+            // 
+            // gbTransporte
+            // 
+            this.gbTransporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbTransporte.Controls.Add(this.lblVolPesoLiquido);
+            this.gbTransporte.Controls.Add(this.lblVolPesoBruto);
+            this.gbTransporte.Controls.Add(this.txtPesoLiquido);
+            this.gbTransporte.Controls.Add(this.txtPesoBruto);
+            this.gbTransporte.Controls.Add(this.lblVolNumer);
+            this.gbTransporte.Controls.Add(this.lblVolMarca);
+            this.gbTransporte.Controls.Add(this.txtVolNumeracao);
+            this.gbTransporte.Controls.Add(this.txtVolMarca);
+            this.gbTransporte.Controls.Add(this.lblVolEspecie);
+            this.gbTransporte.Controls.Add(this.lblVolQtd);
+            this.gbTransporte.Controls.Add(this.txtVolEsp);
+            this.gbTransporte.Controls.Add(this.txtVolQtd);
+            this.gbTransporte.Controls.Add(this.lblPlaca);
+            this.gbTransporte.Controls.Add(this.lblCodANTT);
+            this.gbTransporte.Controls.Add(this.txtPlacaVeiculo);
+            this.gbTransporte.Controls.Add(this.txtCodANTT);
+            this.gbTransporte.Controls.Add(this.lblFrete);
+            this.gbTransporte.Controls.Add(this.cbFrete);
+            this.gbTransporte.Controls.Add(this.lblNomeTransp);
+            this.gbTransporte.Controls.Add(this.btnTransp);
+            this.gbTransporte.Controls.Add(this.txtCNPJtransp);
+            this.gbTransporte.Controls.Add(this.lblTransportador);
+            this.gbTransporte.Location = new System.Drawing.Point(6, 366);
+            this.gbTransporte.Name = "gbTransporte";
+            this.gbTransporte.Size = new System.Drawing.Size(974, 114);
+            this.gbTransporte.TabIndex = 30;
+            this.gbTransporte.TabStop = false;
+            this.gbTransporte.Text = "Transportador / Volumes Transportados";
+            // 
+            // lblVolPesoLiquido
+            // 
+            this.lblVolPesoLiquido.AutoSize = true;
+            this.lblVolPesoLiquido.Location = new System.Drawing.Point(816, 63);
+            this.lblVolPesoLiquido.Name = "lblVolPesoLiquido";
+            this.lblVolPesoLiquido.Size = new System.Drawing.Size(76, 15);
+            this.lblVolPesoLiquido.TabIndex = 74;
+            this.lblVolPesoLiquido.Text = "Peso Líquido";
+            // 
+            // lblVolPesoBruto
+            // 
+            this.lblVolPesoBruto.AutoSize = true;
+            this.lblVolPesoBruto.Location = new System.Drawing.Point(734, 63);
+            this.lblVolPesoBruto.Name = "lblVolPesoBruto";
+            this.lblVolPesoBruto.Size = new System.Drawing.Size(66, 15);
+            this.lblVolPesoBruto.TabIndex = 73;
+            this.lblVolPesoBruto.Text = "Peso Bruto";
+            // 
+            // txtPesoLiquido
+            // 
+            this.txtPesoLiquido.Location = new System.Drawing.Point(819, 81);
+            this.txtPesoLiquido.Name = "txtPesoLiquido";
+            this.txtPesoLiquido.Size = new System.Drawing.Size(85, 23);
+            this.txtPesoLiquido.TabIndex = 72;
+            // 
+            // txtPesoBruto
+            // 
+            this.txtPesoBruto.Location = new System.Drawing.Point(734, 81);
+            this.txtPesoBruto.Name = "txtPesoBruto";
+            this.txtPesoBruto.Size = new System.Drawing.Size(79, 23);
+            this.txtPesoBruto.TabIndex = 71;
+            // 
+            // lblVolNumer
+            // 
+            this.lblVolNumer.AutoSize = true;
+            this.lblVolNumer.Location = new System.Drawing.Point(634, 63);
+            this.lblVolNumer.Name = "lblVolNumer";
+            this.lblVolNumer.Size = new System.Drawing.Size(70, 15);
+            this.lblVolNumer.TabIndex = 70;
+            this.lblVolNumer.Text = "Numeração";
+            // 
+            // lblVolMarca
+            // 
+            this.lblVolMarca.AutoSize = true;
+            this.lblVolMarca.Location = new System.Drawing.Point(531, 63);
+            this.lblVolMarca.Name = "lblVolMarca";
+            this.lblVolMarca.Size = new System.Drawing.Size(43, 15);
+            this.lblVolMarca.TabIndex = 69;
+            this.lblVolMarca.Text = "Marca";
+            // 
+            // txtVolNumeracao
+            // 
+            this.txtVolNumeracao.Location = new System.Drawing.Point(637, 81);
+            this.txtVolNumeracao.Name = "txtVolNumeracao";
+            this.txtVolNumeracao.Size = new System.Drawing.Size(91, 23);
+            this.txtVolNumeracao.TabIndex = 68;
+            // 
+            // txtVolMarca
+            // 
+            this.txtVolMarca.Location = new System.Drawing.Point(531, 81);
+            this.txtVolMarca.Name = "txtVolMarca";
+            this.txtVolMarca.Size = new System.Drawing.Size(100, 23);
+            this.txtVolMarca.TabIndex = 67;
+            // 
+            // lblVolEspecie
+            // 
+            this.lblVolEspecie.AutoSize = true;
+            this.lblVolEspecie.Location = new System.Drawing.Point(422, 63);
+            this.lblVolEspecie.Name = "lblVolEspecie";
+            this.lblVolEspecie.Size = new System.Drawing.Size(48, 15);
+            this.lblVolEspecie.TabIndex = 66;
+            this.lblVolEspecie.Text = "Espécie";
+            // 
+            // lblVolQtd
+            // 
+            this.lblVolQtd.AutoSize = true;
+            this.lblVolQtd.Location = new System.Drawing.Point(348, 63);
+            this.lblVolQtd.Name = "lblVolQtd";
+            this.lblVolQtd.Size = new System.Drawing.Size(71, 15);
+            this.lblVolQtd.TabIndex = 65;
+            this.lblVolQtd.Text = "Quantidade";
+            // 
+            // txtVolEsp
+            // 
+            this.txtVolEsp.Location = new System.Drawing.Point(425, 81);
+            this.txtVolEsp.Name = "txtVolEsp";
+            this.txtVolEsp.Size = new System.Drawing.Size(100, 23);
+            this.txtVolEsp.TabIndex = 64;
+            // 
+            // txtVolQtd
+            // 
+            this.txtVolQtd.Location = new System.Drawing.Point(348, 81);
+            this.txtVolQtd.Name = "txtVolQtd";
+            this.txtVolQtd.Size = new System.Drawing.Size(71, 23);
+            this.txtVolQtd.TabIndex = 63;
+            // 
+            // lblPlaca
+            // 
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Location = new System.Drawing.Point(239, 63);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(80, 15);
+            this.lblPlaca.TabIndex = 38;
+            this.lblPlaca.Text = "Placa Veículo";
+            // 
+            // lblCodANTT
+            // 
+            this.lblCodANTT.AutoSize = true;
+            this.lblCodANTT.Location = new System.Drawing.Point(136, 63);
+            this.lblCodANTT.Name = "lblCodANTT";
+            this.lblCodANTT.Size = new System.Drawing.Size(75, 15);
+            this.lblCodANTT.TabIndex = 37;
+            this.lblCodANTT.Text = "Código ANTT";
+            // 
+            // txtPlacaVeiculo
+            // 
+            this.txtPlacaVeiculo.Location = new System.Drawing.Point(242, 81);
+            this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
+            this.txtPlacaVeiculo.Size = new System.Drawing.Size(100, 23);
+            this.txtPlacaVeiculo.TabIndex = 36;
+            // 
+            // txtCodANTT
+            // 
+            this.txtCodANTT.Location = new System.Drawing.Point(136, 81);
+            this.txtCodANTT.Name = "txtCodANTT";
+            this.txtCodANTT.Size = new System.Drawing.Size(100, 23);
+            this.txtCodANTT.TabIndex = 35;
+            // 
+            // lblFrete
+            // 
+            this.lblFrete.AutoSize = true;
+            this.lblFrete.Location = new System.Drawing.Point(6, 63);
+            this.lblFrete.Name = "lblFrete";
+            this.lblFrete.Size = new System.Drawing.Size(91, 15);
+            this.lblFrete.TabIndex = 34;
+            this.lblFrete.Text = "Frete por Conta";
+            // 
+            // cbFrete
+            // 
+            this.cbFrete.FormattingEnabled = true;
+            this.cbFrete.Location = new System.Drawing.Point(9, 81);
+            this.cbFrete.Name = "cbFrete";
+            this.cbFrete.Size = new System.Drawing.Size(121, 23);
+            this.cbFrete.TabIndex = 33;
+            // 
+            // lblNomeTransp
+            // 
+            this.lblNomeTransp.AutoSize = true;
+            this.lblNomeTransp.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeTransp.Location = new System.Drawing.Point(189, 41);
+            this.lblNomeTransp.Name = "lblNomeTransp";
+            this.lblNomeTransp.Size = new System.Drawing.Size(97, 15);
+            this.lblNomeTransp.TabIndex = 32;
+            this.lblNomeTransp.Text = "</Nome Transp>";
+            this.lblNomeTransp.Visible = false;
+            // 
+            // btnTransp
+            // 
+            this.btnTransp.Location = new System.Drawing.Point(155, 37);
+            this.btnTransp.Name = "btnTransp";
+            this.btnTransp.Size = new System.Drawing.Size(29, 23);
+            this.btnTransp.TabIndex = 30;
+            this.btnTransp.Text = "+";
+            this.btnTransp.UseVisualStyleBackColor = true;
+            // 
+            // txtCNPJtransp
+            // 
+            this.txtCNPJtransp.Location = new System.Drawing.Point(9, 37);
+            this.txtCNPJtransp.Name = "txtCNPJtransp";
+            this.txtCNPJtransp.Size = new System.Drawing.Size(143, 23);
+            this.txtCNPJtransp.TabIndex = 29;
+            // 
+            // lblTransportador
+            // 
+            this.lblTransportador.AutoSize = true;
+            this.lblTransportador.Location = new System.Drawing.Point(6, 19);
+            this.lblTransportador.Name = "lblTransportador";
+            this.lblTransportador.Size = new System.Drawing.Size(86, 15);
+            this.lblTransportador.TabIndex = 31;
+            this.lblTransportador.Text = "Transportador";
+            // 
+            // gbImpostoNota
+            // 
+            this.gbImpostoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbImpostoNota.Controls.Add(this.lblTotalNota);
+            this.gbImpostoNota.Controls.Add(this.txtValorTotal);
+            this.gbImpostoNota.Controls.Add(this.lblVL_ipi);
+            this.gbImpostoNota.Controls.Add(this.txtValorIPI);
+            this.gbImpostoNota.Controls.Add(this.lblOutrasDespesas);
+            this.gbImpostoNota.Controls.Add(this.txtOutrasDesp);
+            this.gbImpostoNota.Controls.Add(this.lblVL_Desconto);
+            this.gbImpostoNota.Controls.Add(this.txtValorDesconto);
+            this.gbImpostoNota.Controls.Add(this.lblVL_Seguro);
+            this.gbImpostoNota.Controls.Add(this.txtValorSeguro);
+            this.gbImpostoNota.Controls.Add(this.lblVL_Frete);
+            this.gbImpostoNota.Controls.Add(this.txtValorFrete);
+            this.gbImpostoNota.Controls.Add(this.lblValorTotalItens);
+            this.gbImpostoNota.Controls.Add(this.txtValorItens);
+            this.gbImpostoNota.Controls.Add(this.lblVL_Importacao);
+            this.gbImpostoNota.Controls.Add(this.txt_vlImportacao);
+            this.gbImpostoNota.Controls.Add(this.lblVL_icmsST);
+            this.gbImpostoNota.Controls.Add(this.txt_vlICMSst);
+            this.gbImpostoNota.Controls.Add(this.lblBC_icmsST);
+            this.gbImpostoNota.Controls.Add(this.txt_bcICMSst);
+            this.gbImpostoNota.Controls.Add(this.lblVL_icms);
+            this.gbImpostoNota.Controls.Add(this.txt_vlICMS);
+            this.gbImpostoNota.Controls.Add(this.lblBC_ICMS);
+            this.gbImpostoNota.Controls.Add(this.txt_bcICMS);
+            this.gbImpostoNota.Location = new System.Drawing.Point(6, 242);
+            this.gbImpostoNota.Name = "gbImpostoNota";
+            this.gbImpostoNota.Size = new System.Drawing.Size(974, 118);
+            this.gbImpostoNota.TabIndex = 29;
+            this.gbImpostoNota.TabStop = false;
+            this.gbImpostoNota.Text = "Cálculo do Imposto";
+            // 
+            // lblTotalNota
+            // 
+            this.lblTotalNota.AutoSize = true;
+            this.lblTotalNota.Location = new System.Drawing.Point(602, 63);
+            this.lblTotalNota.Name = "lblTotalNota";
+            this.lblTotalNota.Size = new System.Drawing.Size(112, 15);
+            this.lblTotalNota.TabIndex = 23;
+            this.lblTotalNota.Text = "Valor Total da Nota";
+            // 
+            // txtValorTotal
+            // 
+            this.txtValorTotal.Location = new System.Drawing.Point(605, 81);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(139, 23);
+            this.txtValorTotal.TabIndex = 11;
+            // 
+            // lblVL_ipi
+            // 
+            this.lblVL_ipi.AutoSize = true;
+            this.lblVL_ipi.Location = new System.Drawing.Point(496, 63);
+            this.lblVL_ipi.Name = "lblVL_ipi";
+            this.lblVL_ipi.Size = new System.Drawing.Size(54, 15);
+            this.lblVL_ipi.TabIndex = 21;
+            this.lblVL_ipi.Text = "Valor IPI";
+            // 
+            // txtValorIPI
+            // 
+            this.txtValorIPI.Location = new System.Drawing.Point(499, 81);
+            this.txtValorIPI.Name = "txtValorIPI";
+            this.txtValorIPI.Size = new System.Drawing.Size(100, 23);
+            this.txtValorIPI.TabIndex = 10;
+            // 
+            // lblOutrasDespesas
+            // 
+            this.lblOutrasDespesas.AutoSize = true;
+            this.lblOutrasDespesas.Location = new System.Drawing.Point(330, 63);
+            this.lblOutrasDespesas.Name = "lblOutrasDespesas";
+            this.lblOutrasDespesas.Size = new System.Drawing.Size(163, 15);
+            this.lblOutrasDespesas.TabIndex = 19;
+            this.lblOutrasDespesas.Text = "Outras Despesas Acessórias";
+            // 
+            // txtOutrasDesp
+            // 
+            this.txtOutrasDesp.Location = new System.Drawing.Point(333, 81);
+            this.txtOutrasDesp.Name = "txtOutrasDesp";
+            this.txtOutrasDesp.Size = new System.Drawing.Size(160, 23);
+            this.txtOutrasDesp.TabIndex = 9;
+            // 
+            // lblVL_Desconto
+            // 
+            this.lblVL_Desconto.AutoSize = true;
+            this.lblVL_Desconto.Location = new System.Drawing.Point(224, 63);
+            this.lblVL_Desconto.Name = "lblVL_Desconto";
+            this.lblVL_Desconto.Size = new System.Drawing.Size(58, 15);
+            this.lblVL_Desconto.TabIndex = 17;
+            this.lblVL_Desconto.Text = "Desconto";
+            // 
+            // txtValorDesconto
+            // 
+            this.txtValorDesconto.Location = new System.Drawing.Point(227, 81);
+            this.txtValorDesconto.Name = "txtValorDesconto";
+            this.txtValorDesconto.Size = new System.Drawing.Size(100, 23);
+            this.txtValorDesconto.TabIndex = 8;
+            // 
+            // lblVL_Seguro
+            // 
+            this.lblVL_Seguro.AutoSize = true;
+            this.lblVL_Seguro.Location = new System.Drawing.Point(118, 63);
+            this.lblVL_Seguro.Name = "lblVL_Seguro";
+            this.lblVL_Seguro.Size = new System.Drawing.Size(93, 15);
+            this.lblVL_Seguro.TabIndex = 15;
+            this.lblVL_Seguro.Text = "Valor do Seguro";
+            // 
+            // txtValorSeguro
+            // 
+            this.txtValorSeguro.Location = new System.Drawing.Point(121, 81);
+            this.txtValorSeguro.Name = "txtValorSeguro";
+            this.txtValorSeguro.Size = new System.Drawing.Size(100, 23);
+            this.txtValorSeguro.TabIndex = 7;
+            // 
+            // lblVL_Frete
+            // 
+            this.lblVL_Frete.AutoSize = true;
+            this.lblVL_Frete.Location = new System.Drawing.Point(6, 63);
+            this.lblVL_Frete.Name = "lblVL_Frete";
+            this.lblVL_Frete.Size = new System.Drawing.Size(83, 15);
+            this.lblVL_Frete.TabIndex = 13;
+            this.lblVL_Frete.Text = "Valor do Frete";
+            // 
+            // txtValorFrete
+            // 
+            this.txtValorFrete.Location = new System.Drawing.Point(9, 81);
+            this.txtValorFrete.Name = "txtValorFrete";
+            this.txtValorFrete.Size = new System.Drawing.Size(106, 23);
+            this.txtValorFrete.TabIndex = 6;
+            // 
+            // lblValorTotalItens
+            // 
+            this.lblValorTotalItens.AutoSize = true;
+            this.lblValorTotalItens.Location = new System.Drawing.Point(602, 19);
+            this.lblValorTotalItens.Name = "lblValorTotalItens";
+            this.lblValorTotalItens.Size = new System.Drawing.Size(142, 15);
+            this.lblValorTotalItens.TabIndex = 11;
+            this.lblValorTotalItens.Text = "Valor Total dos Produtos";
+            // 
+            // txtValorItens
+            // 
+            this.txtValorItens.Location = new System.Drawing.Point(605, 37);
+            this.txtValorItens.Name = "txtValorItens";
+            this.txtValorItens.Size = new System.Drawing.Size(139, 23);
+            this.txtValorItens.TabIndex = 5;
+            // 
+            // lblVL_Importacao
+            // 
+            this.lblVL_Importacao.AutoSize = true;
+            this.lblVL_Importacao.Location = new System.Drawing.Point(449, 19);
+            this.lblVL_Importacao.Name = "lblVL_Importacao";
+            this.lblVL_Importacao.Size = new System.Drawing.Size(130, 15);
+            this.lblVL_Importacao.TabIndex = 9;
+            this.lblVL_Importacao.Text = "Valor Imp. Importação";
+            // 
+            // txt_vlImportacao
+            // 
+            this.txt_vlImportacao.Location = new System.Drawing.Point(452, 37);
+            this.txt_vlImportacao.Name = "txt_vlImportacao";
+            this.txt_vlImportacao.Size = new System.Drawing.Size(127, 23);
+            this.txt_vlImportacao.TabIndex = 4;
+            // 
+            // lblVL_icmsST
+            // 
+            this.lblVL_icmsST.AutoSize = true;
+            this.lblVL_icmsST.Location = new System.Drawing.Point(330, 19);
+            this.lblVL_icmsST.Name = "lblVL_icmsST";
+            this.lblVL_icmsST.Size = new System.Drawing.Size(116, 15);
+            this.lblVL_icmsST.TabIndex = 7;
+            this.lblVL_icmsST.Text = "Valor do ICMS Subs.";
+            // 
+            // txt_vlICMSst
+            // 
+            this.txt_vlICMSst.Location = new System.Drawing.Point(333, 37);
+            this.txt_vlICMSst.Name = "txt_vlICMSst";
+            this.txt_vlICMSst.Size = new System.Drawing.Size(113, 23);
+            this.txt_vlICMSst.TabIndex = 3;
+            // 
+            // lblBC_icmsST
+            // 
+            this.lblBC_icmsST.AutoSize = true;
+            this.lblBC_icmsST.Location = new System.Drawing.Point(224, 19);
+            this.lblBC_icmsST.Name = "lblBC_icmsST";
+            this.lblBC_icmsST.Size = new System.Drawing.Size(101, 15);
+            this.lblBC_icmsST.TabIndex = 5;
+            this.lblBC_icmsST.Text = "BC do ICMS Subs.";
+            // 
+            // txt_bcICMSst
+            // 
+            this.txt_bcICMSst.Location = new System.Drawing.Point(227, 37);
+            this.txt_bcICMSst.Name = "txt_bcICMSst";
+            this.txt_bcICMSst.Size = new System.Drawing.Size(100, 23);
+            this.txt_bcICMSst.TabIndex = 2;
+            // 
+            // lblVL_icms
+            // 
+            this.lblVL_icms.AutoSize = true;
+            this.lblVL_icms.Location = new System.Drawing.Point(118, 19);
+            this.lblVL_icms.Name = "lblVL_icms";
+            this.lblVL_icms.Size = new System.Drawing.Size(84, 15);
+            this.lblVL_icms.TabIndex = 3;
+            this.lblVL_icms.Text = "Valor do ICMS";
+            // 
+            // txt_vlICMS
+            // 
+            this.txt_vlICMS.Location = new System.Drawing.Point(121, 37);
+            this.txt_vlICMS.Name = "txt_vlICMS";
+            this.txt_vlICMS.Size = new System.Drawing.Size(100, 23);
+            this.txt_vlICMS.TabIndex = 1;
+            // 
+            // lblBC_ICMS
+            // 
+            this.lblBC_ICMS.AutoSize = true;
+            this.lblBC_ICMS.Location = new System.Drawing.Point(6, 19);
+            this.lblBC_ICMS.Name = "lblBC_ICMS";
+            this.lblBC_ICMS.Size = new System.Drawing.Size(109, 15);
+            this.lblBC_ICMS.TabIndex = 1;
+            this.lblBC_ICMS.Text = "Base Cálculo ICMS";
+            // 
+            // txt_bcICMS
+            // 
+            this.txt_bcICMS.Location = new System.Drawing.Point(9, 37);
+            this.txt_bcICMS.Name = "txt_bcICMS";
+            this.txt_bcICMS.Size = new System.Drawing.Size(106, 23);
+            this.txt_bcICMS.TabIndex = 0;
+            // 
             // txtNatOp
             // 
             this.txtNatOp.Location = new System.Drawing.Point(591, 81);
@@ -337,6 +829,26 @@
             this.dtEmissao.Size = new System.Drawing.Size(107, 23);
             this.dtEmissao.TabIndex = 7;
             // 
+            // lblNomeFornec
+            // 
+            this.lblNomeFornec.AutoSize = true;
+            this.lblNomeFornec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeFornec.Location = new System.Drawing.Point(189, 217);
+            this.lblNomeFornec.Name = "lblNomeFornec";
+            this.lblNomeFornec.Size = new System.Drawing.Size(97, 15);
+            this.lblNomeFornec.TabIndex = 27;
+            this.lblNomeFornec.Text = "</Nome fornec>";
+            this.lblNomeFornec.Visible = false;
+            // 
+            // mtxtCNPJEmpresa
+            // 
+            this.mtxtCNPJEmpresa.Location = new System.Drawing.Point(9, 169);
+            this.mtxtCNPJEmpresa.Mask = "00\\.000\\.000/0000-00";
+            this.mtxtCNPJEmpresa.Name = "mtxtCNPJEmpresa";
+            this.mtxtCNPJEmpresa.Size = new System.Drawing.Size(143, 23);
+            this.mtxtCNPJEmpresa.TabIndex = 24;
+            this.mtxtCNPJEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtxtCNPJEmpresa_KeyDown);
+            // 
             // txtSerie
             // 
             this.txtSerie.Location = new System.Drawing.Point(440, 125);
@@ -360,6 +872,17 @@
             this.txtChaveAcesso.Size = new System.Drawing.Size(319, 23);
             this.txtChaveAcesso.TabIndex = 2;
             this.txtChaveAcesso.Text = "42190602483544000187550010000810991317908896";
+            // 
+            // lblNomeEmpresa
+            // 
+            this.lblNomeEmpresa.AutoSize = true;
+            this.lblNomeEmpresa.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeEmpresa.Location = new System.Drawing.Point(158, 172);
+            this.lblNomeEmpresa.Name = "lblNomeEmpresa";
+            this.lblNomeEmpresa.Size = new System.Drawing.Size(110, 15);
+            this.lblNomeEmpresa.TabIndex = 23;
+            this.lblNomeEmpresa.Text = "</Nome empresa>";
+            this.lblNomeEmpresa.Visible = false;
             // 
             // txtNumeroNota
             // 
@@ -386,6 +909,34 @@
             this.lblChaveAcesso.TabIndex = 7;
             this.lblChaveAcesso.Text = "Chave de acesso";
             // 
+            // btnFornecedor
+            // 
+            this.btnFornecedor.Location = new System.Drawing.Point(155, 213);
+            this.btnFornecedor.Name = "btnFornecedor";
+            this.btnFornecedor.Size = new System.Drawing.Size(28, 23);
+            this.btnFornecedor.TabIndex = 1;
+            this.btnFornecedor.Text = "+";
+            this.btnFornecedor.UseVisualStyleBackColor = true;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnNovoFornecedor_Click);
+            // 
+            // txt_cnpjFornec
+            // 
+            this.txt_cnpjFornec.Location = new System.Drawing.Point(9, 213);
+            this.txt_cnpjFornec.Name = "txt_cnpjFornec";
+            this.txt_cnpjFornec.Size = new System.Drawing.Size(143, 23);
+            this.txt_cnpjFornec.TabIndex = 0;
+            this.txt_cnpjFornec.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_cnpjFornec_KeyDown);
+            this.txt_cnpjFornec.Leave += new System.EventHandler(this.txt_cnpjFornec_Leave);
+            // 
+            // lblFornecedor
+            // 
+            this.lblFornecedor.AutoSize = true;
+            this.lblFornecedor.Location = new System.Drawing.Point(6, 195);
+            this.lblFornecedor.Name = "lblFornecedor";
+            this.lblFornecedor.Size = new System.Drawing.Size(69, 15);
+            this.lblFornecedor.TabIndex = 22;
+            this.lblFornecedor.Text = "Fornecedor";
+            // 
             // btnArquivoXML
             // 
             this.btnArquivoXML.Location = new System.Drawing.Point(558, 81);
@@ -394,6 +945,15 @@
             this.btnArquivoXML.TabIndex = 1;
             this.btnArquivoXML.Text = "...";
             this.btnArquivoXML.UseVisualStyleBackColor = true;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Location = new System.Drawing.Point(6, 151);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(54, 15);
+            this.lblEmpresa.TabIndex = 19;
+            this.lblEmpresa.Text = "Empresa";
             // 
             // lblArquivoXML
             // 
@@ -800,7 +1360,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProdutosItens.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutosItens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvProdutosItens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvProdutosItens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvProdutosItens.ColumnHeadersHeight = 30;
             this.dgvProdutosItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -829,566 +1388,6 @@
             this.dgvProdutosItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdutosItens.Size = new System.Drawing.Size(987, 325);
             this.dgvProdutosItens.TabIndex = 7;
-            // 
-            // gbImpostoNota
-            // 
-            this.gbImpostoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbImpostoNota.Controls.Add(this.lblTotalNota);
-            this.gbImpostoNota.Controls.Add(this.txtValorTotal);
-            this.gbImpostoNota.Controls.Add(this.lblVL_ipi);
-            this.gbImpostoNota.Controls.Add(this.txtValorIPI);
-            this.gbImpostoNota.Controls.Add(this.lblOutrasDespesas);
-            this.gbImpostoNota.Controls.Add(this.txtOutrasDesp);
-            this.gbImpostoNota.Controls.Add(this.lblVL_Desconto);
-            this.gbImpostoNota.Controls.Add(this.txtValorDesconto);
-            this.gbImpostoNota.Controls.Add(this.lblVL_Seguro);
-            this.gbImpostoNota.Controls.Add(this.txtValorSeguro);
-            this.gbImpostoNota.Controls.Add(this.lblVL_Frete);
-            this.gbImpostoNota.Controls.Add(this.txtValorFrete);
-            this.gbImpostoNota.Controls.Add(this.lblValorTotalItens);
-            this.gbImpostoNota.Controls.Add(this.txtValorItens);
-            this.gbImpostoNota.Controls.Add(this.lblVL_Importacao);
-            this.gbImpostoNota.Controls.Add(this.txt_vlImportacao);
-            this.gbImpostoNota.Controls.Add(this.lblVL_icmsST);
-            this.gbImpostoNota.Controls.Add(this.txt_vlICMSst);
-            this.gbImpostoNota.Controls.Add(this.lblBC_icmsST);
-            this.gbImpostoNota.Controls.Add(this.txt_bcICMSst);
-            this.gbImpostoNota.Controls.Add(this.lblVL_icms);
-            this.gbImpostoNota.Controls.Add(this.txt_vlICMS);
-            this.gbImpostoNota.Controls.Add(this.lblBC_ICMS);
-            this.gbImpostoNota.Controls.Add(this.txt_bcICMS);
-            this.gbImpostoNota.Location = new System.Drawing.Point(6, 242);
-            this.gbImpostoNota.Name = "gbImpostoNota";
-            this.gbImpostoNota.Size = new System.Drawing.Size(974, 118);
-            this.gbImpostoNota.TabIndex = 29;
-            this.gbImpostoNota.TabStop = false;
-            this.gbImpostoNota.Text = "Cálculo do Imposto";
-            // 
-            // lblTotalNota
-            // 
-            this.lblTotalNota.AutoSize = true;
-            this.lblTotalNota.Location = new System.Drawing.Point(602, 63);
-            this.lblTotalNota.Name = "lblTotalNota";
-            this.lblTotalNota.Size = new System.Drawing.Size(112, 15);
-            this.lblTotalNota.TabIndex = 23;
-            this.lblTotalNota.Text = "Valor Total da Nota";
-            // 
-            // txtValorTotal
-            // 
-            this.txtValorTotal.Location = new System.Drawing.Point(605, 81);
-            this.txtValorTotal.Name = "txtValorTotal";
-            this.txtValorTotal.Size = new System.Drawing.Size(139, 23);
-            this.txtValorTotal.TabIndex = 11;
-            // 
-            // lblVL_ipi
-            // 
-            this.lblVL_ipi.AutoSize = true;
-            this.lblVL_ipi.Location = new System.Drawing.Point(496, 63);
-            this.lblVL_ipi.Name = "lblVL_ipi";
-            this.lblVL_ipi.Size = new System.Drawing.Size(54, 15);
-            this.lblVL_ipi.TabIndex = 21;
-            this.lblVL_ipi.Text = "Valor IPI";
-            // 
-            // txtValorIPI
-            // 
-            this.txtValorIPI.Location = new System.Drawing.Point(499, 81);
-            this.txtValorIPI.Name = "txtValorIPI";
-            this.txtValorIPI.Size = new System.Drawing.Size(100, 23);
-            this.txtValorIPI.TabIndex = 10;
-            // 
-            // lblOutrasDespesas
-            // 
-            this.lblOutrasDespesas.AutoSize = true;
-            this.lblOutrasDespesas.Location = new System.Drawing.Point(330, 63);
-            this.lblOutrasDespesas.Name = "lblOutrasDespesas";
-            this.lblOutrasDespesas.Size = new System.Drawing.Size(163, 15);
-            this.lblOutrasDespesas.TabIndex = 19;
-            this.lblOutrasDespesas.Text = "Outras Despesas Acessórias";
-            // 
-            // txtOutrasDesp
-            // 
-            this.txtOutrasDesp.Location = new System.Drawing.Point(333, 81);
-            this.txtOutrasDesp.Name = "txtOutrasDesp";
-            this.txtOutrasDesp.Size = new System.Drawing.Size(160, 23);
-            this.txtOutrasDesp.TabIndex = 9;
-            // 
-            // lblVL_Desconto
-            // 
-            this.lblVL_Desconto.AutoSize = true;
-            this.lblVL_Desconto.Location = new System.Drawing.Point(224, 63);
-            this.lblVL_Desconto.Name = "lblVL_Desconto";
-            this.lblVL_Desconto.Size = new System.Drawing.Size(58, 15);
-            this.lblVL_Desconto.TabIndex = 17;
-            this.lblVL_Desconto.Text = "Desconto";
-            // 
-            // txtValorDesconto
-            // 
-            this.txtValorDesconto.Location = new System.Drawing.Point(227, 81);
-            this.txtValorDesconto.Name = "txtValorDesconto";
-            this.txtValorDesconto.Size = new System.Drawing.Size(100, 23);
-            this.txtValorDesconto.TabIndex = 8;
-            // 
-            // lblVL_Seguro
-            // 
-            this.lblVL_Seguro.AutoSize = true;
-            this.lblVL_Seguro.Location = new System.Drawing.Point(118, 63);
-            this.lblVL_Seguro.Name = "lblVL_Seguro";
-            this.lblVL_Seguro.Size = new System.Drawing.Size(93, 15);
-            this.lblVL_Seguro.TabIndex = 15;
-            this.lblVL_Seguro.Text = "Valor do Seguro";
-            // 
-            // txtValorSeguro
-            // 
-            this.txtValorSeguro.Location = new System.Drawing.Point(121, 81);
-            this.txtValorSeguro.Name = "txtValorSeguro";
-            this.txtValorSeguro.Size = new System.Drawing.Size(100, 23);
-            this.txtValorSeguro.TabIndex = 7;
-            // 
-            // lblVL_Frete
-            // 
-            this.lblVL_Frete.AutoSize = true;
-            this.lblVL_Frete.Location = new System.Drawing.Point(6, 63);
-            this.lblVL_Frete.Name = "lblVL_Frete";
-            this.lblVL_Frete.Size = new System.Drawing.Size(83, 15);
-            this.lblVL_Frete.TabIndex = 13;
-            this.lblVL_Frete.Text = "Valor do Frete";
-            // 
-            // txtValorFrete
-            // 
-            this.txtValorFrete.Location = new System.Drawing.Point(9, 81);
-            this.txtValorFrete.Name = "txtValorFrete";
-            this.txtValorFrete.Size = new System.Drawing.Size(106, 23);
-            this.txtValorFrete.TabIndex = 6;
-            // 
-            // lblValorTotalItens
-            // 
-            this.lblValorTotalItens.AutoSize = true;
-            this.lblValorTotalItens.Location = new System.Drawing.Point(602, 19);
-            this.lblValorTotalItens.Name = "lblValorTotalItens";
-            this.lblValorTotalItens.Size = new System.Drawing.Size(142, 15);
-            this.lblValorTotalItens.TabIndex = 11;
-            this.lblValorTotalItens.Text = "Valor Total dos Produtos";
-            // 
-            // txtValorItens
-            // 
-            this.txtValorItens.Location = new System.Drawing.Point(605, 37);
-            this.txtValorItens.Name = "txtValorItens";
-            this.txtValorItens.Size = new System.Drawing.Size(139, 23);
-            this.txtValorItens.TabIndex = 5;
-            // 
-            // lblVL_Importacao
-            // 
-            this.lblVL_Importacao.AutoSize = true;
-            this.lblVL_Importacao.Location = new System.Drawing.Point(449, 19);
-            this.lblVL_Importacao.Name = "lblVL_Importacao";
-            this.lblVL_Importacao.Size = new System.Drawing.Size(130, 15);
-            this.lblVL_Importacao.TabIndex = 9;
-            this.lblVL_Importacao.Text = "Valor Imp. Importação";
-            // 
-            // txt_vlImportacao
-            // 
-            this.txt_vlImportacao.Location = new System.Drawing.Point(452, 37);
-            this.txt_vlImportacao.Name = "txt_vlImportacao";
-            this.txt_vlImportacao.Size = new System.Drawing.Size(127, 23);
-            this.txt_vlImportacao.TabIndex = 4;
-            // 
-            // lblVL_icmsST
-            // 
-            this.lblVL_icmsST.AutoSize = true;
-            this.lblVL_icmsST.Location = new System.Drawing.Point(330, 19);
-            this.lblVL_icmsST.Name = "lblVL_icmsST";
-            this.lblVL_icmsST.Size = new System.Drawing.Size(116, 15);
-            this.lblVL_icmsST.TabIndex = 7;
-            this.lblVL_icmsST.Text = "Valor do ICMS Subs.";
-            // 
-            // txt_vlICMSst
-            // 
-            this.txt_vlICMSst.Location = new System.Drawing.Point(333, 37);
-            this.txt_vlICMSst.Name = "txt_vlICMSst";
-            this.txt_vlICMSst.Size = new System.Drawing.Size(113, 23);
-            this.txt_vlICMSst.TabIndex = 3;
-            // 
-            // lblBC_icmsST
-            // 
-            this.lblBC_icmsST.AutoSize = true;
-            this.lblBC_icmsST.Location = new System.Drawing.Point(224, 19);
-            this.lblBC_icmsST.Name = "lblBC_icmsST";
-            this.lblBC_icmsST.Size = new System.Drawing.Size(101, 15);
-            this.lblBC_icmsST.TabIndex = 5;
-            this.lblBC_icmsST.Text = "BC do ICMS Subs.";
-            // 
-            // txt_bcICMSst
-            // 
-            this.txt_bcICMSst.Location = new System.Drawing.Point(227, 37);
-            this.txt_bcICMSst.Name = "txt_bcICMSst";
-            this.txt_bcICMSst.Size = new System.Drawing.Size(100, 23);
-            this.txt_bcICMSst.TabIndex = 2;
-            // 
-            // lblVL_icms
-            // 
-            this.lblVL_icms.AutoSize = true;
-            this.lblVL_icms.Location = new System.Drawing.Point(118, 19);
-            this.lblVL_icms.Name = "lblVL_icms";
-            this.lblVL_icms.Size = new System.Drawing.Size(84, 15);
-            this.lblVL_icms.TabIndex = 3;
-            this.lblVL_icms.Text = "Valor do ICMS";
-            // 
-            // txt_vlICMS
-            // 
-            this.txt_vlICMS.Location = new System.Drawing.Point(121, 37);
-            this.txt_vlICMS.Name = "txt_vlICMS";
-            this.txt_vlICMS.Size = new System.Drawing.Size(100, 23);
-            this.txt_vlICMS.TabIndex = 1;
-            // 
-            // lblBC_ICMS
-            // 
-            this.lblBC_ICMS.AutoSize = true;
-            this.lblBC_ICMS.Location = new System.Drawing.Point(6, 19);
-            this.lblBC_ICMS.Name = "lblBC_ICMS";
-            this.lblBC_ICMS.Size = new System.Drawing.Size(109, 15);
-            this.lblBC_ICMS.TabIndex = 1;
-            this.lblBC_ICMS.Text = "Base Cálculo ICMS";
-            // 
-            // txt_bcICMS
-            // 
-            this.txt_bcICMS.Location = new System.Drawing.Point(9, 37);
-            this.txt_bcICMS.Name = "txt_bcICMS";
-            this.txt_bcICMS.Size = new System.Drawing.Size(106, 23);
-            this.txt_bcICMS.TabIndex = 0;
-            // 
-            // gbTransporte
-            // 
-            this.gbTransporte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbTransporte.Controls.Add(this.lblVolPesoLiquido);
-            this.gbTransporte.Controls.Add(this.lblVolPesoBruto);
-            this.gbTransporte.Controls.Add(this.txtPesoLiquido);
-            this.gbTransporte.Controls.Add(this.txtPesoBruto);
-            this.gbTransporte.Controls.Add(this.lblVolNumer);
-            this.gbTransporte.Controls.Add(this.lblVolMarca);
-            this.gbTransporte.Controls.Add(this.txtVolNumeracao);
-            this.gbTransporte.Controls.Add(this.txtVolMarca);
-            this.gbTransporte.Controls.Add(this.lblVolEspecie);
-            this.gbTransporte.Controls.Add(this.lblVolQtd);
-            this.gbTransporte.Controls.Add(this.txtVolEsp);
-            this.gbTransporte.Controls.Add(this.txtVolQtd);
-            this.gbTransporte.Controls.Add(this.lblPlaca);
-            this.gbTransporte.Controls.Add(this.lblCodANTT);
-            this.gbTransporte.Controls.Add(this.txtPlacaVeiculo);
-            this.gbTransporte.Controls.Add(this.txtCodANTT);
-            this.gbTransporte.Controls.Add(this.lblFrete);
-            this.gbTransporte.Controls.Add(this.cbFrete);
-            this.gbTransporte.Controls.Add(this.lblNomeTransp);
-            this.gbTransporte.Controls.Add(this.btnTransp);
-            this.gbTransporte.Controls.Add(this.txtCNPJtransp);
-            this.gbTransporte.Controls.Add(this.lblTransportador);
-            this.gbTransporte.Location = new System.Drawing.Point(6, 366);
-            this.gbTransporte.Name = "gbTransporte";
-            this.gbTransporte.Size = new System.Drawing.Size(974, 114);
-            this.gbTransporte.TabIndex = 30;
-            this.gbTransporte.TabStop = false;
-            this.gbTransporte.Text = "Transportador / Volumes Transportados";
-            // 
-            // lblNomeTransp
-            // 
-            this.lblNomeTransp.AutoSize = true;
-            this.lblNomeTransp.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeTransp.Location = new System.Drawing.Point(189, 41);
-            this.lblNomeTransp.Name = "lblNomeTransp";
-            this.lblNomeTransp.Size = new System.Drawing.Size(97, 15);
-            this.lblNomeTransp.TabIndex = 32;
-            this.lblNomeTransp.Text = "</Nome Transp>";
-            this.lblNomeTransp.Visible = false;
-            // 
-            // btnTransp
-            // 
-            this.btnTransp.Location = new System.Drawing.Point(155, 37);
-            this.btnTransp.Name = "btnTransp";
-            this.btnTransp.Size = new System.Drawing.Size(29, 23);
-            this.btnTransp.TabIndex = 30;
-            this.btnTransp.Text = "+";
-            this.btnTransp.UseVisualStyleBackColor = true;
-            // 
-            // txtCNPJtransp
-            // 
-            this.txtCNPJtransp.Location = new System.Drawing.Point(9, 37);
-            this.txtCNPJtransp.Name = "txtCNPJtransp";
-            this.txtCNPJtransp.Size = new System.Drawing.Size(143, 23);
-            this.txtCNPJtransp.TabIndex = 29;
-            // 
-            // lblTransportador
-            // 
-            this.lblTransportador.AutoSize = true;
-            this.lblTransportador.Location = new System.Drawing.Point(6, 19);
-            this.lblTransportador.Name = "lblTransportador";
-            this.lblTransportador.Size = new System.Drawing.Size(86, 15);
-            this.lblTransportador.TabIndex = 31;
-            this.lblTransportador.Text = "Transportador";
-            // 
-            // cbFrete
-            // 
-            this.cbFrete.FormattingEnabled = true;
-            this.cbFrete.Location = new System.Drawing.Point(9, 81);
-            this.cbFrete.Name = "cbFrete";
-            this.cbFrete.Size = new System.Drawing.Size(121, 23);
-            this.cbFrete.TabIndex = 33;
-            // 
-            // lblFrete
-            // 
-            this.lblFrete.AutoSize = true;
-            this.lblFrete.Location = new System.Drawing.Point(6, 63);
-            this.lblFrete.Name = "lblFrete";
-            this.lblFrete.Size = new System.Drawing.Size(91, 15);
-            this.lblFrete.TabIndex = 34;
-            this.lblFrete.Text = "Frete por Conta";
-            // 
-            // txtCodANTT
-            // 
-            this.txtCodANTT.Location = new System.Drawing.Point(136, 81);
-            this.txtCodANTT.Name = "txtCodANTT";
-            this.txtCodANTT.Size = new System.Drawing.Size(100, 23);
-            this.txtCodANTT.TabIndex = 35;
-            // 
-            // txtPlacaVeiculo
-            // 
-            this.txtPlacaVeiculo.Location = new System.Drawing.Point(242, 81);
-            this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-            this.txtPlacaVeiculo.Size = new System.Drawing.Size(100, 23);
-            this.txtPlacaVeiculo.TabIndex = 36;
-            // 
-            // lblCodANTT
-            // 
-            this.lblCodANTT.AutoSize = true;
-            this.lblCodANTT.Location = new System.Drawing.Point(136, 63);
-            this.lblCodANTT.Name = "lblCodANTT";
-            this.lblCodANTT.Size = new System.Drawing.Size(75, 15);
-            this.lblCodANTT.TabIndex = 37;
-            this.lblCodANTT.Text = "Código ANTT";
-            // 
-            // lblPlaca
-            // 
-            this.lblPlaca.AutoSize = true;
-            this.lblPlaca.Location = new System.Drawing.Point(239, 63);
-            this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(80, 15);
-            this.lblPlaca.TabIndex = 38;
-            this.lblPlaca.Text = "Placa Veículo";
-            // 
-            // lblVolPesoLiquido
-            // 
-            this.lblVolPesoLiquido.AutoSize = true;
-            this.lblVolPesoLiquido.Location = new System.Drawing.Point(816, 63);
-            this.lblVolPesoLiquido.Name = "lblVolPesoLiquido";
-            this.lblVolPesoLiquido.Size = new System.Drawing.Size(76, 15);
-            this.lblVolPesoLiquido.TabIndex = 74;
-            this.lblVolPesoLiquido.Text = "Peso Líquido";
-            // 
-            // lblVolPesoBruto
-            // 
-            this.lblVolPesoBruto.AutoSize = true;
-            this.lblVolPesoBruto.Location = new System.Drawing.Point(734, 63);
-            this.lblVolPesoBruto.Name = "lblVolPesoBruto";
-            this.lblVolPesoBruto.Size = new System.Drawing.Size(66, 15);
-            this.lblVolPesoBruto.TabIndex = 73;
-            this.lblVolPesoBruto.Text = "Peso Bruto";
-            // 
-            // txtPesoLiquido
-            // 
-            this.txtPesoLiquido.Location = new System.Drawing.Point(819, 81);
-            this.txtPesoLiquido.Name = "txtPesoLiquido";
-            this.txtPesoLiquido.Size = new System.Drawing.Size(85, 23);
-            this.txtPesoLiquido.TabIndex = 72;
-            // 
-            // txtPesoBruto
-            // 
-            this.txtPesoBruto.Location = new System.Drawing.Point(734, 81);
-            this.txtPesoBruto.Name = "txtPesoBruto";
-            this.txtPesoBruto.Size = new System.Drawing.Size(79, 23);
-            this.txtPesoBruto.TabIndex = 71;
-            // 
-            // lblVolNumer
-            // 
-            this.lblVolNumer.AutoSize = true;
-            this.lblVolNumer.Location = new System.Drawing.Point(634, 63);
-            this.lblVolNumer.Name = "lblVolNumer";
-            this.lblVolNumer.Size = new System.Drawing.Size(70, 15);
-            this.lblVolNumer.TabIndex = 70;
-            this.lblVolNumer.Text = "Numeração";
-            // 
-            // lblVolMarca
-            // 
-            this.lblVolMarca.AutoSize = true;
-            this.lblVolMarca.Location = new System.Drawing.Point(531, 63);
-            this.lblVolMarca.Name = "lblVolMarca";
-            this.lblVolMarca.Size = new System.Drawing.Size(43, 15);
-            this.lblVolMarca.TabIndex = 69;
-            this.lblVolMarca.Text = "Marca";
-            // 
-            // txtVolNumeracao
-            // 
-            this.txtVolNumeracao.Location = new System.Drawing.Point(637, 81);
-            this.txtVolNumeracao.Name = "txtVolNumeracao";
-            this.txtVolNumeracao.Size = new System.Drawing.Size(91, 23);
-            this.txtVolNumeracao.TabIndex = 68;
-            // 
-            // txtVolMarca
-            // 
-            this.txtVolMarca.Location = new System.Drawing.Point(531, 81);
-            this.txtVolMarca.Name = "txtVolMarca";
-            this.txtVolMarca.Size = new System.Drawing.Size(100, 23);
-            this.txtVolMarca.TabIndex = 67;
-            // 
-            // lblVolEspecie
-            // 
-            this.lblVolEspecie.AutoSize = true;
-            this.lblVolEspecie.Location = new System.Drawing.Point(422, 63);
-            this.lblVolEspecie.Name = "lblVolEspecie";
-            this.lblVolEspecie.Size = new System.Drawing.Size(48, 15);
-            this.lblVolEspecie.TabIndex = 66;
-            this.lblVolEspecie.Text = "Espécie";
-            // 
-            // lblVolQtd
-            // 
-            this.lblVolQtd.AutoSize = true;
-            this.lblVolQtd.Location = new System.Drawing.Point(348, 63);
-            this.lblVolQtd.Name = "lblVolQtd";
-            this.lblVolQtd.Size = new System.Drawing.Size(71, 15);
-            this.lblVolQtd.TabIndex = 65;
-            this.lblVolQtd.Text = "Quantidade";
-            // 
-            // txtVolEsp
-            // 
-            this.txtVolEsp.Location = new System.Drawing.Point(425, 81);
-            this.txtVolEsp.Name = "txtVolEsp";
-            this.txtVolEsp.Size = new System.Drawing.Size(100, 23);
-            this.txtVolEsp.TabIndex = 64;
-            // 
-            // txtVolQtd
-            // 
-            this.txtVolQtd.Location = new System.Drawing.Point(348, 81);
-            this.txtVolQtd.Name = "txtVolQtd";
-            this.txtVolQtd.Size = new System.Drawing.Size(71, 23);
-            this.txtVolQtd.TabIndex = 63;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(6, 19);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(45, 15);
-            this.lblCodigo.TabIndex = 31;
-            this.lblCodigo.Text = "Código";
-            // 
-            // txtCodEntrada
-            // 
-            this.txtCodEntrada.Enabled = false;
-            this.txtCodEntrada.Location = new System.Drawing.Point(9, 37);
-            this.txtCodEntrada.Name = "txtCodEntrada";
-            this.txtCodEntrada.Size = new System.Drawing.Size(100, 23);
-            this.txtCodEntrada.TabIndex = 32;
-            // 
-            // lblEmpresa
-            // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(6, 151);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(54, 15);
-            this.lblEmpresa.TabIndex = 19;
-            this.lblEmpresa.Text = "Empresa";
-            // 
-            // lblFornecedor
-            // 
-            this.lblFornecedor.AutoSize = true;
-            this.lblFornecedor.Location = new System.Drawing.Point(6, 195);
-            this.lblFornecedor.Name = "lblFornecedor";
-            this.lblFornecedor.Size = new System.Drawing.Size(69, 15);
-            this.lblFornecedor.TabIndex = 22;
-            this.lblFornecedor.Text = "Fornecedor";
-            // 
-            // txt_cnpjFornec
-            // 
-            this.txt_cnpjFornec.Location = new System.Drawing.Point(9, 213);
-            this.txt_cnpjFornec.Name = "txt_cnpjFornec";
-            this.txt_cnpjFornec.Size = new System.Drawing.Size(143, 23);
-            this.txt_cnpjFornec.TabIndex = 0;
-            this.txt_cnpjFornec.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_cnpjFornec_KeyDown);
-            this.txt_cnpjFornec.Leave += new System.EventHandler(this.txt_cnpjFornec_Leave);
-            // 
-            // btnFornecedor
-            // 
-            this.btnFornecedor.Location = new System.Drawing.Point(155, 213);
-            this.btnFornecedor.Name = "btnFornecedor";
-            this.btnFornecedor.Size = new System.Drawing.Size(28, 23);
-            this.btnFornecedor.TabIndex = 1;
-            this.btnFornecedor.Text = "+";
-            this.btnFornecedor.UseVisualStyleBackColor = true;
-            this.btnFornecedor.Click += new System.EventHandler(this.btnNovoFornecedor_Click);
-            // 
-            // lblNomeEmpresa
-            // 
-            this.lblNomeEmpresa.AutoSize = true;
-            this.lblNomeEmpresa.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeEmpresa.Location = new System.Drawing.Point(158, 172);
-            this.lblNomeEmpresa.Name = "lblNomeEmpresa";
-            this.lblNomeEmpresa.Size = new System.Drawing.Size(110, 15);
-            this.lblNomeEmpresa.TabIndex = 23;
-            this.lblNomeEmpresa.Text = "</Nome empresa>";
-            this.lblNomeEmpresa.Visible = false;
-            // 
-            // mtxtCNPJEmpresa
-            // 
-            this.mtxtCNPJEmpresa.Location = new System.Drawing.Point(9, 169);
-            this.mtxtCNPJEmpresa.Mask = "00\\.000\\.000/0000-00";
-            this.mtxtCNPJEmpresa.Name = "mtxtCNPJEmpresa";
-            this.mtxtCNPJEmpresa.Size = new System.Drawing.Size(143, 23);
-            this.mtxtCNPJEmpresa.TabIndex = 24;
-            this.mtxtCNPJEmpresa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtxtCNPJEmpresa_KeyDown);
-            // 
-            // lblNomeFornec
-            // 
-            this.lblNomeFornec.AutoSize = true;
-            this.lblNomeFornec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeFornec.Location = new System.Drawing.Point(189, 217);
-            this.lblNomeFornec.Name = "lblNomeFornec";
-            this.lblNomeFornec.Size = new System.Drawing.Size(97, 15);
-            this.lblNomeFornec.TabIndex = 27;
-            this.lblNomeFornec.Text = "</Nome fornec>";
-            this.lblNomeFornec.Visible = false;
-            // 
-            // lblDtEntrada
-            // 
-            this.lblDtEntrada.AutoSize = true;
-            this.lblDtEntrada.Location = new System.Drawing.Point(115, 19);
-            this.lblDtEntrada.Name = "lblDtEntrada";
-            this.lblDtEntrada.Size = new System.Drawing.Size(79, 15);
-            this.lblDtEntrada.TabIndex = 34;
-            this.lblDtEntrada.Text = "Data Entrada";
-            // 
-            // dtpDtEntrada
-            // 
-            this.dtpDtEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDtEntrada.Location = new System.Drawing.Point(115, 37);
-            this.dtpDtEntrada.Name = "dtpDtEntrada";
-            this.dtpDtEntrada.Size = new System.Drawing.Size(107, 23);
-            this.dtpDtEntrada.TabIndex = 33;
-            // 
-            // cbStatusEntrada
-            // 
-            this.cbStatusEntrada.FormattingEnabled = true;
-            this.cbStatusEntrada.Location = new System.Drawing.Point(228, 37);
-            this.cbStatusEntrada.Name = "cbStatusEntrada";
-            this.cbStatusEntrada.Size = new System.Drawing.Size(121, 23);
-            this.cbStatusEntrada.TabIndex = 35;
-            // 
-            // lblStatusEntrada
-            // 
-            this.lblStatusEntrada.AutoSize = true;
-            this.lblStatusEntrada.Location = new System.Drawing.Point(225, 19);
-            this.lblStatusEntrada.Name = "lblStatusEntrada";
-            this.lblStatusEntrada.Size = new System.Drawing.Size(55, 15);
-            this.lblStatusEntrada.TabIndex = 36;
-            this.lblStatusEntrada.Text = "Situação";
             // 
             // colItem
             // 
@@ -1518,14 +1517,14 @@
             this.tabPrincipal.ResumeLayout(false);
             this.gbEmpresa.ResumeLayout(false);
             this.gbEmpresa.PerformLayout();
+            this.gbTransporte.ResumeLayout(false);
+            this.gbTransporte.PerformLayout();
+            this.gbImpostoNota.ResumeLayout(false);
+            this.gbImpostoNota.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.gbItem.ResumeLayout(false);
             this.gbItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosItens)).EndInit();
-            this.gbImpostoNota.ResumeLayout(false);
-            this.gbImpostoNota.PerformLayout();
-            this.gbTransporte.ResumeLayout(false);
-            this.gbTransporte.PerformLayout();
             this.ResumeLayout(false);
 
         }

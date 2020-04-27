@@ -36,6 +36,9 @@
     <ApplicationIcon>Gestor.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomAlertBoxDemo">
+      <HintPath>..\Integracoes\CustomAlertBoxDemo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -92,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{64A0719F-93B1-45F3-A320-E0D6C90AE73D}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sistema.Estoque\Sistema.Estoque.csproj">
       <Project>{3710dddf-4596-4fb6-be0c-77c3b79bf281}</Project>
       <Name>Sistema.Estoque</Name>

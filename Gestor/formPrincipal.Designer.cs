@@ -43,9 +43,6 @@
             this.mEstoqueProdNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueProdConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.mEstoqueProdCateg = new System.Windows.Forms.ToolStripMenuItem();
-            this.mEstoqueProdGrupo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mEstoqueProdSubgrupo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mEstoqueProdTributacao = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueProdEtiq = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +90,7 @@
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.parametrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDePlanoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFiscal = new System.Windows.Forms.ToolStripMenuItem();
             this.notasFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arquivosFiscaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,7 +103,8 @@
             this.testesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDesenvolvedor = new System.Windows.Forms.Label();
             this.img_Empresa = new System.Windows.Forms.PictureBox();
-            this.cadastroDePlanoDeContasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEstoqueProdEstMercadologica = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblEmpresa = new System.Windows.Forms.Label();
             this.menuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).BeginInit();
             this.SuspendLayout();
@@ -164,6 +163,7 @@
             this.mArq_users.Name = "mArq_users";
             this.mArq_users.Size = new System.Drawing.Size(146, 22);
             this.mArq_users.Text = "Usuários";
+            this.mArq_users.Click += new System.EventHandler(this.mArq_users_Click);
             // 
             // logoffToolStripMenuItem
             // 
@@ -212,9 +212,7 @@
             this.mEstoqueProdNovo,
             this.mEstoqueProdConsulta,
             this.toolStripSeparator8,
-            this.mEstoqueProdCateg,
-            this.mEstoqueProdGrupo,
-            this.mEstoqueProdSubgrupo,
+            this.mEstoqueProdEstMercadologica,
             this.toolStripSeparator4,
             this.mEstoqueProdTributacao,
             this.mEstoqueProdEtiq});
@@ -225,58 +223,37 @@
             // mEstoqueProdNovo
             // 
             this.mEstoqueProdNovo.Name = "mEstoqueProdNovo";
-            this.mEstoqueProdNovo.Size = new System.Drawing.Size(131, 22);
+            this.mEstoqueProdNovo.Size = new System.Drawing.Size(203, 22);
             this.mEstoqueProdNovo.Text = "Novo";
             this.mEstoqueProdNovo.Click += new System.EventHandler(this.mEstoqueProdNovo_Click);
             // 
             // mEstoqueProdConsulta
             // 
             this.mEstoqueProdConsulta.Name = "mEstoqueProdConsulta";
-            this.mEstoqueProdConsulta.Size = new System.Drawing.Size(131, 22);
+            this.mEstoqueProdConsulta.Size = new System.Drawing.Size(203, 22);
             this.mEstoqueProdConsulta.Text = "Consultar";
             this.mEstoqueProdConsulta.Click += new System.EventHandler(this.mEstoqueProdConsulta_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(128, 6);
-            // 
-            // mEstoqueProdCateg
-            // 
-            this.mEstoqueProdCateg.Name = "mEstoqueProdCateg";
-            this.mEstoqueProdCateg.Size = new System.Drawing.Size(131, 22);
-            this.mEstoqueProdCateg.Text = "Categorias";
-            this.mEstoqueProdCateg.Click += new System.EventHandler(this.mEstoqueProdCateg_Click);
-            // 
-            // mEstoqueProdGrupo
-            // 
-            this.mEstoqueProdGrupo.Name = "mEstoqueProdGrupo";
-            this.mEstoqueProdGrupo.Size = new System.Drawing.Size(131, 22);
-            this.mEstoqueProdGrupo.Text = "Grupos";
-            this.mEstoqueProdGrupo.Click += new System.EventHandler(this.mEstoqueProdGrupo_Click);
-            // 
-            // mEstoqueProdSubgrupo
-            // 
-            this.mEstoqueProdSubgrupo.Name = "mEstoqueProdSubgrupo";
-            this.mEstoqueProdSubgrupo.Size = new System.Drawing.Size(131, 22);
-            this.mEstoqueProdSubgrupo.Text = "Subgrupos";
-            this.mEstoqueProdSubgrupo.Click += new System.EventHandler(this.mEstoqueProdSubgrupo_Click);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(200, 6);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(200, 6);
             // 
             // mEstoqueProdTributacao
             // 
             this.mEstoqueProdTributacao.Name = "mEstoqueProdTributacao";
-            this.mEstoqueProdTributacao.Size = new System.Drawing.Size(131, 22);
+            this.mEstoqueProdTributacao.Size = new System.Drawing.Size(203, 22);
             this.mEstoqueProdTributacao.Text = "Tributação";
             // 
             // mEstoqueProdEtiq
             // 
             this.mEstoqueProdEtiq.Name = "mEstoqueProdEtiq";
-            this.mEstoqueProdEtiq.Size = new System.Drawing.Size(131, 22);
+            this.mEstoqueProdEtiq.Size = new System.Drawing.Size(203, 22);
             this.mEstoqueProdEtiq.Text = "Etiquetas";
             // 
             // mEstoqueFornec
@@ -529,38 +506,38 @@
             // mFinPagar
             // 
             this.mFinPagar.Name = "mFinPagar";
-            this.mFinPagar.Size = new System.Drawing.Size(180, 22);
+            this.mFinPagar.Size = new System.Drawing.Size(166, 22);
             this.mFinPagar.Text = "Pagar";
             this.mFinPagar.Click += new System.EventHandler(this.mFinPagar_Click);
             // 
             // mFinReceber
             // 
             this.mFinReceber.Name = "mFinReceber";
-            this.mFinReceber.Size = new System.Drawing.Size(180, 22);
+            this.mFinReceber.Size = new System.Drawing.Size(166, 22);
             this.mFinReceber.Text = "Receber";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(163, 6);
             // 
             // mFinConsultas
             // 
             this.mFinConsultas.Name = "mFinConsultas";
-            this.mFinConsultas.Size = new System.Drawing.Size(180, 22);
+            this.mFinConsultas.Size = new System.Drawing.Size(166, 22);
             this.mFinConsultas.Text = "Consulta Pagar";
             this.mFinConsultas.Click += new System.EventHandler(this.mFinConsultas_Click_1);
             // 
             // consultaReceberToolStripMenuItem
             // 
             this.consultaReceberToolStripMenuItem.Name = "consultaReceberToolStripMenuItem";
-            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaReceberToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.consultaReceberToolStripMenuItem.Text = "Consulta Receber";
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(163, 6);
             // 
             // parametrosToolStripMenuItem
             // 
@@ -568,7 +545,7 @@
             this.cadastroDeBancosToolStripMenuItem,
             this.cadastroDePlanoDeContasToolStripMenuItem});
             this.parametrosToolStripMenuItem.Name = "parametrosToolStripMenuItem";
-            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.parametrosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.parametrosToolStripMenuItem.Text = "Parametros";
             // 
             // cadastroDeBancosToolStripMenuItem
@@ -577,6 +554,13 @@
             this.cadastroDeBancosToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.cadastroDeBancosToolStripMenuItem.Text = "Cadastro de Bancos";
             this.cadastroDeBancosToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeBancosToolStripMenuItem_Click);
+            // 
+            // cadastroDePlanoDeContasToolStripMenuItem
+            // 
+            this.cadastroDePlanoDeContasToolStripMenuItem.Name = "cadastroDePlanoDeContasToolStripMenuItem";
+            this.cadastroDePlanoDeContasToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.cadastroDePlanoDeContasToolStripMenuItem.Text = "Cadastro de Plano de Contas";
+            this.cadastroDePlanoDeContasToolStripMenuItem.Click += new System.EventHandler(this.cadastroDePlanoDeContasToolStripMenuItem_Click);
             // 
             // menuFiscal
             // 
@@ -670,12 +654,23 @@
             this.img_Empresa.TabIndex = 427;
             this.img_Empresa.TabStop = false;
             // 
-            // cadastroDePlanoDeContasToolStripMenuItem
+            // mEstoqueProdEstMercadologica
             // 
-            this.cadastroDePlanoDeContasToolStripMenuItem.Name = "cadastroDePlanoDeContasToolStripMenuItem";
-            this.cadastroDePlanoDeContasToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.cadastroDePlanoDeContasToolStripMenuItem.Text = "Cadastro de Plano de Contas";
-            this.cadastroDePlanoDeContasToolStripMenuItem.Click += new System.EventHandler(this.cadastroDePlanoDeContasToolStripMenuItem_Click);
+            this.mEstoqueProdEstMercadologica.Name = "mEstoqueProdEstMercadologica";
+            this.mEstoqueProdEstMercadologica.Size = new System.Drawing.Size(203, 22);
+            this.mEstoqueProdEstMercadologica.Text = "Estrutura Mercadológica";
+            this.mEstoqueProdEstMercadologica.Click += new System.EventHandler(this.mEstoqueProdEstMercadologica_Click);
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.Location = new System.Drawing.Point(12, 410);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(46, 24);
+            this.lblEmpresa.TabIndex = 428;
+            this.lblEmpresa.Text = "</>";
             // 
             // formPrincipal
             // 
@@ -684,6 +679,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(892, 456);
+            this.Controls.Add(this.lblEmpresa);
             this.Controls.Add(this.img_Empresa);
             this.Controls.Add(this.menuPrincipal);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -694,6 +690,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Gestor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.formPrincipal_Shown);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).EndInit();
@@ -747,9 +744,6 @@
         private System.Windows.Forms.ToolStripMenuItem mAjudaFeedback;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem mAjudaSobre;
-        private System.Windows.Forms.ToolStripMenuItem mEstoqueProdCateg;
-        private System.Windows.Forms.ToolStripMenuItem mEstoqueProdGrupo;
-        private System.Windows.Forms.ToolStripMenuItem mEstoqueProdSubgrupo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueFornec;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueTransp;
@@ -780,5 +774,7 @@
         private System.Windows.Forms.ToolStripMenuItem parametrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeBancosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDePlanoDeContasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mEstoqueProdEstMercadologica;
+        private System.Windows.Forms.Label lblEmpresa;
     }
 }
