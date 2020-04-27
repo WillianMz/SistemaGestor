@@ -5,6 +5,10 @@ using Sistema.Financeiro.Interfaces;
 using System;
 using System.Windows.Forms;
 using Util;
+using Sistema.Utilitario.Controles;
+using static Modelo.Config.Parametro;
+using Modelo;
+using CustomAlertBoxDemo;
 
 namespace Gestor
 {
@@ -13,6 +17,23 @@ namespace Gestor
         public formPrincipal()
         {
             InitializeComponent();
+            empresaLogada();            
+        }
+
+        //teste
+        private void empresaLogada()
+        {
+            BLL_Empresa controle = new BLL_Empresa();
+            //controle.filtrarEmpresa_ID(UsuarioLogado.empresa, true);
+            Empresa e = controle.filtrarEmpresa_ID(UsuarioLogado.empresa, true);
+            lblEmpresa.Text = e.razaoSocial + " | " + e.local;
+        }
+
+        //teste
+        private void alerta(string msg, Form_Alert.enmType type)
+        {
+            Form_Alert f = new Form_Alert();
+            f.showAlert(msg, type);
         }
 
         private void TratarExcecao(Exception ex)
@@ -80,10 +101,9 @@ namespace Gestor
         private void logoffToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formLogin form = new formLogin();
-            form.ShowInTaskbar = false;            
+            form.ShowInTaskbar = false;
             form.ShowDialog();
-            //this.Dispose();
-            form.Dispose();
+            form.Dispose();                 
         }
 
         private void mArq_sair_Click(object sender, EventArgs e)
@@ -171,6 +191,28 @@ namespace Gestor
         {
             formPlanoDeContas form = new formPlanoDeContas();
             form.Show();
+        }
+
+        private void mArq_users_Click(object sender, EventArgs e)
+        {
+            formConsultaUsuarios f = new formConsultaUsuarios();
+            f.ShowDialog();
+            f.Dispose();
+        }
+
+        private void mEstoqueProdEstMercadologica_Click(object sender, EventArgs e)
+        {
+            formClassifProdutos f = new formClassifProdutos();
+            f.status = statusForm.Consulta;
+            f.configForm();
+            f.ShowDialog();
+            f.Dispose();
+        }
+
+        private void formPrincipal_Shown(object sender, EventArgs e)
+        {
+            //alerta("Programa inicializado!", Form_Alert.enmType.Success);
+            alerta("Não conectado a Nuvem!", Form_Alert.enmType.Error);
         }
     }
 }

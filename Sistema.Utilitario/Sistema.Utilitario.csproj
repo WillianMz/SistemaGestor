@@ -53,6 +53,12 @@
     <Compile Include="Interfaces\formConfigurar.Designer.cs">
       <DependentUpon>formConfigurar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\formConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaUsuarios.Designer.cs">
+      <DependentUpon>formConsultaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
       <DependentUpon>formLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigSistema21.cs" />
+    <Compile Include="Interfaces\formUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formUsuario.Designer.cs">
+      <DependentUpon>formUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\formLogin.cs">
       <SubType>Form</SubType>
@@ -92,11 +104,17 @@
     <EmbeddedResource Include="Interfaces\formConfigurar.resx">
       <DependentUpon>formConfigurar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formConsultaUsuarios.resx">
+      <DependentUpon>formConsultaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formLoading.resx">
       <DependentUpon>formLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formUsuario.resx">
+      <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

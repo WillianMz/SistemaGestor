@@ -3,6 +3,7 @@ using Sistema.Estoque.Controles;
 using Sistema.Estoque.Utilitario;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using Util;
 
@@ -38,9 +39,9 @@ namespace Sistema.Estoque.Interfaces
         private void atualizarGrid(List<Produto> ps)
         {
             dgvProdutos.Rows.Clear();
-            foreach(Produto p in ps)
+            foreach (Produto p in ps)
             {
-                dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem +"%", p.Marca, p.Fabricante);
+                dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem + "%", p.Marca, p.Fabricante);
             }
             util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
         }
@@ -286,10 +287,11 @@ namespace Sistema.Estoque.Interfaces
             txtPesquisar.Clear();
         }
 
-        private void mConsultarEstoque_Click(object sender, EventArgs e)
+        private void movimentaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formBalancoEstoque f = new formBalancoEstoque();
+            formHistoricoMovProduto f = new formHistoricoMovProduto();
             f.ShowDialog();
+            f.Dispose();
         }
     }
 }

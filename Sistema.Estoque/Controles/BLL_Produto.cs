@@ -1,6 +1,7 @@
 ﻿using DAO;
 using Modelo.Estoque;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Sistema.Estoque.Controles
 {

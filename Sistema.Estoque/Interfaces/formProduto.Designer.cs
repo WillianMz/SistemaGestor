@@ -38,9 +38,11 @@
             this.pbImagem = new System.Windows.Forms.PictureBox();
             this.gbEstoque = new System.Windows.Forms.GroupBox();
             this.txtQtdMaxima = new System.Windows.Forms.TextBox();
+            this.txtLocalizacao = new System.Windows.Forms.TextBox();
             this.lblQtdMaxima = new System.Windows.Forms.Label();
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.txtComprimento = new System.Windows.Forms.TextBox();
+            this.lblLocalizacao = new System.Windows.Forms.Label();
             this.txtQtdEmb = new System.Windows.Forms.TextBox();
             this.txtQtdMinima = new System.Windows.Forms.TextBox();
             this.lblQtdMinima = new System.Windows.Forms.Label();
@@ -56,8 +58,10 @@
             this.txtPesoBruto = new System.Windows.Forms.TextBox();
             this.lblPesoLiquido = new System.Windows.Forms.Label();
             this.gbClassificacao = new System.Windows.Forms.GroupBox();
-            this.txtLocalizacao = new System.Windows.Forms.TextBox();
-            this.lblLocalizacao = new System.Windows.Forms.Label();
+            this.txtSubgrupo = new System.Windows.Forms.TextBox();
+            this.txtGrupo = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.btnClassifProdutos = new System.Windows.Forms.Button();
             this.lblSubgrupo = new System.Windows.Forms.Label();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -81,6 +85,10 @@
             this.lblCod = new System.Windows.Forms.Label();
             this.tabValores = new System.Windows.Forms.TabPage();
             this.gbPreco = new System.Windows.Forms.GroupBox();
+            this.mtxtAlteracao = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtCadastro = new System.Windows.Forms.MaskedTextBox();
+            this.lblAlteracao = new System.Windows.Forms.Label();
+            this.lblCadastro = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCusto = new System.Windows.Forms.TextBox();
             this.lblPorcMargem = new System.Windows.Forms.Label();
@@ -105,14 +113,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabCodigos = new System.Windows.Forms.TabPage();
             this.dgvCodigos = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnAdicionarCodigo = new System.Windows.Forms.Button();
             this.tabTributacao = new System.Windows.Forms.TabPage();
-            this.tabDadosFiscais = new System.Windows.Forms.TabControl();
-            this.tabFederal = new System.Windows.Forms.TabPage();
-            this.tabEstadual = new System.Windows.Forms.TabPage();
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -122,14 +126,41 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.ofdImagem = new System.Windows.Forms.OpenFileDialog();
             this.toolTipProduto = new System.Windows.Forms.ToolTip(this.components);
-            this.btnClassifProdutos = new System.Windows.Forms.Button();
-            this.mtxtAlteracao = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtCadastro = new System.Windows.Forms.MaskedTextBox();
-            this.lblAlteracao = new System.Windows.Forms.Label();
-            this.lblCadastro = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.txtGrupo = new System.Windows.Forms.TextBox();
-            this.txtSubgrupo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dgvEstoque = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.colOrigem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAliq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMovUN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProduto.SuspendLayout();
             this.tabPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
@@ -140,9 +171,13 @@
             this.tabCodigos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCodigos)).BeginInit();
             this.tabTributacao.SuspendLayout();
-            this.tabDadosFiscais.SuspendLayout();
             this.pnlRodape.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProduto
@@ -276,6 +311,16 @@
             this.txtQtdMaxima.TabIndex = 56;
             this.toolTipProduto.SetToolTip(this.txtQtdMaxima, "Qtd.Máxima permitida em estoque");
             // 
+            // txtLocalizacao
+            // 
+            this.txtLocalizacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLocalizacao.Location = new System.Drawing.Point(45, 129);
+            this.txtLocalizacao.Multiline = true;
+            this.txtLocalizacao.Name = "txtLocalizacao";
+            this.txtLocalizacao.Size = new System.Drawing.Size(203, 23);
+            this.txtLocalizacao.TabIndex = 3;
+            this.toolTipProduto.SetToolTip(this.txtLocalizacao, "Informe a localização do produto.\r\nEx.: Prateleira: X\r\n       Depósito: Setor X");
+            // 
             // lblQtdMaxima
             // 
             this.lblQtdMaxima.AutoSize = true;
@@ -298,6 +343,15 @@
             this.txtComprimento.Name = "txtComprimento";
             this.txtComprimento.Size = new System.Drawing.Size(53, 23);
             this.txtComprimento.TabIndex = 50;
+            // 
+            // lblLocalizacao
+            // 
+            this.lblLocalizacao.AutoSize = true;
+            this.lblLocalizacao.Location = new System.Drawing.Point(42, 111);
+            this.lblLocalizacao.Name = "lblLocalizacao";
+            this.lblLocalizacao.Size = new System.Drawing.Size(72, 15);
+            this.lblLocalizacao.TabIndex = 30;
+            this.lblLocalizacao.Text = "Localização";
             // 
             // txtQtdEmb
             // 
@@ -436,24 +490,48 @@
             this.gbClassificacao.TabStop = false;
             this.gbClassificacao.Text = "Classificação";
             // 
-            // txtLocalizacao
+            // txtSubgrupo
             // 
-            this.txtLocalizacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtLocalizacao.Location = new System.Drawing.Point(45, 129);
-            this.txtLocalizacao.Multiline = true;
-            this.txtLocalizacao.Name = "txtLocalizacao";
-            this.txtLocalizacao.Size = new System.Drawing.Size(203, 23);
-            this.txtLocalizacao.TabIndex = 3;
-            this.toolTipProduto.SetToolTip(this.txtLocalizacao, "Informe a localização do produto.\r\nEx.: Prateleira: X\r\n       Depósito: Setor X");
+            this.txtSubgrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSubgrupo.Enabled = false;
+            this.txtSubgrupo.Location = new System.Drawing.Point(10, 136);
+            this.txtSubgrupo.MaxLength = 40;
+            this.txtSubgrupo.Name = "txtSubgrupo";
+            this.txtSubgrupo.Size = new System.Drawing.Size(360, 23);
+            this.txtSubgrupo.TabIndex = 49;
+            this.toolTipProduto.SetToolTip(this.txtSubgrupo, "Marca do produto");
             // 
-            // lblLocalizacao
+            // txtGrupo
             // 
-            this.lblLocalizacao.AutoSize = true;
-            this.lblLocalizacao.Location = new System.Drawing.Point(42, 111);
-            this.lblLocalizacao.Name = "lblLocalizacao";
-            this.lblLocalizacao.Size = new System.Drawing.Size(72, 15);
-            this.lblLocalizacao.TabIndex = 30;
-            this.lblLocalizacao.Text = "Localização";
+            this.txtGrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGrupo.Enabled = false;
+            this.txtGrupo.Location = new System.Drawing.Point(9, 92);
+            this.txtGrupo.MaxLength = 40;
+            this.txtGrupo.Name = "txtGrupo";
+            this.txtGrupo.Size = new System.Drawing.Size(360, 23);
+            this.txtGrupo.TabIndex = 48;
+            this.toolTipProduto.SetToolTip(this.txtGrupo, "Marca do produto");
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCategoria.Enabled = false;
+            this.txtCategoria.Location = new System.Drawing.Point(9, 48);
+            this.txtCategoria.MaxLength = 40;
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(360, 23);
+            this.txtCategoria.TabIndex = 47;
+            this.toolTipProduto.SetToolTip(this.txtCategoria, "Marca do produto");
+            // 
+            // btnClassifProdutos
+            // 
+            this.btnClassifProdutos.Location = new System.Drawing.Point(235, 17);
+            this.btnClassifProdutos.Name = "btnClassifProdutos";
+            this.btnClassifProdutos.Size = new System.Drawing.Size(135, 23);
+            this.btnClassifProdutos.TabIndex = 46;
+            this.btnClassifProdutos.Text = "Classificar Produto";
+            this.btnClassifProdutos.UseVisualStyleBackColor = true;
+            this.btnClassifProdutos.Click += new System.EventHandler(this.btnClassifProdutos_Click);
             // 
             // lblSubgrupo
             // 
@@ -709,6 +787,42 @@
             this.gbPreco.TabStop = false;
             this.gbPreco.Text = "Custo e Venda";
             // 
+            // mtxtAlteracao
+            // 
+            this.mtxtAlteracao.Enabled = false;
+            this.mtxtAlteracao.Location = new System.Drawing.Point(548, 291);
+            this.mtxtAlteracao.Mask = "00/00/0000";
+            this.mtxtAlteracao.Name = "mtxtAlteracao";
+            this.mtxtAlteracao.Size = new System.Drawing.Size(100, 23);
+            this.mtxtAlteracao.TabIndex = 115;
+            // 
+            // mtxtCadastro
+            // 
+            this.mtxtCadastro.Enabled = false;
+            this.mtxtCadastro.Location = new System.Drawing.Point(360, 291);
+            this.mtxtCadastro.Mask = "00/00/0000";
+            this.mtxtCadastro.Name = "mtxtCadastro";
+            this.mtxtCadastro.Size = new System.Drawing.Size(100, 23);
+            this.mtxtCadastro.TabIndex = 114;
+            // 
+            // lblAlteracao
+            // 
+            this.lblAlteracao.AutoSize = true;
+            this.lblAlteracao.Location = new System.Drawing.Point(470, 294);
+            this.lblAlteracao.Name = "lblAlteracao";
+            this.lblAlteracao.Size = new System.Drawing.Size(75, 15);
+            this.lblAlteracao.TabIndex = 117;
+            this.lblAlteracao.Text = "Dt.Alteração";
+            // 
+            // lblCadastro
+            // 
+            this.lblCadastro.AutoSize = true;
+            this.lblCadastro.Location = new System.Drawing.Point(285, 294);
+            this.lblCadastro.Name = "lblCadastro";
+            this.lblCadastro.Size = new System.Drawing.Size(72, 15);
+            this.lblCadastro.TabIndex = 116;
+            this.lblCadastro.Text = "Dt.Cadastro";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -932,24 +1046,20 @@
             this.dgvCodigos.ColumnHeadersHeight = 30;
             this.dgvCodigos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCodigos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCodigo});
-            this.dgvCodigos.Location = new System.Drawing.Point(16, 52);
+            this.colCodigo,
+            this.colDescricao,
+            this.colMovUN});
+            this.dgvCodigos.Location = new System.Drawing.Point(6, 61);
             this.dgvCodigos.Name = "dgvCodigos";
             this.dgvCodigos.ReadOnly = true;
             this.dgvCodigos.RowHeadersVisible = false;
             this.dgvCodigos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCodigos.Size = new System.Drawing.Size(310, 137);
+            this.dgvCodigos.Size = new System.Drawing.Size(862, 315);
             this.dgvCodigos.TabIndex = 28;
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(65, 6);
+            this.txtCodigo.Location = new System.Drawing.Point(65, 15);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(151, 23);
             this.txtCodigo.TabIndex = 2;
@@ -957,7 +1067,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(13, 9);
+            this.lblCodigo.Location = new System.Drawing.Point(13, 18);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(45, 15);
             this.lblCodigo.TabIndex = 1;
@@ -965,7 +1075,7 @@
             // 
             // btnAdicionarCodigo
             // 
-            this.btnAdicionarCodigo.Location = new System.Drawing.Point(222, 6);
+            this.btnAdicionarCodigo.Location = new System.Drawing.Point(222, 15);
             this.btnAdicionarCodigo.Name = "btnAdicionarCodigo";
             this.btnAdicionarCodigo.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarCodigo.TabIndex = 0;
@@ -974,7 +1084,22 @@
             // 
             // tabTributacao
             // 
-            this.tabTributacao.Controls.Add(this.tabDadosFiscais);
+            this.tabTributacao.Controls.Add(this.groupBox5);
+            this.tabTributacao.Controls.Add(this.groupBox2);
+            this.tabTributacao.Controls.Add(this.groupBox4);
+            this.tabTributacao.Controls.Add(this.groupBox1);
+            this.tabTributacao.Controls.Add(this.button4);
+            this.tabTributacao.Controls.Add(this.textBox4);
+            this.tabTributacao.Controls.Add(this.label9);
+            this.tabTributacao.Controls.Add(this.button3);
+            this.tabTributacao.Controls.Add(this.textBox3);
+            this.tabTributacao.Controls.Add(this.label6);
+            this.tabTributacao.Controls.Add(this.button2);
+            this.tabTributacao.Controls.Add(this.textBox2);
+            this.tabTributacao.Controls.Add(this.label5);
+            this.tabTributacao.Controls.Add(this.button1);
+            this.tabTributacao.Controls.Add(this.textBox1);
+            this.tabTributacao.Controls.Add(this.label2);
             this.tabTributacao.Location = new System.Drawing.Point(4, 24);
             this.tabTributacao.Name = "tabTributacao";
             this.tabTributacao.Padding = new System.Windows.Forms.Padding(3);
@@ -982,36 +1107,6 @@
             this.tabTributacao.TabIndex = 3;
             this.tabTributacao.Text = "Tributação";
             this.tabTributacao.UseVisualStyleBackColor = true;
-            // 
-            // tabDadosFiscais
-            // 
-            this.tabDadosFiscais.Controls.Add(this.tabFederal);
-            this.tabDadosFiscais.Controls.Add(this.tabEstadual);
-            this.tabDadosFiscais.Location = new System.Drawing.Point(6, 6);
-            this.tabDadosFiscais.Name = "tabDadosFiscais";
-            this.tabDadosFiscais.SelectedIndex = 0;
-            this.tabDadosFiscais.Size = new System.Drawing.Size(757, 370);
-            this.tabDadosFiscais.TabIndex = 0;
-            // 
-            // tabFederal
-            // 
-            this.tabFederal.Location = new System.Drawing.Point(4, 24);
-            this.tabFederal.Name = "tabFederal";
-            this.tabFederal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFederal.Size = new System.Drawing.Size(749, 342);
-            this.tabFederal.TabIndex = 0;
-            this.tabFederal.Text = "Federal";
-            this.tabFederal.UseVisualStyleBackColor = true;
-            // 
-            // tabEstadual
-            // 
-            this.tabEstadual.Location = new System.Drawing.Point(4, 24);
-            this.tabEstadual.Name = "tabEstadual";
-            this.tabEstadual.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstadual.Size = new System.Drawing.Size(749, 342);
-            this.tabEstadual.TabIndex = 1;
-            this.tabEstadual.Text = "Estadual";
-            this.tabEstadual.UseVisualStyleBackColor = true;
             // 
             // pnlRodape
             // 
@@ -1114,84 +1209,315 @@
             this.toolTipProduto.OwnerDraw = true;
             this.toolTipProduto.ToolTipTitle = "Ajuda";
             // 
-            // btnClassifProdutos
+            // label2
             // 
-            this.btnClassifProdutos.Location = new System.Drawing.Point(235, 17);
-            this.btnClassifProdutos.Name = "btnClassifProdutos";
-            this.btnClassifProdutos.Size = new System.Drawing.Size(135, 23);
-            this.btnClassifProdutos.TabIndex = 46;
-            this.btnClassifProdutos.Text = "Classificar Produto";
-            this.btnClassifProdutos.UseVisualStyleBackColor = true;
-            this.btnClassifProdutos.Click += new System.EventHandler(this.btnClassifProdutos_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "CFOP";
             // 
-            // mtxtAlteracao
+            // textBox1
             // 
-            this.mtxtAlteracao.Enabled = false;
-            this.mtxtAlteracao.Location = new System.Drawing.Point(548, 291);
-            this.mtxtAlteracao.Mask = "00/00/0000";
-            this.mtxtAlteracao.Name = "mtxtAlteracao";
-            this.mtxtAlteracao.Size = new System.Drawing.Size(100, 23);
-            this.mtxtAlteracao.TabIndex = 115;
+            this.textBox1.Location = new System.Drawing.Point(56, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(108, 23);
+            this.textBox1.TabIndex = 1;
             // 
-            // mtxtCadastro
+            // button1
             // 
-            this.mtxtCadastro.Enabled = false;
-            this.mtxtCadastro.Location = new System.Drawing.Point(360, 291);
-            this.mtxtCadastro.Mask = "00/00/0000";
-            this.mtxtCadastro.Name = "mtxtCadastro";
-            this.mtxtCadastro.Size = new System.Drawing.Size(100, 23);
-            this.mtxtCadastro.TabIndex = 114;
+            this.button1.Location = new System.Drawing.Point(165, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // lblAlteracao
+            // button2
             // 
-            this.lblAlteracao.AutoSize = true;
-            this.lblAlteracao.Location = new System.Drawing.Point(470, 294);
-            this.lblAlteracao.Name = "lblAlteracao";
-            this.lblAlteracao.Size = new System.Drawing.Size(75, 15);
-            this.lblAlteracao.TabIndex = 117;
-            this.lblAlteracao.Text = "Dt.Alteração";
+            this.button2.Location = new System.Drawing.Point(165, 35);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // lblCadastro
+            // textBox2
             // 
-            this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Location = new System.Drawing.Point(285, 294);
-            this.lblCadastro.Name = "lblCadastro";
-            this.lblCadastro.Size = new System.Drawing.Size(72, 15);
-            this.lblCadastro.TabIndex = 116;
-            this.lblCadastro.Text = "Dt.Cadastro";
+            this.textBox2.Location = new System.Drawing.Point(56, 35);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(108, 23);
+            this.textBox2.TabIndex = 4;
             // 
-            // txtCategoria
+            // label5
             // 
-            this.txtCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCategoria.Enabled = false;
-            this.txtCategoria.Location = new System.Drawing.Point(9, 48);
-            this.txtCategoria.MaxLength = 40;
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(360, 23);
-            this.txtCategoria.TabIndex = 47;
-            this.toolTipProduto.SetToolTip(this.txtCategoria, "Marca do produto");
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "NCM";
             // 
-            // txtGrupo
+            // button3
             // 
-            this.txtGrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtGrupo.Enabled = false;
-            this.txtGrupo.Location = new System.Drawing.Point(9, 92);
-            this.txtGrupo.MaxLength = 40;
-            this.txtGrupo.Name = "txtGrupo";
-            this.txtGrupo.Size = new System.Drawing.Size(360, 23);
-            this.txtGrupo.TabIndex = 48;
-            this.toolTipProduto.SetToolTip(this.txtGrupo, "Marca do produto");
+            this.button3.Location = new System.Drawing.Point(500, 35);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(38, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // txtSubgrupo
+            // textBox3
             // 
-            this.txtSubgrupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSubgrupo.Enabled = false;
-            this.txtSubgrupo.Location = new System.Drawing.Point(10, 136);
-            this.txtSubgrupo.MaxLength = 40;
-            this.txtSubgrupo.Name = "txtSubgrupo";
-            this.txtSubgrupo.Size = new System.Drawing.Size(360, 23);
-            this.txtSubgrupo.TabIndex = 49;
-            this.toolTipProduto.SetToolTip(this.txtSubgrupo, "Marca do produto");
+            this.textBox3.Location = new System.Drawing.Point(408, 35);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(91, 23);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(370, 38);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 15);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "CEST";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(500, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(38, 23);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(408, 6);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(91, 23);
+            this.textBox4.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(273, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 15);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "CFOP (Fora do Estado)";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Location = new System.Drawing.Point(11, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(272, 89);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "PIS";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(35, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(228, 23);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 25);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(26, 15);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "CST";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(62, 51);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(91, 23);
+            this.textBox5.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 54);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 15);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Alíquota";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dgvEstoque);
+            this.groupBox4.Location = new System.Drawing.Point(11, 159);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(857, 217);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Regras para fora do estado";
+            // 
+            // dgvEstoque
+            // 
+            this.dgvEstoque.AllowUserToAddRows = false;
+            this.dgvEstoque.AllowUserToDeleteRows = false;
+            this.dgvEstoque.AllowUserToResizeRows = false;
+            this.dgvEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEstoque.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dgvEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEstoque.ColumnHeadersHeight = 30;
+            this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOrigem,
+            this.colDestino,
+            this.colAliq});
+            this.dgvEstoque.Location = new System.Drawing.Point(4, 22);
+            this.dgvEstoque.Name = "dgvEstoque";
+            this.dgvEstoque.ReadOnly = true;
+            this.dgvEstoque.RowHeadersVisible = false;
+            this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEstoque.Size = new System.Drawing.Size(847, 147);
+            this.dgvEstoque.TabIndex = 29;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Location = new System.Drawing.Point(289, 64);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(272, 89);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cofins";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(62, 51);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(91, 23);
+            this.textBox6.TabIndex = 9;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 54);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 15);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Alíquota";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(26, 15);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "CST";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(35, 22);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(228, 23);
+            this.comboBox2.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox8);
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.label18);
+            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Location = new System.Drawing.Point(567, 64);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(298, 89);
+            this.groupBox5.TabIndex = 14;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "IPI";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(62, 51);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(91, 23);
+            this.textBox8.TabIndex = 9;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(3, 54);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 15);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Alíquota";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 25);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(26, 15);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "CST";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(35, 22);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(228, 23);
+            this.comboBox4.TabIndex = 0;
+            // 
+            // colOrigem
+            // 
+            this.colOrigem.HeaderText = "Origem";
+            this.colOrigem.Name = "colOrigem";
+            this.colOrigem.ReadOnly = true;
+            // 
+            // colDestino
+            // 
+            this.colDestino.HeaderText = "Destino";
+            this.colDestino.Name = "colDestino";
+            this.colDestino.ReadOnly = true;
+            // 
+            // colAliq
+            // 
+            this.colAliq.HeaderText = "Alíquota";
+            this.colAliq.Name = "colAliq";
+            this.colAliq.ReadOnly = true;
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colDescricao
+            // 
+            this.colDescricao.HeaderText = "Descrição";
+            this.colDescricao.Name = "colDescricao";
+            this.colDescricao.ReadOnly = true;
+            // 
+            // colMovUN
+            // 
+            this.colMovUN.HeaderText = "Qtd.de produtos que este código movimenta";
+            this.colMovUN.Name = "colMovUN";
+            this.colMovUN.ReadOnly = true;
+            this.colMovUN.Width = 210;
             // 
             // formProduto
             // 
@@ -1227,11 +1553,19 @@
             this.tabCodigos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCodigos)).EndInit();
             this.tabTributacao.ResumeLayout(false);
-            this.tabDadosFiscais.ResumeLayout(false);
+            this.tabTributacao.PerformLayout();
             this.pnlRodape.ResumeLayout(false);
             this.pnlRodape.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1275,14 +1609,10 @@
         private System.Windows.Forms.TabPage tabCodigos;
         private System.Windows.Forms.OpenFileDialog ofdImagem;
         private System.Windows.Forms.ToolTip toolTipProduto;
-        private System.Windows.Forms.TabControl tabDadosFiscais;
-        private System.Windows.Forms.TabPage tabFederal;
-        private System.Windows.Forms.TabPage tabEstadual;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnAdicionarCodigo;
         private System.Windows.Forms.DataGridView dgvCodigos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.ComboBox cbUnCompra;
         private System.Windows.Forms.TextBox txtQtdMaxima;
         private System.Windows.Forms.Label lblQtdMaxima;
@@ -1338,5 +1668,40 @@
         private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.TextBox txtSubgrupo;
         private System.Windows.Forms.TextBox txtGrupo;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridView dgvEstoque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOrigem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAliq;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMovUN;
     }
 }

@@ -213,7 +213,7 @@ namespace DAO
             }
         }
 
-        public List<Empresa> selectEmpresa_ID(int id, bool ativo)
+        public Empresa selectEmpresa_ID(int id, bool ativo)
         {
             try
             {
@@ -224,24 +224,21 @@ namespace DAO
                                         "AND e.id_cidade = cidade.id " +
                                         "AND e.id_uf = uf.id ORDER BY fantasia ", id, ativo);
                 DataSet ds = con.ConsultaSQL(SQL);
-                List<Empresa> empresas = new List<Empresa>();
+                Empresa e = null;
 
-                foreach(DataRow dr in ds.Tables[0].Rows)
+                foreach (DataRow dr in ds.Tables[0].Rows)
                 {
-                    Empresa e = new Empresa
-                    {
-                        Id          = int.Parse(dr["id"].ToString()),
-                        cnpj        = dr["cnpj"].ToString(),
-                        razaoSocial = dr["razao_social"].ToString(),
-                        fantasia    = dr["fantasia"].ToString(),
-                        telefone    = long.Parse(dr["telefone"].ToString()),
-                        contato     = dr["contato"].ToString(),
-                        email       = dr["email"].ToString(),
-                        local       = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
-                    };
-                    empresas.Add(e);
+                    e = new Empresa();
+                    e.Id = int.Parse(dr["id"].ToString());
+                    e.cnpj = dr["cnpj"].ToString();
+                    e.razaoSocial = dr["razao_social"].ToString();
+                    e.fantasia = dr["fantasia"].ToString();
+                    e.telefone = long.Parse(dr["telefone"].ToString());//erro
+                    e.contato = dr["contato"].ToString();
+                    e.email = dr["email"].ToString();
+                    e.local = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString());
                 }
-                return empresas;
+                return e;
             }
             catch (Exception ex)
             {

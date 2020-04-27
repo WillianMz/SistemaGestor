@@ -34,6 +34,17 @@ namespace Sistema.Utilitario.Interfaces
             }
         }
 
+        private void carregarAplicacao()
+        {
+            try
+            {
+                //formPrincipal
+            }
+            catch
+            {
+
+            }
+        }
 
         private void btnLogar_Click(object sender, EventArgs e)
         {

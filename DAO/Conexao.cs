@@ -156,5 +156,31 @@ namespace DAO
             }
         }
 
+        //teste
+        public DataTable consulta(string sql)
+        {
+            try
+            {
+                Conectar();
+                DataTable dt = new DataTable();
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, Conn);
+                da.TableMappings.Add("Temp", "Tab1");
+                da.Fill(dt);
+                return dt;
+            }
+            catch(NpgsqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
     }
 }

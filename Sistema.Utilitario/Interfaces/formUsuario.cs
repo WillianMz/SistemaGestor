@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema.Estoque.Interfaces
+namespace Sistema.Utilitario.Interfaces
 {
-    public partial class formBalancoEstoque : Form
+    public partial class formUsuario : Form
     {
-        public formBalancoEstoque()
+        public formUsuario()
         {
             InitializeComponent();
         }
