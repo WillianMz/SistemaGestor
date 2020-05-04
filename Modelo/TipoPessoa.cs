@@ -1,6 +1,6 @@
 ﻿namespace Modelo
 {
-    public class TipoPessoa : Base
+    public class TipoPessoa : ModeloBase
     {
     }
 }

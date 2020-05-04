@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Estoque
 {
-    public class TipoNota : Base
+    public class TipoNota : ModeloBase
     {
     }
 }

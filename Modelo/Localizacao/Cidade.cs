@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Localizacao
 {
-    public class Cidade : Base
+    public class Cidade : ModeloBase
     {
         public UF uf { get; set; } = new UF();
     }

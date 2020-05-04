@@ -586,6 +586,19 @@ namespace DAO
             }
         }
 
+        public void deleteCategoria(Categoria c)
+        {
+            try
+            {
+                cmd = new NpgsqlCommand();
+                SQL = " ";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         /// <summary>
         /// RETORNA TODAS AS CATEGORIAS DA BASE DE DADOS PASSANDO O PARAMETRO True OU False
         /// </summary>

@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Tributacao
 {
-    public class CST : Base
+    public class CST : ModeloBase
     {
     }
 }

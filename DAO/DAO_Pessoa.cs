@@ -30,32 +30,32 @@ namespace DAO
                 SQL += "@dt_nasc, @dt_cadastro, @dt_alteracao) ";
 
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@ativo",         p.Ativo);
-                cmd.Parameters.AddWithValue("@id_tipo",       p.Tipo.Id);
-                cmd.Parameters.AddWithValue("@cliente",       p.Cliente);
-                cmd.Parameters.AddWithValue("@fornecedor",    p.Fornecedor);
-                cmd.Parameters.AddWithValue("@funcionario",   p.Funcionario);
-                cmd.Parameters.AddWithValue("@transportador", p.Transportador);
-                cmd.Parameters.AddWithValue("@outro",         p.Outro);
+                cmd.Parameters.AddWithValue("@ativo",         p.ativo);
+                cmd.Parameters.AddWithValue("@id_tipo",       p.tipo.Id);
+                cmd.Parameters.AddWithValue("@cliente",       p.cliente);
+                cmd.Parameters.AddWithValue("@fornecedor",    p.fornecedor);
+                cmd.Parameters.AddWithValue("@funcionario",   p.funcionario);
+                cmd.Parameters.AddWithValue("@transportador", p.transportador);
+                cmd.Parameters.AddWithValue("@outro",         p.outro);
                 cmd.Parameters.AddWithValue("@cpf_cnpj",      p.CPF_CNPJ);
-                cmd.Parameters.AddWithValue("@nome_completo", p.NomeCompleto);
-                cmd.Parameters.AddWithValue("@fantasia",      p.Fantasia);
+                cmd.Parameters.AddWithValue("@nome_completo", p.nomeCompleto);
+                cmd.Parameters.AddWithValue("@fantasia",      p.fantasia);
                 cmd.Parameters.AddWithValue("@rg_ie",         p.RG_IE);
                 cmd.Parameters.AddWithValue("@cep",           p.CEP);
-                cmd.Parameters.AddWithValue("@id_pais",       p.Pais.Id);
-                cmd.Parameters.AddWithValue("@id_uf",         p.UF.Id);
-                cmd.Parameters.AddWithValue("@id_cidade",     p.Cidade.Id);
-                cmd.Parameters.AddWithValue("@bairro",        p.Bairro);
-                cmd.Parameters.AddWithValue("@logradouro",    p.Logradouro);
-                cmd.Parameters.AddWithValue("@numero",        p.Numero);
-                cmd.Parameters.AddWithValue("@complemento",   p.Complemento);
-                cmd.Parameters.AddWithValue("@telefone",      p.Telefone);
-                cmd.Parameters.AddWithValue("@celular",       p.Celular);
-                cmd.Parameters.AddWithValue("@contato",       p.Contato);
-                cmd.Parameters.AddWithValue("@email",         p.Email);
-                cmd.Parameters.AddWithValue("@dt_nasc",       p.DtNasc);
-                cmd.Parameters.AddWithValue("@dt_cadastro",   p.DtCadastro);
-                cmd.Parameters.AddWithValue("@dt_alteracao",  p.DtAlteracao);
+                cmd.Parameters.AddWithValue("@id_pais",       p.pais.Id);
+                cmd.Parameters.AddWithValue("@id_uf",         p.uf.Id);
+                cmd.Parameters.AddWithValue("@id_cidade",     p.cidade.Id);
+                cmd.Parameters.AddWithValue("@bairro",        p.bairro);
+                cmd.Parameters.AddWithValue("@logradouro",    p.logradouro);
+                cmd.Parameters.AddWithValue("@numero",        p.numero);
+                cmd.Parameters.AddWithValue("@complemento",   p.complemento);
+                cmd.Parameters.AddWithValue("@telefone",      p.telefone);
+                cmd.Parameters.AddWithValue("@celular",       p.celular);
+                cmd.Parameters.AddWithValue("@contato",       p.contato);
+                cmd.Parameters.AddWithValue("@email",         p.email);
+                cmd.Parameters.AddWithValue("@dt_nasc",       p.dtNasc);
+                cmd.Parameters.AddWithValue("@dt_cadastro",   p.dtCadastro);
+                cmd.Parameters.AddWithValue("@dt_alteracao",  p.dtAlteracao);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -78,32 +78,32 @@ namespace DAO
                 SQL += "WHERE id = @id";
 
                 cmd.CommandText = SQL;
-                cmd.Parameters.AddWithValue("@id",            p.Id);
-                cmd.Parameters.AddWithValue("@ativo",         p.Ativo);
-                cmd.Parameters.AddWithValue("@id_tipo",       p.Tipo.Id);
-                cmd.Parameters.AddWithValue("@cliente",       p.Cliente);
-                cmd.Parameters.AddWithValue("@fornecedor",    p.Fornecedor);
-                cmd.Parameters.AddWithValue("@funcionario",   p.Funcionario);
-                cmd.Parameters.AddWithValue("@transportador", p.Transportador);
-                cmd.Parameters.AddWithValue("@outro",         p.Outro);
+                cmd.Parameters.AddWithValue("@id",            p.id);
+                cmd.Parameters.AddWithValue("@ativo",         p.ativo);
+                cmd.Parameters.AddWithValue("@id_tipo",       p.tipo.Id);
+                cmd.Parameters.AddWithValue("@cliente",       p.cliente);
+                cmd.Parameters.AddWithValue("@fornecedor",    p.fornecedor);
+                cmd.Parameters.AddWithValue("@funcionario",   p.funcionario);
+                cmd.Parameters.AddWithValue("@transportador", p.transportador);
+                cmd.Parameters.AddWithValue("@outro",         p.outro);
                 cmd.Parameters.AddWithValue("@cpf_cnpj",      p.CPF_CNPJ);
-                cmd.Parameters.AddWithValue("@nome_completo", p.NomeCompleto);
-                cmd.Parameters.AddWithValue("@fantasia",      p.Fantasia);
+                cmd.Parameters.AddWithValue("@nome_completo", p.nomeCompleto);
+                cmd.Parameters.AddWithValue("@fantasia",      p.fantasia);
                 cmd.Parameters.AddWithValue("@rg_ie",         p.RG_IE);
                 cmd.Parameters.AddWithValue("@cep",           p.CEP);
-                cmd.Parameters.AddWithValue("@id_pais",       p.Pais.Id);
-                cmd.Parameters.AddWithValue("@id_uf",         p.UF.Id);
-                cmd.Parameters.AddWithValue("@id_cidade",     p.Cidade.Id);
-                cmd.Parameters.AddWithValue("@bairro",        p.Bairro);
-                cmd.Parameters.AddWithValue("@logradouro",    p.Logradouro);
-                cmd.Parameters.AddWithValue("@numero",        p.Numero);
-                cmd.Parameters.AddWithValue("@complemento",   p.Complemento);
-                cmd.Parameters.AddWithValue("@telefone",      p.Telefone);
-                cmd.Parameters.AddWithValue("@celular",       p.Celular);
-                cmd.Parameters.AddWithValue("@contato",       p.Contato);
-                cmd.Parameters.AddWithValue("@email",         p.Email);
-                cmd.Parameters.AddWithValue("@dt_nasc",       p.DtNasc);
-                cmd.Parameters.AddWithValue("@dt_alteracao",  p.DtAlteracao);
+                cmd.Parameters.AddWithValue("@id_pais",       p.pais.Id);
+                cmd.Parameters.AddWithValue("@id_uf",         p.uf.Id);
+                cmd.Parameters.AddWithValue("@id_cidade",     p.cidade.Id);
+                cmd.Parameters.AddWithValue("@bairro",        p.bairro);
+                cmd.Parameters.AddWithValue("@logradouro",    p.logradouro);
+                cmd.Parameters.AddWithValue("@numero",        p.numero);
+                cmd.Parameters.AddWithValue("@complemento",   p.complemento);
+                cmd.Parameters.AddWithValue("@telefone",      p.telefone);
+                cmd.Parameters.AddWithValue("@celular",       p.celular);
+                cmd.Parameters.AddWithValue("@contato",       p.contato);
+                cmd.Parameters.AddWithValue("@email",         p.email);
+                cmd.Parameters.AddWithValue("@dt_nasc",       p.dtNasc);
+                cmd.Parameters.AddWithValue("@dt_alteracao",  p.dtAlteracao);
                 con.ComandoSQL(cmd);
             }
             catch (Exception ex)
@@ -143,14 +143,14 @@ namespace DAO
                 {
                     Pessoa p = new Pessoa
                     {
-                        Id           = int.Parse(dr["id"].ToString()),
+                        id           = int.Parse(dr["id"].ToString()),
                         CPF_CNPJ     = dr["cpf_cnpj"].ToString(),
-                        NomeCompleto = dr["nome_completo"].ToString(),
-                        Fantasia     = dr["fantasia"].ToString(),
-                        Telefone     = long.Parse(dr["telefone"].ToString()),
-                        Celular      = long.Parse(dr["celular"].ToString()),
-                        Email        = dr["email"].ToString(),
-                        Local        = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
+                        nomeCompleto = dr["nome_completo"].ToString(),
+                        fantasia     = dr["fantasia"].ToString(),
+                        telefone     = long.Parse(dr["telefone"].ToString()),
+                        celular      = long.Parse(dr["celular"].ToString()),
+                        email        = dr["email"].ToString(),
+                        local        = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
                     };
                     ps.Add(p);
                 }
@@ -173,14 +173,14 @@ namespace DAO
                 {
                     p = new Pessoa
                     {
-                        Id           = int.Parse(dr["id"].ToString()),
+                        id           = int.Parse(dr["id"].ToString()),
                         CPF_CNPJ     = dr["cpf_cnpj"].ToString(),
-                        NomeCompleto = dr["nome_completo"].ToString(),
-                        Fantasia     = dr["fantasia"].ToString(),
-                        Telefone     = long.Parse(dr["telefone"].ToString()),
-                        Celular      = long.Parse(dr["celular"].ToString()),
-                        Email        = dr["email"].ToString(),
-                        Local        = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
+                        nomeCompleto = dr["nome_completo"].ToString(),
+                        fantasia     = dr["fantasia"].ToString(),
+                        telefone     = long.Parse(dr["telefone"].ToString()),
+                        celular      = long.Parse(dr["celular"].ToString()),
+                        email        = dr["email"].ToString(),
+                        local        = Convert.ToString(dr["cidade"].ToString()) + " - " + Convert.ToString(dr["uf"].ToString())
                     };
                 }
                 return p;
@@ -354,50 +354,50 @@ namespace DAO
                     p = new Pessoa();
                     DAO_Endereco daoEnd = new DAO_Endereco();
 
-                    p.Id = int.Parse(dr["id"].ToString());
-                    p.Ativo = bool.Parse(dr["ativo"].ToString());
-                    p.Tipo.Id = int.Parse(dr["id_tipo"].ToString());
-                    TipoPessoa tp = getTipoPessoa(p.Tipo.Id);
-                    p.Tipo = tp;
+                    p.id = int.Parse(dr["id"].ToString());
+                    p.ativo = bool.Parse(dr["ativo"].ToString());
+                    p.tipo.Id = int.Parse(dr["id_tipo"].ToString());
+                    TipoPessoa tp = getTipoPessoa(p.tipo.Id);
+                    p.tipo = tp;
                     //tipo
-                    p.Cliente = bool.Parse(dr["cliente"].ToString());
-                    p.Fornecedor = bool.Parse(dr["fornecedor"].ToString());
-                    p.Funcionario = bool.Parse(dr["funcionario"].ToString());
-                    p.Transportador = bool.Parse(dr["transportador"].ToString());
-                    p.Outro = bool.Parse(dr["outro"].ToString());
+                    p.cliente = bool.Parse(dr["cliente"].ToString());
+                    p.fornecedor = bool.Parse(dr["fornecedor"].ToString());
+                    p.funcionario = bool.Parse(dr["funcionario"].ToString());
+                    p.transportador = bool.Parse(dr["transportador"].ToString());
+                    p.outro = bool.Parse(dr["outro"].ToString());
 
                     p.CPF_CNPJ = dr["cpf_cnpj"].ToString();
-                    p.NomeCompleto = dr["nome_completo"].ToString();
-                    p.Fantasia = dr["fantasia"].ToString();
+                    p.nomeCompleto = dr["nome_completo"].ToString();
+                    p.fantasia = dr["fantasia"].ToString();
                     p.RG_IE = dr["rg_ie"].ToString();
 
                     p.CEP = dr["cep"].ToString();
                     //país
-                    p.Pais.Id = int.Parse(dr["id_pais"].ToString());
-                    Pais pa = daoEnd.getPaisID(p.Pais.Id);
-                    p.Pais = pa;
+                    p.pais.Id = int.Parse(dr["id_pais"].ToString());
+                    Pais pa = daoEnd.getPaisID(p.pais.Id);
+                    p.pais = pa;
                     //estado
-                    p.UF.Id = int.Parse(dr["id_uf"].ToString());
-                    UF uf = daoEnd.getEstadoID(p.UF.Id);
-                    p.UF = uf;
+                    p.uf.Id = int.Parse(dr["id_uf"].ToString());
+                    UF uf = daoEnd.getEstadoID(p.uf.Id);
+                    p.uf = uf;
                     //cidade
-                    p.Cidade.Id = int.Parse(dr["id_cidade"].ToString());
-                    Cidade cid = daoEnd.getCidadeID(p.Cidade.Id);
-                    p.Cidade = cid;
+                    p.cidade.Id = int.Parse(dr["id_cidade"].ToString());
+                    Cidade cid = daoEnd.getCidadeID(p.cidade.Id);
+                    p.cidade = cid;
                     //endereco
-                    p.Bairro = dr["bairro"].ToString();
-                    p.Logradouro = dr["logradouro"].ToString();
-                    p.Numero = Convert.ToInt32(dr["numero"].ToString());
-                    p.Complemento = dr["complemento"].ToString();
+                    p.bairro = dr["bairro"].ToString();
+                    p.logradouro = dr["logradouro"].ToString();
+                    p.numero = Convert.ToInt32(dr["numero"].ToString());
+                    p.complemento = dr["complemento"].ToString();
                     //contato
-                    p.Telefone = long.Parse(dr["telefone"].ToString());
-                    p.Celular = long.Parse(dr["celular"].ToString());
-                    p.Contato = dr["contato"].ToString();
-                    p.Email = dr["email"].ToString();
+                    p.telefone = long.Parse(dr["telefone"].ToString());
+                    p.celular = long.Parse(dr["celular"].ToString());
+                    p.contato = dr["contato"].ToString();
+                    p.email = dr["email"].ToString();
 
-                    p.DtNasc = DateTime.Parse(dr["dt_nasc"].ToString());
-                    p.DtCadastro = DateTime.Parse(dr["dt_cadastro"].ToString());
-                    p.DtAlteracao = DateTime.Parse(dr["dt_alteracao"].ToString());
+                    p.dtNasc = DateTime.Parse(dr["dt_nasc"].ToString());
+                    p.dtCadastro = DateTime.Parse(dr["dt_cadastro"].ToString());
+                    p.dtAlteracao = DateTime.Parse(dr["dt_alteracao"].ToString());
                 }
                 return p;
             }

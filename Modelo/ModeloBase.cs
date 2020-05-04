@@ -1,6 +1,6 @@
 ﻿namespace Modelo
 {
-    public abstract class Base
+    public abstract class ModeloBase
     {
         public int Id { get; set; }
         public string nome { get; set; }

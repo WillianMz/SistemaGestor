@@ -32,7 +32,7 @@ namespace DAO
                 cmd.CommandText = SQL;
 
                 cmd.Parameters.AddWithValue("@id_empresa",    p.empresa.Id);
-                cmd.Parameters.AddWithValue("@id_pessoa",     p.pessoa.Id);
+                cmd.Parameters.AddWithValue("@id_pessoa",     p.pessoa.id);
                 cmd.Parameters.AddWithValue("@descricao",     p.descricao);
                 cmd.Parameters.AddWithValue("@documento",     p.documento);
                 cmd.Parameters.AddWithValue("@id_plano",      p.planoDeConta.id);
@@ -76,7 +76,7 @@ namespace DAO
                 cmd.CommandText = SQL;
 
                 cmd.Parameters.AddWithValue("@empresa",     p.empresa.Id);
-                cmd.Parameters.AddWithValue("@pessoa",      p.pessoa.Id);
+                cmd.Parameters.AddWithValue("@pessoa",      p.pessoa.id);
                 cmd.Parameters.AddWithValue("@descricao",   p.descricao);
                 cmd.Parameters.AddWithValue("@documento",   p.documento);
                 cmd.Parameters.AddWithValue("@plano",       p.planoDeConta.id);

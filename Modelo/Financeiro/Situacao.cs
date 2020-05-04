@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Financeiro
 {
-    public class Situacao : Base
+    public class Situacao : ModeloBase
     {
     }
 }

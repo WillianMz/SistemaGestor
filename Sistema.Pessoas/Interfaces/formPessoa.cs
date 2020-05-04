@@ -171,52 +171,52 @@ namespace Sistema.Pessoas.Interfaces
                 tirarMascara();
                 
                 Pessoa p = new Pessoa();
-                p.Ativo        = true;//como é 1ª vez que esta cadastrando a pessoa por default deve ficar ativa na base
-                p.Tipo.Id      = int.Parse(cbTipoPessoa.SelectedValue.ToString());
+                p.ativo        = true;//como é 1ª vez que esta cadastrando a pessoa por default deve ficar ativa na base
+                p.tipo.Id      = int.Parse(cbTipoPessoa.SelectedValue.ToString());
                 p.CPF_CNPJ     = txtCNPJ.Text;
-                p.NomeCompleto = txtNome.Text.Trim();
-                p.Fantasia     = txtFantasia.Text.Trim();
+                p.nomeCompleto = txtNome.Text.Trim();
+                p.fantasia     = txtFantasia.Text.Trim();
                 p.RG_IE        = txtRG_IE.Text;
                 p.CEP          = txtCEP.Text;
-                p.Pais.Id      = int.Parse(comboBoxPais.SelectedValue.ToString());
-                p.UF.Id        = int.Parse(comboBoxUF.SelectedValue.ToString());
-                p.Cidade.Id    = int.Parse(comboBoxCidade.SelectedValue.ToString());
-                p.Bairro       = txtBairro.Text.Trim();
-                p.Logradouro   = txtLogradouro.Text.Trim();
-                p.Numero       = Convert.ToInt32(txtNumero.Text);
-                p.Complemento  = txtComplemento.Text.Trim();
-                p.Telefone     = long.Parse(txtTelefone.Text);
-                p.Celular      = long.Parse(txtCelular.Text);
-                p.Contato      = txtContato.Text.Trim();
-                p.Email        = txtEmail.Text.Trim();
-                p.DtNasc       = dtNascimento.Value;
-                p.DtCadastro   = dataAtual;
-                p.DtAlteracao  = dataAtual;
+                p.pais.Id      = int.Parse(comboBoxPais.SelectedValue.ToString());
+                p.uf.Id        = int.Parse(comboBoxUF.SelectedValue.ToString());
+                p.cidade.Id    = int.Parse(comboBoxCidade.SelectedValue.ToString());
+                p.bairro       = txtBairro.Text.Trim();
+                p.logradouro   = txtLogradouro.Text.Trim();
+                p.numero       = Convert.ToInt32(txtNumero.Text);
+                p.complemento  = txtComplemento.Text.Trim();
+                p.telefone     = long.Parse(txtTelefone.Text);
+                p.celular      = long.Parse(txtCelular.Text);
+                p.contato      = txtContato.Text.Trim();
+                p.email        = txtEmail.Text.Trim();
+                p.dtNasc       = dtNascimento.Value;
+                p.dtCadastro   = dataAtual;
+                p.dtAlteracao  = dataAtual;
 
                 if (cbCliente.Checked == true)
-                    p.Cliente = true;
+                    p.cliente = true;
                 else
-                    p.Cliente = false;
+                    p.cliente = false;
 
                 if (cbFornecedor.Checked == true)
-                    p.Fornecedor = true;
+                    p.fornecedor = true;
                 else
-                    p.Fornecedor = false;
+                    p.fornecedor = false;
 
                 if (cbTransportador.Checked == true)
-                    p.Transportador = true;
+                    p.transportador = true;
                 else
-                    p.Transportador = false;
+                    p.transportador = false;
 
                 if (cbFuncionario.Checked == true)
-                    p.Funcionario = true;
+                    p.funcionario = true;
                 else
-                    p.Funcionario = false;
+                    p.funcionario = false;
 
                 if (cbOutro.Checked == true)
-                    p.Outro = true;
+                    p.outro = true;
                 else
-                    p.Outro = false;
+                    p.outro = false;
 
                 controle = new BLL_Pessoa();
                 controle.novo(p);
@@ -236,56 +236,56 @@ namespace Sistema.Pessoas.Interfaces
                 tirarMascara();
 
                 Pessoa p = new Pessoa();
-                p.Id           = Convert.ToInt32(txtID.Text);
-                p.Tipo.Id      = int.Parse(cbTipoPessoa.SelectedValue.ToString());
+                p.id           = Convert.ToInt32(txtID.Text);
+                p.tipo.Id      = int.Parse(cbTipoPessoa.SelectedValue.ToString());
                 p.CPF_CNPJ     = txtCNPJ.Text;
-                p.NomeCompleto = txtNome.Text;
-                p.Fantasia     = txtFantasia.Text;
+                p.nomeCompleto = txtNome.Text;
+                p.fantasia     = txtFantasia.Text;
                 p.RG_IE        = txtRG_IE.Text;
                 p.CEP          = txtCEP.Text;
-                p.Pais.Id      = int.Parse(comboBoxPais.SelectedValue.ToString());
-                p.UF.Id        = int.Parse(comboBoxUF.SelectedValue.ToString());
-                p.Cidade.Id    = int.Parse(comboBoxCidade.SelectedValue.ToString());
-                p.Bairro       = txtBairro.Text;
-                p.Logradouro   = txtLogradouro.Text;
-                p.Numero       = Convert.ToInt32(txtNumero.Text);
-                p.Complemento  = txtComplemento.Text;
-                p.Telefone     = long.Parse(txtTelefone.Text);
-                p.Celular      = long.Parse(txtCelular.Text);
-                p.Contato      = txtContato.Text;
-                p.Email        = txtEmail.Text;
-                p.DtNasc       = dtNascimento.Value;
-                p.DtAlteracao  = dataAtual;
+                p.pais.Id      = int.Parse(comboBoxPais.SelectedValue.ToString());
+                p.uf.Id        = int.Parse(comboBoxUF.SelectedValue.ToString());
+                p.cidade.Id    = int.Parse(comboBoxCidade.SelectedValue.ToString());
+                p.bairro       = txtBairro.Text;
+                p.logradouro   = txtLogradouro.Text;
+                p.numero       = Convert.ToInt32(txtNumero.Text);
+                p.complemento  = txtComplemento.Text;
+                p.telefone     = long.Parse(txtTelefone.Text);
+                p.celular      = long.Parse(txtCelular.Text);
+                p.contato      = txtContato.Text;
+                p.email        = txtEmail.Text;
+                p.dtNasc       = dtNascimento.Value;
+                p.dtAlteracao  = dataAtual;
 
                 if (checkBoxAtivo.Checked == true)
-                    p.Ativo = true;
+                    p.ativo = true;
                 else
-                    p.Ativo = false;
+                    p.ativo = false;
 
                 if (cbCliente.Checked == true)
-                    p.Cliente = true;
+                    p.cliente = true;
                 else
-                    p.Cliente = false;
+                    p.cliente = false;
 
                 if (cbFornecedor.Checked == true)
-                    p.Fornecedor = true;
+                    p.fornecedor = true;
                 else
-                    p.Fornecedor = false;
+                    p.fornecedor = false;
 
                 if (cbTransportador.Checked == true)
-                    p.Transportador = true;
+                    p.transportador = true;
                 else
-                    p.Transportador = false;
+                    p.transportador = false;
 
                 if (cbFuncionario.Checked == true)
-                    p.Funcionario = true;
+                    p.funcionario = true;
                 else
-                    p.Funcionario = false;
+                    p.funcionario = false;
 
                 if (cbOutro.Checked == true)
-                    p.Outro = true;
+                    p.outro = true;
                 else
-                    p.Outro = false;
+                    p.outro = false;
 
                 controle = new BLL_Pessoa();
                 controle.editar(p);
@@ -301,34 +301,34 @@ namespace Sistema.Pessoas.Interfaces
         {
             try
             {
-                checkBoxAtivo.Checked        = p.Ativo;
-                cbCliente.Checked            = p.Cliente;
-                cbFornecedor.Checked         = p.Fornecedor;
-                cbTransportador.Checked      = p.Transportador;
-                cbFuncionario.Checked        = p.Funcionario;
-                cbOutro.Checked              = p.Outro;
-                lblTitulo.Text               = p.NomeCompleto;
-                txtID.Text                   = Convert.ToString(p.Id);
-                cbTipoPessoa.SelectedValue   = p.Tipo.Id;
+                checkBoxAtivo.Checked        = p.ativo;
+                cbCliente.Checked            = p.cliente;
+                cbFornecedor.Checked         = p.fornecedor;
+                cbTransportador.Checked      = p.transportador;
+                cbFuncionario.Checked        = p.funcionario;
+                cbOutro.Checked              = p.outro;
+                lblTitulo.Text               = p.nomeCompleto;
+                txtID.Text                   = Convert.ToString(p.id);
+                cbTipoPessoa.SelectedValue   = p.tipo.Id;
                 txtCNPJ.Text                 = p.CPF_CNPJ;
-                txtNome.Text                 = p.NomeCompleto;
-                txtFantasia.Text             = p.Fantasia;
+                txtNome.Text                 = p.nomeCompleto;
+                txtFantasia.Text             = p.fantasia;
                 txtRG_IE.Text                = p.RG_IE;
                 txtCEP.Text                  = p.CEP;
-                comboBoxPais.SelectedValue   = p.Pais.Id;
-                comboBoxUF.SelectedValue     = p.UF.Id;
-                comboBoxCidade.SelectedValue = p.Cidade.Id;
-                txtBairro.Text               = p.Bairro;
-                txtLogradouro.Text           = p.Logradouro;
-                txtNumero.Text               = Convert.ToString(p.Numero);
-                txtComplemento.Text          = p.Complemento;
-                txtTelefone.Text             = Convert.ToString(p.Telefone);
-                txtCelular.Text              = Convert.ToString(p.Celular);
-                txtContato.Text              = p.Contato;
-                txtEmail.Text                = p.Email;
-                mDtCadastro.Text             = Convert.ToString(p.DtCadastro);
-                dtNascimento.Text            = Convert.ToString(p.DtNasc);
-                mDtAlteracao.Text            = Convert.ToString(p.DtAlteracao);
+                comboBoxPais.SelectedValue   = p.pais.Id;
+                comboBoxUF.SelectedValue     = p.uf.Id;
+                comboBoxCidade.SelectedValue = p.cidade.Id;
+                txtBairro.Text               = p.bairro;
+                txtLogradouro.Text           = p.logradouro;
+                txtNumero.Text               = Convert.ToString(p.numero);
+                txtComplemento.Text          = p.complemento;
+                txtTelefone.Text             = Convert.ToString(p.telefone);
+                txtCelular.Text              = Convert.ToString(p.celular);
+                txtContato.Text              = p.contato;
+                txtEmail.Text                = p.email;
+                mDtCadastro.Text             = Convert.ToString(p.dtCadastro);
+                dtNascimento.Text            = Convert.ToString(p.dtNasc);
+                mDtAlteracao.Text            = Convert.ToString(p.dtAlteracao);
             }
             catch (Exception ex)
             {

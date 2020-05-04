@@ -31,7 +31,7 @@ namespace Sistema.Pessoas.Interfaces
             dgvPessoa.Rows.Clear();
             foreach(Pessoa p in ps)
             {
-                dgvPessoa.Rows.Add(p.Id, p.NomeCompleto, p.Fantasia, p.CPF_CNPJ, p.Telefone, p.Email, p.Local);
+                dgvPessoa.Rows.Add(p.id, p.nomeCompleto, p.fantasia, p.CPF_CNPJ, p.telefone, p.email, p.local);
             }
             util_sistema.resultadoPesquisa(dgvPessoa, lblResultado);
         }

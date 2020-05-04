@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Estoque
 {
-    public class Subgrupo : Base
+    public class Subgrupo : ModeloBase
     {
         public Grupo grupo { get; set; } = new Grupo();
     }

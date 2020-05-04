@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Tributacao
 {
-    public class SituacaoTributaria : Base
+    public class SituacaoTributaria : ModeloBase
     {
     }
 }

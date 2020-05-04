@@ -276,9 +276,9 @@ CREATE TABLE produto(
 	marca varchar(40) null,
 	fabricante varchar(40) null,
 	/*estrutura mercadologica*/
-	id_categ int not null,
-	id_grupo int not null,
-	id_subgrupo int null,
+	id_categ int default null,
+	id_grupo int default null,
+	id_subgrupo int default null,
 	/*custo e venda*/
 	custo decimal(12,2) not null,
 	v_com decimal(12,2) default 0, /*comissao*/
