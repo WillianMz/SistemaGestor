@@ -1,7 +1,9 @@
 # Gestor
-Sistema de Gestão Administrativa
+Sistema de Gestão Comercial
   
   >Finanças
   >Estoque
   >Comercial
-  >Relatórios
+  
+  
+  
