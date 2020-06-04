@@ -48,20 +48,15 @@
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menu = new System.Windows.Forms.MenuStrip();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.btnPesquisa = new System.Windows.Forms.Button();
             this.chboxDesativados = new System.Windows.Forms.CheckBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.btnPesquisa = new System.Windows.Forms.Button();
-            this.menuCategoria = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuGrupo = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSubgrupo = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlRodape.SuspendLayout();
             this.gbTabelas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubgrupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
-            this.menu.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +65,7 @@
             this.pnlRodape.Controls.Add(this.btnSelecionar);
             this.pnlRodape.Controls.Add(this.lblMensagem);
             this.pnlRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlRodape.Location = new System.Drawing.Point(0, 431);
+            this.pnlRodape.Location = new System.Drawing.Point(0, 444);
             this.pnlRodape.Name = "pnlRodape";
             this.pnlRodape.Size = new System.Drawing.Size(964, 40);
             this.pnlRodape.TabIndex = 27;
@@ -111,15 +106,16 @@
             this.gbTabelas.Controls.Add(this.dgvSubgrupos);
             this.gbTabelas.Controls.Add(this.dgvGrupos);
             this.gbTabelas.Controls.Add(this.dgvCategorias);
-            this.gbTabelas.Location = new System.Drawing.Point(12, 66);
+            this.gbTabelas.Location = new System.Drawing.Point(12, 42);
             this.gbTabelas.Name = "gbTabelas";
-            this.gbTabelas.Size = new System.Drawing.Size(940, 359);
+            this.gbTabelas.Size = new System.Drawing.Size(940, 396);
             this.gbTabelas.TabIndex = 32;
             this.gbTabelas.TabStop = false;
             // 
             // btnEditarSubgrupo
             // 
-            this.btnEditarSubgrupo.Location = new System.Drawing.Point(744, 330);
+            this.btnEditarSubgrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditarSubgrupo.Location = new System.Drawing.Point(744, 367);
             this.btnEditarSubgrupo.Name = "btnEditarSubgrupo";
             this.btnEditarSubgrupo.Size = new System.Drawing.Size(110, 23);
             this.btnEditarSubgrupo.TabIndex = 40;
@@ -129,7 +125,8 @@
             // 
             // btnEditarGrupo
             // 
-            this.btnEditarGrupo.Location = new System.Drawing.Point(433, 330);
+            this.btnEditarGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditarGrupo.Location = new System.Drawing.Point(433, 367);
             this.btnEditarGrupo.Name = "btnEditarGrupo";
             this.btnEditarGrupo.Size = new System.Drawing.Size(110, 23);
             this.btnEditarGrupo.TabIndex = 39;
@@ -139,7 +136,8 @@
             // 
             // btnEditarCategoria
             // 
-            this.btnEditarCategoria.Location = new System.Drawing.Point(122, 330);
+            this.btnEditarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditarCategoria.Location = new System.Drawing.Point(122, 367);
             this.btnEditarCategoria.Name = "btnEditarCategoria";
             this.btnEditarCategoria.Size = new System.Drawing.Size(110, 23);
             this.btnEditarCategoria.TabIndex = 38;
@@ -149,7 +147,8 @@
             // 
             // btnNovoSubgrupo
             // 
-            this.btnNovoSubgrupo.Location = new System.Drawing.Point(628, 330);
+            this.btnNovoSubgrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNovoSubgrupo.Location = new System.Drawing.Point(628, 367);
             this.btnNovoSubgrupo.Name = "btnNovoSubgrupo";
             this.btnNovoSubgrupo.Size = new System.Drawing.Size(110, 23);
             this.btnNovoSubgrupo.TabIndex = 37;
@@ -159,7 +158,8 @@
             // 
             // btnNovoGrupo
             // 
-            this.btnNovoGrupo.Location = new System.Drawing.Point(317, 330);
+            this.btnNovoGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNovoGrupo.Location = new System.Drawing.Point(317, 367);
             this.btnNovoGrupo.Name = "btnNovoGrupo";
             this.btnNovoGrupo.Size = new System.Drawing.Size(110, 23);
             this.btnNovoGrupo.TabIndex = 36;
@@ -169,7 +169,8 @@
             // 
             // btnNovaCategoria
             // 
-            this.btnNovaCategoria.Location = new System.Drawing.Point(6, 330);
+            this.btnNovaCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNovaCategoria.Location = new System.Drawing.Point(6, 367);
             this.btnNovaCategoria.Name = "btnNovaCategoria";
             this.btnNovaCategoria.Size = new System.Drawing.Size(110, 23);
             this.btnNovaCategoria.TabIndex = 35;
@@ -182,6 +183,8 @@
             this.dgvSubgrupos.AllowUserToAddRows = false;
             this.dgvSubgrupos.AllowUserToDeleteRows = false;
             this.dgvSubgrupos.AllowUserToResizeRows = false;
+            this.dgvSubgrupos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvSubgrupos.BackgroundColor = System.Drawing.Color.White;
             this.dgvSubgrupos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvSubgrupos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -198,7 +201,7 @@
             this.dgvSubgrupos.ReadOnly = true;
             this.dgvSubgrupos.RowHeadersVisible = false;
             this.dgvSubgrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubgrupos.Size = new System.Drawing.Size(306, 305);
+            this.dgvSubgrupos.Size = new System.Drawing.Size(306, 342);
             this.dgvSubgrupos.TabIndex = 34;
             // 
             // dataGridViewTextBoxColumn3
@@ -221,6 +224,8 @@
             this.dgvGrupos.AllowUserToAddRows = false;
             this.dgvGrupos.AllowUserToDeleteRows = false;
             this.dgvGrupos.AllowUserToResizeRows = false;
+            this.dgvGrupos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvGrupos.BackgroundColor = System.Drawing.Color.White;
             this.dgvGrupos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvGrupos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -237,7 +242,7 @@
             this.dgvGrupos.ReadOnly = true;
             this.dgvGrupos.RowHeadersVisible = false;
             this.dgvGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrupos.Size = new System.Drawing.Size(305, 305);
+            this.dgvGrupos.Size = new System.Drawing.Size(305, 342);
             this.dgvGrupos.TabIndex = 33;
             this.dgvGrupos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrupos_CellClick);
             this.dgvGrupos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvGrupos_KeyUp);
@@ -262,6 +267,8 @@
             this.dgvCategorias.AllowUserToAddRows = false;
             this.dgvCategorias.AllowUserToDeleteRows = false;
             this.dgvCategorias.AllowUserToResizeRows = false;
+            this.dgvCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvCategorias.BackgroundColor = System.Drawing.Color.White;
             this.dgvCategorias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvCategorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -278,7 +285,7 @@
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(305, 305);
+            this.dgvCategorias.Size = new System.Drawing.Size(305, 342);
             this.dgvCategorias.TabIndex = 32;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             this.dgvCategorias.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvCategorias_KeyUp);
@@ -297,36 +304,33 @@
             this.colNome.ReadOnly = true;
             this.colNome.Width = 230;
             // 
-            // menu
-            // 
-            this.menu.BackColor = System.Drawing.Color.Transparent;
-            this.menu.Enabled = false;
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuCategoria,
-            this.menuGrupo,
-            this.menuSubgrupo});
-            this.menu.Location = new System.Drawing.Point(0, 0);
-            this.menu.Name = "menu";
-            this.menu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(964, 24);
-            this.menu.TabIndex = 36;
-            this.menu.Text = "menuStrip1";
-            // 
             // pnlSuperior
             // 
             this.pnlSuperior.Controls.Add(this.btnPesquisa);
             this.pnlSuperior.Controls.Add(this.chboxDesativados);
             this.pnlSuperior.Controls.Add(this.txtNome);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperior.Location = new System.Drawing.Point(0, 24);
+            this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(964, 36);
             this.pnlSuperior.TabIndex = 37;
             // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Enabled = false;
+            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
+            this.btnPesquisa.Location = new System.Drawing.Point(325, 7);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(28, 22);
+            this.btnPesquisa.TabIndex = 44;
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            // 
             // chboxDesativados
             // 
             this.chboxDesativados.AutoSize = true;
-            this.chboxDesativados.Location = new System.Drawing.Point(385, 9);
+            this.chboxDesativados.Location = new System.Drawing.Point(359, 9);
             this.chboxDesativados.Name = "chboxDesativados";
             this.chboxDesativados.Size = new System.Drawing.Size(143, 18);
             this.chboxDesativados.TabIndex = 38;
@@ -337,47 +341,16 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(12, 7);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(333, 22);
+            this.txtNome.Size = new System.Drawing.Size(311, 22);
             this.txtNome.TabIndex = 37;
-            // 
-            // btnPesquisa
-            // 
-            this.btnPesquisa.Enabled = false;
-            this.btnPesquisa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPesquisa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
-            this.btnPesquisa.Location = new System.Drawing.Point(348, 7);
-            this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(28, 22);
-            this.btnPesquisa.TabIndex = 44;
-            this.btnPesquisa.UseVisualStyleBackColor = true;
-            // 
-            // menuCategoria
-            // 
-            this.menuCategoria.Name = "menuCategoria";
-            this.menuCategoria.Size = new System.Drawing.Size(70, 20);
-            this.menuCategoria.Text = "Categoria";
-            // 
-            // menuGrupo
-            // 
-            this.menuGrupo.Name = "menuGrupo";
-            this.menuGrupo.Size = new System.Drawing.Size(52, 20);
-            this.menuGrupo.Text = "Grupo";
-            // 
-            // menuSubgrupo
-            // 
-            this.menuSubgrupo.Name = "menuSubgrupo";
-            this.menuSubgrupo.Size = new System.Drawing.Size(71, 20);
-            this.menuSubgrupo.Text = "Subgrupo";
             // 
             // formClassifProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(964, 471);
+            this.ClientSize = new System.Drawing.Size(964, 484);
             this.Controls.Add(this.pnlSuperior);
-            this.Controls.Add(this.menu);
             this.Controls.Add(this.gbTabelas);
             this.Controls.Add(this.pnlRodape);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -396,12 +369,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubgrupos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
-            this.menu.ResumeLayout(false);
-            this.menu.PerformLayout();
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -412,7 +382,6 @@
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.GroupBox gbTabelas;
         private System.Windows.Forms.DataGridView dgvCategorias;
-        private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.CheckBox chboxDesativados;
         private System.Windows.Forms.TextBox txtNome;
@@ -431,8 +400,5 @@
         private System.Windows.Forms.Button btnEditarGrupo;
         private System.Windows.Forms.Button btnEditarCategoria;
         private System.Windows.Forms.Button btnPesquisa;
-        private System.Windows.Forms.ToolStripMenuItem menuCategoria;
-        private System.Windows.Forms.ToolStripMenuItem menuGrupo;
-        private System.Windows.Forms.ToolStripMenuItem menuSubgrupo;
     }
 }

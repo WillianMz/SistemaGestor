@@ -1,10 +1,4 @@
-
-/*Base de dados --------------------------------------------*/
-
-CREATE TABLE bd_versao();
-CREATE TABLE bd_logs();
-
-/*Localização geografica -----------------------------------*/
+/*Localização geografica*/
 CREATE TABLE local_pais(
 	id int primary key,
 	nome varchar(150) not null
@@ -14,18 +8,18 @@ CREATE TABLE local_uf(
 	id int primary key,
 	nome varchar(100) not null,
 	id_pais int not null,
-	constraint fk_local_pais foreign key(id_pais) references local_pais(id) ON DELETE CASCADE ON UPDATE
+	constraint fk_pais foreign key(id_pais) references local_pais(id)
 );
 
 CREATE TABLE local_cidade(
 	id int primary key,
 	nome varchar(100) not null,
 	id_uf int not null,
-	constraint fk_local_uf foreign key(id_uf) references local_uf(id)  ON DELETE CASCADE ON UPDATE
+	constraint fk_uf foreign key(id_uf) references local_uf(id)
 );
 
 /*--------------------------------------------------------*/
-/*rever esta parte*/
+
 CREATE TABLE sis_crt(
 	id int primary key,
 	nome varchar(100) not null
@@ -56,13 +50,13 @@ CREATE TABLE empresa(
 	filial boolean,
 	ie varchar(20) null,
 	im varchar(20) null,
-	id_crt int default 0,/*Regime Tributário*/
-	id_segmento int default 0,
+	id_crt int not null,/*Regime Tributário*/
+	id_segmento int not null,
 
 	cep varchar(10) not null,
-	id_pais int default null,
-	id_uf int default null,
-	id_cidade int default null,
+	id_pais int not null,
+	id_uf int not null,
+	id_cidade int not null,
 	bairro varchar(50) not null,
 	logradouro varchar(100) not null,
 	numero int default 0,
@@ -77,11 +71,11 @@ CREATE TABLE empresa(
 	dt_cadastro timestamp not null,
 	dt_alteracao timestamp,
 
-	constraint fk_empresa_pais     foreign key(id_pais)     references local_pais(id)   ON DELETE SET DEFAULT,
-	constraint fk_empresa_uf       foreign key(id_uf)       references local_uf(id)     ON DELETE SET DEFAULT,
-	constraint fk_empresa_cidade   foreign key(id_cidade)   references local_cidade(id) ON DELETE SET DEFAULT,
-	constraint fk_empresa_crt      foreign key(id_crt)      references sis_crt(id) 		ON DELETE SET DEFAULT,
-	constraint fk_empresa_segmento foreign key(id_segmento) references sis_segmento(id) ON DELETE SET DEFAULT
+	constraint fk_pais     foreign key(id_pais)     references local_pais(id),
+	constraint fk_uf       foreign key(id_uf)       references local_uf(id),
+	constraint fk_cidade   foreign key(id_cidade)   references local_cidade(id),
+	constraint fk_crt      foreign key(id_crt)      references sis_crt(id),
+	constraint fk_segmento foreign key(id_segmento) references sis_segmento(id)
 );
 
 /* PESSOAS (CLIENTE/FORNECEDOR/TRANSP./FUNCIONARIO/OUTROS) -----------------------*/
@@ -99,112 +93,120 @@ CREATE TABLE pessoa(
 	id int primary key default nextval('seq_pessoa'),
 	ativo boolean default true,
 	id_tipo int not null,
+
 	cliente boolean,
 	fornecedor boolean,
 	funcionario boolean,
 	transportador boolean,
 	outro boolean,
+
 	cpf_cnpj varchar(20) not null unique,
 	nome_completo varchar(200) not null,
 	fantasia varchar(150),
-	rg_ie varchar(15),	
-	/*endereço principal da pessoa*/
+	rg_ie varchar(15),
+	
 	cep varchar(10) not null,
-	id_pais integer   default null,
-	id_uf integer     default null,
-	id_cidade integer default null,
+	id_pais integer not null,
+	id_uf integer not null,
+	id_cidade integer not null,
 	bairro varchar(50) not null,
 	logradouro varchar(100) not null,
 	numero integer not null default 0,
 	complemento varchar(40) null,
-	/*contato da pessoa*/
+	
 	telefone varchar(15),
 	celular varchar(15),
 	contato varchar(100) not null,
 	email varchar(150) null,
+
 	dt_nasc date,
 	dt_cadastro timestamp not null,
 	dt_alteracao timestamp,
 
-	constraint fk_pessoa_tipo   foreign key(id_tipo)   references pessoa_tipo(id),
-	constraint fk_pessoa_pais   foreign key(id_pais)   references local_pais(id)   ON DELETE SET DEFAULT,
-	constraint fk_pessoa_uf     foreign key(id_uf)     references local_uf(id)     ON DELETE SET DEFAULT,
-	constraint fk_pessoa_cidade foreign key(id_cidade) references local_cidade(id) ON DELETE SET DEFAULT
+	constraint fk_tipo foreign key(id_tipo) references pessoa_tipo(id),
+	constraint fk_pais foreign key(id_pais) references local_pais(id),
+	constraint fk_uf foreign key(id_uf) references local_uf(id),
+	constraint fk_cidade foreign key(id_cidade) references local_cidade(id)
 );
 
-CREATE SEQUENCE seq_pessoa_cliente INCREMENT 1 START 1;
-CREATE TABLE pessoa_cliente(
-	id primary key default nextval('seq_pessoa_cliente'),
-	id_pessoa int not null,
-	constraint fk_cliente_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE pessoa_cliente();
+CREATE TABLE pessoa_fornecedor();
+CREATE TABLE pessoa_transp();
+CREATE TABLE pessoa_funcionario();
+CREATE TABLE pessoa_outro();
+
+
+/*TABELAS DE DADOS DE TRIBUTAÇÃO --------------------------------------------------*/
+CREATE TABLE fiscal_origem(
+	id int primary key,
+	nome varchar(200) not null
 );
 
-CREATE SEQUENCE seq_pessoa_fornec INCREMENT 1 START 1;
-CREATE TABLE pessoa_fornecedor(
-	id primary key default nextval('seq_pessoa_fornec'),
-	id_pessoa int not null,
-	constraint fk_fornec_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
+INSERT INTO fiscal_origem(id, nome) VALUES (0,'Nacional, exceto as indicadas nos códigos 3 a 5');
+INSERT INTO fiscal_origem(id, nome) VALUES (1,'Estrangeira - Importação direta, exceto a indicada no código 6');
+INSERT INTO fiscal_origem(id, nome) VALUES (2,'Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7');
+INSERT INTO fiscal_origem(id, nome) VALUES (3,'Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40%');
+INSERT INTO fiscal_origem(id, nome) VALUES (4,'Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam o Decreto-Lei nº 288/67 e as Leis nºs 8.248/91,
+8.387/91, 10.176/01 e 11.484/07');
+INSERT INTO fiscal_origem(id, nome) VALUES (5,'Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40%');
+INSERT INTO fiscal_origem(id, nome) VALUES (6,'Estrangeira - Importação direta, sem similar nacional, constante em lista de Resolução CAMEX');
+INSERT INTO fiscal_origem(id, nome) VALUES (7,'Estrangeira - Adquirida no mercado interno, sem similar nacional, constante em lista de Resolução CAMEX');
+
+CREATE TABLE fiscal_cst(
+	id int primary key,
+	nome varchar(150) not null,
+	simples boolean default false
 );
 
-CREATE SEQUENCE seq_pessoa_transp INCREMENT 1 START 1;
-CREATE TABLE pessoa_transp(
-	id primary key default nextval('seq_pessoa_transp'),
-	id_pessoa int not null,
-	constraint fk_transp_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
+INSERT INTO fiscal_cst(id, nome) VALUES(00,'Tributada integralmente');
+INSERT INTO fiscal_cst(id, nome) VALUES(10,'Tributada e com cobrança do ICMS por substituição tributaria');
+INSERT INTO fiscal_cst(id, nome) VALUES(20,'Com redução da Base de cálculo');
+INSERT INTO fiscal_cst(id, nome) VALUES(30,'Isenta / não tributada e com cobrança do ICMS por substituição tributaria');
+INSERT INTO fiscal_cst(id, nome) VALUES(40,'Isenta');
+INSERT INTO fiscal_cst(id, nome) VALUES(41,'Não tributada');
+INSERT INTO fiscal_cst(id, nome) VALUES(50,'Com suspensão');
+INSERT INTO fiscal_cst(id, nome) VALUES(51,'Com diferimento');
+INSERT INTO fiscal_cst(id, nome) VALUES(60,'ICMS cobrado anteriormente por substituição tributaria');
+INSERT INTO fiscal_cst(id, nome) VALUES(70,'Com redução da Base de cálculo do ICMS por substituição tributaria');
+INSERT INTO fiscal_cst(id, nome) VALUES(90,'Outras');
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(101,'Tributada pelo Simples Nacional com permissão de crédito',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(102,'Tributada pelo simples nacional sem permissão de crédito',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(103,'Insenção do ICMS no Simples Nacional para a faixa de receita bruta',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(201,'Tributada pelo Simples Nacional com permissão de crédito e com cobrança do ICMS por Substituição Tributária',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(202,'Tributada pelo Simples Nacional sem permissão de crédito e com cobrança do ICMS por Substituição Tributária',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(203,'Isenção do ICMS no Simples Nacional para a faixa de receita bruta e com cobrança do ICMS por Substituição Tributária',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(300,'Imune',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(400,'Não tributada pelo Simples Nacional',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(500,'ICMS cobrado anteriormente por substituição tributária (substituido) ou por antecipação',true);
+INSERT INTO fiscal_cst(id, nome, simples) VALUES(900,'Outros',true);
+
+
+CREATE TABLE fiscal_cfop(
+	id int primary key,
+	descricao varchar(100) not null,
+	entrada boolean,
+	saida boolean,
+	calcula_icms boolean,
+	calcula_ipi boolean,
+	baixa_estoque boolean,
+	dentro_uf boolean,
+	reducao_icms decimal(12,2),
+	outros varchar(50)
 );
 
-CREATE SEQUENCE seq_pessoa_func INCREMENT 1 START 1;
-CREATE TABLE pessoa_funcionario(
-	id primary key default nextval('seq_pessoa_func'),
-	id_pessoa int not null,
-	constraint fk_func_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE fiscal_ncm(
+	id_ncm int primary key,
+	cest int not null,
+	nome varchar(200) not null,
+	id_segmento int not null,
+	prod_escala_relevante boolean,
+	prod_escala_nao_relevante boolean,
+	desativado boolean,
+	constraint fk_segmento foreign key(id_segmento) references sis_segmento(id)
 );
 
-CREATE SEQUENCE seq_pessoa_outro INCREMENT 1 START 1;
-CREATE TABLE pessoa_outro(
-	id primary key default nextval('seq_pessoa_outro'),
-	id_pessoa int not null,
-	constraint fk_outro_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
 
-CREATE SEQUENCE seq_pessoa_vendedor INCREMENT 1 START 1;
-CREATE TABLE pessoa_vendedor(
-	id primary key default nextval('seq_pessoa_vendedor'),
-	id_pessoa int not null,
-	constraint fk_vendedor_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-CREATE SEQUENCE seq_pessoa_endereco INCREMENT 1 START 1;
-CREATE TABLE pessoa_endereco(
-	id int primary key default nextval('seq_pessoa_endereco'),
-	id_pessoa int not null,
-	principal boolean,
-	nome varchar(30) not null,
-	cep int not null,
-	id_pais	int not null,
-	id_uf int not null,
-	id_cidade int not null,
-	logradouro varchar(100) not null,
-	numero int not null,
-	complemento varchar(40) null,
-	constraint fk_pendereco_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	constraint fk_pendereco_pais   foreign key(id_pais) references local_pais(id),
-	constraint fk_pendereco_uf 	  foreign key(id_uf) references local_uf(id),
-	constraint fk_pendereco_cidade foreign key(id_cidade) references local_cidade(id)
-);
-
-CREATE SEQUENCE seq_pessoa_contato INCREMENT 1 START 1;
-CREATE TABLE pessoa_contato(
-	id int primary key default nextval('seq_pessoa_contato'),
-	id_pessoa int not null,
-	principal boolean,
-	nome varchar(30) not null,
-	telefone int default 0,
-	email varchar(100) default null,
-	constraint fk_pcontato_pessoa foreign key(id_pessoa) references pessoa(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-/*PRODUTOS --------------------------------------------------------------*/
+/*CONTROLE DE ESTOQUE ----------------------------------------------------------------*/
 
 CREATE SEQUENCE seq_prod_unidade INCREMENT 1 START 1;
 CREATE TABLE produto_unid(
@@ -214,24 +216,13 @@ CREATE TABLE produto_unid(
 
 INSERT INTO produto_unid(nome) VALUES ('UN');
 INSERT INTO produto_unid(nome) VALUES ('KG');
+INSERT INTO produto_unid(nome) VALUES ('CX');
+INSERT INTO produto_unid(nome) VALUES ('FD');
 INSERT INTO produto_unid(nome) VALUES ('GR');
 INSERT INTO produto_unid(nome) VALUES ('MT');
 INSERT INTO produto_unid(nome) VALUES ('LT');
 INSERT INTO produto_unid(nome) VALUES ('M2');
 INSERT INTO produto_unid(nome) VALUES ('M3');
-
-CREATE SEQUENCE seq_prod_embalagem INCREMENT 1 START 1;
-CREATE TABLE produto_emb(
-	id int primary key default nextval('seq_prod_embalagem'),
-	nome varchar(10) not null unique,
-	descricao varchar(30) null
-);
-
-INSERT INTO produto_unid(nome, descricao) VALUES ('CX', 'Caixa');
-INSERT INTO produto_unid(nome, descricao) VALUES ('FD', 'Fardo');
-INSERT INTO produto_unid(nome, descricao) VALUES ('DSP', 'Display');
-INSERT INTO produto_unid(nome, descricao) VALUES ('PLT', 'Palete');
-INSERT INTO produto_unid(nome, descricao) VALUES ('SCL', 'Sacola');
 
 CREATE SEQUENCE seq_prod_tipo INCREMENT 1 START 1;
 CREATE TABLE produto_tipo(
@@ -258,7 +249,7 @@ CREATE TABLE produto_grupo(
 	nome varchar(100) not null,
 	id_categ int not null,
 	ativo boolean default true,
-	constraint fk_produto_categ foreign key(id_categ) references produto_categ(id) ON DELETE CASCADE ON UPDATE CASCADE
+	constraint fk_categ foreign key(id_categ) references produto_categ(id)
 );
 
 CREATE SEQUENCE seq_prod_subgrupo INCREMENT 1 START 1;
@@ -267,54 +258,37 @@ CREATE TABLE produto_subgrupo(
 	nome varchar(100) not null,
 	id_grupo int not null,
 	ativo boolean default true,
-	constraint fk_produto_grupo foreign key(id_grupo) references produto_grupo(id) ON DELETE CASCADE ON UPDATE CASCADE
+	constraint fk_grupo foreign key(id_grupo) references produto_grupo(id)
 );
 
-/*utilizado para produto iguais mudando apenas o sabor/fragancia/etc.*/
-CREATE SEQUENCE seq_prod_semelhante INCREMENT 1 START 1;
-CREATE TABLE produto_semelhante(
-	id int primary key default nextval('seq_prod_semelhante'),
-	nome varchar(100) not null unique,
-	ativo boolean default true
-);
 
-/*arrumar esta tabela*/
 CREATE SEQUENCE seq_produto INCREMENT 1 START 1;
 CREATE TABLE produto(
 	id int primary key default nextval('seq_produto'),
-	codigo     varchar(15) unique,/*principal do produto. Não pode ser repetido*/
+	ativo boolean default true,
 	tp_produto int not null,
-	ativo      boolean default true,
-	balanca    boolean default false,/*caso for true o produto deve ser pesado antes de vender*/ 	
-	nome       varchar(50) not null,
-	descricao  varchar(200) not null,	
-	id_unid    int not null,
-	modelo     varchar(40) null,
-	marca      varchar(40) null,
+	codigo varchar(15) unique,
+	nome varchar(50) not null,
+	descricao varchar(200) not null,	
+	id_unid int not null,
+	balanca boolean, 
+	marca varchar(40) null,
 	fabricante varchar(40) null,
-	cnpj_fab   varchar(20) null, /*cnpj do fabricante do produto*/
-	
 	/*estrutura mercadologica*/
-	id_categ    integer default null,
-	id_grupo    integer default null,
-	id_subgrupo integer default null,
-
+	id_categ int not null,
+	id_grupo int not null,
+	id_subgrupo int null,
 	/*custo e venda*/
-	custo         decimal(12,2) not null,
-	comissao      decimal(12,2) default 0, /*comissao*/
-	porc_comissao decimal(12,2) default 0, /*% comissao*/
-	desconto      decimal(12,2) default 0,
-	porc_desconto decimal(12,2) default 0,
-	v_outros      decimal(12,2) default 0,
-	v_outros_p    decimal(12,2) default 0,
-	porc_margem   decimal(12,2) default 0,
-	porc_lucro    decimal(12,2) default 0,
-	venda         decimal(12,2) default 0,	
-
 	custo decimal(12,2) not null,
-
-	
-
+	v_com decimal(12,2) default 0, /*comissao*/
+	v_com_p decimal(12,2) default 0, /*% comissao*/
+	v_desc decimal(12,2) default 0,
+	v_desc_p decimal(12,2) default 0,
+	v_outros decimal(12,2) default 0,
+	v_outros_p decimal(12,2) default 0,
+	v_margem decimal(12,2) default 0,
+	v_lucro decimal(12,2) default 0,
+	venda decimal(12,2) default 0,	
 	/*estoque*/
 	qtd_min decimal(12,2) null,
 	qtd_max decimal(12,2) null,
@@ -329,53 +303,38 @@ CREATE TABLE produto(
 	dtcadastro timestamp,
 	dtalteracao date,
 	imagem varchar(200) null,
-	constraint fk_tp_produto   foreign key(tp_produto)   references produto_tipo(id),
-	constraint fk_unid         foreign key(id_unid)      references produto_unid(id),
-	constraint fk_categ        foreign key(id_categ)     references produto_categ(id)    ON DELETE SET DEFAULT,
-	constraint fk_grupo        foreign key(id_grupo)     references produto_grupo(id)    ON DELETE SET DEFAULT,
-	constraint fk_subgrupo     foreign key(id_subgrupo)  references produto_subgrupo(id) ON DELETE SET DEFAULT,
-	constraint fk_tp_compra	   foreign key(tp_un_compra) references produto_unid(id)
+	constraint fk_tp_produto   foreign key(tp_produto)        references produto_tipo(id),
+	constraint fk_unid         foreign key(id_unid)           references produto_unid(id),
+	constraint fk_categ        foreign key(id_categ)          references produto_categ(id),
+	constraint fk_grupo        foreign key(id_grupo)          references produto_grupo(id),
+	constraint fk_subgrupo     foreign key(id_subgrupo)       references produto_subgrupo(id),
+	constraint fk_tp_compra	   foreign key(tp_un_compra)      references produto_unid(id)
 );
 
-CREATE TABLE produto_codigo(
+CREATE TABLE produto_codigos(
 	id_produto int primary key,
-	ativo boolean default true,
-	codigo int not null unique,
-	constraint fk_produto_cod foreign key(id_produto) references produto(id) ON DELETE CASCADE ON UPDATE CASCADE
+	codbarra int not null unique,
+	constraint fk_produto foreign key(id_produto) references produto(id)
 );
 
-CREATE TABLE produto_detalhes(
-	id_produto int primary key,
-
-	qtd_emb decimal(12,2) not null,
-	pbruto decimal(12,3),
-	pliquido decimal(12,3),
-	altura decimal(12,2),
-	largura decimal(12,2),
-	comprimento decimal(12,2),
-	localizacao varchar(100) null,
-	dtcadastro timestamp,
-	dtalteracao date,
-	imagem varchar(200) null,
-
-	constraint fk_produto_detalhes foreign key(id_produto) references produto(id) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE produto_tributacao(
+	id_produto int not null,
+	id_origem int not null,
+	id_ncm int not null,
+	cest int,
+	id_cfop_dentro_uf int,	
+	id_cfop_fora_uf int,
+	id_sit_trib int not null,
+	icms decimal(12,2),
+	ipi decimal(12,2),
+	pis_cofins decimal(12,2),
+	outros_impostos decimal(12,2),
+	constraint fk_origem       foreign key(id_origem)         references fiscal_origem(id),
+	constraint fk_ncm          foreign key(id_ncm)            references fiscal_ncm(id_ncm),
+	constraint fk_cfop_uf      foreign key(id_cfop_dentro_uf) references fiscal_cfop(id),
+	constraint fk_cfop_fora_uf foreign key(id_cfop_fora_uf)   references fiscal_cfop(id),
+	constraint fk_sit_trib     foreign key(id_sit_trib)       references fiscal_sit_tributaria(id)
 );
-
-CREATE TABLE produto_hist_preco(
-	id_produto int primary key,
-	data timestamp not null,
-	custo decimal(12,2) not null,
-	margem decimal(12,2) not null,
-	venda decimal(12,2) not null,
-	constraint fk_produto_hist_preco foreign key(id_produto) references produto(id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-/*CONTROLE DE ESTOQUE ------------------------------------------------------------------------*/
-
-
-
-
-
 
 CREATE SEQUENCE seq_pedidocompra INCREMENT 1 START 1;
 CREATE TABLE pedido_compra(

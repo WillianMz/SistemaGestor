@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -117,6 +120,7 @@
     <Compile Include="Interfaces\formProdutoSubgrupo.Designer.cs">
       <DependentUpon>formProdutoSubgrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilitario\carregarComboBox.cs" />
     <Compile Include="Utilitario\CollectionHelper.cs" />
