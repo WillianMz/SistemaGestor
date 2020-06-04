@@ -5,5 +5,6 @@ Sistema de Gestão Comercial
   >Estoque
   >Comercial
   
+![alt text](https://github.com/WillianMz/SistemaGestor/blob/master/Capturas%20de%20telas/TelaInicial.png)
 
 ![alt text](https://github.com/WillianMz/SistemaGestor/blob/master/Capturas%20de%20telas/consultaProduto.png)
