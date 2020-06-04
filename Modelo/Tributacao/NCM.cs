@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Tributacao
 {
-    public class NCM : Base
+    public class NCM : ModeloBase
     {
     }
 }

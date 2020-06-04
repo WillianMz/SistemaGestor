@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Financeiro
 {
-    public class FormaPagto : Base
+    public class FormaPagto : ModeloBase
     {
     }
 }

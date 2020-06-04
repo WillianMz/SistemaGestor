@@ -12,7 +12,7 @@ namespace Sistema.Estoque.Interfaces
     public partial class formConsultaProduto : Form
     {
         public statusForm statusForm;
-        BLL_Produto controle;        
+        BLL_Produto controle;
 
         public formConsultaProduto()
         {
@@ -25,13 +25,13 @@ namespace Sistema.Estoque.Interfaces
         }
 
         public void configForm()
-        {       
+        {
 
-            if(statusForm == statusForm.Selecionar)
+            if (statusForm == statusForm.Selecionar)
             {
-                this.Text             = "Consulta de produto";
-                lblMensagem.Text      = "Procure pelo produto e clique em Selecionar";
-                menuAcoes.Visible     = false;
+                this.Text = "Consulta de produto";
+                lblMensagem.Text = "Procure pelo produto e clique em Selecionar";
+                menuAcoes.Visible = false;
                 btnSelecionar.Visible = true;
             }
         }
@@ -45,7 +45,7 @@ namespace Sistema.Estoque.Interfaces
             }
             util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
         }
-        
+
         //usado quando a pesquisa é por codigo e retorna somente um objeto
         private void atualizarGrid2(Produto p)
         {
@@ -54,13 +54,13 @@ namespace Sistema.Estoque.Interfaces
                 dgvProdutos.Rows.Clear();
 
                 if (p != null)
-                {                    
+                {
                     dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem + "%", p.Marca, p.Fabricante);
-                }               
-                                             
+                }
+
                 util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
             }
-            catch( Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -111,8 +111,8 @@ namespace Sistema.Estoque.Interfaces
             {
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }   
-        
+        }
+
         private void executarConsulta()
         {
             if (chboxDesativados.Checked == true)
@@ -120,12 +120,12 @@ namespace Sistema.Estoque.Interfaces
             else
                 pesquisarProduto(true);
         }
-        
+
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                if(e.KeyCode == Keys.Enter)
+                if (e.KeyCode == Keys.Enter)
                 {
                     if (txtPesquisar.Text != "")
                         executarConsulta();
@@ -141,7 +141,7 @@ namespace Sistema.Estoque.Interfaces
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
             util_sistema.keyPress(sender, e);
@@ -152,7 +152,7 @@ namespace Sistema.Estoque.Interfaces
                     e.Handled = true;
             }
         }
-        
+
         private void menuAdicionar_Click(object sender, EventArgs e)
         {
             try
@@ -246,7 +246,7 @@ namespace Sistema.Estoque.Interfaces
                 MessageBox.Show(util_msg.msgErro + ex.Message, util_msg.sistema, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         public Produto selecionarProduto()
         {
             try
@@ -267,7 +267,7 @@ namespace Sistema.Estoque.Interfaces
         {
             try
             {
-                if(dgvProdutos.Rows.Count == 0)
+                if (dgvProdutos.Rows.Count == 0)
                     return;
                 else
                 {
@@ -276,7 +276,7 @@ namespace Sistema.Estoque.Interfaces
                     this.Close();
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -290,6 +290,15 @@ namespace Sistema.Estoque.Interfaces
         private void movimentaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formHistoricoMovProduto f = new formHistoricoMovProduto();
+            f.ShowDialog();
+            f.Dispose();
+        }
+
+        private void mOpcaoEstruturaMercadologica_Click(object sender, EventArgs e)
+        {
+            formClassifProdutos f = new formClassifProdutos();
+            f.status = statusForm.Consulta;
+            f.configForm();
             f.ShowDialog();
             f.Dispose();
         }

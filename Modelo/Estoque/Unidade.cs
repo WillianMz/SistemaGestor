@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Estoque
 {
-    public class Unidade : Base
+    public class Unidade : ModeloBase
     {
     }
 }

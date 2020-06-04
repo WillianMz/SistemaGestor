@@ -1,4 +1,3 @@
-
 /*Localização geografica*/
 CREATE TABLE local_pais(
 	id int primary key,

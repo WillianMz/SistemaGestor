@@ -252,7 +252,7 @@ namespace Sistema.Estoque.Interfaces
                     else
                     {
                        // lblMsgFornec.Text = p.Fantasia;
-                        lblNomeFornec.Text = p.NomeCompleto + " | " + p.Local;
+                        lblNomeFornec.Text = p.nomeCompleto + " | " + p.local;
                     }
                 }
             }

@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Alimentacao
 {
-    public class Mesa : Base
+    public class Mesa : ModeloBase
     {
     }
 }

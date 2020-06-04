@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Tributacao
 {
-    public class CFOP : Base
+    public class CFOP : ModeloBase
     {
     }
 }

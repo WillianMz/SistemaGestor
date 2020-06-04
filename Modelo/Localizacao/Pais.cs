@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Localizacao
 {
-    public class Pais : Base
+    public class Pais : ModeloBase
     {
     }
 }

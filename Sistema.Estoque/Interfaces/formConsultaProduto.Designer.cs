@@ -53,6 +53,8 @@
             this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
             this.mHistMovimento = new System.Windows.Forms.ToolStripMenuItem();
             this.mHistPrecos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMaisOpcoes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mOpcaoEstruturaMercadologica = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarDesativados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarTodos = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +77,9 @@
             this.lblEstoque = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.tributaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.etiquetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.menuAcoes.SuspendLayout();
@@ -90,6 +95,7 @@
             this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -127,28 +133,28 @@
             this.colID.HeaderText = "Cód.";
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
-            this.colID.Width = 70;
+            this.colID.Width = 56;
             // 
             // colCodBarras
             // 
             this.colCodBarras.HeaderText = "Código de Barras";
             this.colCodBarras.Name = "colCodBarras";
             this.colCodBarras.ReadOnly = true;
-            this.colCodBarras.Width = 150;
+            this.colCodBarras.Width = 126;
             // 
             // colNome
             // 
             this.colNome.HeaderText = "Nome";
             this.colNome.Name = "colNome";
             this.colNome.ReadOnly = true;
-            this.colNome.Width = 200;
+            this.colNome.Width = 63;
             // 
             // colDescricao
             // 
             this.colDescricao.HeaderText = "Descrição";
             this.colDescricao.Name = "colDescricao";
             this.colDescricao.ReadOnly = true;
-            this.colDescricao.Width = 300;
+            this.colDescricao.Width = 87;
             // 
             // colCusto
             // 
@@ -158,6 +164,7 @@
             this.colCusto.HeaderText = "Custo";
             this.colCusto.Name = "colCusto";
             this.colCusto.ReadOnly = true;
+            this.colCusto.Width = 63;
             // 
             // colVenda
             // 
@@ -169,26 +176,28 @@
             this.colVenda.HeaderText = "Venda";
             this.colVenda.Name = "colVenda";
             this.colVenda.ReadOnly = true;
+            this.colVenda.Width = 65;
             // 
             // colMargem
             // 
             this.colMargem.HeaderText = "Margem";
             this.colMargem.Name = "colMargem";
             this.colMargem.ReadOnly = true;
+            this.colMargem.Width = 77;
             // 
             // colMarca
             // 
             this.colMarca.HeaderText = "Marca";
             this.colMarca.Name = "colMarca";
             this.colMarca.ReadOnly = true;
-            this.colMarca.Width = 200;
+            this.colMarca.Width = 68;
             // 
             // colFabricante
             // 
             this.colFabricante.HeaderText = "Fabricante";
             this.colFabricante.Name = "colFabricante";
             this.colFabricante.ReadOnly = true;
-            this.colFabricante.Width = 250;
+            this.colFabricante.Width = 91;
             // 
             // pnlRodape
             // 
@@ -225,19 +234,22 @@
             // menuAcoes
             // 
             this.menuAcoes.AutoSize = false;
-            this.menuAcoes.BackColor = System.Drawing.Color.Transparent;
+            this.menuAcoes.BackColor = System.Drawing.Color.White;
+            this.menuAcoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuAcoes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAdicionar,
             this.menuEditar,
             this.menuDetalhes,
             this.menuDesativar,
-            this.menuHistorico});
+            this.menuHistorico,
+            this.menuMaisOpcoes,
+            this.menuRelatorio});
             this.menuAcoes.Location = new System.Drawing.Point(0, 0);
             this.menuAcoes.Name = "menuAcoes";
             this.menuAcoes.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuAcoes.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuAcoes.Size = new System.Drawing.Size(1149, 37);
             this.menuAcoes.TabIndex = 24;
-            this.menuAcoes.Text = "menuStrip1";
             // 
             // menuAdicionar
             // 
@@ -279,15 +291,32 @@
             // mHistMovimento
             // 
             this.mHistMovimento.Name = "mHistMovimento";
-            this.mHistMovimento.Size = new System.Drawing.Size(154, 22);
+            this.mHistMovimento.Size = new System.Drawing.Size(180, 22);
             this.mHistMovimento.Text = "Movimentação";
             this.mHistMovimento.Click += new System.EventHandler(this.movimentaçãoToolStripMenuItem_Click);
             // 
             // mHistPrecos
             // 
             this.mHistPrecos.Name = "mHistPrecos";
-            this.mHistPrecos.Size = new System.Drawing.Size(154, 22);
+            this.mHistPrecos.Size = new System.Drawing.Size(180, 22);
             this.mHistPrecos.Text = "Preços";
+            // 
+            // menuMaisOpcoes
+            // 
+            this.menuMaisOpcoes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mOpcaoEstruturaMercadologica,
+            this.tributaçãoToolStripMenuItem,
+            this.etiquetasToolStripMenuItem});
+            this.menuMaisOpcoes.Name = "menuMaisOpcoes";
+            this.menuMaisOpcoes.Size = new System.Drawing.Size(87, 33);
+            this.menuMaisOpcoes.Text = "Mais Opções";
+            // 
+            // mOpcaoEstruturaMercadologica
+            // 
+            this.mOpcaoEstruturaMercadologica.Name = "mOpcaoEstruturaMercadologica";
+            this.mOpcaoEstruturaMercadologica.Size = new System.Drawing.Size(203, 22);
+            this.mOpcaoEstruturaMercadologica.Text = "Estrutura Mercadológica";
+            this.mOpcaoEstruturaMercadologica.Click += new System.EventHandler(this.mOpcaoEstruturaMercadologica_Click);
             // 
             // menuListarDesativados
             // 
@@ -471,6 +500,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(1109, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 22);
@@ -480,12 +510,31 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(1083, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(27, 22);
             this.button2.TabIndex = 33;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tributaçãoToolStripMenuItem
+            // 
+            this.tributaçãoToolStripMenuItem.Name = "tributaçãoToolStripMenuItem";
+            this.tributaçãoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.tributaçãoToolStripMenuItem.Text = "Tributação";
+            // 
+            // etiquetasToolStripMenuItem
+            // 
+            this.etiquetasToolStripMenuItem.Name = "etiquetasToolStripMenuItem";
+            this.etiquetasToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.etiquetasToolStripMenuItem.Text = "Etiquetas";
+            // 
+            // menuRelatorio
+            // 
+            this.menuRelatorio.Name = "menuRelatorio";
+            this.menuRelatorio.Size = new System.Drawing.Size(71, 33);
+            this.menuRelatorio.Text = "Relatórios";
             // 
             // formConsultaProduto
             // 
@@ -567,5 +616,10 @@
         private System.Windows.Forms.ToolStripMenuItem menuHistorico;
         private System.Windows.Forms.ToolStripMenuItem mHistMovimento;
         private System.Windows.Forms.ToolStripMenuItem mHistPrecos;
+        private System.Windows.Forms.ToolStripMenuItem menuMaisOpcoes;
+        private System.Windows.Forms.ToolStripMenuItem mOpcaoEstruturaMercadologica;
+        private System.Windows.Forms.ToolStripMenuItem tributaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem etiquetasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuRelatorio;
     }
 }

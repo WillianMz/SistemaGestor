@@ -5,35 +5,35 @@ namespace Modelo
 {
     public class Pessoa
     {
-        public int Id { get; set; }
-        public bool Ativo { get; set; }
-        public bool Cliente { get; set; }
-        public bool Fornecedor { get; set; }
-        public bool Transportador { get; set; }
-        public bool Funcionario { get; set; }
-        public bool Outro { get; set; }
-        public TipoPessoa Tipo { get; set; } = new TipoPessoa();
+        public int id { get; set; }
+        public bool ativo { get; set; }
+        public bool cliente { get; set; }
+        public bool fornecedor { get; set; }
+        public bool transportador { get; set; }
+        public bool funcionario { get; set; }
+        public bool outro { get; set; }
+        public TipoPessoa tipo { get; set; } = new TipoPessoa();
         public string CPF_CNPJ { get; set; }
-        public string NomeCompleto { get; set; }
-        public string Fantasia { get; set; }
+        public string nomeCompleto { get; set; }
+        public string fantasia { get; set; }
         public string RG_IE { get; set; }
 
         //Endereco principal
         public string CEP { get; set; }
-        public Pais Pais { get; set; } = new Pais();
-        public UF UF { get; set; } = new UF();
-        public Cidade Cidade { get; set; } = new Cidade();
-        public string Bairro { get; set; }
-        public string Logradouro { get; set; }
-        public int Numero { get; set; }
-        public string Complemento { get; set; }
-        public long Telefone { get; set; }
-        public long Celular { get; set; }
-        public string Contato { get; set; }
-        public string Email { get; set; }
-        public DateTime DtNasc { get; set; }
-        public DateTime DtCadastro { get; set; }
-        public DateTime DtAlteracao { get; set; }
-        public string Local { get; set; }
+        public Pais pais { get; set; } = new Pais();
+        public UF uf { get; set; } = new UF();
+        public Cidade cidade { get; set; } = new Cidade();
+        public string bairro { get; set; }
+        public string logradouro { get; set; }
+        public int numero { get; set; }
+        public string complemento { get; set; }
+        public long telefone { get; set; }
+        public long celular { get; set; }
+        public string contato { get; set; }
+        public string email { get; set; }
+        public DateTime dtNasc { get; set; }
+        public DateTime dtCadastro { get; set; }
+        public DateTime dtAlteracao { get; set; }
+        public string local { get; set; }
     }
 }

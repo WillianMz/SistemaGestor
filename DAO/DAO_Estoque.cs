@@ -70,7 +70,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@id_empresa",    entrada.empresa.Id);
                 cmd.Parameters.AddWithValue("@id_tpnota",     entrada.tipoNota.Id);
                 cmd.Parameters.AddWithValue("@dh_entrada",    entrada.dhEntrada);
-                cmd.Parameters.AddWithValue("@id_fornec",     entrada.fornec.Id);
+                cmd.Parameters.AddWithValue("@id_fornec",     entrada.fornec.id);
                 cmd.Parameters.AddWithValue("@id_cfop",       entrada.cfop);
                 cmd.Parameters.AddWithValue("@chave_nfe",     entrada.chaveNFE);
                 cmd.Parameters.AddWithValue("@versao_nfe",    entrada.versaoNFE);
@@ -97,7 +97,7 @@ namespace DAO
                 cmd.Parameters.AddWithValue("@v_cofins",      entrada.vCOFINS);
                 cmd.Parameters.AddWithValue("@v_outro",       entrada.vOutro);
                 cmd.Parameters.AddWithValue("@total_nf",      entrada.totalNF);
-                cmd.Parameters.AddWithValue("@id_transp",     entrada.transp.Id);
+                cmd.Parameters.AddWithValue("@id_transp",     entrada.transp.id);
                 cmd.Parameters.AddWithValue("@mod_frente",    entrada.modFrete);
                 cmd.Parameters.AddWithValue("@vol_pbruto",    entrada.pesoBruto);
                 cmd.Parameters.AddWithValue("@vol_pliquido",  entrada.pesoLiquido);

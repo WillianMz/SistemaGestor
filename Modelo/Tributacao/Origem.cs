@@ -1,6 +1,6 @@
 ﻿namespace Modelo.Tributacao
 {
-    public class Origem : Base
+    public class Origem : ModeloBase
     {
     }
 }
