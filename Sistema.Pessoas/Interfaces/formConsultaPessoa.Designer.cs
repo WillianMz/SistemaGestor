@@ -112,6 +112,7 @@
             this.dgvPessoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPessoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvPessoa.BackgroundColor = System.Drawing.Color.White;
             this.dgvPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvPessoa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -141,7 +142,7 @@
             this.colID.HeaderText = "Cód.";
             this.colID.Name = "colID";
             this.colID.ReadOnly = true;
-            this.colID.Width = 70;
+            this.colID.Width = 56;
             // 
             // colNome
             // 

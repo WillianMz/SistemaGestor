@@ -43,6 +43,7 @@
             this.mEstoqueProdNovo = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueProdConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.mEstoqueProdEstMercadologica = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mEstoqueProdTributacao = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueProdEtiq = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +104,6 @@
             this.testesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDesenvolvedor = new System.Windows.Forms.Label();
             this.img_Empresa = new System.Windows.Forms.PictureBox();
-            this.mEstoqueProdEstMercadologica = new System.Windows.Forms.ToolStripMenuItem();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.menuPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).BeginInit();
@@ -238,6 +238,13 @@
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(200, 6);
+            // 
+            // mEstoqueProdEstMercadologica
+            // 
+            this.mEstoqueProdEstMercadologica.Name = "mEstoqueProdEstMercadologica";
+            this.mEstoqueProdEstMercadologica.Size = new System.Drawing.Size(203, 22);
+            this.mEstoqueProdEstMercadologica.Text = "Estrutura Mercadológica";
+            this.mEstoqueProdEstMercadologica.Click += new System.EventHandler(this.mEstoqueProdEstMercadologica_Click);
             // 
             // toolStripSeparator4
             // 
@@ -654,13 +661,6 @@
             this.img_Empresa.TabIndex = 427;
             this.img_Empresa.TabStop = false;
             // 
-            // mEstoqueProdEstMercadologica
-            // 
-            this.mEstoqueProdEstMercadologica.Name = "mEstoqueProdEstMercadologica";
-            this.mEstoqueProdEstMercadologica.Size = new System.Drawing.Size(203, 22);
-            this.mEstoqueProdEstMercadologica.Text = "Estrutura Mercadológica";
-            this.mEstoqueProdEstMercadologica.Click += new System.EventHandler(this.mEstoqueProdEstMercadologica_Click);
-            // 
             // lblEmpresa
             // 
             this.lblEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -689,7 +689,6 @@
             this.Name = "formPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Gestor";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.formPrincipal_Shown);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();

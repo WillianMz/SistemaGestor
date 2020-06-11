@@ -1,3 +1,16 @@
+
+
+CREATE SEQUENCE seq_usuario INCREMENT 1 START 1;
+CREATE TABLE user_usuario(
+	id integer primary key default nextval('seq_usuario'),
+	login varchar(100) not null unique,
+	nome varchar(50) not null,
+	senha varchar(100) not null,
+	nivel varchar(10)
+);
+
+INSERT INTO user_usuario(login, nome, senha, nivel) VALUES('dev','programador','123456','D');
+
 /*Localização geografica*/
 CREATE TABLE local_pais(
 	id int primary key,
