@@ -64,6 +64,31 @@
     <Compile Include="formPrincipal.Designer.cs">
       <DependentUpon>formPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\formConfigurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConfigurar.Designer.cs">
+      <DependentUpon>formConfigurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formConsultaUsuarios.Designer.cs">
+      <DependentUpon>formConsultaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formUsuario.Designer.cs">
+      <DependentUpon>formUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notificador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formLoading.resx">
@@ -71,6 +96,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formConfigurar.resx">
+      <DependentUpon>formConfigurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formConsultaUsuarios.resx">
+      <DependentUpon>formConsultaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formUsuario.resx">
+      <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

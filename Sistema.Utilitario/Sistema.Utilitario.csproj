@@ -47,6 +47,7 @@
     <Compile Include="Controles\BLL_Endereco.cs" />
     <Compile Include="Controles\BLL_Sistema.cs" />
     <Compile Include="carregarComboBox.cs" />
+    <Compile Include="Controles\BLL_Usuario.cs" />
     <Compile Include="Interfaces\formConfigurar.cs">
       <SubType>Form</SubType>
     </Compile>

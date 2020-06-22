@@ -1,11 +1,12 @@
 ﻿using Modelo.Config;
+using Sistema.Utilitario;
 using Sistema.Utilitario.Controles;
 using System;
 using System.Windows.Forms;
 using Util;
 using static Modelo.Config.Parametro;
 
-namespace Sistema.Utilitario.Interfaces
+namespace Gestor
 {
     public partial class formLogin : Form
     {
@@ -50,6 +51,10 @@ namespace Sistema.Utilitario.Interfaces
                 {
                     UsuarioLogado.idUser = controler.usuario(login, senha);
                     //UsuarioLogado.nomeUser = login;
+                    formPrincipal iniciar = new formPrincipal();
+                    iniciar.Show();
+                    this.Close();
+                    Dispose();
                     return;
                 }
                 else
@@ -64,7 +69,6 @@ namespace Sistema.Utilitario.Interfaces
         private void btnLogar_Click(object sender, EventArgs e)
         {           
             verificarLogin();
-            Close();
         }
 
         private void btnConfig_Click(object sender, EventArgs e)

@@ -83,6 +83,7 @@
     <Compile Include="DAO_Produto.cs" />
     <Compile Include="DAO_Sistema.cs" />
     <Compile Include="DAO_Tributacao.cs" />
+    <Compile Include="DAO_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
