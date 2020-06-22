@@ -20,7 +20,7 @@ namespace Gestor
         {
             try
             {
-                ConfigSistema config = RegEditWindows.lerDadosRegistroWindows("Gestor");
+                ConfigSistema config = RegEditWindows.lerDadosDeAcessoBancoDeDados("Gestor");
                 SQL.servidor = config.dbServer;
                 SQL.porta    = config.dbPort;
                 SQL.banco    = config.dbBase;
@@ -28,7 +28,14 @@ namespace Gestor
                 SQL.senhaBD  = config.dbPwd;
 
                 carregarComboBox.empresas(cbEmpresa);
-                cbEmpresa.SelectedIndex = 0;
+
+                ConfigSistema cf = RegEditWindows.lerDadosDeLogin("Gestor");
+                ckboxLembrarSenha.Checked = cf.lembrarSenha;
+                txtUsuario.Text = cf.usuario;
+                txtSenha.Text = cf.senha;
+                cbEmpresa.SelectedValue = cf.empresaPadrao;
+
+                //cbEmpresa.SelectedIndex = 0;
             }
             catch (Exception)
             {
@@ -49,11 +56,11 @@ namespace Gestor
 
                 if (controler.verificarUsuario(login, senha) == true)
                 {
+                    lembrarUsuario();
                     UsuarioLogado.idUser = controler.usuario(login, senha);
-                    //UsuarioLogado.nomeUser = login;
                     formPrincipal iniciar = new formPrincipal();
                     iniciar.Show();
-                    this.Close();
+                    Close();
                     Dispose();
                     return;
                 }
@@ -66,6 +73,42 @@ namespace Gestor
             }
         }
 
+        private void lembrarUsuario()
+        {
+            try
+            {
+                ConfigSistema config;
+
+                if (ckboxLembrarSenha.Checked == true)
+                {
+                    config = new ConfigSistema
+                    {
+                        lembrarSenha  = true,
+                        empresaPadrao = int.Parse(cbEmpresa.SelectedValue.ToString()),
+                        usuario       = txtUsuario.Text,
+                        senha         = txtSenha.Text
+                    };                    
+                }
+                else
+                {
+                    config = new ConfigSistema
+                    {
+                        lembrarSenha  = false,
+                        empresaPadrao = 0,
+                        usuario       = "",
+                        senha         = ""
+                    };
+                }
+
+                BLL_Sistema controle = new BLL_Sistema();
+                controle.salvarDadosDeLogin("Gestor", config);
+            }
+            catch
+            {
+
+            }
+        }
+
         private void btnLogar_Click(object sender, EventArgs e)
         {           
             verificarLogin();
@@ -73,16 +116,9 @@ namespace Gestor
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
-            try
-            {
-                formConfigurar f = new formConfigurar();
-                f.ShowDialog();
-                f.Dispose();
-            }
-            catch
-            {
-
-            }
+            formConfigurar f = new formConfigurar();
+            f.ShowDialog();
+            f.Dispose();
         }
 
         private void btnEsqueceuSenha_Click(object sender, EventArgs e)

@@ -40,7 +40,7 @@ namespace Gestor
                 };
 
                 controle = new BLL_Sistema();
-                controle.salvarParamentros("Gestor", config);
+                controle.salvarParametrosDeBaseDeDados("Gestor", config);
             }
             catch
             {
@@ -51,7 +51,7 @@ namespace Gestor
         private void lerDados()
         {
             controle = new BLL_Sistema();
-            ConfigSistema cf = controle.getParamentros("Gestor");
+            ConfigSistema cf = controle.parametrosBaseDeDados("Gestor");
             txtBDServer.Text = cf.dbServer;
             txtBDPort.Text   = Convert.ToString(cf.dbPort);
             txtBDBanco.Text  = cf.dbBase;
