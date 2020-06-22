@@ -35,7 +35,6 @@
             this.mArq_config = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.mArq_users = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mArq_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEstoque = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +66,6 @@
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.mEstoqueEntradaPendente = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueSaida = new System.Windows.Forms.ToolStripMenuItem();
-            this.mEstoqueCompra = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueExped = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueExpConfPedido = new System.Windows.Forms.ToolStripMenuItem();
             this.mEstoqueExpEtiqEmb = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,10 +101,14 @@
             this.mAjudaSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.testesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblDesenvolvedor = new System.Windows.Forms.Label();
-            this.img_Empresa = new System.Windows.Forms.PictureBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
+            this.pnlNavBar = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblNivel = new System.Windows.Forms.Label();
+            this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.menuPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).BeginInit();
+            this.pnlNavBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPrincipal
@@ -122,7 +124,7 @@
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
             this.menuPrincipal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuPrincipal.Size = new System.Drawing.Size(892, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(674, 24);
             this.menuPrincipal.TabIndex = 9;
             this.menuPrincipal.Text = "menuStrip1";
             // 
@@ -133,7 +135,6 @@
             this.mArq_config,
             this.toolStripSeparator7,
             this.mArq_users,
-            this.logoffToolStripMenuItem,
             this.toolStripSeparator3,
             this.mArq_sair});
             this.menuArquivo.Name = "menuArquivo";
@@ -165,13 +166,6 @@
             this.mArq_users.Text = "Usuários";
             this.mArq_users.Click += new System.EventHandler(this.mArq_users_Click);
             // 
-            // logoffToolStripMenuItem
-            // 
-            this.logoffToolStripMenuItem.Name = "logoffToolStripMenuItem";
-            this.logoffToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.logoffToolStripMenuItem.Text = "Logoff";
-            this.logoffToolStripMenuItem.Click += new System.EventHandler(this.logoffToolStripMenuItem_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -198,7 +192,6 @@
             this.toolStripSeparator5,
             this.mEstoqueEntrada,
             this.mEstoqueSaida,
-            this.mEstoqueCompra,
             this.mEstoqueExped,
             this.toolStripSeparator6,
             this.mEstoqueRotinas});
@@ -394,12 +387,6 @@
             this.mEstoqueSaida.Size = new System.Drawing.Size(187, 22);
             this.mEstoqueSaida.Text = "Saídas";
             // 
-            // mEstoqueCompra
-            // 
-            this.mEstoqueCompra.Name = "mEstoqueCompra";
-            this.mEstoqueCompra.Size = new System.Drawing.Size(187, 22);
-            this.mEstoqueCompra.Text = "Compras";
-            // 
             // mEstoqueExped
             // 
             this.mEstoqueExped.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -456,6 +443,7 @@
             this.mComercialPedido,
             this.mComercialOrcamento,
             this.mComercialVenda});
+            this.menuComercial.Enabled = false;
             this.menuComercial.Name = "menuComercial";
             this.menuComercial.Size = new System.Drawing.Size(73, 20);
             this.menuComercial.Text = "Comercial";
@@ -506,6 +494,7 @@
             this.consultaReceberToolStripMenuItem,
             this.toolStripSeparator13,
             this.parametrosToolStripMenuItem});
+            this.menuFinanceiro.Enabled = false;
             this.menuFinanceiro.Name = "menuFinanceiro";
             this.menuFinanceiro.Size = new System.Drawing.Size(74, 20);
             this.menuFinanceiro.Text = "Financeiro";
@@ -574,6 +563,7 @@
             this.menuFiscal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.notasFiscaisToolStripMenuItem,
             this.arquivosFiscaisToolStripMenuItem});
+            this.menuFiscal.Enabled = false;
             this.menuFiscal.Name = "menuFiscal";
             this.menuFiscal.Size = new System.Drawing.Size(48, 20);
             this.menuFiscal.Text = "Fiscal";
@@ -649,28 +639,65 @@
             this.lblDesenvolvedor.TabIndex = 0;
             this.lblDesenvolvedor.Text = "Willian";
             // 
-            // img_Empresa
-            // 
-            this.img_Empresa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.img_Empresa.BackColor = System.Drawing.Color.Transparent;
-            this.img_Empresa.Image = ((System.Drawing.Image)(resources.GetObject("img_Empresa.Image")));
-            this.img_Empresa.Location = new System.Drawing.Point(273, 142);
-            this.img_Empresa.Name = "img_Empresa";
-            this.img_Empresa.Size = new System.Drawing.Size(347, 173);
-            this.img_Empresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.img_Empresa.TabIndex = 427;
-            this.img_Empresa.TabStop = false;
-            // 
             // lblEmpresa
             // 
             this.lblEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresa.Location = new System.Drawing.Point(12, 410);
+            this.lblEmpresa.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.Location = new System.Drawing.Point(12, 223);
             this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(46, 24);
+            this.lblEmpresa.Size = new System.Drawing.Size(49, 30);
             this.lblEmpresa.TabIndex = 428;
             this.lblEmpresa.Text = "</>";
+            // 
+            // pnlNavBar
+            // 
+            this.pnlNavBar.BackColor = System.Drawing.Color.DarkBlue;
+            this.pnlNavBar.Controls.Add(this.imgUsuario);
+            this.pnlNavBar.Controls.Add(this.lblNivel);
+            this.pnlNavBar.Controls.Add(this.lblUsuario);
+            this.pnlNavBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNavBar.Location = new System.Drawing.Point(0, 24);
+            this.pnlNavBar.Name = "pnlNavBar";
+            this.pnlNavBar.Size = new System.Drawing.Size(674, 64);
+            this.pnlNavBar.TabIndex = 430;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(286, 8);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsuario.Size = new System.Drawing.Size(322, 24);
+            this.lblUsuario.TabIndex = 430;
+            this.lblUsuario.Text = "</>";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblNivel
+            // 
+            this.lblNivel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNivel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivel.ForeColor = System.Drawing.Color.White;
+            this.lblNivel.Location = new System.Drawing.Point(428, 32);
+            this.lblNivel.Name = "lblNivel";
+            this.lblNivel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNivel.Size = new System.Drawing.Size(180, 24);
+            this.lblNivel.TabIndex = 431;
+            this.lblNivel.Text = "</>";
+            this.lblNivel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // imgUsuario
+            // 
+            this.imgUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgUsuario.Image = ((System.Drawing.Image)(resources.GetObject("imgUsuario.Image")));
+            this.imgUsuario.Location = new System.Drawing.Point(613, 3);
+            this.imgUsuario.Name = "imgUsuario";
+            this.imgUsuario.Size = new System.Drawing.Size(58, 58);
+            this.imgUsuario.TabIndex = 432;
+            this.imgUsuario.TabStop = false;
             // 
             // formPrincipal
             // 
@@ -678,9 +705,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(892, 456);
+            this.ClientSize = new System.Drawing.Size(674, 269);
+            this.Controls.Add(this.pnlNavBar);
             this.Controls.Add(this.lblEmpresa);
-            this.Controls.Add(this.img_Empresa);
             this.Controls.Add(this.menuPrincipal);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -688,11 +715,12 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "formPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema Gestor";
+            this.Text = "Sistema Gestor | Estoque";
             this.Shown += new System.EventHandler(this.formPrincipal_Shown);
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Empresa)).EndInit();
+            this.pnlNavBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,8 +737,6 @@
         private System.Windows.Forms.Label lblDesenvolvedor;
         private System.Windows.Forms.ToolStripMenuItem testesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuFiscal;
-        internal System.Windows.Forms.PictureBox img_Empresa;
-        private System.Windows.Forms.ToolStripMenuItem logoffToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuEstoque;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueProduto;
@@ -727,7 +753,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueMov;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueValidade;
-        private System.Windows.Forms.ToolStripMenuItem mEstoqueCompra;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueExped;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueExpConfPedido;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueExpEtiqEmb;
@@ -775,5 +800,9 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroDePlanoDeContasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mEstoqueProdEstMercadologica;
         private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.Panel pnlNavBar;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.PictureBox imgUsuario;
+        private System.Windows.Forms.Label lblNivel;
     }
 }

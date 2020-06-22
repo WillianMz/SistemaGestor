@@ -4,7 +4,7 @@ using System;
 using System.Windows.Forms;
 using Util;
 
-namespace Sistema.Utilitario.Interfaces
+namespace Gestor
 {
     public partial class formConfigurar : Form
     {
@@ -40,7 +40,7 @@ namespace Sistema.Utilitario.Interfaces
                 };
 
                 controle = new BLL_Sistema();
-                controle.salvarParamentros("Gestor", config);
+                controle.salvarParametrosDeBaseDeDados("Gestor", config);
             }
             catch
             {
@@ -51,7 +51,7 @@ namespace Sistema.Utilitario.Interfaces
         private void lerDados()
         {
             controle = new BLL_Sistema();
-            ConfigSistema cf = controle.getParamentros("Gestor");
+            ConfigSistema cf = controle.parametrosBaseDeDados("Gestor");
             txtBDServer.Text = cf.dbServer;
             txtBDPort.Text   = Convert.ToString(cf.dbPort);
             txtBDBanco.Text  = cf.dbBase;

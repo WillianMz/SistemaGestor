@@ -6,10 +6,11 @@ CREATE TABLE user_usuario(
 	login varchar(100) not null unique,
 	nome varchar(50) not null,
 	senha varchar(100) not null,
-	nivel varchar(10)
+	nivel int,
+	ativo boolean default true
 );
 
-INSERT INTO user_usuario(login, nome, senha, nivel) VALUES('dev','programador','123456','D');
+INSERT INTO user_usuario(login, nome, senha, nivel) VALUES('dev','programador','123456', 4);
 
 /*Localização geografica*/
 CREATE TABLE local_pais(

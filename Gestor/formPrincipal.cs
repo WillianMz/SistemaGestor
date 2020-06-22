@@ -1,14 +1,14 @@
-﻿using Sistema.Estoque.Interfaces;
-using Sistema.Pessoas.Interfaces;
-using Sistema.Utilitario.Interfaces;
+﻿using CustomAlertBoxDemo;
+using Modelo;
+using Modelo.User;
+using Sistema.Estoque.Interfaces;
 using Sistema.Financeiro.Interfaces;
+using Sistema.Pessoas.Interfaces;
+using Sistema.Utilitario.Controles;
 using System;
 using System.Windows.Forms;
 using Util;
-using Sistema.Utilitario.Controles;
 using static Modelo.Config.Parametro;
-using Modelo;
-using CustomAlertBoxDemo;
 
 namespace Gestor
 {
@@ -20,20 +20,16 @@ namespace Gestor
             empresaLogada();            
         }
 
-        //teste
         private void empresaLogada()
         {
             BLL_Empresa controle = new BLL_Empresa();
-            //controle.filtrarEmpresa_ID(UsuarioLogado.empresa, true);
             Empresa e = controle.filtrarEmpresa_ID(UsuarioLogado.empresa, true);
             lblEmpresa.Text = e.razaoSocial + " | " + e.local;
-        }
 
-        //teste
-        private void alerta(string msg, Form_Alert.enmType type)
-        {
-            Form_Alert f = new Form_Alert();
-            f.showAlert(msg, type);
+            BLL_Usuario users = new BLL_Usuario();
+            Usuario u = users.userID(UsuarioLogado.idUser);
+            lblUsuario.Text = "Olá, " + u.login;
+            lblNivel.Text = "@" + u.nivel;
         }
 
         private void TratarExcecao(Exception ex)
@@ -56,11 +52,6 @@ namespace Gestor
             }
         }
 
-        private void toolStripButton7_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void mEstoqueProdNovo_Click(object sender, EventArgs e)
         {
             formProduto form = new formProduto();
@@ -77,37 +68,9 @@ namespace Gestor
             form.Dispose();
         }
 
-        private void mEstoqueProdCateg_Click(object sender, EventArgs e)
-        {
-            formConsultaCategoria form = new formConsultaCategoria();
-            form.ShowDialog();
-            form.Dispose();
-        }
-
-        private void mEstoqueProdGrupo_Click(object sender, EventArgs e)
-        {
-            formConsultaGrupo form = new formConsultaGrupo();
-            form.ShowDialog();
-            form.Dispose();
-        }
-
-        private void mEstoqueProdSubgrupo_Click(object sender, EventArgs e)
-        {
-            formConsultaSubgrupo form = new formConsultaSubgrupo();
-            form.ShowDialog();
-            form.Dispose();
-        }
-
-        private void logoffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formLogin form = new formLogin();
-            form.ShowInTaskbar = false;
-            form.ShowDialog();
-            form.Dispose();                 
-        }
-
         private void mArq_sair_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
         }
 
@@ -211,8 +174,7 @@ namespace Gestor
 
         private void formPrincipal_Shown(object sender, EventArgs e)
         {
-            //alerta("Programa inicializado!", Form_Alert.enmType.Success);
-            alerta("Não conectado a Nuvem!", Form_Alert.enmType.Error);
+            Notificador.notificacao("Versão de Teste", Form_Alert.enmType.Info);
         }
     }
 }

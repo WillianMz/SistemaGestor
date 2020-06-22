@@ -1,4 +1,5 @@
 ﻿using Modelo.Config;
+using System.CodeDom.Compiler;
 
 namespace Sistema.Utilitario.Controles
 {
@@ -6,16 +7,29 @@ namespace Sistema.Utilitario.Controles
     {
         #region INICIALIZAÇÃO DO PROGRAMA
 
-        public ConfigSistema getParamentros(string software)
+        public ConfigSistema parametrosBaseDeDados(string software)
         {
-            ConfigSistema config = RegEditWindows.lerDadosRegistroWindows(software);
+            ConfigSistema config = RegEditWindows.lerDadosDeAcessoBancoDeDados(software);
             return config;
         }
 
-        public void salvarParamentros(string software, ConfigSistema config)
+        public void salvarParametrosDeBaseDeDados(string software, ConfigSistema config)
         {
-            RegEditWindows.gravarDadosRegistroWindows(software, config);
+            RegEditWindows.gravarDadosDeBancoDeDados(software, config);
         }
+
+        public ConfigSistema dadosDeLogin(string software)
+        {
+            ConfigSistema cf = RegEditWindows.lerDadosDeLogin(software);
+            return cf;
+        }
+
+        public void salvarDadosDeLogin(string software, ConfigSistema cf)
+        {
+            RegEditWindows.gravarDadosDeLogin(software, cf);
+        }
+
+
         #endregion
 
     }

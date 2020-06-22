@@ -1,4 +1,4 @@
-﻿namespace Sistema.Utilitario.Interfaces
+﻿namespace Gestor
 {
     partial class formUsuario
     {

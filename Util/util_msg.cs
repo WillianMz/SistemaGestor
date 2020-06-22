@@ -34,6 +34,12 @@
 
         #endregion
 
+        #region USUARIOS
+
+        public static string msgUser_loginNaoEncontrado = "Usuário não encontrado, verifique!";
+        public static string msgUser_erroNoLogin = "Ocorreu um erro ao realizar o login. Detalhes: ";
+
+        #endregion
 
         #region MENSAGENS DIVERSAS
 
