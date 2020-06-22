@@ -368,5 +368,12 @@ namespace Sistema.Estoque.Interfaces
             adicionarItem();
         }
 
+        private void btnEditarCadProduto_Click(object sender, EventArgs e)
+        {
+            formEntradaAdicionarProduto f = new formEntradaAdicionarProduto();
+            f.ShowDialog();
+            f.Close();
+            f.Dispose();
+        }
     }
 }

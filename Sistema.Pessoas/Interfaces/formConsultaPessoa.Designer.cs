@@ -28,24 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConsultaPessoa));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConsultaPessoa));
             this.menuAcoes = new System.Windows.Forms.MenuStrip();
             this.menuAdicionar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDetalhes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDesativar = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvPessoa = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLocalizacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.lblResultado = new System.Windows.Forms.Label();
             this.pnFiltro = new System.Windows.Forms.Panel();
@@ -54,6 +47,13 @@
             this.lblTipoFiltro = new System.Windows.Forms.Label();
             this.cboxFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocalizacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuAcoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoa)).BeginInit();
             this.pnlRodape.SuspendLayout();
@@ -115,10 +115,8 @@
             this.dgvPessoa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvPessoa.BackgroundColor = System.Drawing.Color.White;
             this.dgvPessoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvPessoa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvPessoa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvPessoa.ColumnHeadersHeight = 30;
-            this.dgvPessoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPessoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colNome,
@@ -135,69 +133,6 @@
             this.dgvPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoa.Size = new System.Drawing.Size(1042, 340);
             this.dgvPessoa.TabIndex = 2;
-            // 
-            // colID
-            // 
-            this.colID.FillWeight = 15F;
-            this.colID.HeaderText = "Cód.";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Width = 56;
-            // 
-            // colNome
-            // 
-            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colNome.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colNome.FillWeight = 90F;
-            this.colNome.HeaderText = "Nome Completo";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colFantasia
-            // 
-            this.colFantasia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.NullValue = null;
-            this.colFantasia.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colFantasia.FillWeight = 50F;
-            this.colFantasia.HeaderText = "Fantasia/Apelido";
-            this.colFantasia.Name = "colFantasia";
-            this.colFantasia.ReadOnly = true;
-            // 
-            // colCNPJ
-            // 
-            this.colCNPJ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "00\\.000\\.000/0000-00";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colCNPJ.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colCNPJ.FillWeight = 70F;
-            this.colCNPJ.HeaderText = "CPF/CNPJ";
-            this.colCNPJ.Name = "colCNPJ";
-            this.colCNPJ.ReadOnly = true;
-            // 
-            // colTelefone
-            // 
-            this.colTelefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Format = "(00)00000-0009";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colTelefone.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colTelefone.HeaderText = "Telefone";
-            this.colTelefone.Name = "colTelefone";
-            this.colTelefone.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
-            // colLocalizacao
-            // 
-            this.colLocalizacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colLocalizacao.HeaderText = "Localização";
-            this.colLocalizacao.Name = "colLocalizacao";
-            this.colLocalizacao.ReadOnly = true;
             // 
             // pnlRodape
             // 
@@ -279,6 +214,76 @@
             this.txtPesquisar.Size = new System.Drawing.Size(406, 23);
             this.txtPesquisar.TabIndex = 1;
             this.txtPesquisar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPesquisar_KeyPress);
+            // 
+            // colID
+            // 
+            this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colID.FillWeight = 15F;
+            this.colID.HeaderText = "Cód.";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Width = 56;
+            // 
+            // colNome
+            // 
+            this.colNome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNome.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colNome.FillWeight = 90F;
+            this.colNome.HeaderText = "Nome Completo";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            this.colNome.Width = 118;
+            // 
+            // colFantasia
+            // 
+            this.colFantasia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle2.NullValue = null;
+            this.colFantasia.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colFantasia.FillWeight = 50F;
+            this.colFantasia.HeaderText = "Fantasia/Apelido";
+            this.colFantasia.Name = "colFantasia";
+            this.colFantasia.ReadOnly = true;
+            this.colFantasia.Width = 127;
+            // 
+            // colCNPJ
+            // 
+            this.colCNPJ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Format = "00\\.000\\.000/0000-00";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colCNPJ.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colCNPJ.FillWeight = 70F;
+            this.colCNPJ.HeaderText = "CPF/CNPJ";
+            this.colCNPJ.Name = "colCNPJ";
+            this.colCNPJ.ReadOnly = true;
+            this.colCNPJ.Width = 82;
+            // 
+            // colTelefone
+            // 
+            this.colTelefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle4.Format = "(00)00000-0009";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colTelefone.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTelefone.HeaderText = "Telefone";
+            this.colTelefone.Name = "colTelefone";
+            this.colTelefone.ReadOnly = true;
+            this.colTelefone.Width = 77;
+            // 
+            // colEmail
+            // 
+            this.colEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Width = 63;
+            // 
+            // colLocalizacao
+            // 
+            this.colLocalizacao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colLocalizacao.HeaderText = "Localização";
+            this.colLocalizacao.Name = "colLocalizacao";
+            this.colLocalizacao.ReadOnly = true;
+            this.colLocalizacao.Width = 97;
             // 
             // formConsultaPessoa
             // 

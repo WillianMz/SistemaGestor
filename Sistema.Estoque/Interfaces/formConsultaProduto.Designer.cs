@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConsultaProduto));
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,12 +49,15 @@
             this.menuAdicionar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDetalhes = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDesativar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAtivarDesativar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistorico = new System.Windows.Forms.ToolStripMenuItem();
             this.mHistMovimento = new System.Windows.Forms.ToolStripMenuItem();
             this.mHistPrecos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMaisOpcoes = new System.Windows.Forms.ToolStripMenuItem();
             this.mOpcaoEstruturaMercadologica = new System.Windows.Forms.ToolStripMenuItem();
+            this.tributaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.etiquetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarDesativados = new System.Windows.Forms.ToolStripMenuItem();
             this.menuListarTodos = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,11 +78,6 @@
             this.colSaldoTroca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaldoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblEstoque = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tributaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.etiquetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.menuAcoes.SuspendLayout();
@@ -99,14 +97,14 @@
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProdutos.ColumnHeadersHeight = 30;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
@@ -158,9 +156,9 @@
             // 
             // colCusto
             // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colCusto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colCusto.DefaultCellStyle = dataGridViewCellStyle5;
             this.colCusto.HeaderText = "Custo";
             this.colCusto.Name = "colCusto";
             this.colCusto.ReadOnly = true;
@@ -168,11 +166,11 @@
             // 
             // colVenda
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colVenda.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colVenda.DefaultCellStyle = dataGridViewCellStyle6;
             this.colVenda.HeaderText = "Venda";
             this.colVenda.Name = "colVenda";
             this.colVenda.ReadOnly = true;
@@ -240,7 +238,7 @@
             this.menuAdicionar,
             this.menuEditar,
             this.menuDetalhes,
-            this.menuDesativar,
+            this.menuAtivarDesativar,
             this.menuHistorico,
             this.menuMaisOpcoes,
             this.menuRelatorio});
@@ -272,12 +270,12 @@
             this.menuDetalhes.Text = "Detalhes";
             this.menuDetalhes.Click += new System.EventHandler(this.menuDetalhes_Click);
             // 
-            // menuDesativar
+            // menuAtivarDesativar
             // 
-            this.menuDesativar.Name = "menuDesativar";
-            this.menuDesativar.Size = new System.Drawing.Size(67, 33);
-            this.menuDesativar.Text = "Desativar";
-            this.menuDesativar.Click += new System.EventHandler(this.menuDesativar_Click);
+            this.menuAtivarDesativar.Name = "menuAtivarDesativar";
+            this.menuAtivarDesativar.Size = new System.Drawing.Size(67, 33);
+            this.menuAtivarDesativar.Text = "Desativar";
+            this.menuAtivarDesativar.Click += new System.EventHandler(this.menuDesativar_Click);
             // 
             // menuHistorico
             // 
@@ -291,14 +289,14 @@
             // mHistMovimento
             // 
             this.mHistMovimento.Name = "mHistMovimento";
-            this.mHistMovimento.Size = new System.Drawing.Size(180, 22);
+            this.mHistMovimento.Size = new System.Drawing.Size(154, 22);
             this.mHistMovimento.Text = "Movimentação";
             this.mHistMovimento.Click += new System.EventHandler(this.movimentaçãoToolStripMenuItem_Click);
             // 
             // mHistPrecos
             // 
             this.mHistPrecos.Name = "mHistPrecos";
-            this.mHistPrecos.Size = new System.Drawing.Size(180, 22);
+            this.mHistPrecos.Size = new System.Drawing.Size(154, 22);
             this.mHistPrecos.Text = "Preços";
             // 
             // menuMaisOpcoes
@@ -317,6 +315,24 @@
             this.mOpcaoEstruturaMercadologica.Size = new System.Drawing.Size(203, 22);
             this.mOpcaoEstruturaMercadologica.Text = "Estrutura Mercadológica";
             this.mOpcaoEstruturaMercadologica.Click += new System.EventHandler(this.mOpcaoEstruturaMercadologica_Click);
+            // 
+            // tributaçãoToolStripMenuItem
+            // 
+            this.tributaçãoToolStripMenuItem.Name = "tributaçãoToolStripMenuItem";
+            this.tributaçãoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.tributaçãoToolStripMenuItem.Text = "Tributação";
+            // 
+            // etiquetasToolStripMenuItem
+            // 
+            this.etiquetasToolStripMenuItem.Name = "etiquetasToolStripMenuItem";
+            this.etiquetasToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.etiquetasToolStripMenuItem.Text = "Etiquetas";
+            // 
+            // menuRelatorio
+            // 
+            this.menuRelatorio.Name = "menuRelatorio";
+            this.menuRelatorio.Size = new System.Drawing.Size(71, 33);
+            this.menuRelatorio.Text = "Relatórios";
             // 
             // menuListarDesativados
             // 
@@ -498,52 +514,12 @@
             this.lblEstoque.TabIndex = 31;
             this.lblEstoque.Text = "Estoque";
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1109, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 22);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(1083, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 22);
-            this.button2.TabIndex = 33;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // tributaçãoToolStripMenuItem
-            // 
-            this.tributaçãoToolStripMenuItem.Name = "tributaçãoToolStripMenuItem";
-            this.tributaçãoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.tributaçãoToolStripMenuItem.Text = "Tributação";
-            // 
-            // etiquetasToolStripMenuItem
-            // 
-            this.etiquetasToolStripMenuItem.Name = "etiquetasToolStripMenuItem";
-            this.etiquetasToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.etiquetasToolStripMenuItem.Text = "Etiquetas";
-            // 
-            // menuRelatorio
-            // 
-            this.menuRelatorio.Name = "menuRelatorio";
-            this.menuRelatorio.Size = new System.Drawing.Size(71, 33);
-            this.menuRelatorio.Text = "Relatórios";
-            // 
             // formConsultaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 544);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEstoque);
             this.Controls.Add(this.dgvEstoque);
             this.Controls.Add(this.chboxDesativados);
@@ -592,13 +568,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuAdicionar;
         private System.Windows.Forms.ToolStripMenuItem menuEditar;
         private System.Windows.Forms.ToolStripMenuItem menuDetalhes;
-        private System.Windows.Forms.ToolStripMenuItem menuDesativar;
+        private System.Windows.Forms.ToolStripMenuItem menuAtivarDesativar;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.CheckBox chboxDesativados;
         private System.Windows.Forms.DataGridView dgvEstoque;
         private System.Windows.Forms.Label lblEstoque;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNome;

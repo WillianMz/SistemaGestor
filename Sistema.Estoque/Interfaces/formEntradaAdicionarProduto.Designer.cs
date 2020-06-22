@@ -70,7 +70,7 @@
             // 
             // gbItem
             // 
-            this.gbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.gbItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbItem.Controls.Add(this.textBox2);
             this.gbItem.Controls.Add(this.label5);
@@ -418,6 +418,8 @@
             this.ClientSize = new System.Drawing.Size(923, 139);
             this.Controls.Add(this.gbItem);
             this.Name = "formEntradaAdicionarProduto";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formEntradaAdicionarProduto";
             this.gbItem.ResumeLayout(false);
