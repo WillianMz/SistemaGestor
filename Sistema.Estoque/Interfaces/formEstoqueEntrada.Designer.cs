@@ -994,6 +994,7 @@
             this.btnEditarCadProduto.TabIndex = 10;
             this.btnEditarCadProduto.Text = "Editar Cadastro";
             this.btnEditarCadProduto.UseVisualStyleBackColor = true;
+            this.btnEditarCadProduto.Click += new System.EventHandler(this.btnEditarCadProduto_Click);
             // 
             // btnRemoverItem
             // 

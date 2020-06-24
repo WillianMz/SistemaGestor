@@ -50,7 +50,8 @@ namespace Gestor
                 BLL_Usuario controler = new BLL_Usuario();
 
                 string login = txtUsuario.Text.Trim();
-                string senha = txtSenha.Text.Trim();
+                //criptografa a senha informada para depois comparar com a da base de dados
+                string senha = util_dados.criptografar(txtSenha.Text.Trim());
 
                 UsuarioLogado.empresa = int.Parse(cbEmpresa.SelectedValue.ToString());
 
