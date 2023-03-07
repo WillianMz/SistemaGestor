@@ -13,7 +13,7 @@ namespace Gestor
         public formConfigurar()
         {
             InitializeComponent();
-            lerDados();
+            //lerDados();
             configForm();
         }
 

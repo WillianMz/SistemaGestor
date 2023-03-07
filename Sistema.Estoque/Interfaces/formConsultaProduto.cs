@@ -42,6 +42,7 @@ namespace Sistema.Estoque.Interfaces
             foreach (Produto p in ps)
             {
                 dgvProdutos.Rows.Add(p.Id, p.Codigo, p.Nome, p.Descricao, p.Custo, p.PrecoVenda, p.VendaMargem + "%", p.Marca, p.Fabricante);
+                //dgvProdutos.DataSource = ps;
             }
             util_sistema.resultadoPesquisa(dgvProdutos, lblMensagem);
         }

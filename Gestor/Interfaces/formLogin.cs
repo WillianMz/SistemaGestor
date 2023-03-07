@@ -20,20 +20,26 @@ namespace Gestor
         {
             try
             {
-                ConfigSistema config = RegEditWindows.lerDadosDeAcessoBancoDeDados("Gestor");
-                SQL.servidor = config.dbServer;
-                SQL.porta    = config.dbPort;
-                SQL.banco    = config.dbBase;
-                SQL.userBD   = config.dbUser;
-                SQL.senhaBD  = config.dbPwd;
+                //ConfigSistema config = RegEditWindows.lerDadosDeAcessoBancoDeDados("Gestor");
+                //SQL.servidor = config.dbServer;
+                //SQL.porta    = config.dbPort;
+                //SQL.banco    = config.dbBase;
+                //SQL.userBD   = config.dbUser;
+                //SQL.senhaBD  = config.dbPwd;
+
+                SQL.servidor = "localhost";
+                SQL.porta = 5432;
+                SQL.banco = "sistema_gestor";
+                SQL.userBD = "postgres";
+                SQL.senhaBD = "123456789";
 
                 carregarComboBox.empresas(cbEmpresa);
 
-                ConfigSistema cf = RegEditWindows.lerDadosDeLogin("Gestor");
-                ckboxLembrarSenha.Checked = cf.lembrarSenha;
-                txtUsuario.Text = cf.usuario;
-                txtSenha.Text = cf.senha;
-                cbEmpresa.SelectedValue = cf.empresaPadrao;
+                //ConfigSistema cf = RegEditWindows.lerDadosDeLogin("Gestor");
+                //ckboxLembrarSenha.Checked = cf.lembrarSenha;
+                //txtUsuario.Text = cf.usuario;
+                //txtSenha.Text = cf.senha;
+                //cbEmpresa.SelectedValue = cf.empresaPadrao;
 
                 //cbEmpresa.SelectedIndex = 0;
             }
@@ -51,7 +57,8 @@ namespace Gestor
 
                 string login = txtUsuario.Text.Trim();
                 //criptografa a senha informada para depois comparar com a da base de dados
-                string senha = util_dados.criptografar(txtSenha.Text.Trim());
+                //string senha = util_dados.criptografar(txtSenha.Text.Trim());
+                string senha = txtSenha.Text.Trim();
 
                 UsuarioLogado.empresa = int.Parse(cbEmpresa.SelectedValue.ToString());
 

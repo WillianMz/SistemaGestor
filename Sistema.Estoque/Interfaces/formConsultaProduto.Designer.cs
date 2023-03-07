@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formConsultaProduto));
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCusto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMargem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.custo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlRodape = new System.Windows.Forms.Panel();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.lblMensagem = new System.Windows.Forms.Label();
@@ -71,131 +69,108 @@
             this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.chboxDesativados = new System.Windows.Forms.CheckBox();
-            this.dgvEstoque = new System.Windows.Forms.DataGridView();
-            this.colEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaldoDisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaldoReservado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaldoTroca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaldoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblEstoque = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.pnlRodape.SuspendLayout();
             this.menuAcoes.SuspendLayout();
             this.pnFiltro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProdutos
             // 
             this.dgvProdutos.AllowUserToAddRows = false;
             this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToOrderColumns = true;
             this.dgvProdutos.AllowUserToResizeRows = false;
             this.dgvProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProdutos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvProdutos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvProdutos.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colCodBarras,
-            this.colNome,
-            this.colDescricao,
-            this.colCusto,
-            this.colVenda,
-            this.colMargem,
-            this.colMarca,
-            this.colFabricante});
+            this.id,
+            this.codigo,
+            this.nome,
+            this.descricao,
+            this.custo,
+            this.precoVenda,
+            this.margem,
+            this.marca,
+            this.fabricante});
             this.dgvProdutos.Location = new System.Drawing.Point(13, 95);
             this.dgvProdutos.MultiSelect = false;
             this.dgvProdutos.Name = "dgvProdutos";
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.RowHeadersVisible = false;
             this.dgvProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProdutos.Size = new System.Drawing.Size(1125, 254);
+            this.dgvProdutos.Size = new System.Drawing.Size(1125, 403);
             this.dgvProdutos.TabIndex = 27;
             // 
-            // colID
+            // id
             // 
-            this.colID.FillWeight = 15F;
-            this.colID.HeaderText = "Cód.";
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            this.colID.Width = 56;
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
-            // colCodBarras
+            // codigo
             // 
-            this.colCodBarras.HeaderText = "Código de Barras";
-            this.colCodBarras.Name = "colCodBarras";
-            this.colCodBarras.ReadOnly = true;
-            this.colCodBarras.Width = 126;
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
             // 
-            // colNome
+            // nome
             // 
-            this.colNome.HeaderText = "Nome";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            this.colNome.Width = 63;
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
             // 
-            // colDescricao
+            // descricao
             // 
-            this.colDescricao.HeaderText = "Descrição";
-            this.colDescricao.Name = "colDescricao";
-            this.colDescricao.ReadOnly = true;
-            this.colDescricao.Width = 87;
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
             // 
-            // colCusto
+            // custo
             // 
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.colCusto.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colCusto.HeaderText = "Custo";
-            this.colCusto.Name = "colCusto";
-            this.colCusto.ReadOnly = true;
-            this.colCusto.Width = 63;
+            this.custo.HeaderText = "Custo";
+            this.custo.Name = "custo";
+            this.custo.ReadOnly = true;
             // 
-            // colVenda
+            // precoVenda
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colVenda.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colVenda.HeaderText = "Venda";
-            this.colVenda.Name = "colVenda";
-            this.colVenda.ReadOnly = true;
-            this.colVenda.Width = 65;
+            this.precoVenda.HeaderText = "Venda";
+            this.precoVenda.Name = "precoVenda";
+            this.precoVenda.ReadOnly = true;
             // 
-            // colMargem
+            // margem
             // 
-            this.colMargem.HeaderText = "Margem";
-            this.colMargem.Name = "colMargem";
-            this.colMargem.ReadOnly = true;
-            this.colMargem.Width = 77;
+            this.margem.HeaderText = "Margem";
+            this.margem.Name = "margem";
+            this.margem.ReadOnly = true;
             // 
-            // colMarca
+            // marca
             // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            this.colMarca.ReadOnly = true;
-            this.colMarca.Width = 68;
+            this.marca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.marca.HeaderText = "Marca";
+            this.marca.Name = "marca";
+            this.marca.ReadOnly = true;
+            this.marca.Width = 68;
             // 
-            // colFabricante
+            // fabricante
             // 
-            this.colFabricante.HeaderText = "Fabricante";
-            this.colFabricante.Name = "colFabricante";
-            this.colFabricante.ReadOnly = true;
-            this.colFabricante.Width = 91;
+            this.fabricante.HeaderText = "Fabricante";
+            this.fabricante.Name = "fabricante";
+            this.fabricante.ReadOnly = true;
             // 
             // pnlRodape
             // 
@@ -441,87 +416,12 @@
             this.chboxDesativados.Text = "Somente desativados";
             this.chboxDesativados.UseVisualStyleBackColor = true;
             // 
-            // dgvEstoque
-            // 
-            this.dgvEstoque.AllowUserToAddRows = false;
-            this.dgvEstoque.AllowUserToDeleteRows = false;
-            this.dgvEstoque.AllowUserToResizeRows = false;
-            this.dgvEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEstoque.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEstoque.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dgvEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvEstoque.ColumnHeadersHeight = 30;
-            this.dgvEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colEmpresa,
-            this.colSaldoDisp,
-            this.colSaldoReservado,
-            this.colSaldoTroca,
-            this.colSaldoTotal});
-            this.dgvEstoque.Location = new System.Drawing.Point(12, 372);
-            this.dgvEstoque.Name = "dgvEstoque";
-            this.dgvEstoque.ReadOnly = true;
-            this.dgvEstoque.RowHeadersVisible = false;
-            this.dgvEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEstoque.Size = new System.Drawing.Size(1125, 126);
-            this.dgvEstoque.TabIndex = 30;
-            // 
-            // colEmpresa
-            // 
-            this.colEmpresa.HeaderText = "Empresa";
-            this.colEmpresa.Name = "colEmpresa";
-            this.colEmpresa.ReadOnly = true;
-            this.colEmpresa.Width = 200;
-            // 
-            // colSaldoDisp
-            // 
-            this.colSaldoDisp.HeaderText = "Saldo Disponível";
-            this.colSaldoDisp.Name = "colSaldoDisp";
-            this.colSaldoDisp.ReadOnly = true;
-            this.colSaldoDisp.Width = 150;
-            // 
-            // colSaldoReservado
-            // 
-            this.colSaldoReservado.HeaderText = "Saldo Reservado";
-            this.colSaldoReservado.Name = "colSaldoReservado";
-            this.colSaldoReservado.ReadOnly = true;
-            this.colSaldoReservado.Width = 150;
-            // 
-            // colSaldoTroca
-            // 
-            this.colSaldoTroca.HeaderText = "Saldo Troca";
-            this.colSaldoTroca.Name = "colSaldoTroca";
-            this.colSaldoTroca.ReadOnly = true;
-            this.colSaldoTroca.Width = 150;
-            // 
-            // colSaldoTotal
-            // 
-            this.colSaldoTotal.HeaderText = "Saldo Total";
-            this.colSaldoTotal.Name = "colSaldoTotal";
-            this.colSaldoTotal.ReadOnly = true;
-            this.colSaldoTotal.Width = 150;
-            // 
-            // lblEstoque
-            // 
-            this.lblEstoque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblEstoque.AutoSize = true;
-            this.lblEstoque.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstoque.Location = new System.Drawing.Point(12, 352);
-            this.lblEstoque.Name = "lblEstoque";
-            this.lblEstoque.Size = new System.Drawing.Size(57, 17);
-            this.lblEstoque.TabIndex = 31;
-            this.lblEstoque.Text = "Estoque";
-            // 
             // formConsultaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1149, 544);
-            this.Controls.Add(this.lblEstoque);
-            this.Controls.Add(this.dgvEstoque);
             this.Controls.Add(this.chboxDesativados);
             this.Controls.Add(this.pnFiltro);
             this.Controls.Add(this.dgvProdutos);
@@ -541,7 +441,6 @@
             this.menuAcoes.PerformLayout();
             this.pnFiltro.ResumeLayout(false);
             this.pnFiltro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,22 +470,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuAtivarDesativar;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.CheckBox chboxDesativados;
-        private System.Windows.Forms.DataGridView dgvEstoque;
-        private System.Windows.Forms.Label lblEstoque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodBarras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDescricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCusto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMargem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFabricante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpresa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSaldoDisp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSaldoReservado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSaldoTroca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSaldoTotal;
         private System.Windows.Forms.ToolStripMenuItem menuHistorico;
         private System.Windows.Forms.ToolStripMenuItem mHistMovimento;
         private System.Windows.Forms.ToolStripMenuItem mHistPrecos;
@@ -595,5 +478,14 @@
         private System.Windows.Forms.ToolStripMenuItem tributaçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem etiquetasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuRelatorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn custo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn margem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fabricante;
     }
 }
