@@ -29,7 +29,7 @@ namespace Gestor
 
                 SQL.servidor = "localhost";
                 SQL.porta = 5432;
-                SQL.banco = "sistema_gestor";
+                SQL.banco = "gestor_2019";
                 SQL.userBD = "postgres";
                 SQL.senhaBD = "123456789";
 
